@@ -1278,6 +1278,7 @@ class PresentationApp {
 
     if (maqueta && startIn3D) {
       this.isAnatomyModeActive = true;
+      this.svgModal.classList.add("mode-3d-active");
       if (this.svgModalIframe) {
         this.svgModalIframe.src = maqueta;
         this.svgModalIframe.style.display = "block";
@@ -1294,6 +1295,7 @@ class PresentationApp {
       }
     } else if (anatomy) {
       this.isAnatomyModeActive = true;
+      this.svgModal.classList.add("mode-3d-active");
       if (this.svgModalIframe) {
         this.svgModalIframe.src = `_GUARDADO_SVG_ISOMETRICOS/visor_general.html?slide=${anatomy}&embedded=true&theme=dark`;
         this.svgModalIframe.style.display = "block";
@@ -1313,6 +1315,7 @@ class PresentationApp {
       }
     } else {
       this.isAnatomyModeActive = false;
+      this.svgModal.classList.remove("mode-3d-active");
       if (this.svgModalIframe) {
         this.svgModalIframe.style.display = "none";
         this.svgModalIframe.src = "";
@@ -1353,6 +1356,7 @@ class PresentationApp {
     if (isShowingIframe) {
       this.svgModalIframe.style.display = "none";
       this.svgModalImg.style.display = "block";
+      this.svgModal.classList.remove("mode-3d-active");
       if (this.btnSvgToggleView) {
         this.btnSvgToggleView.textContent = maqueta ? "🌐 Ver Maqueta 3D" : "🔬 Modo 3D";
       }
@@ -1365,6 +1369,7 @@ class PresentationApp {
       }
       this.svgModalIframe.style.display = "block";
       this.svgModalImg.style.display = "none";
+      this.svgModal.classList.add("mode-3d-active");
       if (this.btnSvgToggleView) {
         this.btnSvgToggleView.textContent = "🗺️ Ver Lámina 2D";
       }
@@ -1377,7 +1382,7 @@ class PresentationApp {
 
   closeSvgModal() {
     if (!this.svgModal) return;
-    this.svgModal.classList.remove("open", "maximized");
+    this.svgModal.classList.remove("open", "maximized", "mode-3d-active");
     if (this.svgModalBackdrop) {
       this.svgModalBackdrop.classList.remove("open");
     }

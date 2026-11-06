@@ -148,6 +148,27 @@
       color: var(--gold-main);
       border-color: var(--gold-main);
     }
+
+    /* Reglas avanzadas de adaptabilidad responsiva móvil (<640px) */
+    @media (max-width: 639px) {
+      .academic-card {
+        border-radius: 10px;
+        box-shadow: 0 4px 18px -2px rgba(15, 23, 42, 0.16);
+      }
+      #info-modal {
+        transition: max-height 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+        max-height: 70vh;
+      }
+      #info-modal.is-collapsed #inspector-body {
+        display: none !important;
+      }
+      #panel-legend-content {
+        transition: opacity 0.22s ease;
+      }
+      #panel-legend-content.is-open {
+        display: block !important;
+      }
+    }
   </style>
 </head>
 <body class="h-screen w-screen relative overflow-hidden">
@@ -155,65 +176,88 @@
   <!-- 3D WebGL Canvas Container -->
   <div id="canvas-container" class="w-full h-full absolute inset-0 cursor-grab active:cursor-grabbing"></div>
 
-  <!-- Cuadro Superior Izquierdo: UNCo CURZAS Sede Central Viedma -->
-  <aside class="absolute top-4 left-4 sm:top-5 sm:left-5 z-10 w-72 sm:w-[330px] pointer-events-auto">
-    <div class="academic-card header-accent p-3.5 sm:p-4 text-slate-800">
+  <!-- Cuadro Superior: UNCo CURZAS Sede Central Viedma (Barra compacta en móvil, tarjeta completa en desktop) -->
+  <aside id="aside-header" class="absolute top-2 left-2 right-2 sm:top-5 sm:left-5 sm:right-auto sm:w-[330px] z-20 pointer-events-auto">
+    <div class="academic-card header-accent p-2 sm:p-4 text-slate-800">
       
       <!-- Encabezado Institucional -->
-      <div class="flex items-start justify-between gap-2 pb-2.5 border-b border-slate-200">
-        <div>
-          <div class="flex items-center gap-1.5 text-[9.5px] font-bold tracking-[0.14em] text-[#996515] uppercase font-serif">
+      <div class="flex items-center justify-between gap-1.5 pb-1 sm:pb-2.5 border-b border-slate-200">
+        <div class="min-w-0 pr-1">
+          <div class="flex items-center gap-1.5 text-[8.5px] sm:text-[9.5px] font-bold tracking-[0.12em] text-[#996515] uppercase font-serif truncate">
             <i class="fa-solid fa-graduation-cap text-[#b48324]"></i>
-            <span>Universidad Nacional del Comahue</span>
+            <span class="truncate">Universidad Nacional del Comahue</span>
           </div>
-          <h1 class="text-sm sm:text-[15px] font-bold tracking-normal text-[#0f172a] uppercase mt-1 leading-snug" style="font-family: 'Cinzel', serif;">
+          <h1 class="text-xs sm:text-[15px] font-bold tracking-normal text-[#0f172a] uppercase mt-0.5 sm:mt-1 leading-tight truncate" style="font-family: 'Cinzel', serif;">
             CURZAS — Sede Central
           </h1>
-          <p class="text-[10.5px] font-medium text-slate-500 mt-0.5">
+          <p class="text-[9.5px] sm:text-[10.5px] font-medium text-slate-500 hidden sm:block mt-0.5">
             Red Territorial de Nodos • Res. CD N° 196/2022
           </p>
         </div>
-        <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[9.5px] font-bold bg-[#fdfaf5] text-[#996515] border border-[#e8d5b5] shadow-2xs shrink-0">
-          <i class="fa-solid fa-map-location-dot"></i> 13 Deptos.
-        </span>
+
+        <!-- Grupo de controles en header (en mobile reúne herramientas y toggle de leyenda) -->
+        <div class="flex items-center gap-1 shrink-0">
+          <span class="inline-flex items-center gap-1 px-1.5 sm:px-2 py-0.5 rounded-full text-[9px] sm:text-[9.5px] font-bold bg-[#fdfaf5] text-[#996515] border border-[#e8d5b5] shadow-2xs">
+            <i class="fa-solid fa-map-location-dot"></i> 13 Deptos.
+          </span>
+
+          <!-- Botones de herramientas integrados para móviles (<640px) -->
+          <div class="flex sm:hidden items-center gap-1 pl-1 border-l border-slate-200">
+            <button id="btn-toggle-labels-m" title="Rótulos de nodos" class="academic-icon-btn !w-7 !h-7 !text-[11px] active">
+              <i class="fa-solid fa-font"></i>
+            </button>
+            <button id="btn-toggle-rotation-m" title="Rotar 360°" class="academic-icon-btn !w-7 !h-7 !text-[11px]">
+              <i class="fa-solid fa-arrows-rotate"></i>
+            </button>
+            <button id="btn-reset-cam-m" title="Restablecer vista" class="academic-icon-btn !w-7 !h-7 !text-[11px]">
+              <i class="fa-solid fa-compass"></i>
+            </button>
+            <button id="btn-toggle-legend" type="button" title="Ver Leyenda y Capas" class="academic-btn !py-1 !px-1.5 !text-[10px] !gap-1">
+              <span>Capas</span>
+              <i id="legend-chevron" class="fa-solid fa-chevron-down text-[8px] transition-transform duration-200"></i>
+            </button>
+          </div>
+        </div>
       </div>
 
-      <!-- Referencias visuales de la cartografía oficial -->
-      <div class="space-y-1.5 mt-2.5 text-[11.5px] font-normal text-slate-700">
-        <div class="flex items-center gap-2">
-          <span class="w-3.5 h-3 rounded-[3px] border border-slate-400 bg-[#EAE0D5] shadow-xs shrink-0"></span>
-          <span>13 Departamentos (Relieve 3D PBR)</span>
+      <!-- Referencias visuales de la cartografía oficial (Colapsable en Mobile) -->
+      <div id="panel-legend-content" class="hidden sm:block">
+        <div class="space-y-1.5 mt-2 sm:mt-2.5 text-[11px] sm:text-[11.5px] font-normal text-slate-700">
+          <div class="flex items-center gap-2">
+            <span class="w-3.5 h-3 rounded-[3px] border border-slate-400 bg-[#EAE0D5] shadow-xs shrink-0"></span>
+            <span>13 Departamentos (Relieve 3D PBR)</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="w-3.5 h-3.5 rounded-full bg-[#0f2d59] border-2 border-white flex items-center justify-center text-[7px] text-white font-black shadow-xs shrink-0">●</span>
+            <span>10 Nodos Universitarios (Docencia Híbrida)</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="w-3.5 h-3.5 rounded-full bg-amber-400 border border-amber-600 flex items-center justify-center text-[8px] text-amber-950 font-black shadow-xs shrink-0">★</span>
+            <span class="font-bold text-[#996515]">Viedma: Sede Central y Capital Provincial</span>
+          </div>
+          <div class="flex items-center gap-2 pt-1 border-t border-slate-200">
+            <span class="w-4 h-0.5 border-t-2 border-dashed border-[#0f2d59]"></span>
+            <span class="text-[#0f2d59] font-medium text-[10.5px]">Traza Troncal (Línea Sur RN 23 & Costa RN 3)</span>
+          </div>
         </div>
-        <div class="flex items-center gap-2">
-          <span class="w-3.5 h-3.5 rounded-full bg-[#0f2d59] border-2 border-white flex items-center justify-center text-[7px] text-white font-black shadow-xs shrink-0">●</span>
-          <span>10 Nodos Universitarios (Docencia Híbrida)</span>
-        </div>
-        <div class="flex items-center gap-2">
-          <span class="w-3.5 h-3.5 rounded-full bg-amber-400 border border-amber-600 flex items-center justify-center text-[8px] text-amber-950 font-black shadow-xs shrink-0">★</span>
-          <span class="font-bold text-[#996515]">Viedma: Sede Central y Capital Provincial</span>
-        </div>
-        <div class="flex items-center gap-2 pt-1 border-t border-slate-200">
-          <span class="w-4 h-0.5 border-t-2 border-dashed border-[#0f2d59]"></span>
-          <span class="text-[#0f2d59] font-medium text-[10.5px]">Traza Troncal (Línea Sur RN 23 & Costa Atlántica RN 3)</span>
-        </div>
-      </div>
 
-      <!-- Controles y Acciones Rápidas -->
-      <div class="grid grid-cols-2 gap-2 mt-3">
-        <button id="btn-toggle-extrude" class="academic-btn active w-full">
-          <i class="fa-solid fa-cube text-[#996515]"></i>
-          <span id="txt-extrude">Relieve 3D Activo</span>
-        </button>
-        <button id="btn-toggle-network" class="academic-btn active w-full">
-          <i class="fa-solid fa-network-wired text-[#996515]"></i>
-          <span>Nodos & Enlaces</span>
-        </button>
+        <!-- Controles y Acciones Rápidas -->
+        <div class="grid grid-cols-2 gap-2 mt-2.5 sm:mt-3">
+          <button id="btn-toggle-extrude" class="academic-btn active w-full">
+            <i class="fa-solid fa-cube text-[#996515]"></i>
+            <span id="txt-extrude">Relieve 3D Activo</span>
+          </button>
+          <button id="btn-toggle-network" class="academic-btn active w-full">
+            <i class="fa-solid fa-network-wired text-[#996515]"></i>
+            <span>Nodos & Enlaces</span>
+          </button>
+        </div>
       </div>
     </div>
   </aside>
 
-  <!-- Barra de Herramientas (Superior Derecha) -->
-  <div class="absolute top-4 right-4 sm:top-5 sm:right-5 z-10 flex gap-1.5 pointer-events-auto">
+  <!-- Barra de Herramientas (Superior Derecha - Desktop) -->
+  <div class="hidden sm:flex absolute top-5 right-5 z-10 gap-1.5 pointer-events-auto">
     <div class="academic-card p-1 flex gap-1 items-center">
       <button id="btn-toggle-labels" title="Mostrar / Ocultar Rótulos de Nodos" class="academic-icon-btn active">
         <i class="fa-solid fa-font"></i>
@@ -227,49 +271,68 @@
     </div>
   </div>
 
-  <!-- Tarjeta Informativa Flotante al Seleccionar Departamento (Abajo a la Derecha - Inspector Oficial) -->
-  <div id="info-modal" class="absolute bottom-4 right-4 sm:bottom-5 sm:right-5 z-10 w-72 sm:w-[340px] academic-card gold-accent p-3.5 sm:p-4 text-slate-800 pointer-events-auto">
-    <!-- Encabezado con Badge y Muestra de Tono PBR integrada -->
-    <div class="flex items-center justify-between gap-2 pb-2 border-b border-slate-200">
-      <span id="card-badge" class="academic-badge gold">
-        <i class="fa-solid fa-star text-amber-500 text-[9px]"></i> Sede Central & Capital
-      </span>
-      <div class="flex items-center gap-1.5 bg-slate-50 px-2 py-0.5 rounded-full border border-slate-200 shadow-2xs">
-        <span id="card-swatch" class="w-3.5 h-3.5 rounded-full border border-slate-300 shadow-xs inline-block" style="background-color: #6BA6DD;"></span>
-        <span class="text-[9px] font-bold text-slate-500 uppercase tracking-wider">Tono PBR</span>
-      </div>
-    </div>
-
-    <!-- Título de Departamento -->
-    <h2 id="card-title" class="text-sm sm:text-base font-bold text-[#0f172a] mt-2 tracking-wide leading-snug" style="font-family: 'Cinzel', serif;">
-      Adolfo Alsina
-    </h2>
+  <!-- Tarjeta Informativa Flotante al Seleccionar Departamento (Inspector Oficial) -->
+  <div id="info-modal" class="absolute bottom-2 left-2 right-2 sm:bottom-5 sm:right-5 sm:left-auto sm:w-[340px] z-20 academic-card gold-accent p-2.5 sm:p-4 text-slate-800 pointer-events-auto shadow-xl is-collapsed sm:!transform-none">
     
-    <!-- Bloque Métrico en 2 Columnas -->
-    <div class="grid grid-cols-2 gap-2 mt-2 bg-slate-50 p-2 sm:p-2.5 rounded-lg border border-slate-200">
-      <div>
-        <span class="text-[9px] text-slate-400 block uppercase font-bold tracking-wider">Cabecera</span>
-        <span id="card-capital" class="font-bold text-[#0f172a] text-xs mt-0.5 block">Viedma (Capital Provincial)</span>
+    <!-- Grab handle para móviles -->
+    <div id="inspector-handle" class="w-8 h-1 bg-slate-300 hover:bg-slate-400 rounded-full mx-auto mb-1.5 sm:hidden cursor-pointer"></div>
+
+    <!-- Encabezado con Badge y Muestra de Tono PBR integrada -->
+    <div id="inspector-header" class="flex items-center justify-between gap-1.5 pb-1 sm:pb-2 border-b border-slate-200 cursor-pointer sm:cursor-default">
+      <div class="flex items-center gap-1.5 min-w-0">
+        <span id="card-badge" class="academic-badge gold shrink-0">
+          <i class="fa-solid fa-star text-amber-500 text-[9px]"></i> Sede Central & Capital
+        </span>
+        <div class="flex items-center gap-1 bg-slate-50 px-1.5 py-0.5 rounded-full border border-slate-200 shadow-2xs shrink-0">
+          <span id="card-swatch" class="w-3 h-3 rounded-full border border-slate-300 shadow-xs inline-block" style="background-color: #6BA6DD;"></span>
+          <span class="text-[8.5px] font-bold text-slate-500 uppercase tracking-wider hidden sm:inline">Tono PBR</span>
+        </div>
       </div>
-      <div>
-        <span class="text-[9px] text-slate-400 block uppercase font-bold tracking-wider">Nodos Activos</span>
-        <span id="card-nodes" class="font-bold text-[#0f2d59] text-xs mt-0.5 block leading-snug">Viedma CURZA (80.632 hab.)</span>
+
+      <div class="flex items-center gap-1">
+        <span id="inspector-status-hint" class="text-[9px] text-[#996515] font-semibold sm:hidden">Detalles</span>
+        <button id="btn-toggle-inspector" type="button" class="sm:hidden text-slate-400 hover:text-slate-700 p-0.5 text-xs transition-transform" title="Minimizar / Expandir">
+          <i id="inspector-chevron" class="fa-solid fa-chevron-up text-[10px]"></i>
+        </button>
       </div>
     </div>
 
-    <!-- Descripción Académica -->
-    <p id="card-desc" class="text-[11px] sm:text-[11.5px] text-slate-600 mt-2 leading-relaxed font-normal">
-      Capital histórica y sede central del CURZAS - Universidad Nacional del Comahue. Cabecera administrativa y nodo troncal.
-    </p>
+    <!-- Título de Departamento (Siempre visible en el dock móvil) -->
+    <div id="inspector-title-bar" class="flex items-center justify-between mt-1 sm:mt-2 cursor-pointer sm:cursor-default">
+      <h2 id="card-title" class="text-xs sm:text-base font-bold text-[#0f172a] tracking-wide leading-snug truncate" style="font-family: 'Cinzel', serif;">
+        Adolfo Alsina
+      </h2>
+      <span id="card-capital-mini" class="text-[10px] text-slate-500 sm:hidden truncate ml-1 font-medium">Viedma</span>
+    </div>
+    
+    <!-- Bloque de contenido expandible -->
+    <div id="inspector-body">
+      <!-- Bloque Métrico en 2 Columnas -->
+      <div class="grid grid-cols-2 gap-1.5 sm:gap-2 mt-1.5 sm:mt-2 bg-slate-50 p-2 sm:p-2.5 rounded-lg border border-slate-200">
+        <div>
+          <span class="text-[8.5px] sm:text-[9px] text-slate-400 block uppercase font-bold tracking-wider">Cabecera</span>
+          <span id="card-capital" class="font-bold text-[#0f172a] text-[11px] sm:text-xs mt-0.5 block truncate">Viedma (Capital Provincial)</span>
+        </div>
+        <div>
+          <span class="text-[8.5px] sm:text-[9px] text-slate-400 block uppercase font-bold tracking-wider">Nodos Activos</span>
+          <span id="card-nodes" class="font-bold text-[#0f2d59] text-[11px] sm:text-xs mt-0.5 block leading-snug truncate">Viedma CURZA (80.632 hab.)</span>
+        </div>
+      </div>
 
-    <!-- Footer Interactivo -->
-    <div class="mt-2.5 pt-2 border-t border-slate-200/80 flex items-center justify-between text-[10.5px]">
-      <span class="text-slate-500 flex items-center gap-1 font-medium">
-        <i class="fa-solid fa-arrow-pointer text-[#996515]"></i> Clic en 3D para enfocar
-      </span>
-      <button type="button" onclick="resetFocus()" class="font-bold text-[#0f2d59] hover:text-[#996515] transition flex items-center gap-1 bg-white hover:bg-slate-50 px-2 py-0.5 rounded border border-slate-200 shadow-2xs cursor-pointer">
-        <span>Ver Todo</span> <i class="fa-solid fa-arrows-to-eye text-[9px]"></i>
-      </button>
+      <!-- Descripción Académica -->
+      <p id="card-desc" class="text-[10.5px] sm:text-[11.5px] text-slate-600 mt-1.5 sm:mt-2 leading-relaxed font-normal max-h-24 sm:max-h-none overflow-y-auto">
+        Capital histórica y sede central del CURZAS - Universidad Nacional del Comahue. Cabecera administrativa y nodo troncal.
+      </p>
+
+      <!-- Footer Interactivo -->
+      <div class="mt-2 pt-1.5 sm:pt-2 border-t border-slate-200/80 flex items-center justify-between text-[10px] sm:text-[10.5px]">
+        <span class="text-slate-500 flex items-center gap-1 font-medium">
+          <i class="fa-solid fa-arrow-pointer text-[#996515]"></i> <span class="hidden sm:inline">Clic en 3D para enfocar</span><span class="sm:hidden">Toca mapa 3D</span>
+        </span>
+        <button type="button" onclick="resetFocus()" class="font-bold text-[#0f2d59] hover:text-[#996515] transition flex items-center gap-1 bg-white hover:bg-slate-50 px-2 py-0.5 rounded border border-slate-200 shadow-2xs cursor-pointer">
+          <span>Ver Todo</span> <i class="fa-solid fa-arrows-to-eye text-[9px]"></i>
+        </button>
+      </div>
     </div>
   </div>
 <script>
@@ -477,8 +540,14 @@
     const container = document.getElementById('canvas-container');
     const scene = new THREE.Scene();
 
-    const camera = new THREE.PerspectiveCamera(42, window.innerWidth / window.innerHeight, 1, 3000);
-    camera.position.set(0, 520, 580);
+    const isMobileDevice = () => window.innerWidth < 640;
+
+    const camera = new THREE.PerspectiveCamera(isMobileDevice() ? 48 : 42, window.innerWidth / window.innerHeight, 1, 3500);
+    if (isMobileDevice()) {
+      camera.position.set(0, 700, 780);
+    } else {
+      camera.position.set(0, 520, 580);
+    }
 
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     renderer.setSize(window.innerWidth, window.innerHeight);
@@ -494,8 +563,16 @@
     controls.dampingFactor = 0.08;
     controls.maxPolarAngle = Math.PI / 2.15;
     controls.minDistance = 150;
-    controls.maxDistance = 1200;
-    controls.target.set(0, 0, 0);
+    controls.maxDistance = 1800;
+    if (isMobileDevice()) {
+      controls.target.set(0, 0, 30);
+    } else {
+      controls.target.set(0, 0, 0);
+    }
+    controls.touches = {
+      ONE: THREE.TOUCH.ROTATE,
+      TWO: THREE.TOUCH.DOLLY_PAN
+    };
 
     // Iluminación cinemática suave para tonos y relieve 3D
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.52);
@@ -790,6 +867,10 @@
     }
 
     function onPointerClick(e) {
+      if (e && e.clientX !== undefined) {
+        mouse.x = (e.clientX / window.innerWidth) * 2 - 1;
+        mouse.y = -(e.clientY / window.innerHeight) * 2 + 1;
+      }
       raycaster.setFromCamera(mouse, camera);
       const intersects = raycaster.intersectObjects(interactiveMeshes, false);
 
@@ -798,17 +879,24 @@
 
         document.getElementById('card-title').innerText = meta.name;
         document.getElementById('card-capital').innerText = meta.cabecera;
+        const capMini = document.getElementById('card-capital-mini');
+        if (capMini) capMini.innerText = meta.cabecera;
         document.getElementById('card-nodes').innerText = meta.nodes.join(', ');
         document.getElementById('card-desc').innerText = meta.desc;
         document.getElementById('card-swatch').style.backgroundColor = meta.colorHex;
 
         const badge = document.getElementById('card-badge');
         if (meta.isCapital) {
-          badge.className = 'academic-badge gold';
+          badge.className = 'academic-badge gold shrink-0';
           badge.innerHTML = '<i class="fa-solid fa-star text-amber-500 text-[9px]"></i> Sede Central & Capital';
         } else {
-          badge.className = 'academic-badge blue';
+          badge.className = 'academic-badge blue shrink-0';
           badge.innerHTML = '<span class="w-1.5 h-1.5 rounded-full bg-[#0f2d59]"></span> Departamento Rionegrino';
+        }
+
+        // En pantallas móviles, expande automáticamente el inspector para mostrar la información del departamento tocado
+        if (isMobileDevice()) {
+          setInspectorCollapsed(false);
         }
       }
     }
@@ -821,22 +909,86 @@
        ===================================================================== */
     let autoRotate = false;
 
-    document.getElementById('btn-toggle-extrude').addEventListener('click', function() {
+    // Toggle de Leyenda / Opciones en Móviles
+    const btnLegend = document.getElementById('btn-toggle-legend');
+    const panelLegend = document.getElementById('panel-legend-content');
+    const legendChevron = document.getElementById('legend-chevron');
+    if (btnLegend && panelLegend) {
+      btnLegend.addEventListener('click', function(e) {
+        e.stopPropagation();
+        const isOpen = panelLegend.classList.toggle('is-open');
+        this.classList.toggle('active', isOpen);
+        if (legendChevron) {
+          legendChevron.style.transform = isOpen ? 'rotate(180deg)' : 'rotate(0deg)';
+        }
+      });
+    }
+
+    // Toggle de Inspector de Departamento (Dock inferior en móviles)
+    function setInspectorCollapsed(collapsed) {
+      const modal = document.getElementById('info-modal');
+      const chevron = document.getElementById('inspector-chevron');
+      const hint = document.getElementById('inspector-status-hint');
+      if (!modal) return;
+      if (collapsed) {
+        modal.classList.add('is-collapsed');
+        if (chevron) chevron.className = 'fa-solid fa-chevron-up text-[10px]';
+        if (hint) hint.innerText = 'Detalles';
+      } else {
+        modal.classList.remove('is-collapsed');
+        if (chevron) chevron.className = 'fa-solid fa-chevron-down text-[10px]';
+        if (hint) hint.innerText = 'Reducir';
+      }
+    }
+
+    const btnInspector = document.getElementById('btn-toggle-inspector');
+    const inspectorHandle = document.getElementById('inspector-handle');
+    const inspectorHeader = document.getElementById('inspector-header');
+    const inspectorTitleBar = document.getElementById('inspector-title-bar');
+
+    const toggleInspector = function(e) {
+      if (!isMobileDevice()) return;
+      const modal = document.getElementById('info-modal');
+      if (modal) {
+        setInspectorCollapsed(!modal.classList.contains('is-collapsed'));
+      }
+    };
+
+    if (btnInspector) btnInspector.addEventListener('click', toggleInspector);
+    if (inspectorHandle) inspectorHandle.addEventListener('click', toggleInspector);
+    if (inspectorHeader) inspectorHeader.addEventListener('click', function(e) {
+      if (e.target.closest('#btn-toggle-inspector')) return;
+      toggleInspector(e);
+    });
+    if (inspectorTitleBar) inspectorTitleBar.addEventListener('click', toggleInspector);
+
+    // Sincronización de botones móviles con las acciones principales
+    const syncActionBtn = (mobileId, desktopAction) => {
+      const btn = document.getElementById(mobileId);
+      if (btn) {
+        btn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          desktopAction(this);
+        });
+      }
+    };
+
+    const toggleExtrudeAction = function() {
       isExtruded = !isExtruded;
       Object.keys(departmentMeshes).forEach(id => {
         departmentMeshes[id].scale.y = isExtruded ? 1.0 : 0.08;
       });
       const txt = document.getElementById('txt-extrude');
       if (txt) txt.innerText = isExtruded ? "Relieve 3D Activo" : "Mapa Plano 2D";
-      this.classList.toggle('active', isExtruded);
-    });
+      document.getElementById('btn-toggle-extrude').classList.toggle('active', isExtruded);
+    };
 
-    document.getElementById('btn-toggle-network').addEventListener('click', function() {
+    const toggleNetworkAction = function() {
       networkGroup.visible = !networkGroup.visible;
-      this.classList.toggle('active', networkGroup.visible);
-    });
+      document.getElementById('btn-toggle-network').classList.toggle('active', networkGroup.visible);
+    };
 
-    document.getElementById('btn-toggle-labels').addEventListener('click', function() {
+    const toggleLabelsAction = function(btnEl) {
       const isVisible = networkGroup.children.some(obj => (obj.isSprite && obj.visible) || (obj.children && obj.children.some(c => c.isSprite && c.visible)));
       networkGroup.children.forEach(obj => {
         if (obj.isSprite) {
@@ -847,28 +999,47 @@
           });
         }
       });
-      this.classList.toggle('active', !isVisible);
-    });
+      const dBtn = document.getElementById('btn-toggle-labels');
+      const mBtn = document.getElementById('btn-toggle-labels-m');
+      if (dBtn) dBtn.classList.toggle('active', !isVisible);
+      if (mBtn) mBtn.classList.toggle('active', !isVisible);
+    };
 
-    document.getElementById('btn-toggle-rotation').addEventListener('click', function() {
+    const toggleRotationAction = function(btnEl) {
       autoRotate = !autoRotate;
       controls.autoRotate = autoRotate;
       controls.autoRotateSpeed = 0.8;
-      this.classList.toggle('active', autoRotate);
-    });
+      const dBtn = document.getElementById('btn-toggle-rotation');
+      const mBtn = document.getElementById('btn-toggle-rotation-m');
+      if (dBtn) dBtn.classList.toggle('active', autoRotate);
+      if (mBtn) mBtn.classList.toggle('active', autoRotate);
+    };
 
-    document.getElementById('btn-reset-cam').addEventListener('click', () => {
-      resetFocus();
-    });
+    document.getElementById('btn-toggle-extrude').addEventListener('click', toggleExtrudeAction);
+    document.getElementById('btn-toggle-network').addEventListener('click', toggleNetworkAction);
+    document.getElementById('btn-toggle-labels').addEventListener('click', function() { toggleLabelsAction(this); });
+    document.getElementById('btn-toggle-rotation').addEventListener('click', function() { toggleRotationAction(this); });
+
+    syncActionBtn('btn-toggle-labels-m', toggleLabelsAction);
+    syncActionBtn('btn-toggle-rotation-m', toggleRotationAction);
+    syncActionBtn('btn-reset-cam-m', resetFocus);
+
+    document.getElementById('btn-reset-cam').addEventListener('click', resetFocus);
 
     function resetFocus() {
       controls.reset();
-      camera.position.set(0, 520, 580);
-      controls.target.set(0, 0, 0);
+      if (isMobileDevice()) {
+        camera.position.set(0, 700, 780);
+        controls.target.set(0, 0, 30);
+      } else {
+        camera.position.set(0, 520, 580);
+        controls.target.set(0, 0, 0);
+      }
     }
 
     window.addEventListener('resize', () => {
       camera.aspect = window.innerWidth / window.innerHeight;
+      camera.fov = isMobileDevice() ? 48 : 42;
       camera.updateProjectionMatrix();
       renderer.setSize(window.innerWidth, window.innerHeight);
     });

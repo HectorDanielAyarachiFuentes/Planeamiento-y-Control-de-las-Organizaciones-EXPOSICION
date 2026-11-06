@@ -1131,6 +1131,15 @@ body {
   flex-wrap: wrap;
 }
 
+/* Ocultar controles de zoom 2D cuando está activa la maqueta 3D interactiva */
+.svg-modal.mode-3d-active .svg-zoom-badge,
+.svg-modal.mode-3d-active #btn-svg-zoom-in,
+.svg-modal.mode-3d-active #btn-svg-zoom-out,
+.svg-modal.mode-3d-active #btn-svg-reset,
+.svg-modal.mode-3d-active #btn-svg-fit {
+  display: none !important;
+}
+
 .btn-svg-tool {
   background: #f8fafc;
   border: 1px solid #cbd5e1;
@@ -2038,21 +2047,36 @@ body {
     transform: none !important;
   }
   .svg-modal-header {
-    gap: 0.4rem;
-    padding-bottom: 0.4rem;
-    margin-bottom: 0.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.35rem;
+    padding-bottom: 0.35rem;
+    margin-bottom: 0.25rem;
+    flex-wrap: nowrap;
+  }
+  .svg-modal-title-group {
+    min-width: 0;
+    flex: 1 1 auto;
+    overflow: hidden;
   }
   .svg-modal-header h3 {
-    font-size: 0.85rem;
+    font-size: 0.78rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.2;
   }
   .svg-modal-toolbar {
+    flex-shrink: 0;
     gap: 0.2rem;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: flex-end;
   }
   .btn-svg-tool {
     padding: 0.22rem 0.45rem;
     font-size: 0.68rem;
+    white-space: nowrap;
   }
   .svg-modal-footer {
     display: none;
