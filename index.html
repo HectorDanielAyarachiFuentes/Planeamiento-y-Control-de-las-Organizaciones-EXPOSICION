@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Planeamiento y Control de las Organizaciones 2026 | Héctor Daniel Ayarachi Fuentes | CURZAS - UNCo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css?v=4.9">
+  <link rel="icon" type="image/png" href="assets/CURZAS.png">
+</head>
+<body>
+
+  <!-- Lienzo de renderizado Three.js (WebGL 3D de fondo / Segundo Plano) -->
+  <canvas id="webgl-canvas"></canvas>
+
+  <!-- Píldora de ayuda de interacción 3D (arrastre, rueda y doble clic) -->
+  <div class="canvas-3d-hint" id="canvas-3d-hint" title="Interactúa libremente con la escultura 3D en todas las filminas">
+    <span>
+      <svg class="btn-icon" style="width: 13px; height: 13px; vertical-align: -2px; margin-right: 3px;" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="5.5" y="2.5" width="9" height="15" rx="4.5"/>
+        <line x1="10" y1="5.5" x2="10" y2="8.5"/>
+      </svg>
+      Arrastrar: Rotar 360° • Rueda: Zoom • Doble clic: Centrar
+    </span>
+  </div>
+
+  <!-- Indicador sutil de radar de red territorial para Filmina 4 (limpio, sobrio y en la capa UI) -->
+  <div class="node-radar-pill" id="node-radar-pill" style="display: none;" aria-live="polite">
+    <span class="node-radar-dot"></span>
+    <span class="node-radar-title" id="node-radar-title">VIEDMA</span>
+    <span class="node-radar-sep">•</span>
+    <span class="node-radar-desc" id="node-radar-desc">Sede Cabecera</span>
+  </div>
+
+  <!-- Barra de progreso general de la defensa académica (25 filminas) -->
+  <div class="presentation-progress-bar" id="presentation-progress-bar" role="progressbar" aria-valuemin="1" aria-valuemax="25" aria-valuenow="1"></div>
+
+  <!-- Capa de Interfaz de Usuario (UI Glassmorphism de Alto Contraste) -->
+  <div class="ui-layer">
+
+    <!-- Barra Superior: Cabecera Institucional + Contador + Estaciones + Cronómetro 30 min -->
+    <header class="top-bar">
+      <div class="brand">
+        <img src="assets/CURZAS.png" alt="Logotipo CURZAS - Universidad Nacional del Comahue" class="brand-logo">
+        <div class="brand-info">
+          <h1>UNCo — CURZAS</h1>
+          <p class="brand-subtitle">Licenciatura en Recursos Humanos | Planeamiento y Control 2026</p>
+        </div>
+      </div>
+
+      <!-- Centro: Contador de Filminas y Estaciones Interactivas -->
+      <div class="stations-wrapper">
+        <button class="slide-counter-badge" id="slide-counter-badge" title="Índice Canónico de los 3 Ejes y 25 Filminas (Tecla I)" aria-label="Abrir Índice de Filminas por Ejes">
+          <span class="badge-index-icon" aria-hidden="true">
+            <svg viewBox="0 0 20 20" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 5h14M3 10h14M3 15h9"/></svg>
+          </span>
+          <span class="slide-counter-text">Filmina <strong id="slide-counter">1 / 25</strong></span>
+          <svg class="counter-chevron" viewBox="0 0 20 20" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 7.5l5 5 5-5"/></svg>
+        </button>
+        <div class="stations-dock-divider" aria-hidden="true"></div>
+        <nav class="stations-indicator" id="stations-indicator" aria-label="Estaciones de la Defensa estructuradas en 3 Ejes"></nav>
+      </div>
+
+      <!-- Cronómetro Académico de 30 minutos (Defensa Oficial) -->
+      <div class="timer-container" aria-label="Cronómetro de Defensa">
+        <span class="timer-label">EXPOSICIÓN</span>
+        <span class="timer-display" id="timer-display">30:00</span>
+        <div class="timer-actions">
+          <button id="btn-timer-toggle" title="Iniciar / Pausar Cronómetro (T)" aria-label="Iniciar / Pausar Cronómetro">▶</button>
+          <button id="btn-timer-reset" title="Reiniciar a 30:00" aria-label="Reiniciar Cronómetro">↺</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Escenario Principal: Tarjeta de Texto Prioritaria (Primer Plano) -->
+    <main class="main-stage" id="main-stage">
+      <article class="slide-card" id="slide-card">
+        <div class="slide-header-tags">
+          <span class="slide-badge" id="slide-badge">FILMINA 1</span>
+          <span class="slide-bloque-badge" id="slide-bloque-badge">BLOQUE I</span>
+        </div>
+        <h2 class="slide-title" id="slide-title">Cargando presentación...</h2>
+        <p class="slide-subtitle" id="slide-subtitle">Espere un instante mientras se inicializan los módulos.</p>
+        <ul class="slide-bullets" id="slide-bullets"></ul>
+        <footer class="slide-footer-meta" id="slide-footer-meta"></footer>
+      </article>
+
+
+      <!-- Botón flotante para restaurar filmina en celulares cuando se explora el modelo 3D -->
+      <button class="btn-floating-card-toggle" id="btn-floating-card-toggle" aria-label="Volver a la filmina">
+        <svg class="btn-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 0.35rem;">
+          <path d="M5 2.5h6.5l4 4V16a1.5 1.5 0 0 1-1.5 1.5H5A1.5 1.5 0 0 1 3.5 16V4A1.5 1.5 0 0 1 5 2.5z"/>
+          <path d="M11.5 2.5v4h4"/>
+          <path d="M7 10h6M7 13h4"/>
+        </svg>
+        <span>Ver Filmina</span>
+      </button>
+    </main>
+
+    <!-- Barra Inferior: Navegación + Atajos + Herramientas Auxiliares -->
+    <footer class="bottom-bar">
+      <div class="nav-buttons">
+        <button class="btn-nav" id="btn-prev" title="Filmina Anterior (← / RePág)" aria-label="Filmina Anterior">
+          <svg class="btn-icon icon-nav-prev" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12.5 15l-5-5 5-5"/>
+          </svg>
+          <span class="nav-text">Anterior</span>
+          <span class="shortcut-pill">←</span>
+        </button>
+        <button class="btn-nav" id="btn-next" title="Filmina Siguiente (→ / Espacio / AvPág)" aria-label="Filmina Siguiente">
+          <span class="nav-text">Siguiente</span>
+          <svg class="btn-icon icon-nav-next" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7.5 5l5 5-5 5"/>
+          </svg>
+          <span class="shortcut-pill">→</span>
+        </button>
+      </div>
+
+      <div class="side-tools">
+        <!-- Toggle específico para celulares -->
+        <!-- Bloque 1: Controles Visuales 3D -->
+        <div class="tool-group tool-group-view">
+          <button class="btn-tool" id="btn-view-text" title="Ver Texto (Maximizar texto y priorizar lectura) (D)">
+            <svg class="btn-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 4.5h14M3 9.5h14M3 14.5h8"/>
+            </svg>
+            <span class="tool-text">Ver Texto</span>
+            <span class="tool-key">D</span>
+          </button>
+          <button class="btn-tool" id="btn-view-3d" title="Ver Objeto (Centrar y agrandar escultura 3D) (O)">
+            <svg class="btn-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10 2.5L16.5 6.2v7.6L10 17.5L3.5 13.8V6.2L10 2.5z"/>
+              <path d="M10 10v7.5M10 10l6.5-3.8M10 10L3.5 6.2"/>
+              <circle cx="10" cy="10" r="1.3" fill="currentColor"/>
+            </svg>
+            <span class="tool-text">Ver Objeto</span>
+            <span class="tool-key">O</span>
+          </button>
+          <button class="btn-tool" id="btn-reset-3d" title="Restablecer Rotación y Centrar Vista 3D (R)">
+            <svg class="btn-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3.5 10a6.5 6.5 0 1 1 2 4.7l-2.7.3"/>
+              <path d="M2.8 11.5v3.5h3.5"/>
+              <circle cx="10" cy="10" r="2.2" fill="currentColor" fill-opacity="0.15"/>
+              <path d="M10 6.5v1.2M10 12.3v1.2M6.5 10h1.2M12.3 10h1.2"/>
+            </svg>
+            <span class="tool-text">Centrar</span>
+            <span class="tool-key">R</span>
+          </button>
+        </div>
+
+        <span class="tools-divider" aria-hidden="true"></span>
+
+        <!-- Bloque 2: Herramientas Académicas de la Defensa -->
+        <div class="tool-group tool-group-academic">
+          <button class="btn-tool" id="btn-toggle-notes" title="Guion y Notas del Orador (N)">
+            <svg class="btn-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="7" y="2.5" width="6" height="8.5" rx="3"/>
+              <path d="M4.5 8v1a5.5 5.5 0 0 0 11 0V8"/>
+              <path d="M10 14.5v3M7 17.5h6"/>
+            </svg>
+            <span class="tool-text">Notas</span>
+            <span class="tool-key">N</span>
+          </button>
+          <button class="btn-tool" id="btn-toggle-drawer" title="Respaldo Metodológico Jurado (M)">
+            <svg class="btn-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10 4.2c-2.4-1.4-5.2-1.4-7.2 0v10.8c2-1.4 4.8-1.4 7.2 0 2.4-1.4 5.2-1.4 7.2 0V4.2c-2-1.4-4.8-1.4-7.2 0z"/>
+              <path d="M10 4.2V15"/>
+            </svg>
+            <span class="tool-text">Respaldo</span>
+            <span class="tool-key">M</span>
+          </button>
+        </div>
+
+        <span class="tools-divider" aria-hidden="true"></span>
+
+        <!-- Bloque 3: Utilidades Compactas de Sistema -->
+        <div class="tool-group tool-group-system">
+          <button class="btn-tool btn-tool-icon-only btn-tool-fullscreen" id="btn-toggle-fullscreen" title="Pantalla Completa (F)" aria-label="Pantalla Completa">
+            <svg class="btn-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 6.5V4a1 1 0 0 1 1-1h2.5M13.5 3H16a1 1 0 0 1 1 1v2.5M17 13.5V16a1 1 0 0 1-1 1h-2.5M6.5 17H4a1 1 0 0 1-1-1v-2.5"/>
+            </svg>
+          </button>
+          <button class="btn-tool btn-tool-icon-only btn-tool-shortcuts" id="btn-toggle-shortcuts" title="Atajos de Teclado (?)" aria-label="Atajos de Teclado">
+            <svg class="btn-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2.5" y="4.5" width="15" height="11" rx="2"/>
+              <circle cx="6" cy="8" r="0.75" fill="currentColor"/>
+              <circle cx="10" cy="8" r="0.75" fill="currentColor"/>
+              <circle cx="14" cy="8" r="0.75" fill="currentColor"/>
+              <circle cx="6" cy="11.5" r="0.75" fill="currentColor"/>
+              <circle cx="14" cy="11.5" r="0.75" fill="currentColor"/>
+              <path d="M9 11.5h2"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Modal Flotante: Guion y Notas del Orador (Verbatim Teleprompter) -->
+  <aside class="notes-modal" id="notes-modal" aria-label="Guion del Orador">
+    <div class="notes-header">
+      <h3>
+        <svg class="btn-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="color: var(--gold-main); vertical-align: -2px; margin-right: 0.35rem;">
+          <rect x="7" y="2.5" width="6" height="8.5" rx="3"/>
+          <path d="M4.5 8v1a5.5 5.5 0 0 0 11 0V8"/>
+          <path d="M10 14.5v3M7 17.5h6"/>
+        </svg>
+        Guion Sugerido para el Orador
+      </h3>
+      <button class="btn-close" id="btn-close-notes" title="Cerrar guion">
+        <svg viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 5l10 10M15 5L5 15"/></svg>
+      </button>
+    </div>
+    <div class="notes-body" id="notes-body"></div>
+  </aside>
+
+  <!-- Modal Especial: Visor de Diagramas Vectoriales SVG en Alta Definición y Zoom Interactivo -->
+  <div class="svg-modal-backdrop" id="svg-modal-backdrop"></div>
+  <aside class="svg-modal" id="svg-modal" aria-label="Visor de Diagramas SVG">
+    <div class="svg-modal-header">
+      <div class="svg-modal-title-group">
+        <h3 id="svg-modal-title">📐 Diagrama Conceptual SVG</h3>
+        <span class="svg-zoom-badge" id="svg-zoom-level">100%</span>
+      </div>
+      <div class="svg-modal-toolbar">
+        <button class="btn-svg-tool" id="btn-svg-toggle-view" title="Alternar entre Dispositivo Isométrico 3D y Mapa Cartográfico" style="display:none;">🔬 Modo 3D</button>
+        <button class="btn-svg-tool" id="btn-svg-turntable" title="Iniciar / Detener Giro 360°" style="display:none;">🔄 Auto-Giro</button>
+        <button class="btn-svg-tool" id="btn-svg-zoom-out" title="Alejar (-)">➖</button>
+        <button class="btn-svg-tool" id="btn-svg-zoom-in" title="Acercar / Agrandar (+)">➕</button>
+        <button class="btn-svg-tool" id="btn-svg-reset" title="Restablecer (100%)">↺ 100%</button>
+        <button class="btn-svg-tool" id="btn-svg-fit" title="Ajustar al Visor">↔ Ajustar</button>
+        <button class="btn-svg-tool" id="btn-svg-maximize" title="Maximizar / Restaurar (M)">⛶ Maximizar</button>
+        <a class="btn-svg-tool btn-svg-link" id="btn-svg-newtab" href="#" target="_blank" title="Abrir SVG original en nueva pestaña">↗ Original</a>
+        <button class="btn-close" id="btn-close-svg" title="Cerrar visor (Esc)">✕</button>
+      </div>
+    </div>
+    <div class="svg-modal-body" id="svg-modal-body">
+      <div class="svg-viewport" id="svg-viewport">
+        <iframe id="svg-modal-iframe" src="" style="width:100%;height:100%;border:none;display:none;background:transparent;" allow="fullscreen"></iframe>
+        <img id="svg-modal-img" style="display:none;" alt="Diagrama Conceptual Vectorial">
+      </div>
+    </div>
+    <div class="svg-modal-footer">
+      <span>💡 Rueda del mouse: Zoom libre • Clic y arrastrar: Desplazar • Doble clic: Alternar zoom • Teclas + / - / 0</span>
+    </div>
+  </aside>
+
+  <!-- Modal Especial: Visor Interactivo de Documentos de Cátedra (PDF, Normativas, Resoluciones) -->
+  <div class="doc-modal-backdrop" id="doc-modal-backdrop" onclick="if(window.app)window.app.closeDocModal()"></div>
+  <aside class="doc-modal" id="doc-modal" aria-label="Visor de Documentos de Cátedra">
+    <div class="doc-modal-header">
+      <div class="doc-modal-title-group">
+        <span class="doc-modal-badge" id="doc-modal-badge">PDF</span>
+        <h3 id="doc-modal-title">Título del Documento</h3>
+      </div>
+      <div class="doc-modal-toolbar">
+        <button class="btn-doc-tool" id="btn-doc-maximize" title="Maximizar / Restaurar (M)" onclick="if(window.app)window.app.toggleDocMaximize()">⛶ Maximizar</button>
+        <a class="btn-doc-tool btn-doc-link" id="btn-doc-newtab" href="#" target="_blank" title="Abrir en pestaña nueva">↗ Abrir pestaña</a>
+        <a class="btn-doc-tool btn-doc-download" id="btn-doc-download" href="#" download title="Descargar archivo">⬇ Descargar</a>
+        <button class="btn-close" id="btn-close-doc" title="Cerrar visor (Esc)" onclick="if(window.app)window.app.closeDocModal()">✕</button>
+      </div>
+    </div>
+    <div class="doc-modal-body" id="doc-modal-body">
+      <iframe id="doc-modal-frame" src="" title="Visor de Documento" frameborder="0"></iframe>
+      <div class="doc-modal-fallback" id="doc-modal-fallback" style="display: none;">
+        <div class="doc-fallback-icon">📘</div>
+        <h4 class="doc-fallback-title" id="doc-fallback-title">Documento de Office</h4>
+        <p class="doc-fallback-desc" id="doc-fallback-desc">Este archivo es un documento editable (.docx/.doc). Podés descargarlo directamente a tu equipo o abrirlo con tu suite ofimática preferida.</p>
+        <div class="doc-fallback-actions">
+          <a class="btn-doc-action-main" id="btn-doc-fallback-download" href="#" download>⬇ Descargar Archivo</a>
+          <a class="btn-doc-action-sec" id="btn-doc-fallback-open" href="#" target="_blank">↗ Abrir en Nueva Pestaña</a>
+        </div>
+      </div>
+    </div>
+    <div class="doc-modal-footer">
+      <span id="doc-modal-breadcrumb">Material Catedra > Documento</span>
+      <span class="doc-modal-hint">💡 Atajo: Tecla <strong>Esc</strong> para cerrar • <strong>M</strong> para maximizar</span>
+    </div>
+  </aside>
+
+  <!-- Panel Desplegable (Drawer): 7 Pestañas de Respaldo Metodológico para el Jurado -->
+  <div class="drawer-backdrop" id="drawer-backdrop"></div>
+  <aside class="drawer-panel" id="drawer-panel" aria-label="Respaldo Metodológico Jurado">
+    <div class="drawer-header">
+      <h2>
+        <svg class="btn-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color: var(--gold-main); vertical-align: -2px; margin-right: 0.4rem;">
+          <path d="M10 4.2c-2.4-1.4-5.2-1.4-7.2 0v10.8c2-1.4 4.8-1.4 7.2 0 2.4-1.4 5.2-1.4 7.2 0V4.2c-2-1.4-4.8-1.4-7.2 0z"/>
+          <path d="M10 4.2V15"/>
+        </svg>
+        Respaldo Teórico-Metodológico
+      </h2>
+      <button class="btn-close" id="btn-close-drawer" title="Cerrar panel">
+        <svg viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 5l10 10M15 5L5 15"/></svg>
+      </button>
+    </div>
+
+    <!-- 7 Pestañas de Filtrado Temático -->
+    <div class="drawer-tabs">
+      <button class="drawer-tab active" data-tab="autores">Autores Clave</button>
+      <button class="drawer-tab" data-tab="normativa">Normativa & Estatuto</button>
+      <button class="drawer-tab" data-tab="territorio">Red Territorial</button>
+      <button class="drawer-tab" data-tab="faq">FAQ Jurado</button>
+      <button class="drawer-tab" data-tab="svgs">Diagramas SVG</button>
+      <button class="drawer-tab" data-tab="catedra">Material Cátedra 📚</button>
+    </div>
+
+    <!-- Contenedor dinámico de fichas -->
+    <div class="drawer-content-box" id="drawer-content"></div>
+  </aside>
+
+  <!-- Modal Flotante: Atajos de Teclado Profesionales (Defensa & Auditorio) -->
+  <div class="shortcuts-backdrop" id="shortcuts-backdrop"></div>
+  <aside class="shortcuts-modal" id="shortcuts-modal" aria-label="Atajos de Teclado">
+    <div class="shortcuts-header">
+      <h3>
+        <svg class="btn-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color: var(--gold-main); vertical-align: -2px; margin-right: 0.4rem;">
+          <rect x="2.5" y="4.5" width="15" height="11" rx="2"/>
+          <circle cx="6" cy="8" r="0.75" fill="currentColor"/>
+          <circle cx="10" cy="8" r="0.75" fill="currentColor"/>
+          <circle cx="14" cy="8" r="0.75" fill="currentColor"/>
+          <circle cx="6" cy="11.5" r="0.75" fill="currentColor"/>
+          <circle cx="14" cy="11.5" r="0.75" fill="currentColor"/>
+          <path d="M9 11.5h2"/>
+        </svg>
+        Atajos de Teclado — Modo Defensa
+      </h3>
+      <button class="btn-close" id="btn-close-shortcuts" title="Cerrar panel de atajos (Esc)">
+        <svg viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 5l10 10M15 5L5 15"/></svg>
+      </button>
+    </div>
+    <div class="shortcuts-body">
+      <div class="shortcut-row"><kbd>→</kbd> <kbd>Espacio</kbd><span>Avanzar filmina</span></div>
+      <div class="shortcut-row"><kbd>←</kbd> <kbd>RePág</kbd><span>Retroceder filmina</span></div>
+      <div class="shortcut-row"><kbd>F</kbd><span>Pantalla Completa</span></div>
+      <div class="shortcut-row"><kbd>T</kbd><span>Iniciar / Pausar Cronómetro</span></div>
+      <div class="shortcut-row"><kbd>N</kbd><span>Guion / Notas del Orador</span></div>
+      <div class="shortcut-row"><kbd>I</kbd><span>Índice Canónico (3 Ejes)</span></div>
+      <div class="shortcut-row"><kbd>M</kbd><span>Respaldo Metodológico (Jurado)</span></div>
+      <div class="shortcut-row"><kbd>B</kbd><span>Material Cátedra (95 Docs)</span></div>
+      <div class="shortcut-row"><kbd>V</kbd><span>Visor de Diagramas SVG</span></div>
+      <div class="shortcut-row"><kbd>D</kbd><span>Ver Texto (Maximizar contenido)</span></div>
+      <div class="shortcut-row"><kbd>O</kbd><span>Ver Objeto (Centrar y agrandar 3D)</span></div>
+      <div class="shortcut-row"><kbd>R</kbd><span>Centrar Escultura 3D</span></div>
+      <div class="shortcut-row"><kbd>?</kbd><span>Ver esta ayuda de atajos</span></div>
+      <div class="shortcut-row"><kbd>Esc</kbd><span>Cerrar paneles y modales</span></div>
+    </div>
+  </aside>
+
+  <!-- Modal / Menú Desplegable: Índice Canónico de los 3 Grandes Ejes (Atajo: I) -->
+  <div class="slides-index-backdrop" id="slides-index-backdrop"></div>
+  <aside class="slides-index-panel" id="slides-index-panel" aria-label="Índice Canónico de Filminas y 3 Ejes">
+    <div class="slides-index-header">
+      <div class="slides-index-title-group">
+        <span class="slides-index-badge">SEMINARIO DE INTEGRACIÓN Y APLICACIÓN • CURZAS UNCo</span>
+        <h3 id="slides-index-title">
+          <svg class="btn-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color: var(--gold-main); vertical-align: -2px; margin-right: 0.4rem;">
+            <path d="M3 4.5h14M3 9.5h14M3 14.5h8"/>
+          </svg>
+          Estructura de la Exposición • 3 Grandes Ejes
+        </h3>
+      </div>
+      <button class="btn-close" id="btn-close-slides-index" title="Cerrar índice (Esc)">✕</button>
+    </div>
+    <div class="slides-index-body" id="slides-index-body">
+      <!-- Se inyecta dinámicamente con los 3 Grandes Ejes, Apertura y Cierre -->
+    </div>
+    <div class="slides-index-footer">
+      <span>💡 Atajo: Tecla <strong>I</strong> abre/cierra • Clic en cualquier filmina para saltar directamente • <strong>Esc</strong> para salir</span>
+    </div>
+  </aside>
+
+  <!-- Librerías Externas y Módulos de la Aplicación -->
+  <!-- 1. Motor Gráfico Three.js (r128 CDN estable) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <!-- 2. Motor de Animación Profesional GSAP (GreenSock Animation Platform) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <!-- 3. Base de Datos Externa de Metadatos (25 Filminas + Enlaces SVG) -->
+  <script src="data/catedra_data.js?v=4.9"></script>
+  <script src="data/presentacion_data.js?v=4.9"></script>
+  <!-- 4. Módulos de Esculturas 3D y Utilitarios -->
+  <script src="js/objetos/materials.js?v=4.9"></script>
+  <script src="js/objetos/helpers.js?v=4.9"></script>
+  <script src="js/objetos/camera_config.js?v=4.9"></script>
+  <script src="js/objetos/bloque1.js?v=4.9"></script>
+  <script src="js/objetos/bloque2.js?v=4.9"></script>
+  <script src="js/objetos/bloque3.js?v=4.9"></script>
+  <script src="js/objetos/bloque4.js?v=4.9"></script>
+  <script src="js/objetos/bloque5.js?v=4.9"></script>
+  <!-- 5. Motor Orquestador 3D (Three.js + GSAP) -->
+  <script src="js/scene3d.js?v=4.9"></script>
+  <!-- 6. Controlador de Navegación, Temporizador y Eventos -->
+  <script src="js/app.js?v=4.9"></script>
+
+</body>
+</html>

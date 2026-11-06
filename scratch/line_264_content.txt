@@ -1,0 +1,387 @@
+const fs = require('fs');
+
+console.log('--- Actualizando Esculturas 3D para Planeamiento y Control 2026 (Avance 2) ---');
+
+// ==============================================================================
+// 1. BLOQUE 1 (Esculturas 1 a 5)
+// ==============================================================================
+let b1 = fs.readFileSync('./js/objetos/bloque1.js', 'utf8');
+
+// Slide 1 (anim_01) Cover texture & Text
+b1 = b1.replace(
+  'ctx.fillText("CURZAS • UNCo — Seminario de Integración y Aplicación", 50, 735);',
+  'ctx.fillText("CURZAS • UNCo — Planeamiento y Control de las Organizaciones", 50, 735);'
+);
+
+b1 = b1.replace(
+  'const sections = [\r\n    { title: "SECCIÓN 1.1 — INTRODUCCIÓN GENERAL", lines: [400, 385, 395, 340, 260] },\r\n    { title: "SECCIÓN 1.2 — MARCO EPISTEMOLÓGICO", lines: [410, 395, 370, 310] },\r\n    { title: "SECCIÓN 1.3 — ANÁLISIS DE ANTECEDENTES", lines: [390, 405, 360, 380, 290] },\r\n    { title: "SECCIÓN 1.4 — OBJETIVOS & ALCANCES", lines: [415, 385, 390, 350, 320, 230] }\r\n  ];',
+  'const sections = [\r\n    { title: "SECCIÓN 1 — MODELO DE GESTIÓN Y GOBERNANZA", lines: [400, 385, 395, 340, 260] },\r\n    { title: "SECCIÓN 2 — POLIGOBERNANZA Y ESTADO PLATAFORMA", lines: [410, 395, 370, 310] },\r\n    { title: "SECCIÓN 3 — TRAMADOS INSTITUCIONALES AD HOC", lines: [390, 405, 360, 380, 290] },\r\n    { title: "SECCIÓN 4 — PLANIFICACIÓN SITUACIONAL Y FODA", lines: [415, 385, 390, 350, 320, 230] }\r\n  ];'
+);
+// LF fallback
+b1 = b1.replace(
+  'const sections = [\n    { title: "SECCIÓN 1.1 — INTRODUCCIÓN GENERAL", lines: [400, 385, 395, 340, 260] },\n    { title: "SECCIÓN 1.2 — MARCO EPISTEMOLÓGICO", lines: [410, 395, 370, 310] },\n    { title: "SECCIÓN 1.3 — ANÁLISIS DE ANTECEDENTES", lines: [390, 405, 360, 380, 290] },\n    { title: "SECCIÓN 1.4 — OBJETIVOS & ALCANCES", lines: [415, 385, 390, 350, 320, 230] }\n  ];',
+  'const sections = [\n    { title: "SECCIÓN 1 — MODELO DE GESTIÓN Y GOBERNANZA", lines: [400, 385, 395, 340, 260] },\n    { title: "SECCIÓN 2 — POLIGOBERNANZA Y ESTADO PLATAFORMA", lines: [410, 395, 370, 310] },\n    { title: "SECCIÓN 3 — TRAMADOS INSTITUCIONALES AD HOC", lines: [390, 405, 360, 380, 290] },\n    { title: "SECCIÓN 4 — PLANIFICACIÓN SITUACIONAL Y FODA", lines: [415, 385, 390, 350, 320, 230] }\n  ];'
+);
+
+b1 = b1.replace(
+  'ctx.fillText("DEPARTAMENTO DE INFORMÁTICA Y CIENCIAS EXACTAS", 256, 112);',
+  'ctx.fillText("DEPARTAMENTO DE ADMINISTRACIÓN PÚBLICA", 256, 112);'
+);
+
+b1 = b1.replace(
+  'ctx.fillText("TRABAJO FINAL DE GRADO", 256, 260);',
+  'ctx.fillText("INFORME INTEGRAL DE PLANEAMIENTO", 256, 260);'
+);
+
+b1 = b1.replace(
+  'ctx.fillText("SEMINARIO DE INTEGRACIÓN Y APLICACIÓN", 256, 285);',
+  'ctx.fillText("PLANEAMIENTO Y CONTROL DE LAS ORGANIZACIONES", 256, 285);'
+);
+
+b1 = b1.replace(
+  'ctx.fillText("«Desarrollo, Gobernanza y Arquitectura", 256, 345);\r\n  ctx.fillText("de Sistemas para el Ámbito Académico Regional»", 256, 365);',
+  'ctx.fillText("«Diagnóstico Institucional, Modelos de Gestión", 256, 345);\r\n  ctx.fillText("y Poligobernanza en el CURZAS (Avance 2)»", 256, 365);'
+);
+b1 = b1.replace(
+  'ctx.fillText("«Desarrollo, Gobernanza y Arquitectura", 256, 345);\n  ctx.fillText("de Sistemas para el Ámbito Académico Regional»", 256, 365);',
+  'ctx.fillText("«Diagnóstico Institucional, Modelos de Gestión", 256, 345);\n  ctx.fillText("y Poligobernanza en el CURZAS (Avance 2)»", 256, 365);'
+);
+
+b1 = b1.replace(
+  'ctx.fillText("Licenciatura en Sistemas de Información", 256, 488);\r\n  ctx.fillText("Defensa Pública Oral ante Tribunal Académico", 256, 508);',
+  'ctx.fillText("Licenciatura en Recursos Humanos", 256, 488);\r\n  ctx.fillText("Docentes: Mgter. Susana Lopez — Lic. Carlos Jauge", 256, 508);'
+);
+b1 = b1.replace(
+  'ctx.fillText("Licenciatura en Sistemas de Información", 256, 488);\n  ctx.fillText("Defensa Pública Oral ante Tribunal Académico", 256, 508);',
+  'ctx.fillText("Licenciatura en Recursos Humanos", 256, 488);\n  ctx.fillText("Docentes: Mgter. Susana Lopez — Lic. Carlos Jauge", 256, 508);'
+);
+
+b1 = b1.replace(
+  '"PROYECTO INTEGRAL DE TFG",\r\n      "CURZAS — Universidad Nacional del Comahue",',
+  '"INFORME INTEGRAL DE PLANEAMIENTO",\r\n      "CURZAS — Universidad Nacional del Comahue",'
+);
+b1 = b1.replace(
+  '"PROYECTO INTEGRAL DE TFG",\n      "CURZAS — Universidad Nacional del Comahue",',
+  '"INFORME INTEGRAL DE PLANEAMIENTO",\n      "CURZAS — Universidad Nacional del Comahue",'
+);
+
+// Slide 2 (anim_02)
+b1 = b1.replace('["CURZAS", "UNIVERSIDAD NACIONAL DEL COMAHUE", "TFG 2026/2027"]', '["CURZAS", "UNIVERSIDAD NACIONAL DEL COMAHUE", "PLANEAMIENTO 2026"]');
+b1 = b1.replace('sub: "DEFENSA",', 'sub: "EXPOSICIÓN",');
+b1 = b1.replace(
+  '"HÉCTOR DANIEL AYARACHI FUENTES",\r\n      "Tec. Sup. en RRHH • Legajo 8252 • CURZAS-UNCo",',
+  '"HÉCTOR DANIEL AYARACHI FUENTES",\r\n      "Tec. Sup. en RRHH • Licenciatura en RRHH • CURZAS",'
+);
+b1 = b1.replace(
+  '"HÉCTOR DANIEL AYARACHI FUENTES",\n      "Tec. Sup. en RRHH • Legajo 8252 • CURZAS-UNCo",',
+  '"HÉCTOR DANIEL AYARACHI FUENTES",\n      "Tec. Sup. en RRHH • Licenciatura en RRHH • CURZAS",'
+);
+
+// Slide 3 (anim_03): Cimientos del Avance 1
+b1 = b1.replace(
+  '{ x: -0.42, z: -0.42, h: 0.58, title: "I. CARÁTULA", sub: "Marco Institucional" },',
+  '{ x: -0.42, z: -0.42, h: 0.58, title: "I. AUTONOMÍA", sub: "Art. 75 inc. 19 CN" },'
+);
+b1 = b1.replace(
+  '{ x: 0.42, z: -0.42, h: 0.78, title: "II. TEMA", sub: "Área y Contexto" },',
+  '{ x: 0.42, z: -0.42, h: 0.78, title: "II. BUROCRACIA", sub: "Weberiana Profesional" },'
+);
+b1 = b1.replace(
+  '{ x: -0.42, z: 0.42, h: 0.98, title: "III. PROBLEMA", sub: "Desnaturalización" },',
+  '{ x: -0.42, z: 0.42, h: 0.98, title: "III. AUTONOMÍA VS NGP", sub: "Resguardo vs Mercado" },'
+);
+b1 = b1.replace(
+  '{ x: 0.42, z: 0.42, h: 1.18, title: "IV. OBJETIVOS", sub: "General y Específicos" }',
+  '{ x: 0.42, z: 0.42, h: 1.18, title: "IV. ACCOUNTABILITY", sub: "Horizontal/Vertical/Social" }'
+);
+b1 = b1.replace('[`CIMIENTO ${idx + 1}/4`]', '[`PILAR AVANCE 1 (${idx + 1}/4)`]');
+b1 = b1.replace('title: "SIA",\r\n          sub: "360°",', 'title: "PCO",\r\n          sub: "AVANCE 1",');
+b1 = b1.replace('title: "SIA",\n          sub: "360°",', 'title: "PCO",\n          sub: "AVANCE 1",');
+
+// Slide 4 (anim_04): Díptico del Avance 2
+b1 = b1.replace('"5. MARCO TEÓRICO"', '"I. ESTADO PLATAFORMA"');
+b1 = b1.replace('"Longo • 360° • Poligobernanza"', '"Interoperabilidad e IOP • Oszlak"');
+b1 = b1.replace('["MODELO SITUADO"]', '["POLIGOBERNANZA"]');
+b1 = b1.replace('"6. ANTECEDENTES"', '"II. TRAMADOS AD HOC"');
+b1 = b1.replace('"Estado del Arte • Vacancia"', '"10 Nodos • Hintze / Aguilar V."');
+b1 = b1.replace('["DIAGNÓSTICO SITUADO"]', '["POLIGOBERNANZA"]');
+
+// Slide 5 (anim_05): Tríptico de Articulación
+b1 = b1.replace('title: "2027",\r\n      sub: "GANTT",', 'title: "PES",\r\n      sub: "MATUS",');
+b1 = b1.replace('title: "2027",\n      sub: "GANTT",', 'title: "PES",\n      sub: "MATUS",');
+b1 = b1.replace('"8. CRONOGRAMA"', '"PES DE CARLOS MATUS"');
+b1 = b1.replace('"7 Meses Continuos (2027)"', '"Planificación Situacional"');
+b1 = b1.replace('["RÉGIMEN TEMPORAL TFG"]', '["JUEGO SOCIAL"]');
+b1 = b1.replace('"7. METODOLOGÍA"', '"POLIGOBERNANZA"');
+b1 = b1.replace('"Diseño Mixto • Operacionalización"', '"Redes Multiactorales"');
+b1 = b1.replace('["TRIANGULACIÓN CUALI-CUANTI"]', '["CAO & BLUTMAN"]');
+b1 = b1.replace('{ color: 0x0284c7, title: "HUMANO" }', '{ color: 0x0284c7, title: "POLÍTICA" }');
+b1 = b1.replace('{ color: 0xf59e0b, title: "TÉCNICO" }', '{ color: 0xf59e0b, title: "ADMINISTRATIVA" }');
+b1 = b1.replace('{ color: 0x10b981, title: "ECONÓMICO" }', '{ color: 0x10b981, title: "TÉCNICA" }');
+b1 = b1.replace('"9. VIABILIDAD"', '"CAPACIDADES ESTATALES"');
+b1 = b1.replace('"Humanos • Técnicos • Costo Cero"', '"Político • Administrativo • Técnico"');
+b1 = b1.replace('["FACTIBILIDAD COMPLETA"]', '["BERTRANOU (2015)"]');
+
+fs.writeFileSync('./js/objetos/bloque1.js', b1, 'utf8');
+console.log('✔ Bloque 1 actualizado exitosamente');
+
+// ==============================================================================
+// 2. BLOQUE 2 (Esculturas 6 a 10)
+// ==============================================================================
+let b2 = fs.readFileSync('./js/objetos/bloque2.js', 'utf8');
+
+// Slide 6 (anim_06)
+b2 = b2.replace(
+  'const labelMaster = engine.createLabelSprite(\r\n      "EL CURZAS EN EL TERRITORIO",\r\n      "Sede Viedma y los 10 Nodos Territoriales (Res. 135/2022)",\r\n      "#0f2d59",\r\n      true\r\n    );',
+  'const labelMaster = engine.createLabelSprite(\r\n      "EL CURZAS EN EL TERRITORIO",\r\n      "Sede Central Viedma y Red de 10 Nodos Regionales de Río Negro",\r\n      "#0f2d59",\r\n      true\r\n    );'
+);
+b2 = b2.replace(
+  'const labelMaster = engine.createLabelSprite(\n      "EL CURZAS EN EL TERRITORIO",\n      "Sede Viedma y los 10 Nodos Territoriales (Res. 135/2022)",\n      "#0f2d59",\n      true\n    );',
+  'const labelMaster = engine.createLabelSprite(\n      "EL CURZAS EN EL TERRITORIO",\n      "Sede Central Viedma y Red de 10 Nodos Regionales de Río Negro",\n      "#0f2d59",\n      true\n    );'
+);
+
+// Slide 7 (anim_07)
+b2 = b2.replace(
+  'engine.createLabelSprite(\r\n      "RED TERRITORIAL DE DOCENCIA HÍBRIDA",\r\n      "Sede Viedma y 10 Nodos Regionales (Res. CD-CURZA 196/2022)",\r\n      "#0f2d59",\r\n      true\r\n    );',
+  'engine.createLabelSprite(\r\n      "RED DE 10 NODOS REGIONALES",\r\n      "Aulas Híbridas y Asistentes Técnico-Pedagógicos Locales",\r\n      "#0f2d59",\r\n      true\r\n    );'
+);
+b2 = b2.replace(
+  'engine.createLabelSprite(\n      "RED TERRITORIAL DE DOCENCIA HÍBRIDA",\n      "Sede Viedma y 10 Nodos Regionales (Res. CD-CURZA 196/2022)",\n      "#0f2d59",\n      true\n    );',
+  'engine.createLabelSprite(\n      "RED DE 10 NODOS REGIONALES",\n      "Aulas Híbridas y Asistentes Técnico-Pedagógicos Locales",\n      "#0f2d59",\n      true\n    );'
+);
+
+// Slide 8 (anim_08: Burocracia Weberiana)
+b2 = b2.replace('"RUTINA COTIDIANA", "Encuesta de Papel Sumativa"', '"BUROCRACIA WEBERIANA", "Estructura Jerárquica y Legalidad"');
+b2 = b2.replace('"VIGILANCIA EPISTEMOLÓGICA", "Ruptura Científica (Wainerman & Sautu)"', '"PRINCIPIO DE LEGALIDAD", "Resoluciones Fundadas y Expedientes"');
+b2 = b2.replace('"OBJETO CIENTÍFICO", "Factibilidad Situada del 360°"', '"BASE PROFESIONAL", "Estabilidad Laboral (CCT 366/06 y 1246/15)"');
+
+// Slide 9 (anim_09: Autonomía vs NGP)
+b2 = b2.replace(
+  'engine.createLabelSprite(\r\n      "ARTÍCULO 75",\r\n      "Permanencia Sumativa Cuatrienal (Estatuto UNCo)",\r\n      "#b91c1c",\r\n      false,\r\n      { x: 0.62, y: 0.18 }\r\n    );',
+  'engine.createLabelSprite(\r\n      "AUTONOMÍA UNIVERSITARIA",\r\n      "Reforma 1918 • Resguardo Democrático (Art. 75 inc. 19 CN)",\r\n      "#1d4ed8",\r\n      false,\r\n      { x: 0.70, y: 0.18 }\r\n    );'
+);
+b2 = b2.replace(
+  'engine.createLabelSprite(\n      "ARTÍCULO 75",\n      "Permanencia Sumativa Cuatrienal (Estatuto UNCo)",\n      "#b91c1c",\n      false,\n      { x: 0.62, y: 0.18 }\n    );',
+  'engine.createLabelSprite(\n      "AUTONOMÍA UNIVERSITARIA",\n      "Reforma 1918 • Resguardo Democrático (Art. 75 inc. 19 CN)",\n      "#1d4ed8",\n      false,\n      { x: 0.70, y: 0.18 }\n    );'
+);
+
+b2 = b2.replace(
+  'engine.createLabelSprite(\r\n      "ARTÍCULO 76",\r\n      "Capacitación Continua y Formativa (Destino del 360°)",\r\n      "#0284c7",\r\n      false,\r\n      { x: 0.62, y: 0.18 }\r\n    );',
+  'engine.createLabelSprite(\r\n      "NUEVA GESTIÓN PÚBLICA (NGP)",\r\n      "Lógica de Mercado • Vouchers • Clientes • Descentralización",\r\n      "#b91c1c",\r\n      false,\r\n      { x: 0.70, y: 0.18 }\r\n    );'
+);
+b2 = b2.replace(
+  'engine.createLabelSprite(\n      "ARTÍCULO 76",\n      "Capacitación Continua y Formativa (Destino del 360°)",\n      "#0284c7",\n      false,\n      { x: 0.62, y: 0.18 }\n    );',
+  'engine.createLabelSprite(\n      "NUEVA GESTIÓN PÚBLICA (NGP)",\n      "Lógica de Mercado • Vouchers • Clientes • Descentralización",\n      "#b91c1c",\n      false,\n      { x: 0.70, y: 0.18 }\n    );'
+);
+
+// Slide 10 (anim_10: Modernización Digital SIU y SUDOCU)
+b2 = b2.replace(
+  '"PREGUNTA CENTRAL", "¿Condiciones de Factibilidad 2027?"',
+  '"MODERNIZACIÓN DIGITAL", "Ecosistema SIU y SUDOCU"'
+);
+b2 = b2.replace('{ name: "NORMATIVA", sub: "Estatuto & CCT", angle: 0, col: 0x38bdf8 },', '{ name: "SIU GUARANÍ", sub: "Gestión Académica", angle: 0, col: 0x38bdf8 },');
+b2 = b2.replace('{ name: "TÉCNICA", sub: "Moodle & TIC", angle: (2 * Math.PI) / 5, col: 0x10b981 },', '{ name: "SIU MAPUCHE", sub: "Recursos Humanos", angle: (2 * Math.PI) / 5, col: 0x10b981 },');
+b2 = b2.replace('{ name: "ORGANIZACIONAL", sub: "Art. 76 Capacitación", angle: (4 * Math.PI) / 5, col: 0xf59e0b },', '{ name: "SUDOCU", sub: "Expediente Digital", angle: (4 * Math.PI) / 5, col: 0xf59e0b },');
+b2 = b2.replace('{ name: "CULTURAL", sub: "Confianza Docente", angle: (6 * Math.PI) / 5, col: 0x8b5cf6 },', '{ name: "SIU DIAGUITA", sub: "Compras y Patrimonio", angle: (6 * Math.PI) / 5, col: 0x8b5cf6 },');
+b2 = b2.replace('{ name: "GOBERNANZA", sub: "Cogobierno Paritario", angle: (8 * Math.PI) / 5, col: 0xec4899 }', '{ name: "CONEAU", sub: "Evaluación y Calidad", angle: (8 * Math.PI) / 5, col: 0xec4899 }');
+
+fs.writeFileSync('./js/objetos/bloque2.js', b2, 'utf8');
+console.log('✔ Bloque 2 actualizado exitosamente');
+
+// ==============================================================================
+// 3. BLOQUE 3 (Esculturas 11 a 15)
+// ==============================================================================
+let b3 = fs.readFileSync('./js/objetos/bloque3.js', 'utf8');
+
+// Slide 11 (anim_11: Accountability)
+b3 = b3.replace(
+  '"OBJETIVO GENERAL", "Factibilidad Integral del Modelo 360°"',
+  '"RENDICIÓN DE CUENTAS (ACCOUNTABILITY)", "Dimensiones de Control Institucional en CURZAS (O\'Donnell)"'
+);
+b3 = b3.replace('{ name: "OBJ. 1 (NORMATIVO)", sub: "Estatuto y CCT", angle: 0, col: 0x38bdf8 },', '{ name: "1. CONTROL HORIZONTAL", sub: "UAI / AGN / Consejo Directivo", angle: 0, col: 0x38bdf8 },');
+b3 = b3.replace('{ name: "OBJ. 2 (PERCEPCIONES)", sub: "Docentes y Alumnos", angle: Math.PI / 2, col: 0x10b981 },', '{ name: "2. CONTROL VERTICAL", sub: "Elecciones de Claustros", angle: Math.PI / 2, col: 0x10b981 },');
+b3 = b3.replace('{ name: "OBJ. 3 (CONDICIONANTES)", sub: "Gobernanza y TIC", angle: Math.PI, col: 0xf59e0b },', '{ name: "3. CONTROL SOCIAL", sub: "Boletines Públicos y Transparencia", angle: Math.PI, col: 0xf59e0b },');
+b3 = b3.replace('{ name: "OBJ. 4 (LINEAMIENTOS)", sub: "Propuesta Situada", angle: (3 * Math.PI) / 2, col: 0x8b5cf6 }', '{ name: "4. EQUILIBRIO ORGÁNICO", sub: "Balance Republicano de Frenos", angle: (3 * Math.PI) / 2, col: 0x8b5cf6 }');
+
+// Slide 12 (anim_12: Poligobernanza)
+b3 = b3.replace(
+  '"SUBSISTEMAS DE RECURSOS HUMANOS",\r\n      "Marco Analítico del Empleo Público (Francisco Longo)",',
+  '"PARADIGMA DE LA POLIGOBERNANZA",\r\n      "Redes Heterogéneas y Complejidad Territorial (Cao & Blutman)",'
+);
+b3 = b3.replace(
+  '"SUBSISTEMAS DE RECURSOS HUMANOS",\n      "Marco Analítico del Empleo Público (Francisco Longo)",',
+  '"PARADIGMA DE LA POLIGOBERNANZA",\n      "Redes Heterogéneas y Complejidad Territorial (Cao & Blutman)",'
+);
+b3 = b3.replace('"1. PLANIFICACIÓN", "Estrategia"', '"REDES MULTIACTORALES", "Articulación Horizontal"');
+b3 = b3.replace('"2. ORGANIZACIÓN", "Estructura"', '"10 NODOS TERRITORIALES", "Presencia en Río Negro"');
+b3 = b3.replace('"3. GESTIÓN DEL EMPLEO", "Ingreso y Carrera"', '"GESTIÓN DE COMPLEJIDAD", "Superación de Jerarquías"');
+b3 = b3.replace('"4. RENDIMIENTO", "Evaluación Formativa"', '"COPRODUCCIÓN PÚBLICA", "Valor Social Patagónico"');
+b3 = b3.replace('"5. COMPENSACIÓN", "Salarios y CCT"', '"ESTADO ARTICULADOR", "Diálogo Interinstitucional"');
+b3 = b3.replace('"6. DESARROLLO", "Capacitación Art. 76"', '"GOBERNANZA SITUADA", "Línea Sur y Costa"');
+b3 = b3.replace('"7. RELACIONES LAB.", "Gremio y Clima"', '"PARTICIPACIÓN ACTIVA", "Comunidades Locales"');
+
+// Slide 13 (anim_13: Estado Plataforma e Interoperabilidad)
+b3 = b3.replace(
+  '"NÚCLEO ESTRATÉGICO DE RRHH",\r\n      "Alineación Rendimiento-Desarrollo-Relaciones"',
+  '"ESTADO PLATAFORMA (CAO & BLUTMAN)",\r\n      "Interoperabilidad de Sistemas de Información (IOP)"'
+);
+b3 = b3.replace(
+  '"NÚCLEO ESTRATÉGICO DE RRHH",\n      "Alineación Rendimiento-Desarrollo-Relaciones"',
+  '"ESTADO PLATAFORMA (CAO & BLUTMAN)",\n      "Interoperabilidad de Sistemas de Información (IOP)"'
+);
+b3 = b3.replace('"1. RENDIMIENTO", "Evaluación Formativa"', '"1. ESTADO PLATAFORMA", "Infraestructura Común de APIs"');
+b3 = b3.replace('"2. DESARROLLO", "Capacitación Docente (Art. 76)"', '"2. INTEROPERABILIDAD", "Principio de Una Sola Vez (Once-Only)"');
+b3 = b3.replace('"3. RELACIONES LABORALES", "Diálogo Gremial (CCT Dec. 1246/15)"', '"3. VENTANILLA ÚNICA", "Eliminación de Costos Transaccionales"');
+
+// Slide 14 (anim_14: Diagnóstico Silos en CURZAS)
+b3 = b3.replace(
+  '"DISPOSITIVO CIRCULAR 360°",\r\n      "Triangulación Multiactoral Formativa (Mitigación de Sesgos)",',
+  '"DIAGNÓSTICO EN CURZAS: SILOS DE INFORMACIÓN",\r\n      "Persistencia de Compartimentos Aislados frente a CONICET e INTA",',
+);
+b3 = b3.replace(
+  '"DISPOSITIVO CIRCULAR 360°",\n      "Triangulación Multiactoral Formativa (Mitigación de Sesgos)",\n      "#0f2d59",',
+  '"DIAGNÓSTICO EN CURZAS: SILOS DE INFORMACIÓN",\n      "Persistencia de Compartimentos Aislados frente a CONICET e INTA",\n      "#0f2d59",',
+);
+b3 = b3.replace('{ name: "AUTOEVALUACIÓN", sub: "Reflexión Docente", angle: 0 },', '{ name: "UNCo (SIU / SUDOCU)", sub: "Gestión Universitaria Interna", angle: 0 },');
+b3 = b3.replace('{ name: "COEVALUACIÓN", sub: "Pares de Cátedra", angle: Math.PI / 2 },', '{ name: "CONICET (SIGEVA)", sub: "Carga Curricular Científica", angle: Math.PI / 2 },');
+b3 = b3.replace('{ name: "HETEROEVALUACIÓN", sub: "Estudiantes", angle: Math.PI },', '{ name: "INTA (SIGA / SIGEP)", sub: "Investigación Agropecuaria", angle: Math.PI },');
+b3 = b3.replace('{ name: "DIRECCIÓN", sub: "Gestión Departamental", angle: (3 * Math.PI) / 2 }', '{ name: "ALERTA: DUPLICACIÓN", sub: "Carga Manual sin Pasarela API", angle: (3 * Math.PI) / 2 }');
+
+// Slide 15 (anim_15: Tramados Ad Hoc frente a la Rigidez)
+b3 = b3.replace(
+  '"ARQUITECTURA 360° CURZAS",\r\n      "Cúpula Geodésica de Integración Departamental"',
+  '"TRAMADOS INSTITUCIONALES AD HOC",\r\n      "Estructuras Matriciales frente a la Rigidez (Hintze)"'
+);
+b3 = b3.replace(
+  '"ARQUITECTURA 360° CURZAS",\n      "Cúpula Geodésica de Integración Departamental"',
+  '"TRAMADOS INSTITUCIONALES AD HOC",\n      "Estructuras Matriciales frente a la Rigidez (Hintze)"'
+);
+b3 = b3.replace(
+  '"NÚCLEO FORMATIVO (ART. 76)", "Desacoplado de Sanciones"',
+  '"GESTIÓN POR PROYECTOS", "Flexibilidad Operativa Temporal"'
+);
+
+fs.writeFileSync('./js/objetos/bloque3.js', b3, 'utf8');
+console.log('✔ Bloque 3 actualizado exitosamente');
+
+// ==============================================================================
+// 4. BLOQUE 4 (Esculturas 16 a 20)
+// ==============================================================================
+let b4 = fs.readFileSync('./js/objetos/bloque4.js', 'utf8');
+
+// Slide 16 (anim_16: Adhocracias en Extensión y CyT - Nodos en Red)
+b4 = b4.replace('{ name: "ADUNC (GREMIO)", sub: "Representación Paritaria", angle: 0, col: "#dc2626", hex: 0xdc2626 },', '{ name: "SECRETARÍA EXTENSIÓN", sub: "Coordinación Territorial CURZAS", angle: 0, col: "#2563eb", hex: 0x2563eb },');
+b4 = b4.replace('{ name: "CLAUSTRO DOCENTE", sub: "Profesores y Asistentes", angle: Math.PI / 2, col: "#2563eb", hex: 0x2563eb },', '{ name: "MUNICIPIOS LOCALES", sub: "Cogestión de Aulas y Logística", angle: Math.PI / 2, col: "#0284c7", hex: 0x0284c7 },');
+b4 = b4.replace('{ name: "CLAUSTRO ESTUDIANTIL", sub: "Comunidad de Alumnos", angle: Math.PI, col: "#16a34a", hex: 0x16a34a },', '{ name: "PEQUEÑOS PRODUCTORES", sub: "Valcheta, SAO y Conesa", angle: Math.PI, col: "#16a34a", hex: 0x16a34a },');
+b4 = b4.replace('{ name: "AUTORIDADES", sub: "Gestión Departamental", angle: (3 * Math.PI) / 2, col: "#d97706", hex: 0xd97706 }', '{ name: "ORGANISMOS CIENTÍFICOS", sub: "INTA, DPA y Mesas Hídricas", angle: (3 * Math.PI) / 2, col: "#d97706", hex: 0xd97706 }');
+b4 = b4.replace(
+  '"PODER COMPARTIDO Y POLIGOBERNANZA", "Matus • Cao & Blutman • Oszlak"',
+  '"PROYECTO NODOS EN RED Y TRAMADOS AD HOC", "Adhocracias Matriciales frente a la Rigidez (Hintze)"'
+);
+
+// Slide 17 (anim_17: Paradoja del Co-Gobierno y Puentes de Poligobernanza)
+b4 = b4.replace(
+  '"VACANCIA DISCIPLINAR PATAGÓNICA", "Inexistencia de Estudios 360° en Universidades Descentralizadas"',
+  '"PARADOJA DEL CO-GOBIERNO Y PUENTES RETICULARES", "De la Endogamia Corporativa a la Coproducción Territorial"'
+);
+
+// Slide 18 (anim_18: De la Planificación Normativa a la PES de Matus)
+b4 = b4.replace('"PREDOMINIO CUALITATIVO", "Sentidos, Acuerdos y Disposiciones"', '"PLANIFICACIÓN NORMATIVA", "Lineal • Rígida • Monopolio del Poder"');
+b4 = b4.replace('"SONDEO CUANTITATIVO", "45 Casos • Escala Likert"', '"PLANIFICACIÓN SITUACIONAL (PES)", "Juego Social • Poder Compartido • Matus"');
+b4 = b4.replace('"DISEÑO MIXTO: CUAL → cuan", "Estudio de Caso Situado • CURZAS 2027"', '"DE LA PLANIFICACIÓN NORMATIVA A LA SITUACIONAL", "Carlos Matus • Viabilidad Técnica y Política"');
+
+// Slide 19 (anim_19: Los Cuatro Momentos de la PES de Carlos Matus)
+b4 = b4.replace('"8 ENTREVISTAS EN PROFUNDIDAD", "Docentes • Autoridades • ADUNC • Estudiantes"', '"MOMENTO 1: EXPLICATIVO", "¿Fue, es y será? • Diagnóstico Situacional"');
+b4 = b4.replace('"45 CUESTIONARIOS LIKERT", "15 Docentes (Amarillo) + 30 Estudiantes (Verde)"', '"MOMENTO 2: NORMATIVO", "¿Debiera ser? • Situación-Objetivo Deseable"');
+b4 = b4.replace('"DISEÑO MUESTRAL Y TÉCNICAS", "Muestreo Intencional Riguroso y Factible"', '"LOS CUATRO MOMENTOS DE LA PES (MATUS)", "Explicativo • Normativo • Estratégico • Táctico"');
+
+// Slide 20 (anim_20: Los Trabajadores como Actores Estratégicos)
+b4 = b4.replace('{ name: "1. NORMATIVA", sub: "Estatuto • CCT", col: "#1d4ed8", hex: 0x1d4ed8, x: -0.76 },', '{ name: "1. APUNC (FATUN)", sub: "Nodocentes • CCT 366/06", col: "#1d4ed8", hex: 0x1d4ed8, x: -0.76 },');
+b4 = b4.replace('{ name: "2. TÉCNICA", sub: "Moodle • Anonimato", col: "#0284c7", hex: 0x0284c7, x: -0.38 },', '{ name: "2. ADUNC (CEDIUNCO)", sub: "Docentes • CCT 1246/15", col: "#0284c7", hex: 0x0284c7, x: -0.38 },');
+b4 = b4.replace('{ name: "3. ORGANIZACIONAL", sub: "Capacitación Art. 76", col: "#d97706", hex: 0xd97706, x: 0.0 },', '{ name: "3. CONSEJO DIRECTIVO", sub: "Co-Gobierno Cuatripartito", col: "#d97706", hex: 0xd97706, x: 0.0 },');
+b4 = b4.replace('{ name: "4. CULTURAL", sub: "Confianza Docente", col: "#16a34a", hex: 0x16a34a, x: 0.38 },', '{ name: "4. DECANATO / SECS.", sub: "Gobernabilidad Operativa", col: "#16a34a", hex: 0x16a34a, x: 0.38 },');
+b4 = b4.replace('{ name: "5. GOBERNANZA", sub: "Cogobierno Paritario", col: "#7c3aed", hex: 0x7c3aed, x: 0.76 }', '{ name: "5. PARITARIAS LOCALES", sub: "Viabilidad y Acuerdos", col: "#7c3aed", hex: 0x7c3aed, x: 0.76 }');
+b4 = b4.replace(
+  '"MATRIZ DE OPERACIONALIZACIÓN", "5 Dimensiones • Indicadores Empíricos • Fuentes"',
+  '"LOS TRABAJADORES COMO ACTORES ESTRATÉGICOS", "Poder Compartido y Negociación Colectiva Paritaria"'
+);
+
+fs.writeFileSync('./js/objetos/bloque4.js', b4, 'utf8');
+console.log('✔ Bloque 4 actualizado exitosamente');
+
+// ==============================================================================
+// 5. BLOQUE 5 (Esculturas 21 a 25)
+// ==============================================================================
+let b5 = fs.readFileSync('./js/objetos/bloque5.js', 'utf8');
+
+// Slide 21 (anim_21: Matriz FODA Situada)
+b5 = b5.replace('title: "2027",\r\n      sub: "CRONOGRAMA",', 'title: "FODA",\r\n      sub: "CURZAS",');
+b5 = b5.replace('title: "2027",\n      sub: "CRONOGRAMA",', 'title: "FODA",\n      sub: "CURZAS",');
+b5 = b5.replace('{ name: "F1 (MAYO)", sub: "Avales y Prueba Piloto", u: 0.10, col: "#38bdf8", hex: 0x38bdf8 },', '{ name: "F (FORTALEZAS)", sub: "10 Nodos • Co-Gobierno • CCT • SIU", u: 0.10, col: "#10b981", hex: 0x10b981 },');
+b5 = b5.replace('{ name: "F2 (JUNIO)", sub: "8 Entrevistas y Leyes", u: 0.28, col: "#2563eb", hex: 0x2563eb },', '{ name: "O (OPORTUNIDADES)", sub: "Demanda Regional • Alianzas", u: 0.28, col: "#38bdf8", hex: 0x38bdf8 },');
+b5 = b5.replace('{ name: "F3 (JULIO)", sub: "Sondeo 45 Casos", u: 0.46, col: "#059669", hex: 0x059669 },', '{ name: "D (DEBILIDADES)", sub: "Silos Informáticos • Sobrecarga", u: 0.46, col: "#f59e0b", hex: 0xf59e0b },');
+b5 = b5.replace('{ name: "F4 (AGOSTO)", sub: "Triangulación Analítica", u: 0.64, col: "#d97706", hex: 0xd97706 },', '{ name: "A (AMENAZAS)", sub: "Desfinanciamiento Nacional", u: 0.64, col: "#ef4444", hex: 0xef4444 },');
+b5 = b5.replace('{ name: "F5 (SEP-OCT)", sub: "Redacción Lineamientos", u: 0.82, col: "#7c3aed", hex: 0x7c3aed },', '{ name: "HORIZONTE SITUADO", sub: "Democratización Patagónica", u: 0.82, col: "#8b5cf6", hex: 0x8b5cf6 },');
+b5 = b5.replace('{ name: "F6 (NOVIEMBRE)", sub: "Entrega y Defensa Oral", u: 0.98, col: "#dc2626", hex: 0xdc2626 }', '{ name: "VIABILIDAD POLÍTICA", sub: "Acuerdos Paritarios Sólidos", u: 0.98, col: "#0f2d59", hex: 0x0f2d59 }');
+b5 = b5.replace(
+  '"CRONOGRAMA DE ACTIVIDADES 2027", "7 Meses Intensivos • 6 Fases Secuenciales"',
+  '"MATRIZ FODA SITUADA EN EL CURZAS", "Análisis Endógeno y Entorno Patagónico Nororiental"'
+);
+
+// Slide 22 (anim_22: Mapeo de Stakeholders de RRHH)
+b5 = b5.replace('name: "RECURSOS HUMANOS",\r\n        sub: "Tesista • Tutor • Informantes",', 'name: "GREMIOS (APUNC / ADUNC)",\r\n        sub: "Poder Muy Alto • CCT y Paritarias",');
+b5 = b5.replace('name: "RECURSOS HUMANOS",\n        sub: "Tesista • Tutor • Informantes",', 'name: "GREMIOS (APUNC / ADUNC)",\n        sub: "Poder Muy Alto • CCT y Paritarias",');
+
+b5 = b5.replace('name: "RECURSOS TÉCNICOS",\r\n        sub: "Moodle • LimeSurvey • SPSS/MAXQDA",', 'name: "ÓRGANOS DE CO-GOBIERNO",\r\n        sub: "Consejo Directivo y Superior UNCo",');
+b5 = b5.replace('name: "RECURSOS TÉCNICOS",\n        sub: "Moodle • LimeSurvey • SPSS/MAXQDA",', 'name: "ÓRGANOS DE CO-GOBIERNO",\n        sub: "Consejo Directivo y Superior UNCo",');
+
+b5 = b5.replace('name: "RECURSOS ECONÓMICOS",\r\n        sub: "Costo Marginal Cero • Plataformas Libres",', 'name: "ACTORES EXTERNOS",\r\n        sub: "SPU Nacional • Municipios de Nodos",');
+b5 = b5.replace('name: "RECURSOS ECONÓMICOS",\n        sub: "Costo Marginal Cero • Plataformas Libres",', 'name: "ACTORES EXTERNOS",\n        sub: "SPU Nacional • Municipios de Nodos",');
+
+b5 = b5.replace(
+  '"VIABILIDAD INTEGRAL DEL PROYECTO",\r\n      "Trípode Monumental de Factibilidad (Apartado 9 TFG)"',
+  '"MAPEO DE ACTORES CLAVE (STAKEHOLDERS)",\r\n      "Fuerzas Sociales en la Arena de Recursos Humanos"'
+);
+b5 = b5.replace(
+  '"VIABILIDAD INTEGRAL DEL PROYECTO",\n      "Trípode Monumental de Factibilidad (Apartado 9 TFG)"',
+  '"MAPEO DE ACTORES CLAVE (STAKEHOLDERS)",\n      "Fuerzas Sociales en la Arena de Recursos Humanos"'
+);
+
+// Slide 23 (anim_23: Capacidades Estatales de Bertranou)
+b5 = b5.replace(
+  '"PROTECCIÓN LEY 25.326", "Disociación Estricta • Sin IPs ni Correos"',
+  '"1. CAPACIDAD POLÍTICO-RELACIONAL: ALTA", "Gobernabilidad Democrática y Alianzas en Nodos"'
+);
+b5 = b5.replace(
+  '"GARANTÍA DE NO AFECTACIÓN", "Sin Injerencia en Permanencia (Art. 75)"',
+  '"2. CAPACIDAD ADMINISTRATIVA: MEDIA-ALTA", "Solvencia en Rutinas y Expedientes SUDOCU"'
+);
+b5 = b5.replace(
+  '"BLINDAJE ÉTICO INSTITUCIONAL", "Protección de Datos y Consentimiento Informado"',
+  '"CAPACIDADES ESTATALES (JULIÁN BERTRANOU)", "Político-Relacional • Administrativa • Técnico-Analítica"'
+);
+
+// Slide 24 (anim_24: Síntesis Estratégica del Avance 2)
+b5 = b5.replace('{ name: "DESACOPLAMIENTO ART. 75", angle: 0, col: "#2563eb" },', '{ name: "SUPERAR SILOS INFORMÁTICOS", angle: 0, col: "#2563eb" },');
+b5 = b5.replace('{ name: "CAPACITACIÓN ART. 76", angle: Math.PI / 2, col: "#0284c7" },', '{ name: "FORTALECER TRAMADOS AD HOC", angle: Math.PI / 2, col: "#0284c7" },');
+b5 = b5.replace('{ name: "DOCENCIA HÍBRIDA", angle: Math.PI, col: "#059669" },', '{ name: "PLANIFICACIÓN SITUACIONAL (PES)", angle: Math.PI, col: "#059669" },');
+b5 = b5.replace('{ name: "CAPACIDADES ESTATALES", angle: (3 * Math.PI) / 2, col: "#7c3aed" }', '{ name: "CAPACITACIÓN LABORAL SITUADA", angle: (3 * Math.PI) / 2, col: "#7c3aed" }');
+b5 = b5.replace(
+  '"VALOR PÚBLICO Y MODERNIZACIÓN", "Hacia una Universidad Formativa, Situada y Democrática"',
+  '"DICTAMEN ESTRATÉGICO FINAL DE PLANEAMIENTO", "Viabilidad Integral y Desafíos del CURZAS 2026"'
+);
+
+// Slide 25 (anim_25: Cierre Protocolar a la Cátedra)
+b5 = b5.replace(
+  'engine.createLabelSprite(\r\n      "TRIBUNAL EVALUADOR DE TESINA",\r\n      "Dra. Deborah Noguera • Esp. Federico Abeiro • Esp. María Cecilia Aguirre",\r\n      "#0f2d59",\r\n      true,\r\n      { x: 0.96, y: 0.22 }\r\n    );',
+  'engine.createLabelSprite(\r\n      "CÁTEDRA DE PLANEAMIENTO Y CONTROL 2026",\r\n      "Mgter. Susana Lopez — Lic. Carlos Jauge",\r\n      "#0f2d59",\r\n      true,\r\n      { x: 0.96, y: 0.22 }\r\n    );'
+);
+b5 = b5.replace(
+  'engine.createLabelSprite(\n      "TRIBUNAL EVALUADOR DE TESINA",\n      "Dra. Deborah Noguera • Esp. Federico Abeiro • Esp. María Cecilia Aguirre",\n      "#0f2d59",\n      true,\n      { x: 0.96, y: 0.22 }\n    );',
+  'engine.createLabelSprite(\n      "CÁTEDRA DE PLANEAMIENTO Y CONTROL 2026",\n      "Mgter. Susana Lopez — Lic. Carlos Jauge",\n      "#0f2d59",\n      true,\n      { x: 0.96, y: 0.22 }\n    );'
+);
+
+fs.writeFileSync('./js/objetos/bloque5.js', b5, 'utf8');
+console.log('✔ Bloque 5 actualizado exitosamente');
+
+console.log('¡Todas las 25 esculturas 3D han sido adaptadas al Avance 2 exitosamente!');

@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demostración 3D: Arte Algorítmico y Matemática Generativa en Esculturas</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Three.js + OrbitControls + FontAwesome -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow: hidden;
+      user-select: none;
+      background: radial-gradient(circle at 50% 35%, #0d1b2a 0%, #050b14 100%);
+      color: #e2e8f0;
+    }
+    .serif-title {
+      font-family: 'Cinzel', serif, Georgia;
+    }
+    .glass-panel {
+      background: rgba(13, 27, 42, 0.78);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(212, 175, 55, 0.28);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45), 0 0 25px rgba(212, 175, 55, 0.08);
+    }
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #fef08a 0%, #d4af37 50%, #996515 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .custom-slider {
+      accent-color: #d4af37;
+    }
+  </style>
+</head>
+<body class="h-screen w-screen relative overflow-hidden">
+
+  <!-- 3D Canvas -->
+  <div id="canvas-container" class="w-full h-full absolute inset-0 cursor-grab active:cursor-grabbing"></div>
+
+  <!-- Header Institucional Superior Izquierdo -->
+  <aside class="absolute top-5 left-5 z-20 max-w-md pointer-events-auto">
+    <div class="glass-panel rounded-2xl p-5 border-t-2 border-t-amber-400">
+      <div class="flex items-center justify-between pb-3 border-b border-amber-500/20">
+        <div>
+          <span class="text-[10px] uppercase font-bold tracking-widest text-amber-400 block mb-0.5">
+            TECNOLOGÍA ALGORÍTMICA & MATEMÁTICA GENERATIVA
+          </span>
+          <h1 class="text-xl font-bold tracking-tight serif-title text-white">
+            Esculturas 3D con Arte Matemático
+          </h1>
+        </div>
+        <span class="px-2.5 py-1 text-[11px] font-bold rounded-lg bg-amber-500/10 text-amber-300 border border-amber-500/30 flex items-center gap-1.5">
+          <i class="fa-solid fa-square-root-variable"></i> Live Math
+        </span>
+      </div>
+
+      <p class="text-xs text-slate-300 mt-3 leading-relaxed">
+        Los objetos clásicos de museo se potencian con <strong class="text-amber-200">algoritmos matemáticos procedurales</strong> en tiempo real: curvas armónicas de Lissajous estampadas al calor, órbitas caóticas del Atractor de Lorenz (PES Matus) y campos de flujo vectorial de gobernanza.
+      </p>
+
+      <!-- Botones de Enfoque Rápido -->
+      <div class="grid grid-cols-3 gap-2 mt-4 text-xs font-semibold">
+        <button id="btn-focus-book" class="px-2.5 py-2 rounded-xl bg-slate-800/80 hover:bg-amber-900/30 text-amber-200 border border-amber-500/30 transition flex flex-col items-center gap-1">
+          <i class="fa-solid fa-book-open text-amber-400 text-sm"></i>
+          <span class="text-[10px]">Tomo & Lissajous</span>
+        </button>
+        <button id="btn-focus-attractor" class="px-2.5 py-2 rounded-xl bg-slate-800/80 hover:bg-cyan-900/30 text-cyan-200 border border-cyan-500/30 transition flex flex-col items-center gap-1">
+          <i class="fa-solid fa-infinity text-cyan-400 text-sm"></i>
+          <span class="text-[10px]">Atractor Lorenz</span>
+        </button>
+        <button id="btn-focus-full" class="px-2.5 py-2 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-white border border-slate-600 transition flex flex-col items-center gap-1">
+          <i class="fa-solid fa-landmark text-amber-400 text-sm"></i>
+          <span class="text-[10px]">Escultura Total</span>
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Panel de Parámetros Matemáticos en Tiempo Real (Lateral Derecho) -->
+  <aside class="absolute top-5 right-5 z-20 w-80 pointer-events-auto">
+    <div class="glass-panel rounded-2xl p-4.5 space-y-4">
+      <div class="flex items-center justify-between pb-2 border-b border-amber-500/20">
+        <h2 class="text-xs font-bold uppercase tracking-wider text-amber-300 flex items-center gap-1.5">
+          <i class="fa-solid fa-sliders"></i> Parámetros Matemáticos
+        </h2>
+        <span id="fps-badge" class="text-[10px] font-mono text-emerald-400 bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-500/30">
+          60 FPS
+        </span>
+      </div>
+
+      <!-- Control 1: Atractor de Lorenz (PES Matus) -->
+      <div class="space-y-1.5">
+        <div class="flex justify-between text-xs">
+          <span class="text-slate-300 font-medium">Viabilidad de Matus (Lorenz)</span>
+          <span id="val-lorenz-speed" class="text-amber-300 font-mono text-[11px]">1.0x</span>
+        </div>
+        <input id="slider-lorenz-speed" type="range" min="0" max="3" step="0.1" value="1.0" class="w-full custom-slider">
+        <p class="text-[10px] text-slate-400">Trayectoria de 3 cuencas: Política, Institucional y Económica.</p>
+      </div>
+
+      <!-- Control 2: Densidad Armónica de Lissajous en Pergamino -->
+      <div class="space-y-1.5 pt-2 border-t border-slate-700/60">
+        <div class="flex justify-between text-xs">
+          <span class="text-slate-300 font-medium">Frecuencia Lissajous (Pergamino)</span>
+          <span id="val-lissajous-freq" class="text-amber-300 font-mono text-[11px]">3 : 2</span>
+        </div>
+        <input id="slider-lissajous-freq" type="range" min="1" max="7" step="1" value="3" class="w-full custom-slider">
+        <p class="text-[10px] text-slate-400">Superposición armónica generativa trazada en pan de oro.</p>
+      </div>
+
+      <!-- Control 3: Campo de Flujo Vectorial (Partículas de Gobernanza) -->
+      <div class="space-y-1.5 pt-2 border-t border-slate-700/60">
+        <div class="flex justify-between text-xs">
+          <span class="text-slate-300 font-medium">Flujo Cuántico de Nodos</span>
+          <span id="val-flow-intensity" class="text-cyan-300 font-mono text-[11px]">Activo</span>
+        </div>
+        <div class="grid grid-cols-2 gap-2 text-xs">
+          <button id="btn-toggle-flow" class="px-2 py-1.5 rounded-lg bg-cyan-950/60 text-cyan-300 border border-cyan-500/40 hover:bg-cyan-900/60 font-semibold transition">
+            <i class="fa-solid fa-wave-square mr-1"></i> Alternar
+          </button>
+          <button id="btn-randomize-seed" class="px-2 py-1.5 rounded-lg bg-amber-950/60 text-amber-300 border border-amber-500/40 hover:bg-amber-900/60 font-semibold transition">
+            <i class="fa-solid fa-dice mr-1"></i> Nueva Semilla
+          </button>
+        </div>
+      </div>
+
+      <!-- Leyenda Matemática de la Escultura -->
+      <div class="pt-2 border-t border-slate-700/60 text-[11px] text-slate-400 space-y-1">
+        <div class="flex items-center gap-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-amber-400 inline-block"></span>
+          <span>Atractor Lorenz 3D (Viabilidad Matus)</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-sky-400 inline-block"></span>
+          <span>Campo Vectorial de Poligobernanza</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="w-2.5 h-2.5 rounded-sm bg-[#faf7ee] border border-amber-500 inline-block"></span>
+          <span>Pergamino Marfil con Filigrana Lissajous</span>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Píldora de Interacción Inferior -->
+  <div class="absolute bottom-5 left-1/2 transform -translate-x-1/2 z-20 pointer-events-none">
+    <div class="glass-panel px-4 py-2 rounded-full text-xs text-slate-300 flex items-center gap-2.5 shadow-lg border border-amber-500/30">
+      <i class="fa-solid fa-arrows-spin text-amber-400 animate-spin" style="animation-duration: 8s;"></i>
+      <span>Arrastrar: Rotar 360° • Rueda: Zoom • Doble clic: Reset</span>
+    </div>
+  </div>
+
+  <script>
+    /* =========================================================================
+       1. INICIALIZACIÓN THREE.JS DE ALTA DEFINICIÓN CON ILUMINACIÓN DE MUSEO
+       ========================================================================= */
+    const container = document.getElementById("canvas-container");
+    const scene = new THREE.Scene();
+    scene.background = new THREE.Color(0x070d17);
+    scene.fog = new THREE.FogExp2(0x070d17, 0.12);
+
+    const camera = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 0.1, 100);
+    camera.position.set(0, 0.65, 3.8);
+
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false, powerPreference: "high-performance" });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.shadowMap.enabled = true;
+    renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 1.15;
+    container.appendChild(renderer.domElement);
+
+    const controls = new THREE.OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true;
+    controls.dampingFactor = 0.05;
+    controls.maxPolarAngle = Math.PI * 0.52;
+    controls.minDistance = 1.2;
+    controls.maxDistance = 6.5;
+    controls.target.set(0, 0, 0);
+
+    // Luces de Galería de Museo
+    const ambientLight = new THREE.AmbientLight(0xfff7ed, 0.65);
+    scene.add(ambientLight);
+
+    const keyLight = new THREE.DirectionalLight(0xfffaed, 1.4);
+    keyLight.position.set(3, 5, 3.5);
+    keyLight.castShadow = true;
+    keyLight.shadow.mapSize.width = 2048;
+    keyLight.shadow.mapSize.height = 2048;
+    keyLight.shadow.bias = -0.0001;
+    scene.add(keyLight);
+
+    const rimLight = new THREE.DirectionalLight(0x38bdf8, 0.85);
+    rimLight.position.set(-3.5, 3, -3);
+    scene.add(rimLight);
+
+    const warmFill = new THREE.PointLight(0xfbbf24, 0.9, 8);
+    warmFill.position.set(0, 1.2, 0.5);
+    scene.add(warmFill);
+
+    /* =========================================================================
+       2. GENERACIÓN ALGORÍTMICA DE PERGAMINO MATEMÁTICO (LISSAJOUS HARMONOGRAM)
+       ========================================================================= */
+    let currentLissajousFreq = 3;
+    let lissajousTexture = null;
+    let pageCanvas = null;
+
+    function renderLissajousPergamino(freq = 3) {
+      if (!pageCanvas) {
+        pageCanvas = document.createElement("canvas");
+        pageCanvas.width = 1024;
+        pageCanvas.height = 1024;
+      }
+      const ctx = pageCanvas.getContext("2d");
+
+      // Pergamino marfil cálido con grano fino
+      ctx.fillStyle = "#faf7ee";
+      ctx.fillRect(0, 0, 1024, 1024);
+
+      // Marco perimetral dorado con filetes dobles
+      ctx.strokeStyle = "#d4af37";
+      ctx.lineWidth = 4;
+      ctx.strokeRect(36, 36, 1024 - 72, 1024 - 72);
+      ctx.lineWidth = 1.5;
+      ctx.strokeRect(48, 48, 1024 - 96, 1024 - 96);
+
+      // Título en Oro y Tipografía Clásica
+      ctx.textAlign = "center";
+      ctx.fillStyle = "#0f2d59";
+      ctx.font = "bold 28px 'Cinzel', serif, Georgia";
+      ctx.fillText("UNIVERSIDAD NACIONAL DEL COMAHUE", 512, 110);
+      ctx.font = "600 20px 'Cinzel', serif, Georgia";
+      ctx.fillStyle = "#b45309";
+      ctx.fillText("CURZAS • PLANEAMIENTO ORGANIZACIONAL", 512, 142);
+
+      // TRAZADO ALGORÍTMICO: Rosa Polar y Curvas Armónicas de Lissajous
+      ctx.save();
+      ctx.translate(512, 490);
+
+      // 1. Rosa Polar de Base (Armonía institucional)
+      ctx.strokeStyle = "rgba(212, 175, 55, 0.28)";
+      ctx.lineWidth = 1.5;
+      ctx.beginPath();
+      const rosePetals = freq * 2;
+      for (let theta = 0; theta <= Math.PI * 2; theta += 0.01) {
+        const r = 240 * Math.cos(rosePetals * theta * 0.5);
+        const x = r * Math.cos(theta);
+        const y = r * Math.sin(theta);
+        if (theta === 0) ctx.moveTo(x, y);
+        else ctx.lineTo(x, y);
+      }
+      ctx.stroke();
+
+      // 2. Harmonógrafo de Lissajous Multicapa (Amortiguamiento exponencial)
+      ctx.strokeStyle = "rgba(180, 83, 9, 0.65)";
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      const totalSteps = 4200;
+      for (let i = 0; i <= totalSteps; i++) {
+        const t = (i / totalSteps) * Math.PI * 18;
+        const decay = Math.exp(-0.0003 * t);
+        const x = Math.sin(t * freq) * 220 * decay + Math.cos(t * (freq + 1.01)) * 50;
+        const y = Math.sin(t * 2.0 + Math.PI / 4) * 220 * decay + Math.sin(t * 4.02) * 45;
+        if (i === 0) ctx.moveTo(x, y);
+        else ctx.lineTo(x, y);
+      }
+      ctx.stroke();
+
+      // Medallón central UNCo
+      ctx.fillStyle = "#0f2d59";
+      ctx.beginPath();
+      ctx.arc(0, 0, 38, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.strokeStyle = "#d4af37";
+      ctx.lineWidth = 3;
+      ctx.stroke();
+      ctx.fillStyle = "#ffffff";
+      ctx.font = "bold 20px 'Cinzel', serif";
+      ctx.textBaseline = "middle";
+      ctx.fillText("UNCo", 0, 0);
+
+      ctx.restore();
+
+      // Metadatos de la Cátedra en la parte inferior
+      ctx.fillStyle = "#334155";
+      ctx.font = "italic 18px serif";
+      ctx.fillText("«Arte Algorítmico y Matemática Generativa aplicada a la Gobernanza»", 512, 850);
+      ctx.font = "bold 17px 'Cinzel', serif";
+      ctx.fillStyle = "#0f2d59";
+      ctx.fillText("HÉCTOR DANIEL AYARACHI FUENTES — VIEDMA 2026", 512, 890);
+
+      if (lissajousTexture) {
+        lissajousTexture.needsUpdate = true;
+      } else {
+        lissajousTexture = new THREE.CanvasTexture(pageCanvas);
+        lissajousTexture.anisotropy = 8;
+      }
+      return lissajousTexture;
+    }
+
+    renderLissajousPergamino(currentLissajousFreq);
+
+    /* =========================================================================
+       3. ATRACTOR DE LORENZ 3D EN TIEMPO REAL (PES MATUS: POLÍTICA, GESTIÓN, TÉCNICA)
+       ========================================================================= */
+    const LORENZ_POINTS = 3200;
+    const lorenzPositions = new Float32Array(LORENZ_POINTS * 3);
+    const lorenzColors = new Float32Array(LORENZ_POINTS * 3);
+
+    // Integración de Lorenz por Euler
+    let lx = 0.1, ly = 0.0, lz = 0.0;
+    const sigma = 10.0, rho = 28.0, beta = 8.0 / 3.0;
+    const dt = 0.008;
+
+    const goldColor = new THREE.Color(0xfbbf24);
+    const cyanColor = new THREE.Color(0x38bdf8);
+
+    for (let i = 0; i < LORENZ_POINTS; i++) {
+      const dx = sigma * (ly - lx);
+      const dy = lx * (rho - lz) - ly;
+      const dz = lx * ly - beta * lz;
+
+      lx += dx * dt;
+      ly += dy * dt;
+      lz += dz * dt;
+
+      // Escalar y centrar sobre el pedestal
+      const scale = 0.038;
+      lorenzPositions[i * 3]     = lx * scale;
+      lorenzPositions[i * 3 + 1] = (lz - 25) * scale + 0.45; // Centrado en Y
+      lorenzPositions[i * 3 + 2] = ly * scale;
+
+      const mixFactor = (lz / 50.0);
+      const col = goldColor.clone().lerp(cyanColor, mixFactor);
+      lorenzColors[i * 3]     = col.r;
+      lorenzColors[i * 3 + 1] = col.g;
+      lorenzColors[i * 3 + 2] = col.b;
+    }
+
+    const lorenzGeo = new THREE.BufferGeometry();
+    lorenzGeo.setAttribute('position', new THREE.BufferAttribute(lorenzPositions, 3));
+    lorenzGeo.setAttribute('color', new THREE.BufferAttribute(lorenzColors, 3));
+
+    const lorenzMat = new THREE.LineBasicMaterial({
+      vertexColors: true,
+      transparent: true,
+      opacity: 0.85,
+      blending: THREE.AdditiveBlending,
+      linewidth: 2
+    });
+
+    const lorenzCurve = new THREE.Line(lorenzGeo, lorenzMat);
+    scene.add(lorenzCurve);
+
+    /* =========================================================================
+       4. CAMPO VECTORIAL DE FLUJO CUÁNTICO DE NODOS (FLOW FIELD PARTICLES)
+       ========================================================================= */
+    const PARTICLE_COUNT = 900;
+    const particlePositions = new Float32Array(PARTICLE_COUNT * 3);
+    const particleColors = new Float32Array(PARTICLE_COUNT * 3);
+    const particleVelocities = [];
+
+    for (let i = 0; i < PARTICLE_COUNT; i++) {
+      const radius = 0.4 + Math.random() * 1.1;
+      const theta = Math.random() * Math.PI * 2;
+      const y = (Math.random() - 0.5) * 1.6 + 0.2;
+
+      particlePositions[i * 3]     = Math.cos(theta) * radius;
+      particlePositions[i * 3 + 1] = y;
+      particlePositions[i * 3 + 2] = Math.sin(theta) * radius;
+
+      particleVelocities.push({
+        radius: radius,
+        angle: theta,
+        y: y,
+        speed: 0.3 + Math.random() * 0.7,
+        ySpeed: (Math.random() - 0.5) * 0.2
+      });
+
+      const c = (i % 2 === 0) ? goldColor : cyanColor;
+      particleColors[i * 3]     = c.r;
+      particleColors[i * 3 + 1] = c.g;
+      particleColors[i * 3 + 2] = c.b;
+    }
+
+    const particleGeo = new THREE.BufferGeometry();
+    particleGeo.setAttribute('position', new THREE.BufferAttribute(particlePositions, 3));
+    particleGeo.setAttribute('color', new THREE.BufferAttribute(particleColors, 3));
+
+    const particleMat = new THREE.PointsMaterial({
+      size: 0.032,
+      vertexColors: true,
+      transparent: true,
+      opacity: 0.75,
+      blending: THREE.AdditiveBlending,
+      depthWrite: false
+    });
+
+    const particleCloud = new THREE.Points(particleGeo, particleMat);
+    scene.add(particleCloud);
+
+    /* =========================================================================
+       5. ESCULTURA CLÁSICA DE MUSEO (MÁRMOL, GRANITO, BRONCE Y GRAN TOMO)
+       ========================================================================= */
+    const sculptureGroup = new THREE.Group();
+    scene.add(sculptureGroup);
+
+    // Basamento monumental circular de museo
+    const plinthMat = new THREE.MeshStandardMaterial({ color: 0x0f172a, roughness: 0.35, metalness: 0.2 });
+    const plinthMesh = new THREE.Mesh(new THREE.CylinderGeometry(1.4, 1.48, 0.22, 48), plinthMat);
+    plinthMesh.position.y = -1.11;
+    plinthMesh.receiveShadow = true;
+    sculptureGroup.add(plinthMesh);
+
+    // Moldura de latón dorado en el borde del zócalo
+    const plinthRimMat = new THREE.MeshStandardMaterial({ color: 0xd4af37, metalness: 0.88, roughness: 0.2 });
+    const plinthRim = new THREE.Mesh(new THREE.TorusGeometry(1.41, 0.02, 16, 64), plinthRimMat);
+    plinthRim.rotation.x = Math.PI / 2;
+    plinthRim.position.y = -1.0;
+    sculptureGroup.add(plinthRim);
+
+    // Columna clásica en Mármol de Carrara
+    const marbleMat = new THREE.MeshStandardMaterial({ color: 0xf8fafc, roughness: 0.22, metalness: 0.05 });
+    const columnMesh = new THREE.Mesh(new THREE.CylinderGeometry(0.12, 0.15, 0.88, 32), marbleMat);
+    columnMesh.position.y = -0.52;
+    columnMesh.castShadow = true;
+    columnMesh.receiveShadow = true;
+    sculptureGroup.add(columnMesh);
+
+    // Anillos de latón en el fuste
+    [-0.85, -0.52, -0.19].forEach(yPos => {
+      const ring = new THREE.Mesh(new THREE.TorusGeometry(0.14, 0.014, 16, 32), plinthRimMat);
+      ring.rotation.x = Math.PI / 2;
+      ring.position.y = yPos;
+      sculptureGroup.add(ring);
+    });
+
+    // Capitel de latón maquinado y cuna basculante a 32°
+    const capital = new THREE.Mesh(new THREE.CylinderGeometry(0.24, 0.13, 0.08, 32), plinthRimMat);
+    capital.position.y = -0.04;
+    sculptureGroup.add(capital);
+
+    // Atril de Caoba noble pulida con ángulo de lectura a 32°
+    const deskGroup = new THREE.Group();
+    deskGroup.position.set(0, 0.26, 0);
+    deskGroup.rotation.x = (32 * Math.PI) / 180;
+    sculptureGroup.add(deskGroup);
+
+    const mahoganyMat = new THREE.MeshStandardMaterial({ color: 0x2e1204, roughness: 0.25, metalness: 0.08 });
+    const deskPlate = new THREE.Mesh(new THREE.BoxGeometry(1.36, 0.042, 1.02), mahoganyMat);
+    deskPlate.castShadow = true;
+    deskGroup.add(deskPlate);
+
+    // Cantoneras de oro en las 4 esquinas del atril
+    [[-0.66, -0.49], [0.66, -0.49], [-0.66, 0.49], [0.66, 0.49]].forEach(([cx, cz]) => {
+      const corner = new THREE.Mesh(new THREE.BoxGeometry(0.09, 0.048, 0.09), plinthRimMat);
+      corner.position.set(cx, 0.005, cz);
+      deskGroup.add(corner);
+    });
+
+    // El Gran Tomo Abierto con textura generativa viva
+    const bookMat = new THREE.MeshStandardMaterial({
+      map: lissajousTexture,
+      roughness: 0.45,
+      metalness: 0.08
+    });
+
+    const leftPage = new THREE.Mesh(new THREE.BoxGeometry(0.48, 0.02, 0.74), bookMat);
+    leftPage.position.set(-0.26, 0.04, 0);
+    leftPage.rotation.z = -0.05;
+    leftPage.castShadow = true;
+    deskGroup.add(leftPage);
+
+    const rightPage = new THREE.Mesh(new THREE.BoxGeometry(0.48, 0.02, 0.74), bookMat);
+    rightPage.position.set(0.26, 0.04, 0);
+    rightPage.rotation.z = 0.05;
+    rightPage.castShadow = true;
+    deskGroup.add(rightPage);
+
+    // Cinta ceremonial de seda dorada ondeante
+    const ribbonMat = new THREE.MeshStandardMaterial({ color: 0xd97706, roughness: 0.3, metalness: 0.2 });
+    const ribbonTail = new THREE.Mesh(new THREE.BoxGeometry(0.042, 0.28, 0.008), ribbonMat);
+    ribbonTail.position.set(0.04, -0.07, 0.53);
+    ribbonTail.rotation.x = 0.18;
+    deskGroup.add(ribbonTail);
+
+    /* =========================================================================
+       6. LOOP DE ANIMACIÓN Y FUSIÓN DE MATEMÁTICA GENERATIVA EN VIVO
+       ========================================================================= */
+    let lorenzSpeed = 1.0;
+    let flowActive = true;
+    const clock = new THREE.Clock();
+
+    function animate() {
+      requestAnimationFrame(animate);
+      const t = clock.getElapsedTime();
+
+      // 1. Órbita y rotación suave del Atractor de Lorenz (PES Matus)
+      if (lorenzCurve) {
+        lorenzCurve.rotation.y = t * 0.35 * lorenzSpeed;
+        lorenzCurve.rotation.x = Math.sin(t * 0.4) * 0.12 * lorenzSpeed;
+      }
+
+      // 2. Campo de Flujo Vectorial de Partículas
+      if (flowActive) {
+        const positions = particleGeo.attributes.position.array;
+        for (let i = 0; i < PARTICLE_COUNT; i++) {
+          const v = particleVelocities[i];
+          v.angle += 0.012 * v.speed;
+          v.y += Math.sin(t * 1.5 + i) * 0.003;
+
+          positions[i * 3]     = Math.cos(v.angle) * v.radius;
+          positions[i * 3 + 1] = v.y;
+          positions[i * 3 + 2] = Math.sin(v.angle) * v.radius;
+        }
+        particleGeo.attributes.position.needsUpdate = true;
+      }
+
+      // 3. Ondulación de la cinta ceremonial de seda
+      if (ribbonTail) {
+        ribbonTail.rotation.z = Math.sin(t * 2.0) * 0.08;
+        ribbonTail.rotation.x = 0.18 + Math.cos(t * 1.7) * 0.05;
+      }
+
+      // 4. Suave respiración de elevación del atril
+      deskGroup.position.y = 0.26 + Math.sin(t * 1.2) * 0.006;
+
+      controls.update();
+      renderer.render(scene, camera);
+    }
+    animate();
+
+    /* =========================================================================
+       7. EVENTOS E INTERACCIÓN DE USUARIO
+       ========================================================================= */
+    window.addEventListener("resize", () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+
+    // Control de Frecuencia de Lissajous
+    const sliderLissajous = document.getElementById("slider-lissajous-freq");
+    const valLissajous = document.getElementById("val-lissajous-freq");
+    sliderLissajous.addEventListener("input", (e) => {
+      const f = parseInt(e.target.value, 10);
+      valLissajous.textContent = `${f} : 2`;
+      renderLissajousPergamino(f);
+    });
+
+    // Control de Velocidad de Lorenz
+    const sliderLorenz = document.getElementById("slider-lorenz-speed");
+    const valLorenz = document.getElementById("val-lorenz-speed");
+    sliderLorenz.addEventListener("input", (e) => {
+      lorenzSpeed = parseFloat(e.target.value);
+      valLorenz.textContent = `${lorenzSpeed.toFixed(1)}x`;
+    });
+
+    // Alternar Campo de Flujo
+    document.getElementById("btn-toggle-flow").addEventListener("click", () => {
+      flowActive = !flowActive;
+      particleCloud.visible = flowActive;
+      document.getElementById("val-flow-intensity").textContent = flowActive ? "Activo" : "Pausado";
+    });
+
+    // Nueva Semilla
+    document.getElementById("btn-randomize-seed").addEventListener("click", () => {
+      const randFreq = Math.floor(Math.random() * 6) + 1;
+      sliderLissajous.value = randFreq;
+      valLissajous.textContent = `${randFreq} : 2`;
+      renderLissajousPergamino(randFreq);
+    });
+
+    // Botones de Enfoque de Cámara
+    document.getElementById("btn-focus-book").addEventListener("click", () => {
+      camera.position.set(0, 0.85, 1.45);
+      controls.target.set(0, 0.35, 0);
+    });
+
+    document.getElementById("btn-focus-attractor").addEventListener("click", () => {
+      camera.position.set(1.4, 0.7, 1.8);
+      controls.target.set(0, 0.45, 0);
+    });
+
+    document.getElementById("btn-focus-full").addEventListener("click", () => {
+      camera.position.set(0, 0.65, 3.8);
+      controls.target.set(0, 0, 0);
+    });
+  </script>
+</body>
+</html>
+

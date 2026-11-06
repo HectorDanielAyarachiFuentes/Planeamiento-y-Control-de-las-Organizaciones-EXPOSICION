@@ -1,0 +1,49 @@
+Created At: 2026-10-31T00:23:57-03:00
+Completed At: 2026-10-31T00:23:57-03:00
+Showing lines 90-135 of 1172
+90:   ctx.lineWidth = 1.5;
+91:   ctx.beginPath();
+92:   ctx.moveTo(48, 74);
+93:   ctx.lineTo(470, 74);
+94:   ctx.stroke();
+95: 
+96:   // Bloques de texto justificado de tesina
+97:   let y = 104;
+98:   const sections = [
+99:     { title: "SECCIÓN 1 — MODELO DE GESTIÓN Y GOBERNANZA", lines: [400, 385, 395, 340, 260] },
+100:     { title: "SECCIÓN 2 — POLIGOBERNANZA Y ESTADO PLATAFORMA", lines: [410, 395, 370, 310] },
+101:     { title: "SECCIÓN 3 — TRAMADOS INSTITUCIONALES AD HOC", lines: [390, 405, 360, 380, 290] },
+102:     { title: "SECCIÓN 4 — PLANIFICACIÓN SITUACIONAL Y FODA", lines: [415, 385, 390, 350, 320, 230] }
+103:   ];
+104: 
+105:   sections.forEach(sec => {
+106:     ctx.fillStyle = "#b45309";
+107:     ctx.font = "bold 13px 'Cinzel', serif, Georgia";
+108:     ctx.fillText(sec.title, 50, y);
+109:     y += 18;
+110: 
+111:     ctx.fillStyle = "#64748b";
+112:     sec.lines.forEach(w => {
+113:       ctx.fillRect(50, y, w, 3.5);
+114:       y += 12;
+115:     });
+116:     y += 16;
+117:   });
+118: 
+119:   // Pie de página
+120:   ctx.fillStyle = "#94a3b8";
+121:   ctx.font = "italic 11px sans-serif";
+122:   ctx.fillText("CURZAS • UNCo — Planeamiento y Control de las Organizaciones", 50, 735);
+123:   ctx.textAlign = "right";
+124:   ctx.fillText("Pág. 1", 470, 735);
+125: 
+126:   _tfgLeftPageTex = new THREE.CanvasTexture(canvas);
+127:   return _tfgLeftPageTex;
+128: }
+129: 
+130: function getTFGRightPageTexture() {
+131:   if (_tfgRightPageTex) return _tfgRightPageTex;
+132:   const canvas = document.createElement("canvas");
+133:   canvas.width = 512;
+134:   canvas.height = 768;
+135:   const ctx = canvas.getContext("2d");

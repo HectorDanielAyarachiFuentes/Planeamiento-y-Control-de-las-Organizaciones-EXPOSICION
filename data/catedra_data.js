@@ -1,0 +1,410 @@
+/**
+ * Catálogo Oficial de Material de Cátedra (33 Documentos Indexados)
+ * Cátedra: Planeamiento y Control de las Organizaciones — CURZAS / UNCo
+ * Unidades I a V: Gobernanza, PES Matus, Diseño Organizacional, Finanzas Públicas y Control SIGEN
+ */
+const CATEDRA_MATERIAL_DATA = [
+  {
+    "nombre": "U1 - Abal Medina, J. M. (2025) - El Estado (pp. 23-61).pdf",
+    "titulo": "Abal Medina, J. M. (2025) — El Estado: Modelos de Gestión y Burocracia (pp. 23-61)",
+    "ext": ".pdf",
+    "tamano": "307.8 KB",
+    "bytes": 315182,
+    "ruta": "material/1️⃣ UNIDAD I Estado Modelos de Gestión y Gobernanza 🏛️/U1 - Abal Medina, J. M. (2025) - El Estado (pp. 23-61).pdf",
+    "categoriaSlug": "u1",
+    "categoriaLabel": "Unidad I: Estado & Gobernanza",
+    "seccion": "Unidad I: Estado, Modelos de Gestión y Gobernanza",
+    "subseccion": "Bibliografía Obligatoria"
+  },
+  {
+    "nombre": "U1 - Aguilar Villanueva, Luis (2015) - Gobernanza y Gestion Publica (Cap. 1 Gobernanza, pp. 31-120).pdf",
+    "titulo": "Aguilar Villanueva, Luis (2015) — Gobernanza y Gestión Pública (Cap. 1: Gobernanza, pp. 31-120)",
+    "ext": ".pdf",
+    "tamano": "529.5 KB",
+    "bytes": 542206,
+    "ruta": "material/1️⃣ UNIDAD I Estado Modelos de Gestión y Gobernanza 🏛️/U1 - Aguilar Villanueva, Luis (2015) - Gobernanza y Gestion Publica (Cap. 1 Gobernanza, pp. 31-120).pdf",
+    "categoriaSlug": "u1",
+    "categoriaLabel": "Unidad I: Estado & Gobernanza",
+    "seccion": "Unidad I: Estado, Modelos de Gestión y Gobernanza",
+    "subseccion": "Bibliografía Obligatoria"
+  },
+  {
+    "nombre": "U1 - Aguilar Villanueva, Luis (2015) - Gobernanza y Gestion Publica (Caps. 1 y 2 Gobernanza y NGP, pp. 31-208).pdf",
+    "titulo": "Aguilar Villanueva, Luis (2015) — Gobernanza y NGP (Caps. 1 y 2: Gobernanza y NGP, pp. 31-208)",
+    "ext": ".pdf",
+    "tamano": "994.7 KB",
+    "bytes": 1018565,
+    "ruta": "material/1️⃣ UNIDAD I Estado Modelos de Gestión y Gobernanza 🏛️/U1 - Aguilar Villanueva, Luis (2015) - Gobernanza y Gestion Publica (Caps. 1 y 2 Gobernanza y NGP, pp. 31-208).pdf",
+    "categoriaSlug": "u1",
+    "categoriaLabel": "Unidad I: Estado & Gobernanza",
+    "seccion": "Unidad I: Estado, Modelos de Gestión y Gobernanza",
+    "subseccion": "Bibliografía Obligatoria"
+  },
+  {
+    "nombre": "U1 - Blutman, Gustavo y Cao, Horacio (2023) - Cap. 1 Un acercamiento al futuro del empleo publico (pp. 46-121).pdf",
+    "titulo": "Blutman, Gustavo y Cao, Horacio (2023) — Futuro del Empleo Público (Cap. 1, pp. 46-121)",
+    "ext": ".pdf",
+    "tamano": "1.1 MB",
+    "bytes": 1151417,
+    "ruta": "material/1️⃣ UNIDAD I Estado Modelos de Gestión y Gobernanza 🏛️/U1 - Blutman, Gustavo y Cao, Horacio (2023) - Cap. 1 Un acercamiento al futuro del empleo publico (pp. 46-121).pdf",
+    "categoriaSlug": "u1",
+    "categoriaLabel": "Unidad I: Estado & Gobernanza",
+    "seccion": "Unidad I: Estado, Modelos de Gestión y Gobernanza",
+    "subseccion": "Bibliografía Obligatoria"
+  },
+  {
+    "nombre": "U1 - Cao, Horacio y Blutman, Gustavo (2023) - Escenarios futuros para el Estado y la Administracion Publica (pp. 33-66).pdf",
+    "titulo": "Cao, Horacio y Blutman, Gustavo (2023) — Escenarios Futuros para el Estado y la AP (pp. 33-66)",
+    "ext": ".pdf",
+    "tamano": "442.6 KB",
+    "bytes": 453200,
+    "ruta": "material/1️⃣ UNIDAD I Estado Modelos de Gestión y Gobernanza 🏛️/U1 - Cao, Horacio y Blutman, Gustavo (2023) - Escenarios futuros para el Estado y la Administracion Publica (pp. 33-66).pdf",
+    "categoriaSlug": "u1",
+    "categoriaLabel": "Unidad I: Estado & Gobernanza",
+    "seccion": "Unidad I: Estado, Modelos de Gestión y Gobernanza",
+    "subseccion": "Bibliografía Obligatoria"
+  },
+  {
+    "nombre": "U1 - Cao, Horacio y otros (2022) - Continuidades, rupturas y desafios (Capitulos 1 y 2).pdf",
+    "titulo": "Cao, Horacio y otros (2022) — Continuidades, Rupturas y Desafíos de la APN (Caps. 1 y 2)",
+    "ext": ".pdf",
+    "tamano": "318.0 KB",
+    "bytes": 325641,
+    "ruta": "material/1️⃣ UNIDAD I Estado Modelos de Gestión y Gobernanza 🏛️/U1 - Cao, Horacio y otros (2022) - Continuidades, rupturas y desafios (Capitulos 1 y 2).pdf",
+    "categoriaSlug": "u1",
+    "categoriaLabel": "Unidad I: Estado & Gobernanza",
+    "seccion": "Unidad I: Estado, Modelos de Gestión y Gobernanza",
+    "subseccion": "Bibliografía Obligatoria"
+  },
+  {
+    "nombre": "U1 - Grandinetti, Rey y Serafinoff (2025) - Relaciones intergubernamentales Cap 5 (pp. 221-263).pdf",
+    "titulo": "Grandinetti, Rey y Serafinoff (2025) — Relaciones Intergubernamentales y Articulación Multinivel (Cap. 5)",
+    "ext": ".pdf",
+    "tamano": "849.6 KB",
+    "bytes": 869970,
+    "ruta": "material/1️⃣ UNIDAD I Estado Modelos de Gestión y Gobernanza 🏛️/U1 - Grandinetti, Rey y Serafinoff (2025) - Relaciones intergubernamentales Cap 5 (pp. 221-263).pdf",
+    "categoriaSlug": "u1",
+    "categoriaLabel": "Unidad I: Estado & Gobernanza",
+    "seccion": "Unidad I: Estado, Modelos de Gestión y Gobernanza",
+    "subseccion": "Bibliografía Obligatoria"
+  },
+  {
+    "nombre": "U1 - IA en la practica - Casos de uso y aplicaciones con agentes (Transcripcion).txt",
+    "titulo": "IA en la Práctica — Casos de Uso y Agentes Inteligentes en el Sector Público (Transcripción)",
+    "ext": ".txt",
+    "tamano": "53.6 KB",
+    "bytes": 54838,
+    "ruta": "material/1️⃣ UNIDAD I Estado Modelos de Gestión y Gobernanza 🏛️/U1 - IA en la practica - Casos de uso y aplicaciones con agentes (Transcripcion).txt",
+    "categoriaSlug": "u1",
+    "categoriaLabel": "Unidad I: Estado & Gobernanza",
+    "seccion": "Unidad I: Estado, Modelos de Gestión y Gobernanza",
+    "subseccion": "Transcripciones y Clases"
+  },
+  {
+    "nombre": "U1 - LA ADMINISTRACION PUBLICA - CAO HORACIO (Transcripcion).txt",
+    "titulo": "Horacio Cao — La Administración Pública: Tensiones y Perspectivas (Transcripción)",
+    "ext": ".txt",
+    "tamano": "52.9 KB",
+    "bytes": 54178,
+    "ruta": "material/1️⃣ UNIDAD I Estado Modelos de Gestión y Gobernanza 🏛️/U1 - LA ADMINISTRACION PUBLICA - CAO HORACIO (Transcripcion).txt",
+    "categoriaSlug": "u1",
+    "categoriaLabel": "Unidad I: Estado & Gobernanza",
+    "seccion": "Unidad I: Estado, Modelos de Gestión y Gobernanza",
+    "subseccion": "Transcripciones y Clases"
+  },
+  {
+    "nombre": "U1 - Oszlak - El Estado en la era exponencial. Cap 2 Capacidades estatales frente a la disrupcion tecnologica (pp. 101-230).pdf",
+    "titulo": "Oszlak, Oscar (2020) — El Estado en la Era Exponencial (Cap. 2: Capacidades y Disrupción)",
+    "ext": ".pdf",
+    "tamano": "704.9 KB",
+    "bytes": 721802,
+    "ruta": "material/1️⃣ UNIDAD I Estado Modelos de Gestión y Gobernanza 🏛️/U1 - Oszlak - El Estado en la era exponencial. Cap 2 Capacidades estatales frente a la disrupcion tecnologica (pp. 101-230).pdf",
+    "categoriaSlug": "u1",
+    "categoriaLabel": "Unidad I: Estado & Gobernanza",
+    "seccion": "Unidad I: Estado, Modelos de Gestión y Gobernanza",
+    "subseccion": "Bibliografía Obligatoria"
+  },
+  {
+    "nombre": "U2 - 901-inf-final.pdf",
+    "titulo": "Documento 901 — Informe Metodológico de Planificación Institucional",
+    "ext": ".pdf",
+    "tamano": "772.6 KB",
+    "bytes": 791147,
+    "ruta": "material/2️⃣ UNIDAD II Planeamiento Estratégico y Capacidades Estatales 🎯/U2 - 901-inf-final.pdf",
+    "categoriaSlug": "u2",
+    "categoriaLabel": "Unidad II: Planeamiento (PES)",
+    "seccion": "Unidad II: Planeamiento Estratégico y Capacidades Estatales",
+    "subseccion": "Documentos Técnicos"
+  },
+  {
+    "nombre": "U2 - CAPACIDADES-BAZALDUA.pdf",
+    "titulo": "Bazaldúa — Capacidades Estatales y Modelos de Gestión Pública",
+    "ext": ".pdf",
+    "tamano": "618.9 KB",
+    "bytes": 633754,
+    "ruta": "material/2️⃣ UNIDAD II Planeamiento Estratégico y Capacidades Estatales 🎯/U2 - CAPACIDADES-BAZALDUA.pdf",
+    "categoriaSlug": "u2",
+    "categoriaLabel": "Unidad II: Planeamiento (PES)",
+    "seccion": "Unidad II: Planeamiento Estratégico y Capacidades Estatales",
+    "subseccion": "Bibliografía Obligatoria"
+  },
+  {
+    "nombre": "U2 - Dialnet-PlanificacionYGobierno- MATUS.pdf",
+    "titulo": "Matus, Carlos — Planificación y Gobierno: Teoría del PES y Triángulo de Gobierno",
+    "ext": ".pdf",
+    "tamano": "1.8 MB",
+    "bytes": 1898370,
+    "ruta": "material/2️⃣ UNIDAD II Planeamiento Estratégico y Capacidades Estatales 🎯/U2 - Dialnet-PlanificacionYGobierno- MATUS.pdf",
+    "categoriaSlug": "u2",
+    "categoriaLabel": "Unidad II: Planeamiento (PES)",
+    "seccion": "Unidad II: Planeamiento Estratégico y Capacidades Estatales",
+    "subseccion": "Bibliografía Obligatoria"
+  },
+  {
+    "nombre": "U2 - Manual_de_Induccion_2019_MPF.pdf",
+    "titulo": "Manual de Inducción MPF (2019) — Circuitos y Planificación Operativa",
+    "ext": ".pdf",
+    "tamano": "6.7 MB",
+    "bytes": 7057012,
+    "ruta": "material/2️⃣ UNIDAD II Planeamiento Estratégico y Capacidades Estatales 🎯/U2 - Manual_de_Induccion_2019_MPF.pdf",
+    "categoriaSlug": "u2",
+    "categoriaLabel": "Unidad II: Planeamiento (PES)",
+    "seccion": "Unidad II: Planeamiento Estratégico y Capacidades Estatales",
+    "subseccion": "Manuales de Aplicación"
+  },
+  {
+    "nombre": "U2 - Matus, Carlos. Entrevista sobre problemáticas de gobierno en América Latina (1998).txt",
+    "titulo": "Matus, Carlos (1998) — Entrevista sobre Problemas de Gobierno y Gobernabilidad en AL",
+    "ext": ".txt",
+    "tamano": "9.1 KB",
+    "bytes": 9361,
+    "ruta": "material/2️⃣ UNIDAD II Planeamiento Estratégico y Capacidades Estatales 🎯/U2 - Matus, Carlos. Entrevista sobre problemáticas de gobierno en América Latina (1998).txt",
+    "categoriaSlug": "u2",
+    "categoriaLabel": "Unidad II: Planeamiento (PES)",
+    "seccion": "Unidad II: Planeamiento Estratégico y Capacidades Estatales",
+    "subseccion": "Testimonios y Ensayos Clave"
+  },
+  {
+    "nombre": "U2 - SOTELO PLANIFICACION.pdf",
+    "titulo": "Sotelo Maciel, Adrián — Planificación Estratégica en el Sector Público y Construcción de Viabilidad",
+    "ext": ".pdf",
+    "tamano": "6.0 MB",
+    "bytes": 6273139,
+    "ruta": "material/2️⃣ UNIDAD II Planeamiento Estratégico y Capacidades Estatales 🎯/U2 - SOTELO PLANIFICACION.pdf",
+    "categoriaSlug": "u2",
+    "categoriaLabel": "Unidad II: Planeamiento (PES)",
+    "seccion": "Unidad II: Planeamiento Estratégico y Capacidades Estatales",
+    "subseccion": "Bibliografía Obligatoria"
+  },
+  {
+    "nombre": "U2 - TESIS ANALISIS ORGANIZACIONAL DE LA EMPRESA CARMETALICA LTDA.[1].pdf",
+    "titulo": "Estudio de Caso Organizacional — Análisis de Procesos y Estructura en Carmetálica Ltda.",
+    "ext": ".pdf",
+    "tamano": "961.4 KB",
+    "bytes": 984491,
+    "ruta": "material/2️⃣ UNIDAD II Planeamiento Estratégico y Capacidades Estatales 🎯/U2 - TESIS ANALISIS ORGANIZACIONAL DE LA EMPRESA CARMETALICA LTDA.[1].pdf",
+    "categoriaSlug": "u2",
+    "categoriaLabel": "Unidad II: Planeamiento (PES)",
+    "seccion": "Unidad II: Planeamiento Estratégico y Capacidades Estatales",
+    "subseccion": "Estudios de Caso"
+  },
+  {
+    "nombre": "U3 - 20227.pdf",
+    "titulo": "Documento Técnico 20227 — Estructuras Orgánicas y Mapeo de Procesos",
+    "ext": ".pdf",
+    "tamano": "144.1 KB",
+    "bytes": 147575,
+    "ruta": "material/3️⃣ UNIDAD III Diseño Organizacional Procesos y Tecnologías Públicas ⚙️/U3 - 20227.pdf",
+    "categoriaSlug": "u3",
+    "categoriaLabel": "Unidad III: Diseño Organizacional",
+    "seccion": "Unidad III: Diseño Organizacional, Procesos y Tecnologías Públicas",
+    "subseccion": "Guías Técnicas"
+  },
+  {
+    "nombre": "U3 - FACES_n9_9-22.pdf",
+    "titulo": "Revista FACES Nº 9 (pp. 9-22) — Rediseño de Procesos y Estructuras en la Gestión Pública",
+    "ext": ".pdf",
+    "tamano": "481.1 KB",
+    "bytes": 492649,
+    "ruta": "material/3️⃣ UNIDAD III Diseño Organizacional Procesos y Tecnologías Públicas ⚙️/U3 - FACES_n9_9-22.pdf",
+    "categoriaSlug": "u3",
+    "categoriaLabel": "Unidad III: Diseño Organizacional",
+    "seccion": "Unidad III: Diseño Organizacional, Procesos y Tecnologías Públicas",
+    "subseccion": "Bibliografía Obligatoria"
+  },
+  {
+    "nombre": "U3 - Guía de estudio Unidad 3.pdf",
+    "titulo": "Guía de Estudio Cátedra — Unidad III: Diseño Organizacional, Estructuras y Procesos",
+    "ext": ".pdf",
+    "tamano": "99.1 KB",
+    "bytes": 101464,
+    "ruta": "material/3️⃣ UNIDAD III Diseño Organizacional Procesos y Tecnologías Públicas ⚙️/U3 - Guía de estudio Unidad 3.pdf",
+    "categoriaSlug": "u3",
+    "categoriaLabel": "Unidad III: Diseño Organizacional",
+    "seccion": "Unidad III: Diseño Organizacional, Procesos y Tecnologías Públicas",
+    "subseccion": "Guías de Cátedra"
+  },
+  {
+    "nombre": "U3 - INAP.pdf",
+    "titulo": "INAP — Manual Metodológico para el Análisis y Rediseño de Estructuras Organizacionales",
+    "ext": ".pdf",
+    "tamano": "55.0 KB",
+    "bytes": 56359,
+    "ruta": "material/3️⃣ UNIDAD III Diseño Organizacional Procesos y Tecnologías Públicas ⚙️/U3 - INAP.pdf",
+    "categoriaSlug": "u3",
+    "categoriaLabel": "Unidad III: Diseño Organizacional",
+    "seccion": "Unidad III: Diseño Organizacional, Procesos y Tecnologías Públicas",
+    "subseccion": "Normas y Guías INAP"
+  },
+  {
+    "nombre": "U3 - vdocuments.mx_8-forester-racionalidad-limitada-y-salir-del-paso.pdf",
+    "titulo": "Forester, John — Racionalidad Limitada, Salir del Paso y Diseño en Entornos Complejos",
+    "ext": ".pdf",
+    "tamano": "1.2 MB",
+    "bytes": 1232974,
+    "ruta": "material/3️⃣ UNIDAD III Diseño Organizacional Procesos y Tecnologías Públicas ⚙️/U3 - vdocuments.mx_8-forester-racionalidad-limitada-y-salir-del-paso.pdf",
+    "categoriaSlug": "u3",
+    "categoriaLabel": "Unidad III: Diseño Organizacional",
+    "seccion": "Unidad III: Diseño Organizacional, Procesos y Tecnologías Públicas",
+    "subseccion": "Bibliografía Obligatoria"
+  },
+  {
+    "nombre": "U3 - ZELLER- ORGANIZACION DEL ESTADO Y APN.pdf",
+    "titulo": "Zeller, Norberto — Organización del Estado y Administración Pública Nacional: Configuración Institucional",
+    "ext": ".pdf",
+    "tamano": "745.2 KB",
+    "bytes": 763078,
+    "ruta": "material/3️⃣ UNIDAD III Diseño Organizacional Procesos y Tecnologías Públicas ⚙️/U3 - ZELLER- ORGANIZACION DEL ESTADO Y APN.pdf",
+    "categoriaSlug": "u3",
+    "categoriaLabel": "Unidad III: Diseño Organizacional",
+    "seccion": "Unidad III: Diseño Organizacional, Procesos y Tecnologías Públicas",
+    "subseccion": "Bibliografía Obligatoria"
+  },
+  {
+    "nombre": "U4 - J14_-Marcos-Makon_2024_-Estrategia.pdf",
+    "titulo": "Makon, Marcos (2024) — Estrategia, Planificación y Presupuesto por Programas en el Sector Público",
+    "ext": ".pdf",
+    "tamano": "562.7 KB",
+    "bytes": 576218,
+    "ruta": "material/4️⃣ UNIDAD IV Presupuesto, Gestión Financiera y Control de Gestión 💰/U4 - J14_-Marcos-Makon_2024_-Estrategia.pdf",
+    "categoriaSlug": "u4",
+    "categoriaLabel": "Unidad IV: Presupuesto & Finanzas",
+    "seccion": "Unidad IV: Presupuesto, Gestión Financiera y Control de Gestión",
+    "subseccion": "Bibliografía Obligatoria"
+  },
+  {
+    "nombre": "U4 - Makon sist integrados de adm financiera.pdf",
+    "titulo": "Makon, Marcos — Sistemas Integrados de Administración Financiera (SIAF) y la Ley 24.156",
+    "ext": ".pdf",
+    "tamano": "2.2 MB",
+    "bytes": 2321083,
+    "ruta": "material/4️⃣ UNIDAD IV Presupuesto, Gestión Financiera y Control de Gestión 💰/U4 - Makon sist integrados de adm financiera.pdf",
+    "categoriaSlug": "u4",
+    "categoriaLabel": "Unidad IV: Presupuesto & Finanzas",
+    "seccion": "Unidad IV: Presupuesto, Gestión Financiera y Control de Gestión",
+    "subseccion": "Bibliografía Obligatoria"
+  },
+  {
+    "nombre": "U4 - Presupuesto_Sistema_Presupuestario_Publico.pdf",
+    "titulo": "Manual del Sistema Presupuestario Público — Clasificadores, Ciclo y Ejecución Presupuestaria",
+    "ext": ".pdf",
+    "tamano": "1.4 MB",
+    "bytes": 1429051,
+    "ruta": "material/4️⃣ UNIDAD IV Presupuesto, Gestión Financiera y Control de Gestión 💰/U4 - Presupuesto_Sistema_Presupuestario_Publico.pdf",
+    "categoriaSlug": "u4",
+    "categoriaLabel": "Unidad IV: Presupuesto & Finanzas",
+    "seccion": "Unidad IV: Presupuesto, Gestión Financiera y Control de Gestión",
+    "subseccion": "Manuales Técnicos Oficiales"
+  },
+  {
+    "nombre": "U4 - Schweinheim sistema de administracion financiera.pdf",
+    "titulo": "Schweinheim, Guillermo — El Sistema de Administración Financiera Gubernamental y el Control Público",
+    "ext": ".pdf",
+    "tamano": "182.3 KB",
+    "bytes": 186695,
+    "ruta": "material/4️⃣ UNIDAD IV Presupuesto, Gestión Financiera y Control de Gestión 💰/U4 - Schweinheim sistema de administracion financiera.pdf",
+    "categoriaSlug": "u4",
+    "categoriaLabel": "Unidad IV: Presupuesto & Finanzas",
+    "seccion": "Unidad IV: Presupuesto, Gestión Financiera y Control de Gestión",
+    "subseccion": "Bibliografía Obligatoria"
+  },
+  {
+    "nombre": "U5 - Feinstein, O. (2016) - La evaluacion pragmatica de politicas publicas (pp. 27-48).pdf",
+    "titulo": "Feinstein, Osvaldo (2016) — La Evaluación Pragmática de Políticas Públicas: Criterios y Métodos (pp. 27-48)",
+    "ext": ".pdf",
+    "tamano": "145.5 KB",
+    "bytes": 149000,
+    "ruta": "material/5️⃣ UNIDAD V Control, Auditoría, Participación y Evaluación 🔍/U5 - Feinstein, O. (2016) - La evaluacion pragmatica de politicas publicas (pp. 27-48).pdf",
+    "categoriaSlug": "u5",
+    "categoriaLabel": "Unidad V: Control & Evaluación",
+    "seccion": "Unidad V: Control, Auditoría, Participación y Evaluación",
+    "subseccion": "Bibliografía Obligatoria"
+  },
+  {
+    "nombre": "U5 - Guia Metodologica para el Diseno de Compromisos, Indicadores y Metas (PI - 2027).pdf",
+    "titulo": "Guía Metodológica Oficial — Diseño de Compromisos, Indicadores y Metas de Gestión (PI-2027)",
+    "ext": ".pdf",
+    "tamano": "1.2 MB",
+    "bytes": 1293876,
+    "ruta": "material/5️⃣ UNIDAD V Control, Auditoría, Participación y Evaluación 🔍/U5 - Guia Metodologica para el Diseno de Compromisos, Indicadores y Metas (PI - 2027).pdf",
+    "categoriaSlug": "u5",
+    "categoriaLabel": "Unidad V: Control & Evaluación",
+    "seccion": "Unidad V: Control, Auditoría, Participación y Evaluación",
+    "subseccion": "Guías Metodológicas Oficiales"
+  },
+  {
+    "nombre": "U5 - Martinez Nogueira, R. (2016) - Introduccion (pp. 15-26).pdf",
+    "titulo": "Martínez Nogueira, Roberto (2016) — Introducción a la Evaluación de Políticas y Control de Gestión (pp. 15-26)",
+    "ext": ".pdf",
+    "tamano": "87.8 KB",
+    "bytes": 89906,
+    "ruta": "material/5️⃣ UNIDAD V Control, Auditoría, Participación y Evaluación 🔍/U5 - Martinez Nogueira, R. (2016) - Introduccion (pp. 15-26).pdf",
+    "categoriaSlug": "u5",
+    "categoriaLabel": "Unidad V: Control & Evaluación",
+    "seccion": "Unidad V: Control, Auditoría, Participación y Evaluación",
+    "subseccion": "Bibliografía Obligatoria"
+  },
+  {
+    "nombre": "U5 - Mayne, J. (2016) - Abordaje de la atribucion a traves del analisis de contribucion (pp. 305-330).pdf",
+    "titulo": "Mayne, John (2016) — Abordaje de la Atribución a través del Análisis de Contribución en Políticas Públicas",
+    "ext": ".pdf",
+    "tamano": "200.4 KB",
+    "bytes": 205197,
+    "ruta": "material/5️⃣ UNIDAD V Control, Auditoría, Participación y Evaluación 🔍/U5 - Mayne, J. (2016) - Abordaje de la atribucion a traves del analisis de contribucion (pp. 305-330).pdf",
+    "categoriaSlug": "u5",
+    "categoriaLabel": "Unidad V: Control & Evaluación",
+    "seccion": "Unidad V: Control, Auditoría, Participación y Evaluación",
+    "subseccion": "Bibliografía Obligatoria"
+  },
+  {
+    "nombre": "U5 - Ramirez, T. I. (2023) - Indicadores de gestion. Herramienta informativa del control de gestion publica.pdf",
+    "titulo": "Ramírez, T. I. (2023) — Indicadores de Gestión: Herramienta Informativa del Control de Gestión Pública",
+    "ext": ".pdf",
+    "tamano": "372.1 KB",
+    "bytes": 381027,
+    "ruta": "material/5️⃣ UNIDAD V Control, Auditoría, Participación y Evaluación 🔍/U5 - Ramirez, T. I. (2023) - Indicadores de gestion. Herramienta informativa del control de gestion publica.pdf",
+    "categoriaSlug": "u5",
+    "categoriaLabel": "Unidad V: Control & Evaluación",
+    "seccion": "Unidad V: Control, Auditoría, Participación y Evaluación",
+    "subseccion": "Bibliografía Obligatoria"
+  },
+  {
+    "nombre": "U5 - SIGEN (2025) - Normas de Auditoria Interna Gubernamental.pdf",
+    "titulo": "SIGEN (2025) — Normas de Auditoría Interna Gubernamental (Marco Oficial de Auditoría y Control)",
+    "ext": ".pdf",
+    "tamano": "1.4 MB",
+    "bytes": 1470496,
+    "ruta": "material/5️⃣ UNIDAD V Control, Auditoría, Participación y Evaluación 🔍/U5 - SIGEN (2025) - Normas de Auditoria Interna Gubernamental.pdf",
+    "categoriaSlug": "u5",
+    "categoriaLabel": "Unidad V: Control & Evaluación",
+    "seccion": "Unidad V: Control, Auditoría, Participación y Evaluación",
+    "subseccion": "Normativa Oficial SIGEN"
+  }
+];
+
+if (typeof window !== "undefined") {
+  window.CATEDRA_MATERIAL_DATA = CATEDRA_MATERIAL_DATA;
+}
+if (typeof module !== "undefined" && module.exports) {
+  module.exports = CATEDRA_MATERIAL_DATA;
+}

@@ -1,0 +1,99 @@
+Created At: 2026-10-31T00:06:39-03:00
+Completed At: 2026-10-31T00:06:40-03:00
+Showing lines 550-645 of 1204
+550:       const line = new THREE.Line(lineGeo, lineMat);
+551:       line.computeLineDistances();
+552:       networkLinksGroup.add(line);
+553:     });
+554: 
+555:     // ═══════════════════════════════════════════════════════════════════════════
+556:     // 5. PULSOS PARAMÉTRICOS DE FLUJO EN VIVO (DATA PACKETS)
+557:     // ═══════════════════════════════════════════════════════════════════════════
+558:     const pulses = [];
+559:     const pulseColors = [0x38bdf8, 0xfbbf24, 0x34d399, 0x60a5fa, 0x38bdf8, 0xfbbf24, 0x34d399, 0x60a5fa];
+560: 
+561:     for (let i = 0; i < 8; i++) {
+562:       const pGeo = new THREE.SphereGeometry(0.038, 12, 12);
+563:       const pMat = new THREE.MeshBasicMaterial({
+564:         color: pulseColors[i % pulseColors.length]
+565:       });
+566:       const pulseMesh = new THREE.Mesh(pGeo, pMat);
+567:       pulseMesh.userData = {
+568:         edgeIndex: i % ALL_EDGES.length,
+569:         progress: i / 8
+570:       };
+571:       networkLinksGroup.add(pulseMesh);
+572:       pulses.push(pulseMesh);
+573:     }
+574: 
+575:     // ═══════════════════════════════════════════════════════════════════════════
+576:     // 6. CARTELA MONUMENTAL DE CABECERA SUPERIOR
+577:     // ═══════════════════════════════════════════════════════════════════════════
+578:     const mainTitleBadge = makeBadgeSprite(
+579:       "INFORME INTEGRAL DE PLANEAMIENTO Y GESTIÓN",
+580:       "Centro Universitario Regional Zona Atlántica • CURZAS - UNCo",
+581:       "#0f2444",
+582:       "#ffffff"
+583:     );
+584:     mainTitleBadge.position.set(0, 1.55, 0);
+585:     mainTitleBadge.scale.set(1.95, 0.52, 1);
+586:     g.add(mainTitleBadge);
+587: 
+588:     // Registro de variables para el loop de animación
+589:     engine.anim01_modelGroup = modelGroup;
+590:     engine.anim01_beacon = beacon;
+591:     engine.anim01_orbitRing = orbitRing;
+592:     engine.anim01_slabs = ejeSlabs;
+593:     engine.anim01_pulses = pulses;
+594:     engine.anim01_edges = ALL_EDGES;
+595:   },
+596: 
+597:   animate(engine, t) {
+598:     // 1. Rotación serena del conjunto orbital (velocidad calmada)
+599:     if (engine.anim01_modelGroup) {
+600:       engine.anim01_modelGroup.rotation.y = t * 0.12;
+601:     }
+602: 
+603:     // 2. Faro central: rotación propia y respiración de luz
+604:     if (engine.anim01_beacon) {
+605:       engine.anim01_beacon.rotation.y = t * 0.8;
+606:       engine.anim01_beacon.rotation.x = Math.sin(t * 0.6) * 0.15;
+607:     }
+608:     if (engine.anim01_orbitRing) {
+609:       engine.anim01_orbitRing.rotation.z = t * 0.9;
+610:     }
+611: 
+612:     // 3. Levitación orgánica ("breathing effect") con desfase armónico en los 4 Ejes
+613:     if (engine.anim01_slabs) {
+614:       engine.anim01_slabs.forEach(slab => {
+615:         slab.group.position.y = slab.baseY + Math.sin(t * 1.8 + slab.phase) * 0.022;
+616:       });
+617:     }
+618: 
+619:     // 4. Trayectoria paramétrica de los pulsos de datos por los enlaces
+620:     if (engine.anim01_pulses && engine.anim01_edges) {
+621:       const dt = 0.016; // Aproximación estándar de delta frame
+622:       engine.anim01_pulses.forEach(p => {
+623:         p.userData.progress += dt * 0.42;
+624:         if (p.userData.progress > 1.0) p.userData.progress = 0;
+625: 
+626:         const edge = engine.anim01_edges[p.userData.edgeIndex];
+627:         const tVal = p.userData.progress;
+628: 
+629:         const pA = edge.from;
+630:         const pB = edge.to;
+631: 
+632:         // Interpolación lineal en X y Z
+633:         p.position.x = pA[0] + (pB[0] - pA[0]) * tVal;
+634:         p.position.z = pA[2] + (pB[2] - pA[2]) * tVal;
+635:         // Elevación en arco parabólico sobre el plano de la maqueta
+636:         p.position.y = pA[1] + (pB[1] - pA[1]) * tVal + Math.sin(tVal * Math.PI) * 0.14;
+637:       });
+638:     }
+639:   }
+640: };
+641: 
+642: window.Presentation3D_Objects["anim_02"] = {
+643:   build(engine, g) {
+644:     engine.createMuseumPlinth(g, 1.35, 0.22, -1.22);
+645: 
