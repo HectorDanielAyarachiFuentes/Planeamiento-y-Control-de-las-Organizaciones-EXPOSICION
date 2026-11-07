@@ -631,12 +631,113 @@ class PresentationApp {
     }
 
     this.bulletsElement.innerHTML = "";
-    const bulletsList = slide.puntosClave || slide.bullets || [];
-    bulletsList.forEach((punto) => {
-      const li = document.createElement("li");
-      li.textContent = punto;
-      this.bulletsElement.appendChild(li);
-    });
+    this.bulletsElement.classList.remove("intro-mode", "avances-mode");
+
+    if (index === 0 || slide.id === "slide_1" || slide.layout === "intro_showcase") {
+      this.bulletsElement.classList.add("intro-mode");
+      const introCards = [
+        {
+          badge: "EXPOSITOR",
+          icon: "🎓",
+          title: "Héctor Daniel Ayarachi Fuentes",
+          sub: "Téc. Sup. en Recursos Humanos • Estudiante de Licenciatura",
+          meta: "Legajo N° 8252 • CURZAS — Sede Viedma"
+        },
+        {
+          badge: "CASA DE ESTUDIOS",
+          icon: "🏛️",
+          title: "CURZAS — Sede Viedma",
+          sub: "Centro Universitario Regional Zona Atlántica y Sur",
+          meta: "Universidad Nacional del Comahue (UNCo)"
+        },
+        {
+          badge: "CÁTEDRA 2026",
+          icon: "📚",
+          title: "Planeamiento y Control",
+          sub: "Ciclo Académico 2026 • Dpto. de Administración Pública",
+          meta: "Docentes: Mgter. Susana Lopez • Lic. Carlos Jauge"
+        },
+        {
+          badge: "OBJETIVO DE LA DEFENSA",
+          icon: "⚖️",
+          title: "Defensa Integral de los 4 Avances",
+          sub: "Diagnóstico Situado, Estructura Burocrática, Poligobernanza y Presupuesto",
+          meta: "Investigación Institucional Rigurosa • Viedma, Río Negro"
+        }
+      ];
+
+      introCards.forEach((c) => {
+        const li = document.createElement("li");
+        li.className = "intro-card";
+        li.innerHTML = `
+          <div class="intro-card-header">
+            <span class="intro-card-badge">${c.badge}</span>
+            <span class="intro-card-icon">${c.icon}</span>
+          </div>
+          <h4 class="intro-card-title">${c.title}</h4>
+          <p class="intro-card-sub">${c.sub}</p>
+          <div class="intro-card-meta">${c.meta}</div>
+        `;
+        this.bulletsElement.appendChild(li);
+      });
+    } else if (index === 1 || slide.id === "slide_2" || slide.layout === "avances_summary") {
+      this.bulletsElement.classList.add("avances-mode");
+      const avances = [
+        {
+          num: "AVANCE 1",
+          eje: "Modelo & Gobernanza",
+          title: "Marco Institucional y Burocracia Profesional",
+          text: "Burocracia profesional que asegura legalidad y convenios paritarios, frente al reto de evitar el aislamiento en el co-gobierno."
+        },
+        {
+          num: "AVANCE 2",
+          eje: "Poligobernanza & PES",
+          title: "Red Territorial Compleja en 10 Nodos",
+          text: "Superación de silos de datos con CONICET/INTA mediante concertación política y planificación situacional (Matus)."
+        },
+        {
+          num: "AVANCE 3",
+          eje: "Estructura & Procesos",
+          title: "Circuitos de Personal y Ecosistema Digital",
+          text: "Organigrama real frente al formal; trazabilidad del circuito de licencias y superación de la inercia del papel."
+        },
+        {
+          num: "AVANCE 4",
+          eje: "Presupuesto & Personas",
+          title: "Centralidad del Inciso 1 y Factor Humano",
+          text: "90,2% del presupuesto destinado a salarios con 40% de Zona Desfavorable; el personal es la auténtica capacidad estatal."
+        }
+      ];
+
+      avances.forEach((a) => {
+        const li = document.createElement("li");
+        li.className = "avance-summary-card";
+        li.innerHTML = `
+          <div class="avance-row-header">
+            <span class="avance-pill">${a.num}</span>
+            <span class="avance-eje-tag">${a.eje}</span>
+            <h4 class="avance-row-title">${a.title}</h4>
+          </div>
+          <p class="avance-row-text">${a.text}</p>
+        `;
+        this.bulletsElement.appendChild(li);
+      });
+    } else {
+      const bulletsList = slide.puntosClave || slide.bullets || [];
+      bulletsList.forEach((punto) => {
+        const li = document.createElement("li");
+        li.className = "slide-bullet-item";
+        const colonIdx = punto.indexOf(":");
+        if (colonIdx > 0 && colonIdx < 50) {
+          const concept = punto.slice(0, colonIdx).trim();
+          const desc = punto.slice(colonIdx + 1).trim();
+          li.innerHTML = `<span class="bullet-concept">${concept}:</span><span class="bullet-desc">${desc}</span>`;
+        } else {
+          li.innerHTML = `<span class="bullet-desc">${punto}</span>`;
+        }
+        this.bulletsElement.appendChild(li);
+      });
+    }
 
     if (slide.dispositivoAnatomy) {
       const anatomyBox = document.createElement("div");

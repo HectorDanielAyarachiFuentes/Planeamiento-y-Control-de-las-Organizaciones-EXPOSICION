@@ -226,10 +226,10 @@ const PRESENTACION_DATA = {
       "titulo": "Informe Integral de Planeamiento y Gestión Organizacional",
       "subtitulo": "Diagnóstico Situado, Estructura Burocrática, Poligobernanza y Presupuesto en el CURZAS (UNCo)",
       "puntosClave": [
-        "Quién soy: Tec. Sup. en Recursos Humanos Héctor Daniel Ayarachi Fuentes, estudiante del Ciclo de Licenciatura en RR. HH.",
-        "Nuestra Institución: Centro Universitario Regional Zona Atlántica y Sur (CURZAS) • Universidad Nacional del Comahue.",
-        "Espacio de Cátedra: Planeamiento y Control de las Organizaciones (2026) • Mgter. Susana Lopez y Lic. Carlos Jauge.",
-        "Propósito de la Exposición: Defender de forma ágil, clara y rigurosa los 4 Avances del trabajo final de investigación institucional."
+        "Expositor: Téc. Sup. en Recursos Humanos Héctor Daniel Ayarachi Fuentes (Ciclo de Licenciatura • Legajo N° 8252)",
+        "Casa de Estudios: CURZAS — Centro Universitario Regional Zona Atlántica y Sur (UNCo • Sede Viedma)",
+        "Espacio de Cátedra: Planeamiento y Control de las Organizaciones 2026 (Mgter. Susana Lopez • Lic. Carlos Jauge)",
+        "Propósito de la Exposición: Defensa integral de los 4 Avances del Diagnóstico Situado Institucional"
       ],
       "metadatosFooter": "Carátula Oficial y Presentación del Estudiante • Cátedra Planeamiento y Control 2026 • Viedma",
       "escena3D": "anim_01",

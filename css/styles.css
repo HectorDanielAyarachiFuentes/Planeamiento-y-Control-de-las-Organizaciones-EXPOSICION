@@ -575,7 +575,7 @@ body {
   font-family: var(--font-body);
   font-size: clamp(0.95rem, 1.35vh + 0.22vw, 1.18rem);
   color: var(--gold-main);
-  font-weight: 450;
+  font-weight: 400; /* Regular: solo los títulos llevan negrita */
   font-style: italic;
   line-height: 1.45;
   margin-bottom: clamp(0.65rem, 1.4vh, 1.35rem);
@@ -616,22 +616,199 @@ body {
 
 .slide-bullets li {
   position: relative;
-  padding-left: clamp(1.5rem, 2.1vw, 2.0rem);
-  font-size: clamp(0.95rem, 1.32vh + 0.22vw, 1.12rem);
-  line-height: 1.56;
-  color: #0f172a;
-  font-weight: 450;
+  padding-left: clamp(1.35rem, 1.9vw, 1.75rem);
+  font-size: clamp(0.92rem, 1.25vh + 0.2vw, 1.05rem);
+  line-height: 1.58;
+  color: #334155; /* Tono pizarra de alto contraste y lectura descansada */
+  font-weight: 400; /* Regular: sin exceso de negritas en el cuerpo */
 }
 
+/* Indicador de viñeta geométrico y refinado (en reemplazo del tosco § bold) */
 .slide-bullets li::before {
-  content: '§';
+  content: '';
   position: absolute;
-  left: 0;
-  top: 0;
-  color: var(--gold-light);
+  left: 0.15rem;
+  top: 0.62em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold-main);
+  box-shadow: 0 0 0 2px rgba(180, 131, 36, 0.22);
+}
+
+/* Jerarquía de concepto y texto para viñetas estándar */
+.bullet-concept {
+  font-weight: 600; /* Solo el concepto/título lleva peso tipográfico */
+  color: var(--oxford-blue);
+  letter-spacing: 0.01em;
+  margin-right: 0.3rem;
+}
+
+.bullet-desc {
+  font-weight: 400; /* Texto explicativo en peso regular limpio */
+  color: #334155;
+}
+
+/* ─── FILMINA 1: FICHA EJECUTIVA DE PRESENTACIÓN INSTITUCIONAL (INTRO-MODE) ─── */
+.slide-bullets.intro-mode {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: clamp(0.6rem, 1.2vh, 0.95rem) !important;
+  padding: 0.15rem 0.2rem 0.4rem 0.1rem !important;
+  overflow-y: auto !important;
+}
+
+.slide-bullets.intro-mode li.intro-card {
+  position: relative !important;
+  padding: clamp(0.75rem, 1.25vh, 1.05rem) clamp(0.85rem, 1.2vw, 1.2rem) !important;
+  background: rgba(255, 255, 255, 0.9) !important;
+  border: 1px solid rgba(180, 131, 36, 0.24) !important;
+  border-left: 3.5px solid var(--gold-main) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.22rem !important;
+  transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease, background 0.22s ease !important;
+}
+
+.slide-bullets.intro-mode li.intro-card:hover {
+  transform: translateY(-2px) !important;
+  border-color: var(--gold-main) !important;
+  box-shadow: 0 8px 24px rgba(180, 131, 36, 0.15) !important;
+  background: #ffffff !important;
+}
+
+.slide-bullets.intro-mode li.intro-card::before {
+  display: none !important; /* Oculta indicador de punto en modo tarjeta */
+}
+
+.intro-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.2rem;
+}
+
+.intro-card-badge {
   font-family: var(--font-serif);
-  font-size: clamp(0.95rem, 1.35vh, 1.15rem);
-  font-weight: 700;
+  font-size: clamp(0.65rem, 0.92vh, 0.72rem);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--gold-main);
+}
+
+.intro-card-icon {
+  font-size: clamp(0.95rem, 1.3vh, 1.12rem);
+  opacity: 0.9;
+}
+
+.intro-card-title {
+  font-family: var(--font-title);
+  font-size: clamp(1.1rem, 1.48vh + 0.15vw, 1.3rem);
+  font-weight: 700; /* Título destacado con peso visual correcto */
+  color: var(--oxford-blue);
+  line-height: 1.2;
+  margin: 0;
+}
+
+.intro-card-sub {
+  font-family: var(--font-body);
+  font-size: clamp(0.82rem, 1.15vh, 0.92rem);
+  font-weight: 400; /* Regular: sin negrita */
+  color: #334155;
+  line-height: 1.46;
+  margin: 0;
+}
+
+.intro-card-meta {
+  font-family: var(--font-body);
+  font-size: clamp(0.74rem, 1vh, 0.8rem);
+  font-weight: 400; /* Regular: sin negrita */
+  color: #64748b;
+  margin-top: 0.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+/* ─── FILMINA 2: HOJA DE RUTA EJECUTIVA DE LOS 4 AVANCES (AVANCES-MODE) ─── */
+.slide-bullets.avances-mode {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: clamp(0.48rem, 0.95vh, 0.72rem) !important;
+  padding: 0.1rem !important;
+}
+
+.slide-bullets.avances-mode li.avance-summary-card {
+  position: relative !important;
+  padding: clamp(0.6rem, 1.05vh, 0.8rem) clamp(0.85rem, 1.2vw, 1.15rem) !important;
+  background: rgba(255, 255, 255, 0.88) !important;
+  border: 1px solid rgba(15, 23, 42, 0.08) !important;
+  border-left: 3.5px solid var(--gold-main) !important;
+  border-radius: 6px !important;
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.03) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.18rem !important;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease !important;
+}
+
+.slide-bullets.avances-mode li.avance-summary-card:hover {
+  transform: translateX(3px) !important;
+  border-color: var(--gold-main) !important;
+  background: #ffffff !important;
+  box-shadow: 0 4px 16px rgba(180, 131, 36, 0.1) !important;
+}
+
+.slide-bullets.avances-mode li.avance-summary-card::before {
+  display: none !important;
+}
+
+.avance-row-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.avance-pill {
+  font-family: var(--font-serif);
+  font-size: clamp(0.65rem, 0.9vh, 0.72rem);
+  font-weight: 600;
+  padding: 1px 7px;
+  border-radius: 3px;
+  background: var(--gold-dim);
+  color: var(--gold-main);
+  border: 1px solid var(--gold-border);
+  letter-spacing: 0.06em;
+}
+
+.avance-eje-tag {
+  font-family: var(--font-serif);
+  font-size: clamp(0.68rem, 0.92vh, 0.75rem);
+  font-weight: 500;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.avance-row-title {
+  font-family: var(--font-title);
+  font-size: clamp(0.98rem, 1.35vh, 1.14rem);
+  font-weight: 600; /* Título con peso medio */
+  color: var(--oxford-blue);
+  margin: 0;
+}
+
+.avance-row-text {
+  font-family: var(--font-body);
+  font-size: clamp(0.82rem, 1.15vh, 0.92rem);
+  font-weight: 400; /* Regular: sin negrita */
+  color: #334155;
+  line-height: 1.48;
+  margin: 0;
 }
 
 .slide-svg-action {
@@ -1878,8 +2055,12 @@ body {
     line-height: 1.38;
     padding-left: 1.15rem;
   }
-  .slide-bullets li::before {
-    font-size: 0.72rem;
+  .slide-bullets.intro-mode {
+    grid-template-columns: 1fr !important;
+    gap: 0.45rem !important;
+  }
+  .slide-bullets.intro-mode li.intro-card {
+    padding: 0.55rem 0.75rem !important;
   }
   .btn-open-svg {
     padding: 0.42rem 0.65rem;
