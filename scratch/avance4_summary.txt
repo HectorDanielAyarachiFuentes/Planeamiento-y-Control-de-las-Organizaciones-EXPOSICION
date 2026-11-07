@@ -1,0 +1,716 @@
+=== Page 40 ===
+Planeamiento y Control de las Organizaciones | CURZAS UNCo — CURZAS
+AVANCE 4: Programación Presupuestaria y Factor Humano
+AVANCE 4: Programación Presupuestaria y Factor Humano
+Vinculación entre Planificación Política, Presupuesto por Programas y el Factor Humano en el CURZAS 
+(UNCo)
+UNCo — CURZAS
+Ejes Analíticos y Metodológicos del Avance 4 (Unidad IV)
+• Encuadre Teórico: La técnica del Presupuesto por Programas y la relación insumo-producto (Marcos Makon / CEPAL); el 
+sistema de administración financiera y la rigidez estructural del gasto público (Guillermo Schweinheim / Ley 24.156); 
+clasificadores oficiales de la ONP.
+• Eje 1: Identificación y Desglose del Gasto en Personal (Inciso 1): Presupuesto global asignado a la UNCo / CURZAS; peso 
+porcentual hegemónico del Inciso 1 ( 90%); impacto de la Zona Desfavorable Patagónica (40%) y composición retributiva por 
+estamentos docente y nodocente (CCT 366/06 y CCT 1246/15).
+• Eje 2: Estructura de Programas en la Planilla Presupuestaria Oficial: El Programa 26 (“Desarrollo de la Educación 
+Superior”); apertura en actividades centrales y específicas; matriz de insumo-proceso-producto terminal (Makon).
+• Eje 3: El Ciclo Presupuestario Universitario y los Sistemas Integrados (SIAF): Las cuatro etapas del ciclo (Formulación, 
+Aprobación, Ejecución y Control); la articulación tecnológica entre SIU-Pilagá, SIU-Mapuche y e-SIDIF; mecanismos de control 
+interno (UAI/SIGEN) y externo (AGN).
+• Eje 4: Síntesis Estratégica: La articulación entre la Planificación Estratégica Situacional (Matus) y la asignación económica; 
+asfixia de gastos de funcionamiento e implicancias para la poligobernanza de los nodos territoriales y el factor humano.
+Introducción y Encuadre Teórico-Metodológico de la Unidad IV
+El presente módulo constituye la cuarta entrega del informe integral de diagnóstico institucional sobre 
+el Complejo Universitario Regional Zona Atlántica y Sur (CURZAS) de la Universidad 
+Nacional del Comahue (UNCo). Tras haber caracterizado el modelo de administración pública y los 
+contrapesos democráticos en el Avance 1, evaluado la viabilidad política de la poligobernanza 
+territorial y el mapeo de actores situacionales en el Avance 2, y examinado la microestructura 
+funcional, los flujogramas de personal y la transición al ecosistema electrónico (SUDOCU/SIU-
+Mapuche) en el Avance 3, el Avance 4 aborda el núcleo económico-financiero de la organización: la 
+programación presupuestaria, la articulación entre el plan político y los recursos asignados, y 
+la centralidad estratégica del factor humano.
+A. Articulación con los Marcos Teóricos de la Unidad IV
+El análisis se fundamenta rigurosamente en la bibliografía oficial de la cátedra para la Unidad IV:
+1. Marcos Makon (CEPAL / ILPES): Presupuestos por Programas y Basados en Resultados: 
+Makon (2024) postula que el presupuesto público no es un mero catálogo contable de gastos e 
+ingresos, sino la expresión financiera y cuantitativa de las políticas públicas y del plan de 
+gobierno. La técnica del Presupuesto por Programas (PPP) supera el enfoque tradicional de 
+“caja” al organizar las asignaciones en una red coherente de acciones presupuestarias, 
+estructurada en categorías jerarquizadas: Programa (unidad máxima que expresa el objetivo de 
+política), Subprograma, Proyecto, Actividad (Central, Común o Específica) y Obra. El aporte 
+conceptual decisivo de Makon radica en la relación sistemática entre insumo, proceso, 
+producto y resultado: los recursos financieros adquieren insumos reales (recursos humanos, 
+bienes de consumo, servicios, equipamiento), los cuales se combinan mediante tecnologías de 
+gestión para generar productos intermedios y productos terminales (bienes y servicios públicos 
+entregados a la sociedad), cuyo impacto final transforma la realidad social. Asimismo, Makon 
+analiza los Sistemas Integrados de Administración Financiera (SIAF) como plataformas 
+transversales que interconectan de forma indisoluble los sistemas rectores de Presupuesto, Tesorería, 
+Contabilidad y Crédito Público.
+Téc. Sup. en RR. HH. Héctor Daniel Ayarachi Fuentes
+ Página 39 de 51
+=== Page 41 ===
+Planeamiento y Control de las Organizaciones | CURZAS UNCo — CURZAS
+2. Guillermo Schweinheim (2018): El Sistema de Administración Financiera en Argentina 
+(Ley 24.156): Schweinheim efectúa un balance histórico y estructural del modelo instituido por la 
+Ley N° 24.156 en Argentina. Si bien reconoce las virtudes instrumentales de la modernización 
+contable, introduce una crítica sociopolítica fundamental: el instrumentalismo gerencial asume 
+erróneamente que el presupuesto es una técnica neutral susceptible de optimización 
+puramente técnica. En la práctica de las organizaciones públicas, el presupuesto es una arena de 
+disputa política y distributiva atravesada por relaciones de poder, demandas gremiales y 
+restricciones macroeconómicas. Schweinheim enfatiza el concepto de rigidez presupuestaria 
+estructural: en el Sector Público Nacional, y con intensidad extrema en las Universidades 
+Nacionales Autónomas, la casi totalidad de los créditos presupuestarios está predeterminada por 
+leyes, estatutos y convenios colectivos. El gasto en personal (Inciso 1) absorbe habitualmente cerca 
+del 90% de los fondos, reduciendo el margen de maniobra gerencial a una porción mínima para 
+gastos corrientes de funcionamiento e inversión.
+3. Manual del Sistema Presupuestario Público (Oficina Nacional de Presupuesto - ONP / 
+MECON): La Oficina Nacional de Presupuesto establece los clasificadores presupuestarios 
+homogéneos que rigen para todo el Sector Público Nacional conforme a la Ley 24.156:
+• Clasificación Institucional: Define qué organismo gasta. Las Universidades Nacionales integran 
+el Carácter 2 (Organismos Descentralizados e Instituciones Universitarias) dentro de la 
+Jurisdicción 88 (Ministerio de Capital Humano / Secretaría de Educación - SPU), identificándose a 
+la UNCo como la Entidad 809.
+• Clasificación por Fuente de Financiamiento: Según el clasificador de la ONP, el presupuesto 
+universitario se financia de manera abrumadoramente mayoritaria a través de la Fuente 11 
+(Tesoro Nacional), que cubre aproximadamente el 98% del presupuesto ordinario (destinado a la 
+masa salarial y funcionamiento básico), mientras que la Fuente 12 (Recursos Propios) 
+representa apenas el 2% restante (generado por aranceles de carreras de posgrado, diplomaturas y 
+convenios de servicios o transferencias técnicas a terceros). Esta marcada asimetría confirma la 
+extrema dependencia financiera respecto a las transferencias del Estado Nacional.
+• Clasificación por Objeto del Gasto: Identifica en qué insumo específico se gasta, agrupado en 
+incisos: Inciso 1 (Gastos en Personal), Inciso 2 (Bienes de Consumo), Inciso 3 (Servicios No 
+Personales), Inciso 4 (Bienes de Uso / Capital) e Inciso 5 (Transferencias / Becas).
+• Clasificación Programática: Muestra con qué finalidad de política pública se asigna el gasto, 
+ubicándose a las Universidades en el Programa 26: “Desarrollo de la Educación Superior”.
+B. Trazabilidad Analítica Integrada: Del Diagnóstico Político a la Asignación Económica
+La dimensión presupuestaria no es un compartimento aislado, sino el terreno material donde confluyen 
+los tres ejes estructurantes de todo el informe:
+• Autonomía Universitaria (Avances 1 y 3): Se manifiesta en la autarquía económico-financiera 
+(Art. 75 inc. 19 CN). El Poder Ejecutivo y el Congreso fijan el crédito global para la Universidad 
+Nacional del Comahue en el Presupuesto General, pero es el Consejo Superior de la UNCo (órgano 
+de cogobierno democrático) el que aprueba soberanamente la Ordenanza de distribución interna 
+entre sus Unidades Académicas y dependencias centrales.
+• Poligobernanza Territorial de los Nodos (Avance 2): La red de 10 Nodos Regionales del CURZAS 
+en la Línea Sur y la Costa Atlántica rionegrina requiere partidas operativas concretas (conectividad, 
+viáticos, infraestructura áulica conveniada con municipios). La falta de una partida presupuestaria 
+específica para los nodos en la planilla oficial genera una asfixia silenciosa que debe ser paliada 
+mediante transferencias cruzadas de extensión o economías de escala.
+• El Factor Humano como Actor Estratégico (Avances 2 y 3): En consonancia con Matus y 
+Schweinheim, los trabajadores no son “costos salariales”, sino la capacidad estatal viviente de la 
+universidad. Las paritarias docentes y nodocentes (CCT 366/06 y CCT 1246/15) son el motor central 
+Téc. Sup. en RR. HH. Héctor Daniel Ayarachi Fuentes
+ Página 40 de 51
+=== Page 42 ===
+Planeamiento y Control de las Organizaciones | CURZAS UNCo — CURZAS
+que determina el volumen del Inciso 1, tornando indispensable articular la planificación académica 
+con la previsibilidad salarial.
+Eje 1: Identificación y Análisis del Presupuesto Total y del Inciso 1 (Gastos en 
+Personal)
+A. Respuesta a la Pregunta Guía 1 de Cátedra
+PREGUNTA DE INVESTIGACIÓN INSTITUCIONAL
+¿Cuál es el presupuesto total asignado al organismo y qué porcentaje se destina al Inciso 1 (Gastos en Personal)?
+A partir del relevamiento de la planilla oficial de la Ley de Presupuesto General de la Administración 
+Nacional, los decretos de prórroga presupuestaria y las resoluciones de distribución interna del Consejo 
+Superior de la UNCo para el ejercicio 2025, se sistematizan los datos económicos estructurales:
+1. El Presupuesto Global Consolidado de la UNCo (Ejercicio 2025) y el Conflicto 
+Universitario: En la planilla presupuestaria oficial remitida por el Poder Ejecutivo Nacional al 
+Congreso para el ejercicio 2025 (Ministerio de Economía / ONP, Planillas Anexas al Título I, 
+Jurisdicción 88 - Entidad 809 UNCo - Programa 26), se asignó a la Universidad Nacional del 
+Comahue un crédito anualizado consolidado de $73.900 millones de pesos. Este monto oficial 
+contrasta drásticamente con la pauta de necesidades reales: mientras que la UNCo peticionó 
+formalmente ante el Consejo Interuniversitario Nacional (CIN) un requerimiento presupuestario de 
+$121.800 millones para garantizar el funcionamiento operativo y salarios dignos, el proyecto del 
+PEN consolidó un recorte de casi $47,9 mil millones, asignando apenas el 60% de lo requerido. 
+Al respecto, en su informe oficial brindado ante el Consejo Superior de la UNCo bajo el título «Con 
+el presupuesto 2025 del gobierno “peligra todo lo que hace la UNCo”» (publicado en el portal 
+institucional del CRUB - UNCo, 2024), la rectora Prof. Beatriz Gentile denunció:
+«Sin la ley de financiamiento para las universidades ante un eventual veto presidencial y con el presupuesto 2025 que propone el 
+Poder Ejecutivo Nacional peligra todo lo que hace la universidad… nos están asignando el 60% de lo que necesitamos y para nosotros 
+eso es una catástrofe. La UNCo propuso un monto de 121,8 mil millones de pesos y en el presupuesto 2025 del gobierno figuran 73,9 
+mil millones, una diferencia en menos de casi 47,9 mil millones».
+Esta asfixia no constituye un hecho aislado de la UNCo, sino un patrón sistémico documentado en 
+los informes técnicos de la Oficina de Presupuesto del Congreso (OPC, 2024): mientras que la 
+propuesta federal del CIN solicitaba un presupuesto global de $7,2 billones para el conjunto del 
+sistema universitario nacional, el Ejecutivo asignó $3,8 billones (apenas el 54% de lo peticionado, 
+suprimiendo más de $3,3 billones). Asimismo, tal como advirtió la rectora Gentile, el proyecto de 
+presupuesto nacional suspende la meta legal de destinar el 6% del PBI a educación (Ley de 
+Educación Nacional N° 26.206) e impide alcanzar el 0,45% del PBI fijado por ley para la función 
+Ciencia y Tecnología, subordinando la inversión en conocimiento al dogma del “déficit cero”.
+2. La Asignación Específica del CURZAS (Ejercicio 2025): De acuerdo con la pauta histórica y la 
+fórmula de distribución del Consejo Superior de la UNCo (donde al Complejo Universitario Regional 
+Zona Atlántica y Sur le corresponde una participación de aproximadamente el 6,6% dentro de la 
+franja habitual del 6,2% al 7,0%), la masa presupuestaria anual estimada del CURZAS para el ejercicio 
+2025 asciende a $4.880 millones de pesos ($4.880.000.000).
+3. El Peso Porcentual Hegemónico del Inciso 1 (Gastos en Personal) y la Doctrina 
+Presupuestaria del CIN: El dato estructural más contundente del análisis financiero es que el 
+90,2% del presupuesto total asignado al CURZAS ($4.401.760.000) se destina con exclusividad 
+al Inciso 1 (Gastos en Personal). Apenas el 9,8% restante ($478.240.000) debe distribuirse entre 
+Téc. Sup. en RR. HH. Héctor Daniel Ayarachi Fuentes
+ Página 41 de 51
+=== Page 43 ===
+Planeamiento y Control de las Organizaciones | CURZAS UNCo — CURZAS
+todos los demás gastos imprescindibles para sostener la operatividad cotidiana de la sede y sus 
+extensiones: mantenimiento edilicio, pago de tarifas de electricidad y gas en el campus de Viedma, 
+alquileres, conectividad de banda ancha satelital con los 10 nodos, adquisición de insumos de 
+laboratorio e informática, bibliografía y programas de becas estudiantiles.
+Esta distribución no constituye una distorsión o anomalía contable aislada del CURZAS: la relación 
+estructural del 90% destinado al Inciso 1 (Gastos en Personal) y el 10% restante a gastos de 
+funcionamiento se fundamenta en los parámetros históricos de formulación y ejecución presupuestaria 
+establecidos por el Consejo Interuniversitario Nacional (CIN) y documentados en los informes de 
+financiamiento elevados anualmente a la Comisión de Presupuesto y Hacienda del H. Congreso de la 
+Nación. Al respecto, las autoridades técnicas de la Comisión de Asuntos Económicos del CIN 
+ratificaron ante el Parlamento que:
+«Históricamente, la metodología presupuestaria universitaria contempla una relación del 90% para salarios (Gastos en Personal - 
+Inciso 1) y de apenas un 10% para gastos de funcionamiento (bienes y servicios) que se rinden de forma periódica» (CIN / Portal 
+Universidad, 2024).
+Tabla 4.1: Estructura del Presupuesto Consolidado del CURZAS / UNCo (Ejercicio 2025)
+Fuente: Elaboración propia en base a la planilla oficial PEN 2025 ($73.900 M UNCo), distribución Consejo Superior UNCo (6,6%) y clasificadores ONP.
+Inciso Denominación Oficial (ONP) Monto Anual Est. 
+2025* Participación Impacto Operativo y 
+Diagnóstico Situacional
+Inciso 1 Gastos en Personal
+(Salarios, cargas sociales, SAC, 
+adicionales)
+$ 4.401.760.000 90,2 % Absorbe la casi totalidad del 
+crédito. Financia la masa salarial 
+docente y nodocente. Incorpora 
+el 40% de Zona Desfavorable 
+Patagónica.
+Inciso 2 Bienes de Consumo
+(Papelería, limpieza, insumos de 
+campo/lab)
+$ 117.120.000 2,4 % Fuerte asfixia inflacionaria. 
+Restringe compra de insumos 
+para laboratorios y tareas de 
+campo.
+Inciso 3 Servicios No 
+Personales
+(Luz, gas, internet, fletes, viáticos)
+$ 258.640.000 5,3 % Partida crítica de 
+funcionamiento. Cubre servicios 
+básicos en campus Viedma y 
+conectividad con los 10 nodos.
+Inciso 4 Bienes de Uso 
+(Capital)
+(Equipamiento, PC, servidores, obras)
+$ 29.280.000 0,6 % Retrasa renovación de servidores 
+para SUDOCU y parque 
+informático en aulas virtuales.
+Inciso 5 Transferencias
+(Becas de residencia, transporte y 
+comedor)
+$ 73.200.000 1,5 % Destinado a bienestar 
+estudiantil. Clave para evitar la 
+deserción de alumnos de parajes 
+rurales.
+TOTAL Crédito Presupuestario Anual 
+Estimado $ 4.880.000.000 100,0 %
+Base total estimada CURZAS 
+(participación 6,6% sobre $73.900 
+M de la UNCo).
+* Nota Metodológica sobre Valores Presupuestarios: Los montos del ejercicio 2025 se calculan sobre la base oficial asignada por el PEN a la UNCo 
+($73.900.000.000) y la cuota de participación histórica del CURZAS (6,6%), aplicando los porcentajes consolidados por inciso del clasificador oficial de la ONP y los 
+parámetros doctrinales de formulación fijados por el Consejo Interuniversitario Nacional (CIN, relación histórica 90% salarios / 10% funcionamiento).
+B. Desglose Estructural del Inciso 1: La Centralidad del Factor Humano
+El análisis del Inciso 1 a la luz de los Convenios Colectivos de Trabajo y la normativa patagónica revela 
+dos factores causales decisivos:
+1. El Componente Ineludible de la Zona Desfavorable Patagónica (40%): A diferencia de las 
+universidades radicadas en la región pampeana o centro del país, el CURZAS y la UNCo tienen la 
+obligación legal y convencional de liquidar un adicional salarial del 40% en concepto de Zona 
+Téc. Sup. en RR. HH. Héctor Daniel Ayarachi Fuentes
+ Página 42 de 51
+=== Page 44 ===
+Planeamiento y Control de las Organizaciones | CURZAS UNCo — CURZAS
+Desfavorable a la totalidad de sus trabajadores (docentes y nodocentes). Este ítem compensa el 
+costo de vida patagónico, las inclemencias climáticas y el aislamiento territorial. Desde la 
+perspectiva presupuestaria, este suplemento eleva la base financiera de cada cargo, explicando por 
+qué el Inciso 1 supera holgadamente el 90% en la región sur.
+2. Distribución Retributiva por Estamentos Universitarios (Ejercicio 2025): La masa de recursos 
+del factor humano (base total de $4.401.760.000) se estructura conforme a las misiones sustantivas 
+de la institución:
+Tabla 4.2: Desglose Interno del Inciso 1 (Gastos en Personal - Ejercicio 2025)
+Fuente: Elaboración propia en base a CCT 366/06 (Nodocente), CCT 1246/15 (Docente) y base salarial CURZAS 2025 ($4.401.760.000).
+Estamento / Sub-partida CCT Aplicable Participación Monto Est. 2025 Composición de Cargos y 
+Funciones
+Personal Docente
+(Planta Permanente e Interina)
+Decreto 
+1246/2015
+63,5 % $ 2.795.117.600 Titulares, Asociados, Adjuntos, 
+JTP y Ayudantes de Primera 
+(dedicaciones Exclusiva, 
+Semiexclusiva y Simple).
+Personal 
+Nodocente
+(Planta Permanente y 
+Contratados)
+Decreto 
+366/2006
+25,8 % $ 1.135.654.080 Categorías 1 a 7 en agrupamientos 
+Administrativo, Técnico, 
+Profesional y Servicios Generales.
+Contribuciones 
+Patronales
+(Seguridad Social y Obra 
+Social)
+Leyes 
+Nacionales
+8,7 % $ 382.953.120 Aportes patronales ANSES, cuota 
+SOSUNC (obra social 
+universitaria) y seguro ART.
+Suplementos y 
+Otros
+(Antigüedad, títulos, 
+asignaciones)
+CCT / 
+Normativa
+2,0 % $ 88.035.200 Asignaciones familiares, títulos de 
+posgrado y suplementos por 
+mayor responsabilidad.
+TOTAL INCISO 1 Masa Salarial 100,0 % $ 4.401.760.000 Base consolidada del gasto en 
+personal del CURZAS.
+DICTAMEN TEÓRICO-PRESUP UESTARIO DEL EJE 1 (SCHWEINHEIM)
+Conclusión: La extrema concentración del gasto en el Inciso 1 (90,2% del presupuesto total) confirma de manera 
+irrebatible la tesis de Guillermo Schweinheim (2018) sobre la alta rigidez estructural del presupuesto público. El 
+CURZAS es, por su propia naturaleza formativa y científica, una organización trabajo-intensiva (labor-intensive): su 
+insumo principal no son máquinas ni insumos industriales, sino el saber, la docencia y la capacidad administrativa de sus 
+trabajadores. La contracara es la fragilidad operativa: cualquier fluctuación o congelamiento en el 9,8% restante de 
+funcionamiento pone en riesgo directo la apertura de aulas y la continuidad de las comisiones de estudio en los nodos 
+territoriales.
+Téc. Sup. en RR. HH. Héctor Daniel Ayarachi Fuentes
+ Página 43 de 51
+=== Page 45 ===
+Planeamiento y Control de las Organizaciones | CURZAS UNCo — CURZAS
+Eje 2: Estructura de Programas y la Técnica de Presupuesto por Programas 
+(Makon)
+A. Respuesta a la Pregunta Guía 2 de Cátedra
+PREGUNTA DE INVESTIGACIÓN INSTITUCIONAL
+¿Cómo se estructuran los programas del organismo en la planilla presupuestaria oficial?
+En la planilla presupuestaria oficial de la Administración Pública Nacional, confeccionada con arreglo a 
+las directivas de la Oficina Nacional de Presupuesto (ONP), la Universidad Nacional del Comahue y 
+sus unidades académicas dependientes se estructuran bajo un esquema programático formalizado:
+1. El Programa Presupuestario Rector: Programa 26: A nivel nacional, la totalidad de los créditos 
+asignados a las Universidades Nacionales dentro de la Jurisdicción 88 (Ministerio de Capital 
+Humano / Secretaría de Educación) se agrupan en el:
+• Programa 26: “Desarrollo de la Educación Superior”
+Este programa macro define como objetivo de política pública la formación de profesionales, la 
+generación de conocimientos científicos y la extensión hacia la comunidad.
+2. Apertura en Subprogramas y Actividades en la Planilla de la UNCo / CURZAS: Para 
+canalizar la ejecución presupuestaria hacia el territorio, el presupuesto del CURZAS se desagrega 
+internamente en categorías programáticas específicas, diferenciando claramente las Actividades 
+Centrales de Conducción de las Actividades Específicas de Producción Académica y 
+Extensión:
+• Actividad 01 — Conducción Institucional y Gestión Administrativa Central: Agrupa los 
+gastos de gobierno (Consejo Directivo y Decanato), las Secretarías de gestión, la Dirección de 
+Personal, Mesa de Entradas, Tesorería y Contable. Su objetivo es brindar soporte y gobernabilidad 
+a toda la sede.
+• Actividad 02 — Formación Académica de Grado, Pregrado y Posgrado: Es el núcleo terminal 
+sustantivo. Asigna los cargos docentes a los Departamentos de Administración, Psicopedagogía, 
+Humanidades y Lengua, y Producción Agropecuaria.
+• Actividad 03 — Extensión Universitaria, Vinculación y Territorialidad: Financia los 
+proyectos comunitarios y la logística de acompañamiento de los 10 Nodos Regionales de la 
+Línea Sur y la Costa.
+• Actividad 04 — Investigación Científica y Transferencia Tecnológica: Financia los Proyectos 
+de Investigación (PIN/PI) y programas de becas científicas en convenio con CONICET.
+B. Aplicación Situada de la Matriz de Insumo-Proceso-Producto (Marcos Makon)
+Aplicando la metodología de Marcos Makon (2024), el presupuesto del CURZAS se conceptualiza 
+como un sistema articulado donde los créditos monetarios se transforman en insumos reales para 
+ejecutar procesos formativos y entregar productos públicos tangibles:
+Tabla 4.3: Matriz de Categorías Programáticas y Relación Insumo-Producto en el CURZAS (Makon / ONP)
+Fuente: Elaboración propia a partir de la metodología de Presupuesto por Programas de Marcos Makon (CEPAL, 2024) y planilla oficial ONP.
+Categoría Denominación Insumos Reales Críticos
+Acción 
+Presupuestaria 
+(Proceso)
+Producto 
+Intermedio
+Producto 
+Terminal 
+(Impacto)
+Actividad 
+01
+Central
+Gobierno y 
+Administración
+• Horas nodocente 
+(Dir. Personal/
+Hacienda).
+Gestión de 
+legajos, 
+liquidación en 
+Expedientes 
+tramitados 
+en 
+Sostenibilidad 
+institucional 
+y 
+Téc. Sup. en RR. HH. Héctor Daniel Ayarachi Fuentes
+ Página 44 de 51
+=== Page 46 ===
+Planeamiento y Control de las Organizaciones | CURZAS UNCo — CURZAS
+Categoría Denominación Insumos Reales Críticos
+Acción 
+Presupuestaria 
+(Proceso)
+Producto 
+Intermedio
+Producto 
+Terminal 
+(Impacto)
+• Licencias 
+SUDOCU.
+• Suministros 
+oficina.
+SIU-Mapuche, 
+compras, 
+mantenimiento 
+edilicio y 
+resoluciones 
+de Decanato.
+SUDOCU; 
+resoluciones 
+emitidas; 
+haberes 
+liquidados 
+en término.
+gobernabilidad 
+democrática 
+del 
+complejo.
+Actividad 
+02
+Específica
+Enseñanza de 
+Grado y 
+Posgrado
+• Horas docentes 
+titulares/adjuntos.
+• Aulas físicas y 
+plataforma 
+Moodle (PED).
+Dictado de 
+cátedras 
+teóricas y 
+prácticas en 
+Administración, 
+RRHH, 
+Psicopedagogía, 
+Arte y 
+Enfermería.
+Comisiones 
+dictadas; 
+mesas de 
+examen 
+registradas 
+en SIU-
+Guaraní; 
+estudiantes 
+regulares.
+Graduados 
+Universitarios 
+insertos en 
+el mercado 
+laboral y 
+sector 
+público 
+norpatagónico.
+Actividad 
+03
+Específica
+Extensión y 
+Red de Nodos
+• Asistentes 
+técnicos locales en 
+Nodos.
+• Viáticos y 
+traslados de 
+docentes.
+• Conectividad 
+satelital / banda 
+ancha (Inciso 3).
+• Espacios físicos 
+municipales 
+conveniados.
+Articulación 
+de 
+poligobernanza 
+con 
+municipios 
+locales; 
+tutorías a 
+distancia y 
+clases 
+híbridas en la 
+estepa; 
+talleres 
+productivos 
+en territorio 
+(Valcheta, 
+Jacobacci, 
+Conesa).
+10 Nodos 
+regionales 
+operativos; 
+población 
+rural 
+capacitada; 
+conectividad 
+y logística 
+costeados 
+con cargo al 
+Inciso 3 
+($258,6 M 
+para todo el 
+CURZAS).
+Inclusión 
+territorial 
+y 
+democratización 
+social de la 
+educación 
+superior en 
+la estepa, 
+superando 
+la brecha 
+geográfica 
+mediante 
+cogestión 
+municipal.
+Actividad 
+04
+Específica
+Investigación 
+y Posgrado
+• Docentes con 
+dedicación 
+exclusiva.
+• Reactivos campo.
+• Becas posgrado.
+Ejecución de 
+proyectos de 
+investigación 
+sobre recursos 
+hídricos, 
+producción 
+ovina y 
+políticas 
+sociales.
+Informes de 
+avance de 
+PIN; tesis 
+dirigidas; 
+ponencias 
+en 
+congresos 
+científicos.
+Conocimiento 
+científico 
+situado y 
+soluciones 
+socioambientales 
+para la 
+Patagonia.
+Téc. Sup. en RR. HH. Héctor Daniel Ayarachi Fuentes
+ Página 45 de 51
+=== Page 47 ===
+Planeamiento y Control de las Organizaciones | CURZAS UNCo — CURZAS
+EL IMPACTO CONCRETO DEL FINANCIAMIENTO EN LA ACTIVIDAD 03 (NODOS TERRITORIALES Y 
+POLIGOBERNANZA)
+El análisis programático bajo la metodología de Marcos Makon pone de relieve un condicionante estructural crucial: los 
+10 Nodos Regionales del CURZAS en la Línea Sur y la Costa Atlántica dependen casi con exclusividad del Inciso 3 
+(Servicios No Personales) para financiar la conectividad a internet de banda ancha satelital, los servicios básicos de los 
+espacios áulicos y los viáticos y movilidad de las comisiones docentes. Dado que la totalidad del Inciso 3 asignado al 
+CURZAS asciende a apenas $258.640.000 anuales para atender de forma conjunta las demandas del campus central de 
+Viedma (electricidad, gas, mantenimiento, telefonía e informática) y de toda la sede, el margen presupuestario remanente 
+para los nodos resulta extraordinariamente exiguo. Esta restricción material demuestra técnicamente la necesidad 
+imperiosa de la poligobernanza reticular (analizada en el Avance 2): sin los acuerdos de cooperación y cogestión 
+formalizados con los municipios locales —que aportan los edificios comunales, la energía y el personal de apoyo local—, el 
+CURZAS no podría sostener su despliegue territorial únicamente con sus partidas presupuestarias ordinarias.
+APORTE METODOLÓGICO DE MARCOS MAKON AL DIAGNÓSTICO DEL CURZAS
+La aplicación de la matriz de Marcos Makon permite superar el mero control de legalidad del gasto y enfocarse en la 
+eficiencia asignativa y la eficacia social: cada peso invertido en el Inciso 1 (docentes y nodocentes) no es un fin en sí 
+mismo, sino el insumo catalizador indispensable para que la universidad rionegrina entregue graduados calificados, 
+investigación situada y democratización territorial.
+Téc. Sup. en RR. HH. Héctor Daniel Ayarachi Fuentes
+ Página 46 de 51
+=== Page 48 ===
+Planeamiento y Control de las Organizaciones | CURZAS UNCo — CURZAS
+Eje 3: El Ciclo Presupuestario Universitario y los Sistemas Integrados 
+(Schweinheim / Ley 24.156)
+A. Análisis de las Etapas del Ciclo Presupuestario en una Universidad Autónoma
+El ciclo presupuestario del CURZAS se encuentra reglamentado por las disposiciones de la Ley N° 
+24.156 de Administración Financiera y las normas de autarquía universitaria consagradas por el 
+Estatuto de la UNCo:
+Tabla 4.4: Etapas del Ciclo Presupuestario, Sistemas Informáticos (SIAF) y Órganos de Control en el CURZAS / UNCo
+Fuente: Elaboración propia sobre la base de la Ley N° 24.156, Schweinheim (2018) y manuales del consorcio SIU.
+Etapa del Ciclo Acción Institucional / 
+Operativa Sistema Informático Órgano 
+Responsable
+Instancia de Control / 
+Fiscalización
+1. 
+Formulación
+(Junio - Septiembre)
+Estimación de gastos 
+por partidas; proyección 
+de nómina salarial; 
+fijación de techos por el 
+Ministerio de Economía.
+Planillas ONP / 
+SIU-Diaguita 
+(previsión)
+Secretaría de 
+Hacienda 
+UNCo / 
+Decanatos
+Techos de la ONP / 
+Consulta a Consejos 
+Directivos de sedes.
+2. 
+Aprobación
+(Octubre - 
+Diciembre)
+Doble instancia 
+constitucional:
+a) Sanción de la Ley de 
+Presupuesto en el 
+Congreso Nacional.
+b) Votación de la 
+Ordenanza de 
+Presupuesto en el 
+Consejo Superior de 
+la UNCo.
+SUDOCU 
+(Expediente de 
+Ordenanza)
+Congreso 
+Nacional / 
+Consejo 
+Superior 
+UNCo
+Control 
+democrático de los 
+cuatro claustros en 
+el Co-Gobierno.
+3. 
+Ejecución
+(Enero - Diciembre)
+Momentos contables 
+del gasto (Ley 24.156):
+1. Afectación 
+Preventiva.
+2. Compromiso 
+Definitivo.
+3. Gasto Devengado 
+(prestación 
+cumplida).
+4. Mandado a Pagar / 
+Pagado mediante la 
+Cuenta Única del 
+Tesoro (CUT).
+SIU-Pilagá 
+(Presupuesto y 
+Tesorería)
+↔︎
+SIU-Mapuche 
+(Liquidación 
+salarial)
+↔︎
+e-SIDIF 
+(Nación)
+Dirección de 
+Administración 
+y Hacienda 
+CURZAS / 
+Rectorado
+Control de cuotas 
+de compromiso y 
+devengado por la 
+Tesorería General 
+de la Nación (TGN).
+4. 
+Evaluación 
+y Control
+(Posterior y 
+Concurrente)
+Auditoría financiera, 
+legal y de gestión sobre 
+las rendiciones de 
+cuentas y comprobantes 
+de gasto de la sede.
+SIU-Wichi (BI) / 
+Portal 
+Transparencia
+UAI UNCo / 
+AGN / SIGEN
+Control Interno: 
+Unidad de Auditoría 
+Interna (UAI) y 
+SIGEN.
+Control Externo: 
+Auditoría General 
+de la Nación (AGN) 
+y Congreso.
+Téc. Sup. en RR. HH. Héctor Daniel Ayarachi Fuentes
+ Página 47 de 51
+=== Page 49 ===
+Planeamiento y Control de las Organizaciones | CURZAS UNCo — CURZAS
+B. Interconexión del Ecosistema Financiero: SIU-Pilagá, SIU-Mapuche y e-SIDIF
+Conforme a la conceptualización de los Sistemas Integrados de Administración Financiera (SIAF) de 
+Marcos Makon, en el CURZAS el presupuesto opera a través de una red digital unificada:
+• SIU-Pilagá: Es el sistema modular central para la gestión financiera, presupuestaria y contable de las 
+universidades. Registra cada partida, emite las órdenes de compra y fiscaliza el saldo de crédito 
+disponible.
+• SIU-Mapuche: Es el subsistema de Recursos Humanos y nómina salarial. Liquida mensualmente los 
+sueldos de docentes y nodocentes. Transfiere automáticamente al SIU-Pilagá el asiento contable del 
+gasto devengado de personal para su imputación presupuestaria al Inciso 1.
+• Enlace con el e-SIDIF y la CUT: Una vez devengado el salario en la UNCo, los fondos se 
+transfieren desde la Cuenta Única del Tesoro (CUT) de la Secretaría de Hacienda de la Nación a 
+través del sistema e-SIDIF hacia las cuentas bancarias de los trabajadores en el Banco Credicoop / 
+Banco de la Nación Argentina.
+Eje 4: Síntesis Estratégica: Vínculo entre Planificación Política, Presupuesto y 
+Factor Humano
+A. La Tensión Crítica entre Planificación y Rigidez Financiera
+Al confrontar la Planificación Estratégica Situacional (PES de Carlos Matus) del Avance 2 con la 
+realidad presupuestaria modelada por Makon y Schweinheim, surge una paradoja estructural 
+determinante:
+1. La Planificación Política Ambiciosa: En sus documentos institucionales y en las sesiones del 
+Consejo Directivo, el CURZAS proyecta expandir su presencia en la Línea Sur, crear nuevas 
+tecnicaturas y carreras de grado orientadas al desarrollo rionegrino y consolidar una gestión 100% 
+digital sin papel.
+2. La Realidad Presupuestaria de la Asfixia Operativa: Al estar el 90,2% del presupuesto 
+cautivo en salarios preexistentes (Inciso 1) y al encontrarse los gastos corrientes licuados por la 
+inflación, el margen de decisión estratégica sobre el 9,8% restante resulta extraordinariamente 
+estrecho.
+3. El Presupuesto como Límite a la Poligobernanza Territorial: Como se analizó en el Avance 2, 
+sostener los 10 Nodos Regionales de la estepa patagónica demanda recursos para conectividad, 
+viáticos y mantenimiento. Cuando la Nación retrasa los giros de las partidas de funcionamiento 
+(Incisos 2 y 3), la sede Viedma se ve forzada a subsidiar a los nodos o a recurrir a convenios de 
+auxilio financiero con intendencias municipales, exponiendo la vulnerabilidad de la gobernanza 
+reticular.
+B. El Factor Humano como la Auténtica Capacidad Estatal del Organismo
+En el marco del pensamiento de Julián Bertranou (2015) y Aldo Schlemenson (INAP, 1997), el 
+verdadero capital y la capacidad estatal del CURZAS no reside en su infraestructura física o en sus 
+cuentas bancarias, sino en su factor humano:
+• El personal docente garantiza la calidad académica adaptándose a entornos virtuales y dictando 
+clases en parajes aislados de la Línea Sur con recursos propios.
+• El personal nodocente del Área de Personal y de Servicios Generales asume la sobrecarga de un 
+ecosistema digital incompleto (SUDOCU y SIU-Mapuche), actuando con un alto sentido de 
+pertenencia para asegurar que la universidad pública no se detenga.
+• En consecuencia, el Inciso 1 (Gastos en Personal) no debe ser catalogado como un “gasto corriente 
+improductivo” —como postulaba la retórica tecnocrática de la Nueva Gestión Pública—, sino como la 
+inversión sustantiva más trascendente del Estado: la retribución al trabajo humano que hace 
+posible el derecho a la educación superior en el territorio norpatagónico.
+Téc. Sup. en RR. HH. Héctor Daniel Ayarachi Fuentes
+ Página 48 de 51
+=== Page 50 ===
+Planeamiento y Control de las Organizaciones | CURZAS UNCo — CURZAS
+DICTAMEN ESTRATÉGICO FINAL DEL AVANCE 4 (UNIDAD IV)
+Conclusión Integradora: El análisis presupuestario del CURZAS (UNCo) demuestra que la viabilidad del planeamiento 
+institucional exige superar el abismo entre la formulación de objetivos políticos y la asignación concreta de recursos. En 
+una organización donde el factor humano representa más del 90% del presupuesto consolidado, la planificación no puede 
+concebirse como un ejercicio tecnocrático abstracto: debe asumir la rigidez estructural del gasto, defender la autonomía 
+financiera de la universidad pública ante las restricciones del Tesoro Nacional y fortalecer las capacidades de sus 
+trabajadores docentes y nodocentes como los verdaderos protagonistas de la democratización educativa en la Patagonia.
+Téc. Sup. en RR. HH. Héctor Daniel Ayarachi Fuentes
+ Página 49 de 51

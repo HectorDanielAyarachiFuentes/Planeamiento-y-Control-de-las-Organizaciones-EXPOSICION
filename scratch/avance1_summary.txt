@@ -1,0 +1,302 @@
+=== Page 3 ===
+Planeamiento y Control de las Organizaciones | CURZAS UNCo — CURZAS
+AVANCE 1: Contexto, Modelo de Gestión y Gobernanza
+AVANCE 1: Contexto, Modelo de Gestión y Gobernanza
+Caracterización Institucional, Modelo de Administración y Mecanismos de Control
+UNCo — CURZAS
+1. Identificación y Marco Institucional de la Organización
+El objeto de estudio del presente trabajo es el Complejo Universitario Regional Zona Atlántica y 
+Sur (CURZAS), unidad académica territorial dependiente de la Universidad Nacional del Comahue 
+(UNCo), con sede central en la ciudad de Viedma, Provincia de Río Negro. Su radio de influencia 
+abarca la comarca Atlántica y se proyecta sobre la vasta geografía social y productiva de la Línea Sur 
+rionegrina.
+El estatus institucional del organismo se asienta en el principio de autonomía académica e 
+institucional y autarquía económico-financiera, consagrado en el Artículo 75 inciso 19 de la 
+Constitución Nacional Argentina y regulado por la Ley de Educación Superior N° 24.521. Su estructura 
+y dinámica decisoria se rigen por el Estatuto General de la UNCo (Ordenanza N° 470/1993 y 
+modificatorias), el cual consagra el principio del co-gobierno democrático cuatripartito (integrado 
+por docentes, estudiantes, graduados y personal nodocente) como el órgano colegiado soberano para la 
+definición de políticas académicas, normativas y de asignación de recursos.
+MISIÓN INSTITUCIONAL Y DESPLIEGUE TERRITORIAL
+El CURZAS tiene como misión primordial la creación, formación y democratización del conocimiento científico, técnico y 
+humanístico en el territorio norpatagónico. Su estructura formal articula departamentos académicos, secretarías 
+sustantivas y de apoyo (Académica, de Investigación y Posgrado, de Extensión y de Administración) y órganos de 
+gobierno colegiados (Consejo Directivo y Decanato).
+2. Identificación del Modelo de Administración Predominante
+Para caracterizar el modelo de administración del CURZAS, se coteja su realidad funcional con los 
+paradigmas teóricos analizados por Cao y Blutman (2019) y Abal Medina (2014), estableciendo una 
+distinción conceptual rigurosa entre la matriz burocrática clásica, el régimen de autonomía 
+universitaria y la Nueva Gestión Pública (NGP).
+A. Rasgos de la Burocracia Tradicional Weberiana (Matriz Predominante)
+El análisis institucional confirma la prevalencia estructural de una Burocracia Profesional y 
+Weberiana:
+• Estructura Jerárquica y Centralizada: Las líneas de autoridad, reporte y delegación de 
+competencias administrativas se encuentran taxativamente fijadas por el organigrama estatutario 
+(Decanato → Secretarías → Direcciones → Departamentos y Divisiones).
+• Principio de Legalidad y Procedimentalismo Normativo: Los actos administrativos carecen de 
+validez sin el respaldo de resoluciones fundadas, expedientes foliados y dictámenes jurídicos previos, 
+supeditando la discrecionalidad funcionarial al estricto cumplimiento reglamentario.
+• Estatuto del Empleo Público y Carrera Administrativa: El trabajo docente y nodocente se 
+encuentra regulado por Convenios Colectivos de Trabajo de alcance nacional (Decretos N° 366/06 y 
+N° 1246/15). El régimen garantiza ingreso y promoción por concursos públicos de oposición y 
+antecedentes, estabilidad laboral absoluta y un sistema escalafonario rígido que previene la 
+arbitrariedad política.
+Téc. Sup. en RR. HH. Héctor Daniel Ayarachi Fuentes
+ Página 2 de 51
+=== Page 4 ===
+Planeamiento y Control de las Organizaciones | CURZAS UNCo — CURZAS
+B. Autonomía Universitaria frente a la Descentralización Gerencial de la NGP
+Un aspecto analítico fundamental radica en no confundir la autonomía universitaria con las reformas 
+gerencialistas de los años noventa. Como demuestran Cao y Blutman (2019), la Nueva Gestión 
+Pública (NGP) promueve la descentralización como una técnica de desagregación funcional y 
+fragmentación estructural, cuyo objetivo es descomponer la administración central en agencias 
+radiales o “unidades de negocios” autónomas que compitan internamente por recursos presupuestarios, 
+orienten su accionar bajo una lógica mercantil y traten al ciudadano como un mero “cliente”.
+En contraste, la autonomía y la autarquía presupuestaria que ejerce el CURZAS a través de su Consejo 
+Directivo responden a una conquista histórica y constitucional preexistente —arraigada en la 
+Reforma Universitaria de 1918 y blindada por la Constitución Nacional— cuyo fin es constituir un 
+mecanismo político de resguardo democrático, pluralismo ideológico y libertad académica 
+frente al poder central del Estado.
+En el CURZAS no existen lógicas de mercado propias de la NGP: el financiamiento no se estructura 
+sobre esquemas de vouchers, no existe arancelamiento de grado, los presupuestos no dependen de 
+metas mercantiles de egreso ni se celebran contratos individuales de rendimiento por productividad 
+corporativa.
+C. Rasgos Instrumentales y Modernizadores de la NGP Presentes en la Gestión
+La influencia de la NGP en el organismo no es doctrinaria sino instrumental, incorporando 
+herramientas para optimizar la gestión pública:
+• Orientación al Usuario/Estudiante en Servicios Académicos: Incorporación de plataformas de 
+autogestión y ventanilla virtual mediante el ecosistema SIU (Guaraní para gestión académica, Mocoví 
+para gestión presupuestaria de extensión, Wichi/Diaguita) y el sistema de gestión documental 
+electrónica SUDOCU, simplificando trámites, firmas digitales y tiempos de resolución.
+• Evaluación de Calidad y Rendición por Estándares: Procesos de autoevaluación institucional y 
+acreditación periódica ante la Comisión Nacional de Evaluación y Acreditación Universitaria 
+(CONEAU), incorporando parámetros de mejora continua y transparencia formativa.
+DICTAMEN DE LA MATRIZ ORGANIZACIONAL
+Conclusión: El CURZAS se define como una Burocracia Tradicional Weberiana de Base Profesional, vertebrada 
+por el autogobierno democrático y complementada con herramientas instrumentales de modernización digital.
+3. Análisis de Mecanismos de Rendición de Cuentas (Accountability)
+A partir de la conceptualización de Guillermo O’Donnell sistematizada por Abal Medina (2014), la 
+rendición de cuentas institucional en el CURZAS se despliega en tres dimensiones interconectadas:
+Tabla 1.1: Mecanismos Institucionales de Rendición de Cuentas (Accountability) en el CURZAS / UNCo
+Fuente: Elaboración propia en base a O’Donnell (sistematizado por Abal Medina, 2014), Estatuto de la UNCo y Ley 24.156.
+Dimensión Mecanismos Institucionales en CURZAS / UNCo Sustento Normativo / Evidencia
+Horizontal
+(Control intraestatal e 
+interorgánico)
+• Unidad de Auditoría Interna de la UNCo 
+(UAI).
+• Control externo por la Auditoría General 
+de la Nación (AGN) y SIGEN.
+• Ley 24.156 de Adm. 
+Financiera.
+• Dictámenes de auditoría 
+UAI/AGN.
+• Memoria Anual y Balance 
+de Gestión.
+Téc. Sup. en RR. HH. Héctor Daniel Ayarachi Fuentes
+ Página 3 de 51
+=== Page 5 ===
+Planeamiento y Control de las Organizaciones | CURZAS UNCo — CURZAS
+Dimensión Mecanismos Institucionales en CURZAS / UNCo Sustento Normativo / Evidencia
+• Contrapesos orgánicos: el Consejo 
+Directivo fiscaliza, aprueba o rechaza la 
+ejecución presupuestaria del Decanato.
+Vertical
+(Control electoral y 
+representativo)
+• Elecciones periódicas, directas y 
+ponderadas para Decano/a y Vicedecano/
+a.
+• Renovación democrática de los 
+representantes de los cuatro claustros 
+(Docentes, Nodocentes, Estudiantes y 
+Graduados) ante el Consejo Directivo.
+• Estatuto General de la 
+UNCo.
+• Resoluciones de Junta 
+Electoral y padrones 
+públicos transparentes.
+Social
+(Transparencia y control 
+ciudadano)
+• Portal Web de Transparencia Activa y 
+Datos Abiertos.
+• Publicación obligatoria de compras, 
+licitaciones y escalas salariales.
+• Tramitación pública de solicitudes 
+ciudadanas de acceso a la información.
+• Ley 27.275 de Acceso a la 
+Información Pública.
+• Portal de Transparencia 
+Abierta UNCo.
+4. Gobernanza y Poligobernanza: La Paradoja del Co-Gobierno Universitario
+El análisis de la conducción institucional exige articular los postulados de la Gobernanza 
+desarrollados por Luis Aguilar Villanueva (2006) con la teoría de la Poligobernanza y 
+Gobernación Reticular formulada por Cao y Blutman (2019, 2021).
+A. Gobernanza Reticular y Poligobernanza en el Marco Teórico
+Aguilar Villanueva (2006) define la gobernanza como el proceso de dirección social mediante el 
+cual el gobierno y la sociedad civil interactúan de forma interdependiente, superando la 
+histórica “insuficiencia directiva del Estado en solitario”. La gobernanza implica construir 
+conjuntamente la intencionalidad social (los objetivos y valores colectivos) y la capacidad social 
+(los recursos y arreglos organizativos para alcanzarlos), transitando desde el monopolio estatal 
+jerárquico hacia sistemas de coordinación reticular y coproducción pública.
+Por su parte, Cao y Blutman (2019, 2021) profundizan esta visión a través del concepto de 
+Poligobernanza, concebida como un modelo de gobernación en red con lógica bottom-up (de abajo 
+hacia arriba). Este paradigma propone transformar el Estado en un “Estado plataforma”, articulando 
+horizontalmente a organismos públicos con comunidades de práctica, movimientos sociales y 
+organizaciones civiles para romper la inercia, la compartimentación en “silos” y el anquilosamiento 
+normativo que caracteriza a las burocracias tradicionales.
+B. Análisis Crítico: La Paradoja del Co-Gobierno Institucional
+Al examinar la dinámica del CURZAS a la luz de estos conceptos, emerge una paradoja institucional 
+estructurante:
+1. El Co-Gobierno como Dirección Social Compartida Interna: La conformación estatutaria de 
+los órganos colegiados del CURZAS (Consejo Directivo integrado democráticamente por docentes, 
+graduados, estudiantes y nodocentes) representa una experiencia pionera de dirección social 
+compartida incrustada en las entrañas del Estado público.
+2. El Riesgo del “Silo Corporativo Endogámico”: No obstante su virtud democrática interna, la 
+práctica institucional corre el riesgo recurrente de replegarse en una dinámica autorreferencial. En 
+términos de Cao y Blutman, las organizaciones burocráticas tienden a operar como “islas” o silos 
+Téc. Sup. en RR. HH. Héctor Daniel Ayarachi Fuentes
+ Página 4 de 51
+=== Page 6 ===
+Planeamiento y Control de las Organizaciones | CURZAS UNCo — CURZAS
+aislados dominados por intereses estamentales, donde las disputas claustrales internas y la 
+reproducción burocrática absorben la energía política, desatendiendo las demandas emergentes del 
+entorno socio-territorial.
+3. El Desafío de la Poligobernanza con la Línea Sur y la Comarca Atlántica: Para que el co-
+gobierno trascienda el encapsulamiento burocrático y concrete una verdadera poligobernanza 
+territorial, el CURZAS debe consolidar redes horizontales y proyectos de cocreación con los 
+pequeños productores ganaderos, las cooperativas de trabajo, las comunidades originarias y los 
+municipios de la Línea Sur rionegrina. En este esquema, la Secretaría de Extensión y 
+Transferencia se erige como el canal institucional estratégico y la frontera viva donde se debate la 
+superación de la endogamia universitaria.
+5. Evaluación de Gobernanza Pública Inteligente (Según Oszlak)
+A partir de las tesis de Oscar Oszlak (2020) sobre la transición del Gobierno Electrónico hacia el 
+Estado Inteligente y la Gobernanza Algorítmica, se analizó la penetración de tecnologías disruptivas 
+e Inteligencia Artificial en el organismo.
+A. Diagnóstico de Madurez Tecnológica
+El CURZAS ha consolidado una fase madura de Gobierno Electrónico e Interoperabilidad Digital 
+mediante la adopción integral del ecosistema SIU (Guaraní, Mapuche, Diaguita, Mocoví) y el sistema de 
+expedientes digitales SUDOCU. Esto garantiza trazabilidad, firma digital y celeridad procesal, 
+reduciendo sustancialmente el soporte físico en papel.
+B. Análisis de la Pregunta Guía: Algoritmos e Inteligencia Artificial en Recursos Humanos
+PREGUNTA DE INVESTIGACIÓN INSTITUCIONAL
+¿Cuenta el organismo con normativas vigentes sobre la incorporación de algoritmos o software predictivo en la selección o 
+monitoreo de personal?
+Resultados del Relevamiento Normativo y de Gestión:
+• Inexistencia Absoluta de Algoritmos Predictivos: En el CURZAS no existen normativas, 
+proyectos piloto ni herramientas de software predictivo o Inteligencia Artificial destinadas a la 
+selección, evaluación de desempeño o monitoreo disciplinario de los trabajadores.
+• Blindaje Paritario y Garantía de Control Humano: La selección y promoción del personal se 
+rige con exclusividad por jurados y comisiones paritarias integradas por personas humanas, 
+garantizadas por los Convenios Colectivos de Trabajo (Decretos N° 366/06 y N° 1246/15). Existe un 
+consenso institucional y sindical explícito que rechaza la delegación de decisiones laborales en 
+sistemas algorítmicos automatizados.
+• Ubicación en la Escala de Oszlak: La institución se encuentra plenamente inserta en la etapa de 
+digitalización de trámites y expedientes, pero distante de la Gobernanza Algorítmica y el 
+Estado Inteligente. Esta distancia no obedece a un mero rezago tecnológico, sino a un blindaje 
+ético, político y gremial orientado a resguardar la transparencia, la imparcialidad y las garantías 
+constitucionales del empleo público.
+6. Conclusión Sintética del Avance 1
+El análisis del CURZAS evidencia una organización pública donde converge una matriz burocrática-
+profesional weberiana garantista, un régimen de autonomía y co-gobierno democrático conquistado 
+históricamente, e innovaciones tecnológicas orientadas a la modernización de servicios. El desafío 
+estratégico central radica en proyectar su co-gobierno interno hacia redes horizontales de 
+Téc. Sup. en RR. HH. Héctor Daniel Ayarachi Fuentes
+ Página 5 de 51
+=== Page 7 ===
+Planeamiento y Control de las Organizaciones | CURZAS UNCo — CURZAS
+poligobernanza con el territorio de la Línea Sur y la Zona Atlántica rionegrina, preservando la primacía 
+del control humano y paritario frente a los desafíos de la era algorítmica.
+Téc. Sup. en RR. HH. Héctor Daniel Ayarachi Fuentes
+ Página 6 de 51
+=== Page 8 ===
+Planeamiento y Control de las Organizaciones | CURZAS UNCo — CURZAS
+AVANCE 2: Conexión con la Poligobernanza
+AVANCE 2: Conexión con la Poligobernanza
+Estado Plataforma, Interoperabilidad y Tramados Institucionales Ad Hoc
+UNCo — CURZAS
+Ejes Analíticos y Metodológicos del Avance 2
+• Eje 1: Desafío del “Estado Plataforma” e Interoperabilidad frente a los Silos de Información (Cao & Blutman, Oszlak).
+• Eje 2: “Tramados Institucionales Ad Hoc” y Despliegue Territorial frente a la Rigidez Departamental (Hintze, Aguilar 
+Villanueva).
+• Eje 3: Evaluación de Viabilidad, Matriz FODA Situada, Mapeo de Stakeholders y Capacidades Estatales (PES de Carlos Matus, 
+Bertranou).
+1. Introducción y Enfoque Teórico del Avance 2
+Avanzando en la aplicación de los marcos contemporáneos sobre modernización y reforma estatal, el 
+presente módulo profundiza la conexión del CURZAS (UNCo) con el paradigma de la 
+Poligobernanza desarrollado por Horacio Cao y Gustavo Blutman (2019, 2021), complementado 
+con las contribuciones de Luis F. Aguilar Villanueva (2006), Oscar Oszlak (2020) y Jorge Hintze 
+(2018).
+El análisis se estructura en torno a dos desafíos organizacionales críticos para la gestión pública 
+universitaria en el territorio norpatagónico: la capacidad de operar bajo la lógica de un “Estado 
+Plataforma” interoperable frente a los silos de información, y la conformación de “Tramados 
+institucionales ad hoc” para brindar respuestas socio-productivas ágiles frente a la rigidez 
+departamental tradicional.
+2. Desafío 1: El “Estado Plataforma” e Interoperabilidad frente a los Silos de 
+Información
+PREGUNTA DE INVESTIGACIÓN INSTITUCIONAL
+Si pensamos en el “Estado Plataforma” de Cao y Blutman: ¿El CURZAS funciona de manera interoperable compartiendo 
+datos integrados con otros organismos públicos e institutos científicos (como el CONICET o el INTA), o persisten los sistemas 
+aislados de información?
+A. Marco Conceptual: Del Estado Burocrático al Estado Plataforma
+Según Cao y Blutman (2019, 2021), el Estado Plataforma representa una superación radical del 
+modelo burocrático cerrado. En lugar de operar como un conjunto de pirámides aisladas que 
+monopolizan trámites y retienen datos en compartimentos estancos, la administración pública se 
+concibe como un ecosistema digital y sociotécnico articulador. El Estado provee una 
+infraestructura común, estándares de datos abiertos y arquitecturas de microservicios mediante 
+interfaces de programación de aplicaciones (APIs), permitiendo que diversas áreas gubernamentales, 
+institutos científicos y actores de la sociedad civil colaboren en la coproducción de valor público.
+La piedra angular de este modelo es la Interoperabilidad de Sistemas de Información (IOP). Como 
+destacan los autores y ratifica Oszlak (2020), la interoperabilidad no solo asegura la comunicación 
+fluida y segura entre bases de datos heterogéneas, sino que viabiliza el principio de “una sola vez” 
+(once-only), según el cual ningún ciudadano, productor o investigador debe entregar a una ventanilla 
+estatal información que ya consta en otra dependencia pública.
+Téc. Sup. en RR. HH. Héctor Daniel Ayarachi Fuentes
+ Página 7 de 51
+=== Page 9 ===
+Planeamiento y Control de las Organizaciones | CURZAS UNCo — CURZAS
+B. Diagnóstico Empírico en el CURZAS: Silos Informáticos y Duplicación Operativa
+Al contrastar este modelo con la realidad organizativa del CURZAS y su articulación con los 
+organismos del sistema científico-técnico nacional (CONICET e INTA), el relevamiento confirma de 
+manera contundente la persistencia de sistemas aislados de información:
+1. Silos Informáticos en la Suite de Gestión: La UNCo opera centralmente con la suite SIU 
+(Guaraní para gestión académica, Mocoví para presupuesto y extensión, Wichi/Diaguita y SUDOCU 
+para expedientes digitales). A nivel de ciencia y tecnología, la Universidad gestiona sus propios 
+registros, mientras que el CONICET exige la carga curricular y de producción en SIGEVA / CVar y 
+el INTA maneja sus plataformas propias (SIGA / SIGEP).
+2. Persistencia del Trabajo Manual Duplicado: Aunque el CONICET desarrolló en 2009 un 
+“módulo de interoperabilidad” en SIGEVA para convenios específicos con determinadas 
+universidades (como la UBA), no existe una pasarela API automatizada e institucionalizada 
+en tiempo real entre las bases de datos de la UNCo y las de CONICET o INTA. Como 
+consecuencia, los docentes-investigadores del CURZAS con doble pertenencia (en el Centro de 
+Investigaciones y Transferencia CIT Río Negro / CCT Patagonia Norte o en proyectos radicados 
+en la Estación Experimental Agropecuaria INTA Valle Inferior) deben ingresar manualmente 
+sus datos curriculares, memorias de investigación y producciones científicas por duplicado o 
+triplicado en cada sistema por separado.
+3. Duplicación de Relevamientos en la Región Sur y Zona Atlántica: En el plano socio-
+territorial, las iniciativas de relevamiento de datos socio-productivos, censos campesinos y mapas de 
+vulnerabilidad agroclimática en la Línea Sur continúan ejecutándose de forma fragmentada por cada 
+organismo. La falta de un repositorio digital interoperable único reproduce las “islas burocráticas”, 
+insume costos transaccionales innecesarios y priva a la región de una analítica de datos integrada 
+para la toma de decisiones públicas basadas en evidencia.
+DICTAMEN SOBRE EL EJE 1: INTEROPERABILIDAD
+Conclusión: En el CURZAS persiste un modelo de sistemas aislados de información. Si bien se ha consolidado una 
+fase madura de digitalización interna de trámites (SIU/SUDOCU), la transición hacia un Estado Plataforma 
+interoperable con CONICET e INTA permanece como una deuda estructural pendiente.
+3. Desafío 2: “Tramados Institucionales Ad Hoc” frente a la Rigidez 
+Departamental
+PREGUNTA DE INVESTIGACIÓN INSTITUCIONAL
+Pensando en los “Tramados institucionales ad hoc”: ¿Las secretarías de Extensión o Investigación configuran redes flexibles y 
+temporales con municipios locales para resolver demandas socio-productivas de urgencia regional, rompiendo la rigidez de los 
+departamentos tradicionales?
+A. Marco Conceptual: Tramados Ad Hoc y Gestión Matricial por Proyectos
+El concepto de tramados institucionales ad hoc es formulado por Cao y Blutman (2019, 2021) en 
+el seno de la teoría de la Poligobernanza. Frente a la naturaleza hipercompleja, volátil y heterogénea de 
+las problemáticas sociales contemporáneas, las estructuras burocráticas jerárquicas y departamentales 
+—diseñadas para administrar rutinas estables y estandarizadas— resultan excesivamente lentas, rígidas 
+e ineficaces.
+La Poligobernanza postula la conformación de arreglos institucionales dinámicos, flexibles y 
+temporales (adhocracias y estructuras matriciales), donde organismos estatales, gobiernos locales, 
+Téc. Sup. en RR. HH. Héctor Daniel Ayarachi Fuentes
+ Página 8 de 51

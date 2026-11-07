@@ -1,0 +1,133 @@
+{
+    autores: [
+      {
+        autor: "Horacio Cao & Gustavo Blutman (2019, 2021)",
+        concepto: "Poligobernanza, Estado Plataforma, interoperabilidad de datos y tramados institucionales ad hoc frente a la rigidez departamental en territorios complejos."
+      },
+      {
+        autor: "Carlos Matus (1993, 2007)",
+        concepto: "Planificación Estratégica Situacional (PES): Los cuatro momentos (Explicativo, Normativo, Estratégico, Táctico), juego social, actores con intereses propios y unión indisoluble de viabilidad técnica y política."
+      },
+      {
+        autor: "Julián Bertranou (2015)",
+        concepto: "Capacidades estatales en tres dimensiones operativas: capacidad político-relacional (alianzas y consensos), administrativo-organizacional (rutinas y legalidad) y técnico-analítica (saberes y competencias)."
+      },
+      {
+        autor: "Oscar Oszlak (2020)",
+        concepto: "El Estado en la era exponencial: interoperabilidad de sistemas (IOP), principio de 'una sola vez' (once-only) y ventanillas únicas digitales para evitar islas burocráticas."
+      },
+      {
+        autor: "Luis F. Aguilar Villanueva (2006)",
+        concepto: "Gobernanza reticular: coproducción horizontal de valor público y articulación bottom-up entre universidad, municipios y comunidad frente a modelos tecnocráticos verticales."
+      },
+      {
+        autor: "Juan Manuel Abal Medina (2014)",
+        concepto: "Modelos de administración pública: burocracia weberiana profesional, críticas a la Nueva Gestión Pública (NGP) y dimensiones de rendición de cuentas (accountability)."
+      },
+      {
+        autor: "Jorge Hintze (2018)",
+        concepto: "Estructuras matriciales y gestión por proyectos: flexibilidad organizativa temporal para dar respuestas rápidas sin desarticular la burocracia permanente."
+      },
+      {
+        autor: "Francisco Longo (2006)",
+        concepto: "Subsistemas de gestión del empleo público: alineación estratégica entre planificación, rendimiento, compensaciones y relaciones laborales."
+      }
+    ],
+
+    normativa: [
+      {
+        norma: "Constitución Nacional (Art. 75 inc. 19)",
+        descripcion: "Garantiza la autonomía y autarquía de las Universidades Nacionales como resguardo democrático frente al poder político central."
+      },
+      {
+        norma: "Ley de Educación Superior N° 24.521",
+        descripcion: "Marco legal para el co-gobierno democrático universitario, concursos públicos y gratuidad de los estudios de grado."
+      },
+      {
+        norma: "Estatuto General de la UNCo (Ord. 470/93)",
+        descripcion: "Régimen del co-gobierno cuatripartito (Docentes, Nodocentes, Estudiantes, Graduados) y competencias del Consejo Directivo y Decanato."
+      },
+      {
+        norma: "Decreto PEN N° 366/2006 (CCT Nodocente)",
+        descripcion: "Convenio Colectivo de Trabajo General para el Personal Nodocente de las Universidades Nacionales. Protege carrera y estabilidad laboral."
+      },
+      {
+        norma: "Decreto PEN N° 1246/2015 (CCT Docente)",
+        descripcion: "Convenio Colectivo de Trabajo Docente. Garantiza estabilidad, concursos de carrera docente y tutela gremial en comisiones paritarias."
+      },
+      {
+        norma: "Ley 24.156 de Administración Financiera",
+        descripcion: "Regula el control interno (UAI / SIGEN) y el control externo legislativo (Auditoría General de la Nación - AGN)."
+      },
+      {
+        norma: "Resolución CD-CURZA N° 196/2022",
+        descripcion: "Reglamenta las mediaciones tecnológicas, la presencialidad remota sincrónica y el soporte tutorial en la Red de Nodos Territoriales."
+      }
+    ],
+
+    nodosTerritoriales: [
+      {
+        sede: "Sede Cabecera: Viedma",
+        detalle: "Capital provincial y asiento del Decanato, Secretarías, Consejo Directivo y soporte central administrativo del CURZAS."
+      },
+      {
+        sede: "Nodo San Antonio Oeste (Zona Atlántica)",
+        detalle: "Vinculación con el sector pesquero, portuario y turístico; oferta formativa territorializada."
+      },
+      {
+        sede: "Nodo Sierra Grande (Costa Atlántica Sur)",
+        detalle: "Polo productivo minero e industrial en reactivación; aula híbrida con soporte tecnológico."
+      },
+      {
+        sede: "Nodo General Conesa (Valle Inferior)",
+        detalle: "Nexo logístico y agropecuario sobre el Río Negro; articulación con cooperativas locales."
+      },
+      {
+        sede: "Nodo Río Colorado (Valle Norte)",
+        detalle: "Portal norte de la provincia; articulación en carreras de ciclo y articulación universitaria."
+      },
+      {
+        sede: "Nodo Valcheta (Portal de la Línea Sur)",
+        detalle: "Puerta de entrada a la estepa rionegrina; proyecto extensionista 'Nodos en Red' con pequeños productores."
+      },
+      {
+        sede: "Nodo Ramos Mexía (Meseta de Somuncura)",
+        detalle: "Comunidad de la estepa profunda a más de 400 km de Viedma; cursadas virtuales sincrónicas."
+      },
+      {
+        sede: "Nodo Sierra Colorada (Centro Geográfico)",
+        detalle: "Ubicación en el corazón de Río Negro sobre la Ruta Nacional 23; nexo de comunicaciones."
+      },
+      {
+        sede: "Nodo Los Menucos (Cruce de Rutas 6 y 23)",
+        detalle: "Centro neurálgico del comercio ganadero y artesanal en la región sur rionegrina."
+      },
+      {
+        sede: "Nodo Maquinchao e Ing. Jacobacci (Línea Sur Alta)",
+        detalle: "Zona de clima extremo y gran dispersión territorial; rol clave de los Asistentes Técnico-Pedagógicos."
+      }
+    ],
+
+    faq: [
+      {
+        pregunta: "¿El CURZAS funciona como un 'Estado Plataforma' interoperable o persisten silos informáticos?",
+        respuesta: "Persiste un modelo de sistemas aislados de información. Si bien la UNCo ha consolidado la digitalización interna con SIU (Guaraní, Mapuche, Diaguita) y SUDOCU, no existen pasarelas API automatizadas en tiempo real con CONICET (SIGEVA) ni con INTA, forzando a los investigadores a duplicar tareas manualmente."
+      },
+      {
+        pregunta: "¿Cómo quiebran las Secretarías de Extensión y Ciencia y Técnica la rigidez departamental?",
+        respuesta: "Operan como adhocracias matriciales y 'puentes de poligobernanza'. Mientras los departamentos disciplinares tienen tiempos deliberativos prolongados, las Secretarías articulan tramados ad hoc con municipios y productores mediante los 10 nodos regionales (como el proyecto 'Nodos en Red')."
+      },
+      {
+        pregunta: "¿Por qué el modelo de Planificación Normativa resulta insuficiente según Carlos Matus?",
+        respuesta: "Porque asume que quien planifica posee el monopolio del poder y opera en un sistema cerrado. La Planificación Estratégica Situacional (PES) demuestra que los trabajadores docentes y nodocentes son actores estratégicos con poder de veto y representación en co-gobierno, exigiendo construir viabilidad política."
+      },
+      {
+        pregunta: "¿Cuál es el diagnóstico de las Capacidades Estatales del CURZAS según Bertranou?",
+        respuesta: "Capacidad Político-Relacional: Alta (fuerte legitimidad democrática y alianzas territoriales); Capacidad Administrativa: Media-Alta (solvencia en rutinas formales y tramitación digital, pero con sobrecarga en Viedma); Capacidad Técnica: Media (brechas en analítica digital y entornos híbridos)."
+      },
+      {
+        pregunta: "¿Cómo resuelve dialécticamente el Avance 2 la paradoja del co-gobierno endogámico?",
+        respuesta: "El co-gobierno corre el riesgo de replegarse como un silo corporativo cerrado en disputas internas. Las Secretarías de Extensión y CyT actúan como 'puentes de poligobernanza' que oxigenan la institución al conectar la deliberación con las demandas socio-productivas vivas de la región."
+      }
+    ]
+  }
