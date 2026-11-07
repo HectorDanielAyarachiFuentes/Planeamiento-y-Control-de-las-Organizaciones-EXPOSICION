@@ -212,11 +212,16 @@ class Presentation3D {
       this.camera.clearViewOffset();
       return;
     }
-    if (w > 1024) {
+    // Con la tarjeta de filmina ocupando ~52vw (el rey de la pantalla),
+    // desplazamos suavemente la vista para que el objeto 3D quede perfectamente centrado en el sector derecho
+    if (w > 1200) {
+      const offsetX = -w * 0.22;
+      this.camera.setViewOffset(w, h, offsetX, 0, w, h);
+    } else if (w > 900) {
       const offsetX = -w * 0.16;
       this.camera.setViewOffset(w, h, offsetX, 0, w, h);
     } else if (w > 768) {
-      const offsetX = -w * 0.08;
+      const offsetX = -w * 0.10;
       this.camera.setViewOffset(w, h, offsetX, 0, w, h);
     } else {
       this.camera.clearViewOffset();
@@ -225,7 +230,7 @@ class Presentation3D {
 
   /**
    * Cambia el modo de enfoque de la escultura 3D:
-   * - 'object': centra en pantalla (x: 0) y agranda (+48% escala) para máxima presencia
+   * - 'object': centra en pantalla (x: 0) y agranda (+45% escala) para máxima presencia
    * - 'default' | 'text': regresa a la posición lateral canónica para convivir con la filmina
    */
   setFocusMode(mode) {
@@ -236,8 +241,8 @@ class Presentation3D {
       this.focusAnim = { centerXOffset: 0, scaleMultiplier: 1.0 };
     }
 
-    const targetOffsetX = mode === "object" ? -1.6 : 0;
-    const targetScale = mode === "object" ? 1.48 : 1.0;
+    const targetOffsetX = mode === "object" ? -1.72 : 0;
+    const targetScale = mode === "object" ? 1.45 : 1.0;
 
     if (window.gsap) {
       gsap.to(this.focusAnim, {
@@ -270,7 +275,9 @@ class Presentation3D {
     if (this.scenes[id]) return this.scenes[id];
 
     const group = new THREE.Group();
-    group.position.set(1.6, 0, 0);
+    // Posición canónica y escala inicial proporcionada (objeto más compacto y elevado sobre la base)
+    group.position.set(1.72, 0.22, 0);
+    group.scale.setScalar(0.82);
     group.visible = false;
     this.scenes[id] = group;
     this.scene.add(group);
@@ -618,18 +625,23 @@ class Presentation3D {
     }
 
     // 4. Aplicar rotación orbital y desplazamiento interactivo a la escultura 3D activa
+    // Escala y elevación calibradas: objeto ~18% más compacto y elevado para que el pedestal nunca se corte abajo
+    const globalModelScale = 0.82;
+    const baseElevationY = 0.22;
+    const baseOffsetX = 1.72;
+
     const activeGroup = this.scenes[this.currentSceneId];
     if (activeGroup) {
       const enter = this.transitionState?.enterOffset || { x: 0, y: 0, z: 0, scale: 1, rotY: 0 };
       const centerOffset = this.focusAnim?.centerXOffset || 0;
       const scaleMult = this.focusAnim?.scaleMultiplier || 1.0;
-      activeGroup.position.x = 1.6 + centerOffset + this.userPan.x + enter.x;
-      activeGroup.position.y = this.userPan.y + enter.y;
+      activeGroup.position.x = baseOffsetX + centerOffset + this.userPan.x + enter.x;
+      activeGroup.position.y = baseElevationY + this.userPan.y + enter.y;
       activeGroup.position.z = enter.z;
       activeGroup.rotation.y = this.userRotation.y + enter.rotY;
       activeGroup.rotation.x = this.userRotation.x;
       const baseScale = enter.scale !== undefined ? enter.scale : 1;
-      activeGroup.scale.setScalar(baseScale * scaleMult);
+      activeGroup.scale.setScalar(baseScale * scaleMult * globalModelScale);
     }
 
     // 4b. Escultura saliente en suave retroceso de galería
@@ -638,11 +650,11 @@ class Presentation3D {
       const exit = this.transitionState.exitOffset;
       const centerOffset = this.focusAnim?.centerXOffset || 0;
       const scaleMult = this.focusAnim?.scaleMultiplier || 1.0;
-      exitingGroup.position.x = 1.6 + centerOffset + exit.x;
-      exitingGroup.position.y = exit.y;
+      exitingGroup.position.x = baseOffsetX + centerOffset + exit.x;
+      exitingGroup.position.y = baseElevationY + exit.y;
       exitingGroup.position.z = exit.z;
       const baseScale = exit.scale !== undefined ? exit.scale : 1;
-      exitingGroup.scale.setScalar(baseScale * scaleMult);
+      exitingGroup.scale.setScalar(baseScale * scaleMult * globalModelScale);
     }
 
     // 5. Animación modular delegada a la escultura activa
