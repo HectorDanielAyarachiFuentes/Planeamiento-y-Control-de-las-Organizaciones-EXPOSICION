@@ -457,46 +457,56 @@ class PresentationApp {
         shortLabel: "Apertura",
         shortTitle: "APERTURA",
         title: "Apertura Institucional y Hoja de Ruta",
-        range: [0, 4], // filminas 1 a 5
+        range: [0, 1], // filminas 1 a 2
         isEje: false
       },
       {
-        id: "eje1",
-        code: "EJE I",
-        shortLabel: "Eje I: Modelo y Gestión",
-        shortTitle: "EJE I",
-        title: "EJE I: Modelo de Gestión, Autonomía y Burocracia",
-        range: [5, 10], // filminas 6 a 11
+        id: "avance1",
+        code: "AVANCE 1",
+        shortLabel: "Avance 1: Unidad I",
+        shortTitle: "AVANCE 1",
+        title: "Avance 1: Contexto, Modelo de Gestión y Gobernanza (Unidad I)",
+        range: [2, 6], // filminas 3 a 7
         isEje: true,
         ejeNumber: 1
       },
       {
-        id: "eje2",
-        code: "EJE II",
-        shortLabel: "Eje II: Poligobernanza",
-        shortTitle: "EJE II",
-        title: "EJE II: Poligobernanza, Estado Plataforma y Adhocracias",
-        range: [11, 16], // filminas 12 a 17
+        id: "avance2",
+        code: "AVANCE 2",
+        shortLabel: "Avance 2: Unidad II",
+        shortTitle: "AVANCE 2",
+        title: "Avance 2: Diagnóstico y Planificación Estratégica Situacional (Unidad II)",
+        range: [7, 12], // filminas 8 a 13
         isEje: true,
         ejeNumber: 2
       },
       {
-        id: "eje3",
-        code: "EJE III",
-        shortLabel: "Eje III: PES y Capacidades",
-        shortTitle: "EJE III",
-        title: "EJE III: Planificación Situacional, FODA y Capacidades",
-        range: [17, 22], // filminas 18 a 23
+        id: "avance3",
+        code: "AVANCE 3",
+        shortLabel: "Avance 3: Unidad III",
+        shortTitle: "AVANCE 3",
+        title: "Avance 3: Diseño Organizacional, Procesos y Ecosistema Digital (Unidad III)",
+        range: [13, 18], // filminas 14 a 19
         isEje: true,
         ejeNumber: 3
       },
       {
+        id: "avance4",
+        code: "AVANCE 4",
+        shortLabel: "Avance 4: Unidad IV",
+        shortTitle: "AVANCE 4",
+        title: "Avance 4: Programación Presupuestaria y Factor Humano (Unidad IV)",
+        range: [19, 23], // filminas 20 a 24
+        isEje: true,
+        ejeNumber: 4
+      },
+      {
         id: "cierre",
         code: "CIERRE",
-        shortLabel: "Cierre y Síntesis",
+        shortLabel: "Cierre y Defensa",
         shortTitle: "CIERRE",
-        title: "Cierre: Síntesis Estratégica y Conclusiones",
-        range: [23, 24], // filminas 24 y 25
+        title: "Cierre: Conclusiones Integrales y Defensa de Cátedra",
+        range: [24, 24], // filmina 25
         isEje: false
       }
     ];
@@ -685,27 +695,27 @@ class PresentationApp {
       const avances = [
         {
           num: "AVANCE 1",
-          eje: "Modelo & Gobernanza",
-          title: "Marco Institucional y Burocracia Profesional",
+          eje: "Unidad I",
+          title: "Contexto, Modelo de Gestión y Gobernanza",
           text: "Burocracia profesional que asegura legalidad y convenios paritarios, frente al reto de evitar el aislamiento en el co-gobierno."
         },
         {
           num: "AVANCE 2",
-          eje: "Poligobernanza & PES",
-          title: "Red Territorial Compleja en 10 Nodos",
-          text: "Superación de silos de datos con CONICET/INTA mediante concertación política y planificación situacional (Matus)."
+          eje: "Unidad II",
+          title: "Diagnóstico y Planificación Estratégica Situacional",
+          text: "Red viva en 10 nodos provinciales, superando silos de datos con CONICET/INTA mediante concertación política y metodología PES (Matus)."
         },
         {
           num: "AVANCE 3",
-          eje: "Estructura & Procesos",
-          title: "Circuitos de Personal y Ecosistema Digital",
-          text: "Organigrama real frente al formal; trazabilidad del circuito de licencias y superación de la inercia del papel."
+          eje: "Unidad III",
+          title: "Diseño Organizacional, Procesos y Ecosistema Digital",
+          text: "Organigrama real frente al formal; trazabilidad del circuito de licencias y superación de la inercia del papel mediante interoperabilidad."
         },
         {
           num: "AVANCE 4",
-          eje: "Presupuesto & Personas",
-          title: "Centralidad del Inciso 1 y Factor Humano",
-          text: "90,2% del presupuesto destinado a salarios con 40% de Zona Desfavorable; el personal es la auténtica capacidad estatal."
+          eje: "Unidad IV",
+          title: "Programación Presupuestaria y Factor Humano",
+          text: "El 90,2% del gasto va a salarios (Inciso 1) con 40% de Zona Desfavorable; el personal es la auténtica capacidad estatal."
         }
       ];
 

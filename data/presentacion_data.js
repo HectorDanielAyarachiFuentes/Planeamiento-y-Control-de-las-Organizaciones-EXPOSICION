@@ -244,10 +244,10 @@ const PRESENTACION_DATA = {
       "titulo": "Los 4 Avances de Gestión: Diagnóstico Integral del CURZAS",
       "subtitulo": "Lo Más Destacado y Revelador que Detectamos en Cada Etapa del Análisis",
       "puntosClave": [
-        "Avance 1 (Modelo & Gobernanza): Burocracia profesional que asegura legalidad y convenios paritarios, frente al reto de evitar el aislamiento en el co-gobierno.",
-        "Avance 2 (Poligobernanza & PES): Red viva en 10 nodos provinciales, pero con silos de datos con CONICET/INTA y necesidad de concertación política (Matus).",
-        "Avance 3 (Estructura & Procesos): El organigrama formal invisibiliza a los nodos; mapeamos el circuito de licencias y el choque entre digital y carga manual.",
-        "Avance 4 (Presupuesto & Factor Humano): El 90,2% del gasto va a salarios (Inciso 1) con 40% de Zona Desfavorable; el personal es la auténtica capacidad estatal."
+        "Avance 1: Contexto, Modelo de Gestión y Gobernanza (Unidad I): Burocracia profesional que asegura legalidad y convenios paritarios, frente al reto de evitar el aislamiento en el co-gobierno.",
+        "Avance 2: Diagnóstico y Planificación Estratégica Situacional (Unidad II): Red viva en 10 nodos provinciales, superando silos de datos con CONICET/INTA mediante concertación política situada (Matus).",
+        "Avance 3: Diseño Organizacional, Procesos y Ecosistema Digital (Unidad III): El organigrama formal invisibiliza a los nodos; mapeamos el circuito de licencias y el choque entre digital y carga manual.",
+        "Avance 4: Programación Presupuestaria y Factor Humano (Unidad IV): El 90,2% del gasto va a salarios (Inciso 1) con 40% de Zona Desfavorable; el personal es la auténtica capacidad estatal."
       ],
       "metadatosFooter": "Hoja de Ruta Ejecutiva • Resumen Somero de los 4 Avances • CURZAS - UNCo",
       "escena3D": "anim_02",
@@ -256,7 +256,7 @@ const PRESENTACION_DATA = {
     {
       "id": "slide_3",
       "numero": 3,
-      "bloque": "AVANCE 1: MODELO Y GOBERNANZA",
+      "bloque": "AVANCE 1: CONTEXTO, MODELO DE GESTIÓN Y GOBERNANZA (UNIDAD I)",
       "esquema": "Marco Institucional y Vocación",
       "badge": "UNIDAD I • IDENTIFICACIÓN",
       "titulo": "El CURZAS en el Sistema Universitario: Misión y Despliegue",
@@ -274,7 +274,7 @@ const PRESENTACION_DATA = {
     {
       "id": "slide_4",
       "numero": 4,
-      "bloque": "AVANCE 1: MODELO Y GOBERNANZA",
+      "bloque": "AVANCE 1: CONTEXTO, MODELO DE GESTIÓN Y GOBERNANZA (UNIDAD I)",
       "esquema": "Burocracia Weberiana Profesional",
       "badge": "UNIDAD I • MODELO DE GESTIÓN",
       "titulo": "Matriz Administrativa: Burocracia Profesional y Legalidad",
@@ -292,7 +292,7 @@ const PRESENTACION_DATA = {
     {
       "id": "slide_5",
       "numero": 5,
-      "bloque": "AVANCE 1: MODELO Y GOBERNANZA",
+      "bloque": "AVANCE 1: CONTEXTO, MODELO DE GESTIÓN Y GOBERNANZA (UNIDAD I)",
       "esquema": "Autonomía vs. Gerencialismo NGP",
       "badge": "UNIDAD I • AUTONOMÍA VS NGP",
       "titulo": "Autonomía Universitaria frente al Gerencialismo de la NGP",
@@ -310,7 +310,7 @@ const PRESENTACION_DATA = {
     {
       "id": "slide_6",
       "numero": 6,
-      "bloque": "AVANCE 1: MODELO Y GOBERNANZA",
+      "bloque": "AVANCE 1: CONTEXTO, MODELO DE GESTIÓN Y GOBERNANZA (UNIDAD I)",
       "esquema": "Rendición de Cuentas y Co-Gobierno",
       "badge": "UNIDAD I • CONTROL Y GOBERNANZA",
       "titulo": "Rendición de Cuentas y la Paradoja del Co-Gobierno",
@@ -328,7 +328,7 @@ const PRESENTACION_DATA = {
     {
       "id": "slide_7",
       "numero": 7,
-      "bloque": "AVANCE 1: MODELO Y GOBERNANZA",
+      "bloque": "AVANCE 1: CONTEXTO, MODELO DE GESTIÓN Y GOBERNANZA (UNIDAD I)",
       "esquema": "Mapeo Territorial y Nodos de Río Negro",
       "badge": "MAPA TERRITORIAL 3D",
       "titulo": "Mapeo Territorial y Nodos Regionales de Río Negro",
@@ -348,7 +348,7 @@ const PRESENTACION_DATA = {
     {
       "id": "slide_8",
       "numero": 8,
-      "bloque": "AVANCE 2: POLIGOBERNANZA Y PES",
+      "bloque": "AVANCE 2: DIAGNÓSTICO Y PLANIFICACIÓN ESTRATÉGICA SITUACIONAL (UNIDAD II)",
       "esquema": "Redes Territoriales Complejas",
       "badge": "UNIDAD II • POLIGOBERNANZA",
       "titulo": "Paradigma de la Poligobernanza: Redes frente a la Jerarquía",
@@ -367,7 +367,7 @@ const PRESENTACION_DATA = {
     {
       "id": "slide_9",
       "numero": 9,
-      "bloque": "AVANCE 2: POLIGOBERNANZA Y PES",
+      "bloque": "AVANCE 2: DIAGNÓSTICO Y PLANIFICACIÓN ESTRATÉGICA SITUACIONAL (UNIDAD II)",
       "esquema": "Estado Plataforma e Interoperabilidad",
       "badge": "UNIDAD II • ESTADO PLATAFORMA",
       "titulo": "Desafío 1: El Estado Plataforma frente a los Silos de Datos",
@@ -385,7 +385,7 @@ const PRESENTACION_DATA = {
     {
       "id": "slide_10",
       "numero": 10,
-      "bloque": "AVANCE 2: POLIGOBERNANZA Y PES",
+      "bloque": "AVANCE 2: DIAGNÓSTICO Y PLANIFICACIÓN ESTRATÉGICA SITUACIONAL (UNIDAD II)",
       "esquema": "Tramados Ad Hoc y Adhocracias",
       "badge": "UNIDAD II • ADHOCRACIAS",
       "titulo": "Desafío 2: Tramados Ad Hoc frente a la Rigidez Burocrática",
@@ -403,7 +403,7 @@ const PRESENTACION_DATA = {
     {
       "id": "slide_11",
       "numero": 11,
-      "bloque": "AVANCE 2: POLIGOBERNANZA Y PES",
+      "bloque": "AVANCE 2: DIAGNÓSTICO Y PLANIFICACIÓN ESTRATÉGICA SITUACIONAL (UNIDAD II)",
       "esquema": "Planificación Situacional de Matus",
       "badge": "UNIDAD II • PES MATUS",
       "titulo": "De la Planificación Normativa a la Situacional (PES)",
@@ -421,7 +421,7 @@ const PRESENTACION_DATA = {
     {
       "id": "slide_12",
       "numero": 12,
-      "bloque": "AVANCE 2: POLIGOBERNANZA Y PES",
+      "bloque": "AVANCE 2: DIAGNÓSTICO Y PLANIFICACIÓN ESTRATÉGICA SITUACIONAL (UNIDAD II)",
       "esquema": "Matriz FODA Situada",
       "badge": "UNIDAD II • MATRIZ FODA",
       "titulo": "Matriz FODA Situada en el Contexto del CURZAS",
@@ -439,7 +439,7 @@ const PRESENTACION_DATA = {
     {
       "id": "slide_13",
       "numero": 13,
-      "bloque": "AVANCE 2: POLIGOBERNANZA Y PES",
+      "bloque": "AVANCE 2: DIAGNÓSTICO Y PLANIFICACIÓN ESTRATÉGICA SITUACIONAL (UNIDAD II)",
       "esquema": "Stakeholders y Capacidades Estatales",
       "badge": "UNIDAD II • CAPACIDADES",
       "titulo": "Mapeo de Actores y Capacidades Estatales según Bertranou",
@@ -457,7 +457,7 @@ const PRESENTACION_DATA = {
     {
       "id": "slide_14",
       "numero": 14,
-      "bloque": "AVANCE 3: ESTRUCTURA Y DIGITALIZACIÓN",
+      "bloque": "AVANCE 3: DISEÑO ORGANIZACIONAL, PROCESOS Y ECOSISTEMA DIGITAL (UNIDAD III)",
       "esquema": "Organigrama Formal vs Real",
       "badge": "UNIDAD III • ORGANIGRAMA",
       "titulo": "Organigrama: Estructura Formal vs Estructura Real",
@@ -475,7 +475,7 @@ const PRESENTACION_DATA = {
     {
       "id": "slide_15",
       "numero": 15,
-      "bloque": "AVANCE 3: ESTRUCTURA Y DIGITALIZACIÓN",
+      "bloque": "AVANCE 3: DISEÑO ORGANIZACIONAL, PROCESOS Y ECOSISTEMA DIGITAL (UNIDAD III)",
       "esquema": "Niveles de Gestión del Personal",
       "badge": "UNIDAD III • NIVELES DE GESTIÓN",
       "titulo": "Centralización y Desconcentración en la Gestión del Personal",
@@ -493,7 +493,7 @@ const PRESENTACION_DATA = {
     {
       "id": "slide_16",
       "numero": 16,
-      "bloque": "AVANCE 3: ESTRUCTURA Y DIGITALIZACIÓN",
+      "bloque": "AVANCE 3: DISEÑO ORGANIZACIONAL, PROCESOS Y ECOSISTEMA DIGITAL (UNIDAD III)",
       "esquema": "Flujograma del Circuito de Licencias",
       "badge": "UNIDAD III • FLUJOGRAMA",
       "titulo": "Flujograma del Circuito Clave: Trámite de Licencias",
@@ -511,7 +511,7 @@ const PRESENTACION_DATA = {
     {
       "id": "slide_17",
       "numero": 17,
-      "bloque": "AVANCE 3: ESTRUCTURA Y DIGITALIZACIÓN",
+      "bloque": "AVANCE 3: DISEÑO ORGANIZACIONAL, PROCESOS Y ECOSISTEMA DIGITAL (UNIDAD III)",
       "esquema": "Cuellos de Botella Digitales",
       "badge": "UNIDAD III • DIGITALIZACIÓN",
       "titulo": "La Transición al Ecosistema Electrónico y sus Cuellos de Botella",
@@ -529,7 +529,7 @@ const PRESENTACION_DATA = {
     {
       "id": "slide_18",
       "numero": 18,
-      "bloque": "AVANCE 3: ESTRUCTURA Y DIGITALIZACIÓN",
+      "bloque": "AVANCE 3: DISEÑO ORGANIZACIONAL, PROCESOS Y ECOSISTEMA DIGITAL (UNIDAD III)",
       "esquema": "Inercia y Salir del Paso",
       "badge": "UNIDAD III • TEORÍA ORGANIZACIONAL",
       "titulo": "Inercia Estructural y Racionalidad Limitada en la Universidad",
@@ -547,7 +547,7 @@ const PRESENTACION_DATA = {
     {
       "id": "slide_19",
       "numero": 19,
-      "bloque": "AVANCE 3: ESTRUCTURA Y DIGITALIZACIÓN",
+      "bloque": "AVANCE 3: DISEÑO ORGANIZACIONAL, PROCESOS Y ECOSISTEMA DIGITAL (UNIDAD III)",
       "esquema": "Propuestas de Rediseño",
       "badge": "UNIDAD III • REDISEÑO Y MEJORA",
       "titulo": "Propuestas de Mejora: Firma Digital, Interoperabilidad y Subrogancia",
@@ -565,7 +565,7 @@ const PRESENTACION_DATA = {
     {
       "id": "slide_20",
       "numero": 20,
-      "bloque": "AVANCE 4: PRESUPUESTO Y FACTOR HUMANO",
+      "bloque": "AVANCE 4: PROGRAMACIÓN PRESUPUESTARIA Y FACTOR HUMANO (UNIDAD IV)",
       "esquema": "Hegemonía del Inciso 1 (90,2%)",
       "badge": "UNIDAD IV • FINANZAS PÚBLICAS",
       "titulo": "Presupuesto Universitario y la Centralidad del Inciso 1",
@@ -583,7 +583,7 @@ const PRESENTACION_DATA = {
     {
       "id": "slide_21",
       "numero": 21,
-      "bloque": "AVANCE 4: PRESUPUESTO Y FACTOR HUMANO",
+      "bloque": "AVANCE 4: PROGRAMACIÓN PRESUPUESTARIA Y FACTOR HUMANO (UNIDAD IV)",
       "esquema": "Zona Desfavorable y Estamentos",
       "badge": "UNIDAD IV • MASA SALARIAL",
       "titulo": "Factores Estructurales: Zona Desfavorable (40%) y Planta",
@@ -601,7 +601,7 @@ const PRESENTACION_DATA = {
     {
       "id": "slide_22",
       "numero": 22,
-      "bloque": "AVANCE 4: PRESUPUESTO Y FACTOR HUMANO",
+      "bloque": "AVANCE 4: PROGRAMACIÓN PRESUPUESTARIA Y FACTOR HUMANO (UNIDAD IV)",
       "esquema": "Presupuesto por Programas (Makon)",
       "badge": "UNIDAD IV • TÉCNICA MAKON",
       "titulo": "Presupuesto por Programas: La Cadena Insumo-Producto",
@@ -619,7 +619,7 @@ const PRESENTACION_DATA = {
     {
       "id": "slide_23",
       "numero": 23,
-      "bloque": "AVANCE 4: PRESUPUESTO Y FACTOR HUMANO",
+      "bloque": "AVANCE 4: PROGRAMACIÓN PRESUPUESTARIA Y FACTOR HUMANO (UNIDAD IV)",
       "esquema": "Ciclo Presupuestario y Sistemas SIU",
       "badge": "UNIDAD IV • SISTEMAS FINANCIEROS",
       "titulo": "El Ciclo Presupuestario y el Ecosistema Financiero Integrado",
@@ -637,7 +637,7 @@ const PRESENTACION_DATA = {
     {
       "id": "slide_24",
       "numero": 24,
-      "bloque": "AVANCE 4: PRESUPUESTO Y FACTOR HUMANO",
+      "bloque": "AVANCE 4: PROGRAMACIÓN PRESUPUESTARIA Y FACTOR HUMANO (UNIDAD IV)",
       "esquema": "El Factor Humano como Capacidad",
       "badge": "UNIDAD IV • SÍNTESIS FINAL",
       "titulo": "El Factor Humano como la Auténtica Capacidad Estatal",
@@ -655,7 +655,7 @@ const PRESENTACION_DATA = {
     {
       "id": "slide_25",
       "numero": 25,
-      "bloque": "CIERRE Y CONCLUSIONES",
+      "bloque": "CIERRE: CONCLUSIONES INTEGRALES Y DEFENSA",
       "esquema": "Cierre Protocolar de la Defensa",
       "badge": "CONCLUSIÓN Y PREGUNTAS",
       "titulo": "Conclusiones Integrales, Agradecimiento y Apertura a Preguntas",
