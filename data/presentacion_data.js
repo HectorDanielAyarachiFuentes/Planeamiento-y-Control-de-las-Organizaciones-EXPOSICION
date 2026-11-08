@@ -1,36 +1,10 @@
 /**
  * =============================================================================
- * METADATOS Y CONTENIDO DE LA PRESENTACIÓN — CÁTEDRA PLANEAMIENTO Y CONTROL 2026
- * Universidad Nacional del Comahue — CURZAS
- * Licenciatura en Recursos Humanos
- * Autor: Tec. Sup. en RRHH Héctor Daniel Ayarachi Fuentes
- * =============================================================================
- * ESTRUCTURA INTEGRAL CONSOLIDADA DE LOS 4 AVANCES:
- * 1. Presentación y Quiénes Somos (Filmina 1)
- * 2. Hoja de Ruta Ejecutiva: Los 4 Avances en Síntesis Somera (Filmina 2)
- * 3. AVANCE 1: Identificación y Marco Institucional del CURZAS (Filmina 3)
- * 4. AVANCE 1: Modelo Administrativo: Burocracia Weberiana Profesional (Filmina 4)
- * 5. AVANCE 1: Autonomía Universitaria frente a la NGP (Filmina 5)
- * 6. AVANCE 1: Rendición de Cuentas (Accountability) y Paradoja del Co-Gobierno (Filmina 6)
- * 7. AVANCE 1: Mapeo Territorial y Nodos de Río Negro — Visor 3D & SVG (Filmina 7)
- * 8. AVANCE 2: Paradigma de la Poligobernanza: Redes Territoriales Complejas (Filmina 8)
- * 9. AVANCE 2: Desafío 1: Estado Plataforma frente a Silos de Datos (Filmina 9)
- * 10. AVANCE 2: Desafío 2: Tramados Institucionales Ad Hoc y Adhocracias (Filmina 10)
- * 11. AVANCE 2: De la Planificación Normativa a la Situacional (PES Matus) (Filmina 11)
- * 12. AVANCE 2: Matriz FODA Situada del CURZAS (Filmina 12)
- * 13. AVANCE 2: Mapeo de Stakeholders y Capacidades Estatales (Bertranou) (Filmina 13)
- * 14. AVANCE 3: Estructura Orgánica: Organigrama Formal vs Real (Filmina 14)
- * 15. AVANCE 3: Centralización y Desconcentración en Recursos Humanos (Filmina 15)
- * 16. AVANCE 3: Flujograma del Circuito de Licencias de Personal (Filmina 16)
- * 17. AVANCE 3: Transición al Ecosistema Electrónico y Cuellos de Botella (Filmina 17)
- * 18. AVANCE 3: Inercia Estructural (Campos) y Salir del Paso (Forester) (Filmina 18)
- * 19. AVANCE 3: Propuestas de Rediseño: Firma Digital e Interoperabilidad (Filmina 19)
- * 20. AVANCE 4: Presupuesto Universitario y Centralidad del Inciso 1 (Filmina 20)
- * 21. AVANCE 4: Zona Desfavorable Patagónica (40%) y Masa Salarial (Filmina 21)
- * 22. AVANCE 4: Presupuesto por Programas: Cadena Insumo-Producto (Makon) (Filmina 22)
- * 23. AVANCE 4: Ciclo Presupuestario y Sistemas Integrados (SIU / Ley 24.156) (Filmina 23)
- * 24. AVANCE 4: El Factor Humano como la Auténtica Capacidad Estatal (Filmina 24)
- * 25. CIERRE: Conclusiones Integrales, Agradecimiento y Apertura a Preguntas (Filmina 25)
+ * METADATOS Y CONTENIDOS OFICIALES DE LA DEFENSA ORAL
+ * Asignatura: Planeamiento y Control de las Organizaciones (2026)
+ * Carrera: Licenciatura en Recursos Humanos - CURZAS / UNCo
+ * Estudiante: Tec. Sup. en RR. HH. Héctor Daniel Ayarachi Fuentes
+ * Docentes Evaluadores: Mgter. Susana Lopez y Lic. Carlos Jauge
  * =============================================================================
  */
 
@@ -66,6 +40,94 @@ const PRESENTACION_DATA = {
     "alertaRojaMinutos": 27,
     "promedioPorSlideMin": 1.2
   },
+  "consignasCatedra": [
+    {
+      "avanceNum": 1,
+      "avanceTitulo": "Avance 1: Contexto, Modelo de Gestión y Gobernanza (Unidad I)",
+      "unidad": "Unidad I",
+      "objetivo": "Caracterizar el marco institucional de la organización: modelo de administración predominante (Burocracia Weberiana vs. Nueva Gestión Pública), mecanismos de rendición de cuentas (accountability) y nivel de Gobernanza Pública Inteligente / IA (Oszlak).",
+      "entregables": [
+        "Identificar el modelo de administración predominante en la entidad (Burocracia tradicional vs. Nueva Gestión Pública).",
+        "Analizar los mecanismos de rendición de cuentas (accountability) horizontal, vertical o social vigentes.",
+        "Evaluar el nivel de Gobernanza Pública Inteligente o si existen iniciativas preliminares de automatización o gestión algorítmica/IA según los postulados de Oszlak."
+      ],
+      "queBuscar": [
+        "Ley de creación del organismo (Ley 19.648/1972) y Estatuto Universitario de la UNCo.",
+        "Misiones y funciones institucionales aprobadas y convenios colectivos docentes (CCT 1246/15) y nodocentes (CCT 366/06).",
+        "Cartas de compromiso ciudadano, boletines oficiales y normativas electorales del co-gobierno."
+      ],
+      "preguntasGuia": [
+        "¿El organismo se rige bajo estructuras estrictamente centralizadas y jerárquicas (modelo weberiano)?",
+        "¿Existe una Oficina de Transparencia o sección de datos abiertos para la rendición de cuentas (accountability)?",
+        "¿Cuenta el área con normativas vigentes sobre la incorporación de algoritmos o software predictivo en la selección o monitoreo de personal?"
+      ],
+      "respuestaSituada": "El CURZAS opera bajo un modelo de Burocracia Profesional weberiana con fuerte apego a la legalidad y convenios paritarios docentes y nodocentes. El co-gobierno cuatripartito triangula la rendición de cuentas (AGN, UAI, elecciones y boletines). El nivel de gobernanza inteligente es medio (SUDOCU), sin normativas ni uso de algoritmos predictivos o IA en Recursos Humanos."
+    },
+    {
+      "avanceNum": 2,
+      "avanceTitulo": "Avance 2: Diagnóstico y Planificación Estratégica Situacional (Unidad II)",
+      "unidad": "Unidad II",
+      "objetivo": "Analizar la viabilidad y las capacidades institucionales de la entidad mediante una Matriz FODA situada en el contexto actual, un Mapeo de Actores Clave (stakeholders) que influyen en el área de RRHH y la evaluación de capacidades estatales según Bertranou.",
+      "entregables": [
+        "Elaboración de una Matriz FODA situada en el contexto actual del organismo.",
+        "Desarrollo de un Mapeo de Actores Clave (stakeholders) que influyen en las decisiones del área de Recursos Humanos.",
+        "Evaluación de las capacidades estatales del organismo siguiendo la metodología de Bertranou."
+      ],
+      "queBuscar": [
+        "Plan estratégico institucional vigente y planes operativos anuales (POA).",
+        "Memorias de gestión anuales y resoluciones de extensión y posgrado de la sede CURZAS.",
+        "Convenios interinstitucionales de articulación con organismos científico-técnicos y municipios provinciales."
+      ],
+      "preguntasGuia": [
+        "¿Los planes vigentes son normativos (rígidos) o adoptan un enfoque situacional (PES) que considera a los trabajadores como actores estratégicos?",
+        "¿Cuáles son las principales fortalezas y debilidades operativas manifestadas de forma interna (insumo directo para la matriz FODA)?",
+        "¿Existen deficiencias críticas detectadas en las competencias técnicas de las plantillas actuales (capacidad estatal)?"
+      ],
+      "respuestaSituada": "Predomina un enfoque situacional de facto ante la necesidad de sostener 10 nodos provinciales. La principal fortaleza es el arraigo territorial patagónico; la mayor debilidad radica en la fragmentación de datos y la dependencia de aportes ad hoc. Bertranou permite constatar una alta capacidad técnico-académica, pero con capacidades administrativas y tecnológicas tensionadas por la dispersión geográfica."
+    },
+    {
+      "avanceNum": 3,
+      "avanceTitulo": "Avance 3: Diseño Organizacional, Procesos y Ecosistema Digital (Unidad III)",
+      "unidad": "Unidad III",
+      "objetivo": "Mapear la estructura formal y la transformación digital de la entidad: organigrama actual y manual de funciones, niveles de centralización/desconcentración, y diseño del flujograma de un proceso clave de personal (licencias) evaluando su transición a GDE/SUDOCU y detectando cuellos de botella.",
+      "entregables": [
+        "Relevamiento y análisis del Organigrama actual y el manual de funciones institucionales.",
+        "Identificación de los niveles de centralización o descentralización.",
+        "Diseño de un Flujograma de un proceso clave dentro del área de personal, evaluando su transición hacia el Sistema de Gestión Documental Electrónica (GDE) o Trámites a Distancia (TAD) / SUDOCU y detectando cuellos de botella."
+      ],
+      "queBuscar": [
+        "Organigrama formal aprobado por ordenanza/resolución de Consejo Superior y Directivo.",
+        "Manuales de misiones y funciones de los departamentos docentes y direcciones nodocentes.",
+        "Normativas internas de despapelización y transición hacia expediente digital (SUDOCU / SIU-Mapuche)."
+      ],
+      "preguntasGuia": [
+        "¿El organigrama real coincide con la estructura formal de dependencias y delegaciones?",
+        "¿Cómo se gestionan las autorizaciones internas? ¿Se utiliza de forma exclusiva el Sistema de Gestión Documental Electrónica (GDE) o la plataforma Trámites a Distancia (TAD / SUDOCU)?",
+        "¿Qué cuellos de botella burocráticos persisten en el circuito de licencias, designaciones o ascensos?"
+      ],
+      "respuestaSituada": "El organigrama formal no refleja la compleja red de los 10 nodos territoriales de Río Negro ni las coordinaciones de carrera. En el circuito de licencias, la gestión se realiza en SUDOCU pero requiere doble carga manual en SIU-Mapuche. El principal cuello de botella es la parálisis de firmas por ausencia del superior directo al carecer de un régimen reglamentado de subrogancia."
+    },
+    {
+      "avanceNum": 4,
+      "avanceTitulo": "Avance 4: Programación Presupuestaria y Factor Humano (Unidad IV)",
+      "unidad": "Unidad IV",
+      "objetivo": "Vincular la planificación política con los recursos económicos asignados: identificación de partidas de gasto asignadas al factor humano (Inciso 1 - Gastos en Personal) y análisis del ciclo presupuestario bajo la técnica de Presupuesto por Programas (Makon).",
+      "entregables": [
+        "Identificación de las partidas de gasto asignadas al factor humano (Inciso 1 - Gastos en Personal) dentro del presupuesto de la entidad.",
+        "Análisis del ciclo presupuestario del organismo bajo la técnica de Presupuesto por Programas."
+      ],
+      "queBuscar": [
+        "Ley de Presupuesto General de la Administración Nacional aprobada para el ejercicio corriente.",
+        "Planillas presupuestarias de distribución administrativa de partidas de la UNCo y desagregación por dependencias (CURZAS).",
+        "Convenios colectivos y escalafones salariales con cómputo del adicional por Zona Desfavorable (40%)."
+      ],
+      "preguntasGuia": [
+        "¿Cuál es el presupuesto total asignado al organismo y qué porcentaje se destina al Inciso 1 (Gastos en Personal)?",
+        "¿Cómo se estructuran los programas del organismo en la planilla presupuestaria oficial?"
+      ],
+      "respuestaSituada": "El presupuesto institucional del CURZAS asciende a $4.877 millones de pesos (sobre un total UNCo de $73.900M). El 90,2% está absorbido rígidamente por el Inciso 1 (Personal), condicionado por el impacto de ley del 40% de Zona Desfavorable. Se estructura bajo el Programa 26 (Desarrollo de la Educación Superior), evidenciando que las personas constituyen la auténtica capacidad operativa de la universidad pública."
+    }
+  ],
   "fichasRespaldo": {
     "autores": [
       {
@@ -280,10 +342,10 @@ const PRESENTACION_DATA = {
       "titulo": "Matriz Administrativa: Burocracia Profesional y Legalidad",
       "subtitulo": "Procedimentalismo Normativo, Concursos Públicos y Tutela Paritaria",
       "puntosClave": [
-        "Apego al Principio de Legalidad: Todo trámite requiere expediente formal foliado, fundamentación reglamentaria y dictamen jurídico.",
-        "Estabilidad y Carrera Administrativa: Empleo regido por el CCT Nodocente (Dec. 366/06) y CCT Docente (Dec. 1246/15) que blindan contra el clientelismo.",
-        "Base Profesional Especializada: Fuerte autonomía pedagógica y científica conviviendo con procedimientos administrativos estandarizados.",
-        "Fortaleza Institucional: Las reglas claras garantizan igualdad de trato, transparencia y neutralidad operativa en el empleo público."
+        "Pregunta Guía Cátedra: ¿El organismo se rige bajo estructuras estrictamente centralizadas y jerárquicas (modelo weberiano)?",
+        "Diagnóstico Situado: Burocracia profesional con fuerte apego al principio de legalidad, expediente foliado y dictamen jurídico previo.",
+        "Estabilidad de Planta: Empleo regido por el CCT Nodocente (Dec. 366/06) y CCT Docente (Dec. 1246/15) que blindan contra el clientelismo.",
+        "Especialización y Autonomía: Procedimientos administrativos estandarizados conviviendo armoniosamente con autonomía de cátedra y científica."
       ],
       "metadatosFooter": "Avance 1 • Burocracia Tradicional de Base Profesional • Weber / Abal Medina",
       "escena3D": "anim_04",
@@ -298,10 +360,10 @@ const PRESENTACION_DATA = {
       "titulo": "Autonomía Universitaria frente al Gerencialismo de la NGP",
       "subtitulo": "La Universidad como Bien Público Social frente a las Lógicas de Mercado",
       "puntosClave": [
-        "Distinción Esencial: La autonomía universitaria es un escudo democrático de libertad nacido en 1918, no una desregulación de mercado.",
-        "Crítica a la NGP: La Nueva Gestión Pública divide al Estado en agencias que compiten y tratan al alumno como usuario o cliente.",
-        "Inexistencia de Lógicas Mercantiles: En el CURZAS no hay vouchers educativos, aranceles ni contratos por productividad individual.",
-        "Uso Instrumental: La NGP solo influyó en la adopción técnica de plataformas informáticas (ecosistema SIU), sin alterar la vocación pública."
+        "Entregable de Cátedra: Identificar el modelo de administración predominante en la entidad (Burocracia tradicional vs Nueva Gestión Pública).",
+        "Inexistencia de Lógicas Mercantiles: En el CURZAS no rige el gerencialismo de la NGP (no hay vouchers, aranceles ni contratos por productividad).",
+        "Escudo Autonómico Constitucional: El Art. 75 inc. 19 CN y la Reforma de 1918 consagran a la educación como bien público y derecho humano inalienable.",
+        "Uso Instrumental de Tecnologías: La NGP solo influyó en la adopción operativa de sistemas informáticos (ecosistema SIU), sin alterar la vocación pública."
       ],
       "metadatosFooter": "Avance 1 • Análisis Crítico de Modelos de Gestión • Cao & Blutman (2019)",
       "escena3D": "anim_05",
@@ -316,10 +378,10 @@ const PRESENTACION_DATA = {
       "titulo": "Rendición de Cuentas y la Paradoja del Co-Gobierno",
       "subtitulo": "Controles Republicano, Electoral y Social frente al Riesgo de Endogamia",
       "puntosClave": [
-        "Triangulación de Controles (O'Donnell): Control Horizontal (UAI y AGN), Vertical (elecciones de claustros) y Social (boletines abiertos).",
-        "Soberanía Colegiada: Las autoridades ejecutivas unipersonales (Decanato) no pueden comprometer fondos sin aval del Consejo Directivo.",
-        "La Paradoja del Co-Gobierno: El órgano soberano deliberativo corre el riesgo de volverse endogámico si se encierra en disputas corporativas.",
-        "Gobernanza Inteligente (Oszlak): Nivel de madurez tecnológica medio; incipiente aplicación de inteligencia de datos en recursos humanos."
+        "Preguntas Guía Cátedra: ¿Mecanismos de rendición de cuentas vigentes? ¿Existe Oficina de Transparencia? ¿Normativas sobre IA según Oszlak?",
+        "Triangulación de Accountability: Control Horizontal (UAI y AGN auditando legalidad y fondos), Vertical (elecciones de claustros) y Social (boletines abiertos).",
+        "Gobernanza Inteligente (Oszlak): Nivel de madurez medio en el CURZAS; portal web institucional y expediente digital SUDOCU, pero sin Oficina de Datos Abiertos formal.",
+        "Software Predictivo e Inteligencia Artificial: No existen normativas vigentes ni algoritmos en selección o monitoreo; los concursos se resuelven por jurados colegiados."
       ],
       "metadatosFooter": "Avance 1 • Mecanismos de Rendición de Cuentas y Co-Gobierno • O'Donnell",
       "escena3D": "anim_06",
@@ -409,10 +471,10 @@ const PRESENTACION_DATA = {
       "titulo": "De la Planificación Normativa a la Situacional (PES)",
       "subtitulo": "Los Cuatro Momentos de Matus y la Viabilidad Política en Arenas de Poder Compartido",
       "puntosClave": [
-        "Fracaso del Modelo Normativo: Quien planifica no tiene el monopolio de la realidad ni un sistema cerrado; convive con otros actores que también juegan.",
-        "Los 4 Momentos de Matus: Momento Explicativo (diagnóstico), Normativo (lo que debe ser), Estratégico (construcción de viabilidad) y Táctico (acción).",
-        "Viabilidad Técnica vs Política: Un plan técnicamente brillante fracasa si no construye consensos políticos con los gremios y la comunidad.",
-        "Aplicación en CURZAS: Los planes de modernización requieren necesariamente de concertación paritaria docente y nodocente."
+        "Pregunta Guía Cátedra: ¿Los planes son normativos (rígidos) o adoptan un enfoque situacional (PES) que considera a los trabajadores como actores estratégicos?",
+        "Respuesta a la Cátedra: La universidad planificó históricamente desde un enfoque normativo cerrado, pero la realidad territorial impuso el enfoque situacional (PES Matus).",
+        "Los 4 Momentos de Matus: Explicativo (diagnóstico situado), Normativo (lo que debe ser), Estratégico (construcción de viabilidad) y Táctico (acción cotidiana).",
+        "Trabajadores como Actores Estratégicos: Docentes y nodocentes tienen intereses, poder de veto y convenios propios; la viabilidad técnica es indisoluble de la política."
       ],
       "metadatosFooter": "Avance 2 • Planificación Estratégica Situacional • Carlos Matus",
       "escena3D": "anim_11",
@@ -427,10 +489,10 @@ const PRESENTACION_DATA = {
       "titulo": "Matriz FODA Situada en el Contexto del CURZAS",
       "subtitulo": "Diagnóstico Realista entre Fortalezas Territoriales y Amenazas del Entorno",
       "puntosClave": [
-        "Fortalezas: Red consolidada de 10 nodos, estabilidad por convenios colectivos, legitimidad democrática y ecosistema SIU/SUDOCU.",
-        "Debilidades: Silos informáticos, sobrecarga administrativa en Viedma y disparidad de competencias digitales avanzadas.",
-        "Oportunidades: Alta demanda de formación superior en la provincia y alianzas estratégicas con municipios y comisiones de fomento.",
-        "Amenazas: Congelamiento presupuestario nacional, pérdida del poder adquisitivo de salarios y brecha de conectividad en la estepa."
+        "Entregable de Cátedra: Elaboración de una Matriz FODA situada en el contexto actual del organismo (insumo de fortalezas y debilidades operativas).",
+        "Fortalezas Internas: Arraigo territorial histórico en Río Negro, gratuidad, calidad académica y estabilidad laboral docente/nodocente.",
+        "Debilidades Internas: Silos de datos departamentales, dispersión logística en 10 nodos y lentitud en la carga administrativa manual.",
+        "Oportunidades y Amenazas Externas: Demanda regional de carreras híbridas frente al severo recorte presupuestario nacional del CIN/SPU."
       ],
       "metadatosFooter": "Avance 2 • Matriz FODA Situada del CURZAS • Relevamiento Empírico 2026",
       "escena3D": "anim_12",
@@ -445,10 +507,10 @@ const PRESENTACION_DATA = {
       "titulo": "Mapeo de Actores y Capacidades Estatales según Bertranou",
       "subtitulo": "Evaluación en Tres Dimensiones: Político-Relacional, Administrativa y Técnico-Analítica",
       "puntosClave": [
-        "Mapeo de Fuerzas: Gremios APUNC (nodocente) y ADUNC (docente) con alto poder e interés en la mesa paritaria; municipios como aliados territoriales.",
-        "Capacidad Político-Relacional (ALTA): Destacada aptitud para procesar conflictos y alcanzar consensos democráticos y territoriales.",
-        "Capacidad Administrativa-Organizacional (MEDIA-ALTA): Solvencia en procedimientos reglados, con rigidez para rediseños ágiles.",
-        "Capacidad Técnico-Analítica (MEDIA): Alto saber académico disciplinar, pero con necesidad urgente de capacitación en analítica y gestión de datos."
+        "Entregable de Cátedra: Mapeo de Actores Clave (stakeholders) en Recursos Humanos y evaluación de capacidades estatales según Bertranou.",
+        "Mapeo de Actores Clave: Consejo Directivo, Decanato, gremios paritarios (APUNC y ADUNC/CEDIUNCO), estudiantes y municipios rionegrinos.",
+        "Capacidades Político-Relacional y Administrativa: Alta articulación territorial pero burocracia procedimental lenta.",
+        "Deficiencias en Competencias Técnicas: Brecha digital en agentes de mayor antigüedad para el uso pleno de SUDOCU y SIU-Mapuche (requiere capacitación situada)."
       ],
       "metadatosFooter": "Avance 2 • Evaluación de Capacidades Estatales • Julián Bertranou (2015)",
       "escena3D": "anim_13",
@@ -463,10 +525,10 @@ const PRESENTACION_DATA = {
       "titulo": "Organigrama: Estructura Formal vs Estructura Real",
       "subtitulo": "La Invisibilidad Orgánica de los 10 Nodos y las Respuestas Operativas de Emergencia",
       "puntosClave": [
-        "Estructura Formal (De Jure): Organigrama formal en 5 niveles (Consejo Directivo, Decanato, Secretarías, Departamentos y Direcciones).",
-        "La Gran Discrepancia Detectada: Los 10 Nodos Territoriales no figuran como áreas ni direcciones en el organigrama formal oficial.",
-        "Estructura Real (De Facto): Red viva de nodos sostenida por convenios, mediaciones tecnológicas y Asistentes Pedagógicos en territorio.",
-        "Comisiones Ad Hoc: Grupos de trabajo transitorios que funcionan como válvulas de escape ante la lentitud de los departamentos tradicionales."
+        "Pregunta Guía Cátedra: ¿El organigrama real coincide con la estructura formal de dependencias y delegaciones?",
+        "Discordancia Estructural: El organigrama formal aprobado por resolución solo refleja las secretarías centrales e invisibiliza a los 10 nodos.",
+        "Estructura Real en Red: En el territorio los nodos operan como delegaciones desconcentradas de facto sostenidas por asistentes técnicos pedagógicos.",
+        "Misiones y Funciones No Reconocidas: Falta de formalización orgánica de las figuras de enlace territorial en el manual de misiones y funciones."
       ],
       "metadatosFooter": "Avance 3 • Organigrama Formal e Invisibilidad Territorial • CURZAS - UNCo",
       "escena3D": "anim_14",
@@ -499,10 +561,10 @@ const PRESENTACION_DATA = {
       "titulo": "Flujograma del Circuito Clave: Trámite de Licencias",
       "subtitulo": "Diagramación Algorítmica, Etapas Operativas y Responsables (CCT 366/06 y 1246/15)",
       "puntosClave": [
-        "Proceso Crítico Seleccionado: Circuito integral de licencias médicas, por maternidad y razones particulares del personal.",
-        "Etapa 1: Solicitud inicial y acreditación médica mediante certificado (docente/nodocente).",
-        "Etapa 2: Intervención de Junta Médica / Reconocimientos Médicos y visado de la Dirección de Personal.",
-        "Etapa 3 y 4: Dictamen jurídico, acto resolutivo del Decanato y registro formal en el sistema SIU-Mapuche."
+        "Entregable de Cátedra: Diseño de Flujograma de un proceso clave de personal, evaluando transición hacia sistema digital y detectando cuellos de botella.",
+        "Circuito Relevado: Inicio por agente, visado médico, autorización de jefatura de área, resolución del Decanato e imputación en nómina salarial.",
+        "Cuello de Botella Crítico: Dependencia exclusiva de la firma unipersonal del jefe de área; sin protocolo de subrogancia, las licencias se paralizan.",
+        "Transición Híbrida: Convivencia forzada entre certificados en papel, expedientes en SUDOCU y re-tipeo posterior en SIU-Mapuche."
       ],
       "metadatosFooter": "Avance 3 • Diagramación Algorítmica de Procesos • Circuito de Personal",
       "escena3D": "anim_16",
@@ -517,10 +579,10 @@ const PRESENTACION_DATA = {
       "titulo": "La Transición al Ecosistema Electrónico y sus Cuellos de Botella",
       "subtitulo": "Del Expediente Físico a SUDOCU: La Paradoja de la Carga Manual Duplicada",
       "puntosClave": [
-        "Avance Digital: Implementación de SUDOCU para despapelizar y agilizar la trazabilidad de expedientes en tiempo real.",
-        "El Cuello de Botella Detectado: SUDOCU no se conecta automáticamente con SIU-Mapuche; un empleado debe cargar a mano la licencia en el sistema de sueldos.",
-        "Falsa Digitalización: Docentes que escanean certificados en papel y suben fotos borrosas, obligando a verificaciones presenciales redundantes.",
-        "Desafío de Conectividad: En los nodos de la estepa, los cortes de luz y fibra óptica retrasan la subida de documentación reglamentaria."
+        "Preguntas Guía Cátedra: ¿Cómo se gestionan las autorizaciones internas? ¿Se utiliza de forma exclusiva el Sistema de Gestión Documental Electrónica?",
+        "Respuesta a la Cátedra: La universidad utiliza SUDOCU (equivalente universitario de GDE). No es 100% digital: impera el modelo de 'papel escaneado'.",
+        "Falta de Interoperabilidad: Ausencia de conexión nativa entre SUDOCU y SIU-Mapuche; el operador debe cargar los datos dos veces a mano.",
+        "Normativa de Despapelización Incompleta: Persistencia de archivos paralelos físicos en carpetas de cartulina por temor a la pérdida de registros."
       ],
       "metadatosFooter": "Avance 3 • Cuellos de Botella Burocráticos en la Transición Digital • CURZAS",
       "escena3D": "anim_17",
@@ -571,10 +633,10 @@ const PRESENTACION_DATA = {
       "titulo": "Presupuesto Universitario y la Centralidad del Inciso 1",
       "subtitulo": "El 90,2% del Gasto Destinado a Sueldos: Diagnóstico de Rigidez y Misión Social",
       "puntosClave": [
-        "Presupuesto Global UNCo 2025: $73.900 Millones asignados por el PEN (frente a $154.000 Millones solicitados por el Consejo Interuniversitario Nacional).",
-        "Participación Histórica del CURZAS: $4.877 Millones (equivalente al 6,6% de la masa presupuestaria total de la universidad).",
-        "Hegemonía del Inciso 1 (Personal): 90,2% ($4.401 Millones) destinado exclusivamente a salarios de la planta docente y nodocente.",
-        "Gastos de Funcionamiento Mínimos: Solo un 9,8% ($475 Millones) disponible para luz, gas, limpieza, equipamiento y mantenimiento en 10 sedes."
+        "Preguntas Guía Cátedra: ¿Cuál es el presupuesto total asignado al organismo y qué porcentaje se destina al Inciso 1 (Gastos en Personal)?",
+        "Presupuesto Oficial UNCo 2025: $73.900 Millones aprobados frente a $154.000 Millones solicitados por el CIN.",
+        "Presupuesto Específico CURZAS: $4.877 Millones (equivalente al 6,6% del total de la universidad).",
+        "Porcentaje al Inciso 1 (Personal): El 90,2% ($4.401 Millones) se destina exclusivamente a salarios docentes y nodocentes; solo 9,8% para funcionamiento."
       ],
       "metadatosFooter": "Avance 4 • Ejecución Presupuestaria Oficial y Concentración en Personal • CURZAS",
       "escena3D": "anim_20",
@@ -607,10 +669,10 @@ const PRESENTACION_DATA = {
       "titulo": "Presupuesto por Programas: La Cadena Insumo-Producto",
       "subtitulo": "Aplicación de la Metodología de Marcos Makon en la Educación Superior",
       "puntosClave": [
-        "Programa 26 Nacional: 'Desarrollo de la Educación Superior' como unidad programática rectora que canaliza las partidas universitarias.",
-        "Subprogramas Sustantivos: Formación de Grado y Posgrado, Investigación Científica y Vinculación Tecnológica y Extensión.",
-        "Cadena Insumo → Proceso → Producto: Los recursos financieros pagan horas docentes e insumos para producir graduados calificados y ciencia.",
-        "El Producto Terminal Universitario: No se mide en rentabilidad económica, sino en profesionales formados y valor social para la región."
+        "Pregunta Guía Cátedra: ¿Cómo se estructuran los programas del organismo en la planilla presupuestaria oficial (Presupuesto por Programas)?",
+        "Programa 26 Oficial: 'Desarrollo de la Educación Superior' como unidad programática nacional rectora (Técnica Marcos Makon / CEPAL).",
+        "Subprogramas Sustantivos: Formación de Grado y Posgrado, Investigación Científica y Vinculación Territorial y Extensión.",
+        "Cadena Insumo → Proceso → Producto: Recursos financieros financian horas cátedra y laboratorios para producir egresados calificados y ciencia comunitaria."
       ],
       "metadatosFooter": "Avance 4 • Presupuesto por Programas y Matriz Insumo-Producto • Marcos Makon",
       "escena3D": "anim_22",
