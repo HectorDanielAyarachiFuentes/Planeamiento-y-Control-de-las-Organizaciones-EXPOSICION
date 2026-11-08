@@ -591,14 +591,28 @@ body {
   margin-bottom: clamp(0.65rem, 1.3vh, 1.25rem);
   flex: 1 1 auto;
   min-height: 0;
-  overflow-y: auto;
-  padding-right: 0.6rem;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  overscroll-behavior-x: none !important;
+  padding-right: 0.45rem;
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
   scrollbar-width: thin;
   scrollbar-color: rgba(180, 131, 36, 0.35) transparent;
 }
 
 .slide-bullets::-webkit-scrollbar {
   width: 5px;
+  height: 0px !important;
+}
+
+.slide-bullets::-webkit-scrollbar:horizontal {
+  display: none !important;
+  height: 0px !important;
+  width: 0px !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
 }
 
 .slide-bullets::-webkit-scrollbar-track {
@@ -617,10 +631,14 @@ body {
 .slide-bullets li {
   position: relative;
   padding-left: clamp(1.4rem, 2vw, 1.85rem);
-  font-size: clamp(0.98rem, 1.34vh + 0.2vw, 1.14rem); /* Texto de filmina más grande y legible */
+  font-size: clamp(0.98rem, 1.34vh + 0.2vw, 1.14rem);
   line-height: 1.62;
-  color: #334155; /* Tono pizarra de alto contraste y lectura descansada */
-  font-weight: 400; /* Regular: sin exceso de negritas en el cuerpo */
+  color: #334155;
+  font-weight: 400;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  overflow-wrap: break-word !important;
+  word-break: break-word !important;
 }
 
 /* Indicador de viñeta geométrico y refinado (en reemplazo del tosco § bold) */
@@ -759,7 +777,7 @@ body {
 }
 
 .slide-bullets.avances-mode li.avance-summary-card:hover {
-  transform: translateX(3px) !important;
+  transform: translateY(-2px) !important;
   border-color: var(--gold-main) !important;
   background: #ffffff !important;
   box-shadow: 0 4px 16px rgba(180, 131, 36, 0.1) !important;
@@ -4029,7 +4047,7 @@ body {
 }
 
 .slide-bullets.conclusion-mode li.conclusion-summary-card:hover {
-  transform: translateX(3px) !important;
+  transform: translateY(-2px) !important;
   border-color: var(--gold-main) !important;
   background: #ffffff !important;
   box-shadow: 0 4px 16px rgba(180, 131, 36, 0.1) !important;
@@ -4394,4 +4412,62 @@ body {
   height: 560px;
   border: none;
   background: #525659;
+}
+
+
+/* ─── BLINDAJE TOTAL: ELIMINACIÓN DE SCROLLBAR HORIZONTAL Y RESPONSIVIDAD ─── */
+.slide-card {
+  overflow-x: hidden !important;
+  box-sizing: border-box !important;
+}
+
+.slide-bullets,
+.slide-bullets.intro-mode,
+.slide-bullets.avances-mode,
+.slide-bullets.conclusion-mode {
+  overflow-x: hidden !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.slide-bullets li,
+.slide-bullet-item,
+.intro-card,
+.avance-summary-card,
+.conclusion-summary-card {
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  overflow-wrap: break-word !important;
+  word-break: break-word !important;
+}
+
+.consigna-line,
+.conclusion-row,
+.avance-row-header,
+.avance-card-actions {
+  flex-wrap: wrap !important;
+  max-width: 100% !important;
+}
+
+.consigna-val,
+.conclusion-text,
+.avance-row-text,
+.bullet-desc {
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  overflow-wrap: break-word !important;
+  word-break: break-word !important;
+}
+
+/* Ocultamiento universal de cualquier barra horizontal en la presentación */
+.slide-card::-webkit-scrollbar:horizontal,
+.slide-bullets::-webkit-scrollbar:horizontal,
+.slide-bullets *::-webkit-scrollbar:horizontal {
+  display: none !important;
+  height: 0px !important;
+  width: 0px !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
 }
