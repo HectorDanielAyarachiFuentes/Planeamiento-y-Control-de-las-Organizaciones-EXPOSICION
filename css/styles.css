@@ -4004,3 +4004,165 @@ body {
   color: #ffffff;
   box-shadow: 0 4px 12px rgba(180, 131, 36, 0.25);
 }
+
+
+/* ─── FILMINA 25: CONCLUSIÓN GENERAL DE LOS 4 AVANCES (CONCLUSION-MODE) ─── */
+.slide-bullets.conclusion-mode {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: clamp(0.38rem, 0.8vh, 0.58rem) !important;
+  padding: 0.1rem !important;
+}
+
+.slide-bullets.conclusion-mode li.conclusion-summary-card {
+  position: relative !important;
+  padding: clamp(0.5rem, 0.88vh, 0.72rem) clamp(0.8rem, 1.15vw, 1.1rem) !important;
+  background: rgba(255, 255, 255, 0.92) !important;
+  border: 1px solid rgba(15, 23, 42, 0.08) !important;
+  border-left: 3.5px solid var(--gold-main) !important;
+  border-radius: 6px !important;
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.03) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.2rem !important;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease !important;
+}
+
+.slide-bullets.conclusion-mode li.conclusion-summary-card:hover {
+  transform: translateX(3px) !important;
+  border-color: var(--gold-main) !important;
+  background: #ffffff !important;
+  box-shadow: 0 4px 16px rgba(180, 131, 36, 0.1) !important;
+}
+
+.slide-bullets.conclusion-mode li.conclusion-summary-card::before {
+  display: none !important;
+}
+
+.conclusion-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+}
+
+.conclusion-pill {
+  font-family: var(--font-serif);
+  font-size: clamp(0.64rem, 0.85vh, 0.7rem);
+  font-weight: 600;
+  padding: 1px 6px;
+  border-radius: 3px;
+  background: var(--gold-dim);
+  color: var(--gold-main);
+  border: 1px solid var(--gold-border);
+  letter-spacing: 0.06em;
+}
+
+.conclusion-unidad {
+  font-family: var(--font-serif);
+  font-size: clamp(0.66rem, 0.88vh, 0.72rem);
+  font-weight: 500;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.conclusion-card-title {
+  font-family: var(--font-title);
+  font-size: clamp(0.88rem, 1.2vh, 1.02rem);
+  font-weight: 600;
+  color: var(--oxford-blue);
+  margin: 0;
+}
+
+.conclusion-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.18rem;
+  margin-top: 0.12rem;
+}
+
+.conclusion-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  font-size: clamp(0.72rem, 0.98vh, 0.8rem);
+  line-height: 1.38;
+}
+
+.conclusion-label {
+  font-family: var(--font-serif);
+  font-size: clamp(0.66rem, 0.9vh, 0.72rem);
+  font-weight: 600;
+  color: var(--oxford-blue);
+  flex-shrink: 0;
+  letter-spacing: 0.02em;
+}
+
+.conclusion-row.destacado .conclusion-label {
+  color: #854d0e;
+}
+
+.conclusion-row.problema .conclusion-label {
+  color: #b91c1c;
+}
+
+.conclusion-text {
+  font-family: var(--font-body);
+  font-weight: 400;
+  color: #334155;
+}
+
+.conclusion-row.problema .conclusion-text {
+  color: #451a03;
+}
+
+.slide-bullets.conclusion-mode li.conclusion-closing-card {
+  position: relative !important;
+  padding: clamp(0.5rem, 0.88vh, 0.7rem) clamp(0.8rem, 1.15vw, 1.1rem) !important;
+  background: linear-gradient(135deg, rgba(253, 252, 247, 0.96) 0%, rgba(245, 240, 225, 0.96) 100%) !important;
+  border: 1px solid var(--gold-border) !important;
+  border-radius: 6px !important;
+  box-shadow: 0 3px 12px rgba(180, 131, 36, 0.08) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.2rem !important;
+}
+
+.slide-bullets.conclusion-mode li.conclusion-closing-card::before {
+  display: none !important;
+}
+
+.closing-header {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.closing-badge {
+  font-family: var(--font-serif);
+  font-size: 0.66rem;
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 3px;
+  background: var(--gold-main);
+  color: #ffffff;
+  letter-spacing: 0.06em;
+}
+
+.closing-title {
+  font-family: var(--font-title);
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--oxford-blue);
+  margin: 0;
+}
+
+.closing-text {
+  font-family: var(--font-body);
+  font-size: clamp(0.74rem, 1.02vh, 0.82rem);
+  font-weight: 400;
+  color: #334155;
+  line-height: 1.42;
+  margin: 0;
+}
