@@ -1494,6 +1494,8 @@ class PresentationApp {
       });
     } else if (tabType === "consignas") {
       this.renderConsignasTab();
+    } else if (tabType === "avance4") {
+      this.renderAvance4Tab();
     } else if (tabType === "catedra") {
       this.renderCatedraMaterialTab();
     }
@@ -2055,6 +2057,14 @@ class PresentationApp {
 
       this.drawerContent.appendChild(card);
     });
+  }
+
+  openAvance4Drawer(avanceNum = 4) {
+    this.openDrawer();
+    document.querySelectorAll(".drawer-tab").forEach(t => t.classList.remove("active"));
+    const tabBtn = document.querySelector('.drawer-tab[data-tab="avance4"]');
+    if (tabBtn) tabBtn.classList.add("active");
+    this.renderAvance4Tab(avanceNum);
   }
 
   openConsignasDrawer(avanceNum = null) {
