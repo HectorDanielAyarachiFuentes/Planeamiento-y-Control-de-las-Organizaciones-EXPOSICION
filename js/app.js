@@ -184,6 +184,41 @@ class PresentationApp {
 
     // Modal de Notas de Orador
     this.btnToggleNotes.addEventListener("click", () => this.toggleNotes());
+    
+    // Controles de tamaño de letra y navegación del teleprómpter
+    this.teleprompterFontSize = 1.05; // rem base
+    const btnFontInc = document.getElementById("btn-notes-font-inc");
+    const btnFontDec = document.getElementById("btn-notes-font-dec");
+    if (btnFontInc) {
+      btnFontInc.addEventListener("click", (e) => {
+        e.stopPropagation();
+        this.teleprompterFontSize = Math.min(1.45, this.teleprompterFontSize + 0.1);
+        const content = document.getElementById("speech-card-content");
+        if (content) content.style.fontSize = `${this.teleprompterFontSize}rem`;
+      });
+    }
+    if (btnFontDec) {
+      btnFontDec.addEventListener("click", (e) => {
+        e.stopPropagation();
+        this.teleprompterFontSize = Math.max(0.85, this.teleprompterFontSize - 0.1);
+        const content = document.getElementById("speech-card-content");
+        if (content) content.style.fontSize = `${this.teleprompterFontSize}rem`;
+      });
+    }
+    const btnNotesPrev = document.getElementById("btn-notes-prev");
+    const btnNotesNext = document.getElementById("btn-notes-next");
+    if (btnNotesPrev) {
+      btnNotesPrev.addEventListener("click", (e) => {
+        e.stopPropagation();
+        this.prevSlide();
+      });
+    }
+    if (btnNotesNext) {
+      btnNotesNext.addEventListener("click", (e) => {
+        e.stopPropagation();
+        this.nextSlide();
+      });
+    }
     this.btnCloseNotes.addEventListener("click", () => this.toggleNotes(false));
 
     // Drawer de Respaldo Metodológico
@@ -1010,9 +1045,32 @@ class PresentationApp {
       this.slideCounter.textContent = `${index + 1} / ${this.totalSlides}`;
     }
 
+    const slideNumEl = document.getElementById("notes-slide-num");
+    if (slideNumEl) {
+      slideNumEl.textContent = `Filmina ${index + 1} / ${this.totalSlides}`;
+    }
+    const slideTimeEl = document.getElementById("notes-slide-time");
+    if (slideTimeEl) {
+      slideTimeEl.textContent = slide.tiempoSugerido || "⏱️ ~1.5 min";
+    }
+
     this.notesBody.innerHTML = `
-      <p><strong>🎯 Objetivo de la Filmina ${index + 1}:</strong> ${slide.esquema}</p>
-      <p style="margin-top: 0.6rem;">${slide.guionOrador}</p>
+      <div class="teleprompter-obj-card">
+        <div class="teleprompter-obj-header">
+          <span class="teleprompter-obj-badge">🎯 OBJETIVO PEDAGÓGICO • FILMINA ${index + 1}</span>
+        </div>
+        <h4 class="teleprompter-obj-title">${slide.titulo}</h4>
+        <p class="teleprompter-obj-text">${slide.esquema}</p>
+      </div>
+      <div class="teleprompter-speech-card">
+        <div class="speech-card-header">
+          <span class="speech-card-badge">🗣️ Guion Sugerido para la Exposición</span>
+          <span class="speech-reading-mode">Oratoria Guiada</span>
+        </div>
+        <div class="speech-card-content" id="speech-card-content">
+          ${slide.guionOrador ? slide.guionOrador.split('\n').filter(p => p.trim()).map(p => `<p class="speech-para">${p}</p>`).join('') : '<p>Sin guion registrado para esta filmina.</p>'}
+        </div>
+      </div>
     `;
   }
 
