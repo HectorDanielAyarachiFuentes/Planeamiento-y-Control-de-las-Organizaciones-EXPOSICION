@@ -612,131 +612,130 @@ window.Presentation3D_Objects["anim_01"] = {
 
 window.Presentation3D_Objects["anim_02"] = {
   build(engine, g) {
-    engine.createMuseumPlinth(g, 1.35, 0.22, -1.22);
+    engine.createMuseumPlinth(g, 1.75, 0.22, -1.22);
 
-    // 1. Basamento monumental de granito negro y caoba noble
-    const pedestalBase = new THREE.Mesh(
-      new THREE.CylinderGeometry(0.36, 0.42, 0.10, 16),
+    const roadmapGroup = new THREE.Group();
+    roadmapGroup.position.set(0, -0.15, 0);
+
+    // Zócalo base circular de granito pulido
+    const baseDisk = new THREE.Mesh(
+      new THREE.CylinderGeometry(1.68, 1.72, 0.08, 48),
       engine.graniteMat(0x0f172a, 0.35, 0.25)
     );
-    pedestalBase.position.y = -1.06;
-    pedestalBase.receiveShadow = true;
-    g.add(pedestalBase);
+    baseDisk.position.y = -0.85;
+    roadmapGroup.add(baseDisk);
 
-    const footRing = new THREE.Mesh(
-      new THREE.TorusGeometry(0.35, 0.02, 16, 48),
-      engine.brassMat()
-    );
-    footRing.rotation.x = Math.PI / 2;
-    footRing.position.y = -1.01;
-    g.add(footRing);
+    // Los 5 Pilares de la Hoja de Ruta de los 5 Avances
+    const avances = [
+      { num: "AVANCE 1", title: "GOBERNANZA", sub: "Marco Institucional & Weber", col: 0x0284c7, x: -1.05, h: 0.65 },
+      { num: "AVANCE 2", title: "PLANIFICACIÓN", sub: "PES Matus & FODA Situado", col: 0x10b981, x: -0.52, h: 0.78 },
+      { num: "AVANCE 3", title: "DIGITALIZACIÓN", sub: "SUDOCU & Flujograma", col: 0xf59e0b, x: 0.00, h: 0.92 },
+      { num: "AVANCE 4", title: "PRESUPUESTO", sub: "Inciso 1 Personal (90,2%)", col: 0xef4444, x: 0.52, h: 1.05 },
+      { num: "AVANCE 5", title: "CONTROL & KPIs", sub: "AGN, UAI, SIGEN & 4 KPIs", col: 0xd4af37, x: 1.05, h: 1.18 }
+    ];
 
-    // Fuste de caoba oscura con cantoneras de latón
-    const shaftChassis = engine.createMachinedChassis(0.44, 0.78, 0.28, { color: 0x2e1204 });
-    shaftChassis.position.y = -0.58;
-    g.add(shaftChassis);
+    engine.anim02_pillars = [];
 
-    // Capitel de latón maquinado
-    const capitalMesh = new THREE.Mesh(
-      new THREE.BoxGeometry(0.48, 0.05, 0.32),
-      engine.brassMat(0xd4af37)
-    );
-    capitalMesh.position.y = -0.16;
-    g.add(capitalMesh);
+    avances.forEach((av) => {
+      const pGroup = new THREE.Group();
+      pGroup.position.set(av.x, -0.81 + av.h / 2, 0);
 
-    // 2. Credencial académica flotante en marco de latón pulido y cristal esmerilado
-    const cardGroup = new THREE.Group();
-    cardGroup.position.set(0, 0.30, 0);
-
-    // Marco exterior con cantoneras doradas
-    const frameMesh = new THREE.Mesh(
-      new THREE.BoxGeometry(0.92, 1.32, 0.045),
-      engine.brassMat(0xd4af37)
-    );
-    frameMesh.castShadow = true;
-    cardGroup.add(frameMesh);
-
-    // 4 Cantoneras angulares en las esquinas de la credencial
-    const cx = 0.43;
-    const cy = 0.63;
-    [[-cx, -cy], [cx, -cy], [-cx, cy], [cx, cy]].forEach(([x, y]) => {
-      const corner = new THREE.Mesh(
-        new THREE.BoxGeometry(0.10, 0.10, 0.055),
-        engine.goldMat(0xffd700)
+      // Columna de mármol Carrara
+      const col = new THREE.Mesh(
+        new THREE.BoxGeometry(0.38, av.h, 0.38),
+        engine.marbleMat(0xf8fafc, 0.22)
       );
-      corner.position.set(x, y, 0);
-      cardGroup.add(corner);
+      col.castShadow = true;
+      col.receiveShadow = true;
+      pGroup.add(col);
+
+      // Capitel de latón noble
+      const cap = new THREE.Mesh(
+        new THREE.BoxGeometry(0.42, 0.04, 0.42),
+        engine.brassMat(av.col)
+      );
+      cap.position.y = av.h / 2 + 0.02;
+      pGroup.add(cap);
+
+      // Gema superior de avance
+      const gem = new THREE.Mesh(
+        new THREE.OctahedronGeometry(0.08, 1),
+        new THREE.MeshStandardMaterial({
+          color: av.col,
+          emissive: av.col,
+          emissiveIntensity: 0.65,
+          roughness: 0.1,
+          metalness: 0.8
+        })
+      );
+      gem.position.y = av.h / 2 + 0.12;
+      pGroup.add(gem);
+
+      // Placa frontal grabada
+      const plaque = engine.createEngravedPlaque(
+        0.36,
+        0.16,
+        av.num,
+        av.title,
+        [av.sub],
+        { theme: "dark" }
+      );
+      plaque.position.set(0, 0, 0.20);
+      pGroup.add(plaque);
+
+      // Cartela superior flotante
+      const label = engine.createLabelSprite(
+        av.num,
+        av.title,
+        "#0f2d59",
+        false,
+        { x: 0.45 }
+      );
+      label.position.set(0, av.h / 2 + 0.28, 0);
+      pGroup.add(label);
+
+      roadmapGroup.add(pGroup);
+      engine.anim02_pillars.push({ group: pGroup, gem, baseY: pGroup.position.y });
     });
 
-    // Cuerpo de vidrio templado translúcido esmerilado
-    const cardGlass = new THREE.Mesh(
-      new THREE.BoxGeometry(0.86, 1.26, 0.035),
-      engine.glassMat(0xf8fafc, { opacity: 0.85, roughness: 0.08 })
-    );
-    cardGroup.add(cardGlass);
-
-    // 3. Escudo oficial UNCo en alto relieve superior
-    const seal = engine.createAcademicSeal(0.10);
-    seal.position.set(0, 0.44, 0.028);
-    cardGroup.add(seal);
-
-    // 4. Placa técnica grabada con datos de identidad del tesista
-    const infoPlaque = engine.createEngravedPlaque(
-      0.84,
-      0.44,
-      "HÉCTOR DANIEL AYARACHI FUENTES",
-      "Tec. Sup. en RRHH • Legajo 8252 • DNI 35.492.138",
-      ["CURZAS", "UNIVERSIDAD NACIONAL DEL COMAHUE", "PLANEAMIENTO 2026"],
+    // Rótulo frontal monumental
+    const frontPlaque = engine.createEngravedPlaque(
+      1.10,
+      0.24,
+      "HOJA DE RUTA EJECUTIVA: LOS 5 AVANCES DE CÁTEDRA",
+      "Estructura Temática según los Objetivos y Entregables Fijados por la Cátedra",
+      ["PROGRAMA INTEGRAL CURZAS • UNCo 2026"],
       { theme: "dark" }
     );
-    infoPlaque.position.set(0, 0.08, 0.024);
-    cardGroup.add(infoPlaque);
+    frontPlaque.position.set(0, -0.66, 0.95);
+    frontPlaque.rotation.x = -Math.PI * 0.12;
+    roadmapGroup.add(frontPlaque);
 
-    // 5. Dial graduado de progreso académico hacia la Licenciatura (100% completado / En Defensa)
-    const progDial = engine.createGraduatedDial(0.14, {
-      divisions: 40,
-      isPercentage: true,
-      title: "100%",
-      sub: "EXPOSICIÓN",
-      theme: "dark"
-    });
-    progDial.rotation.x = Math.PI / 2;
-    progDial.position.set(0, -0.38, 0.035);
-    if (progDial.needle) {
-      progDial.needle.rotation.y = -Math.PI * 0.75;
-    }
-    cardGroup.add(progDial);
-
-    g.add(cardGroup);
-
-    // Cartela flotante superior
-    const label = engine.createLabelSprite(
-      "HÉCTOR DANIEL AYARACHI FUENTES",
-      "Tec. Sup. en RRHH • Licenciatura en RRHH • CURZAS",
+    // Rótulo superior
+    const headerTitle = engine.createLabelSprite(
+      "HOJA DE RUTA: LOS 5 AVANCES DE CÁTEDRA",
+      "Unidades I a V: Gobernanza, Planificación, Procesos, Presupuesto y Control",
       "#0f2d59",
       true
     );
-    label.position.set(0, 1.20, 0);
-    g.add(label);
+    headerTitle.position.set(0, 1.25, 0);
+    g.add(headerTitle);
 
-    engine.anim02_card = cardGroup;
-    engine.anim02_dial = progDial;
+    g.add(roadmapGroup);
   },
 
   animate(engine, t) {
-    if (engine.anim02_card) {
-      engine.anim02_card.position.y = 0.30 + Math.sin(t * 1.5) * 0.015;
-      engine.anim02_card.rotation.y = Math.sin(t * 0.7) * 0.04;
-    }
-    if (engine.anim02_dial && engine.anim02_dial.needle) {
-      engine.anim02_dial.needle.rotation.y = -Math.PI * 0.75 + Math.sin(t * 2.0) * 0.05;
+    if (engine.anim02_pillars) {
+      engine.anim02_pillars.forEach((p, i) => {
+        if (p.gem) {
+          p.gem.rotation.y = t * (0.8 + i * 0.2);
+          const s = 1.0 + Math.sin(t * 2.5 + i) * 0.12;
+          p.gem.scale.set(s, s, s);
+        }
+      });
     }
   }
 };
-
-// ──────────────────────────────────────────────────────────────────────────
-// 3. ESQUEMA SIA TP N° 2: Podio Cúbico de los 4 Cimientos del TFG
-// ──────────────────────────────────────────────────────────────────────────
 
 window.Presentation3D_Objects["anim_03"] = {
   build(engine, g) {
@@ -901,15 +900,15 @@ window.Presentation3D_Objects["anim_04"] = {
     const plaqueLeft = engine.createEngravedPlaque(
       0.54,
       0.22,
-      "I. ESTADO PLATAFORMA",
-      "Interoperabilidad e IOP • Oszlak",
-      ["POLIGOBERNANZA"],
+      "BUROCRACIA PROFESIONAL",
+      "Weber / Abal Medina • Resguardo",
+      ["LEGALIDAD Y CONVENIOS CCT"],
       { theme: "dark" }
     );
     plaqueLeft.position.set(-0.58, -0.85, 0.38);
     diptychGroup.add(plaqueLeft);
 
-    const labelLeft = engine.createLabelSprite("5. MARCO TEÓRICO", "Longo • 360° • Poligobernanza", "#0f2d59", false);
+    const labelLeft = engine.createLabelSprite("BUROCRACIA PÚBLICA", "Resguardo de la Educación Superior", "#0f2d59", false);
     labelLeft.position.set(-0.58, 0.96, 0);
     diptychGroup.add(labelLeft);
 
@@ -953,15 +952,15 @@ window.Presentation3D_Objects["anim_04"] = {
     const plaqueRight = engine.createEngravedPlaque(
       0.54,
       0.22,
-      "II. TRAMADOS AD HOC",
-      "10 Nodos • Hintze / Aguilar V.",
-      ["POLIGOBERNANZA"],
+      "NUEVA GESTIÓN PÚBLICA",
+      "Gerencialismo & Eficientismo",
+      ["CLIENTE VS CIUDADANO"],
       { theme: "dark" }
     );
     plaqueRight.position.set(0.58, -0.85, 0.38);
     diptychGroup.add(plaqueRight);
 
-    const labelRight = engine.createLabelSprite("6. ANTECEDENTES", "Estado del Arte • Vacancia", "#0f2d59", false);
+    const labelRight = engine.createLabelSprite("TENSIÓN NGP", "Riesgos del Enfoque de Mercado", "#0f2d59", false);
     labelRight.position.set(0.58, 0.96, 0);
     diptychGroup.add(labelRight);
 
@@ -1004,8 +1003,7 @@ window.Presentation3D_Objects["anim_05"] = {
 
     // Cartela Maestra Superior de la Articulación Integral
     const masterHeader = engine.createLabelSprite(
-      "ARTICULACIÓN INTEGRAL DE LOS 4 EJES",
-      "Gobernanza Multinivel • Diagnóstico Situacional • Capacidades",
+      "PROPUESTAS DE REDISEÑO DE PROCESOS", "Firma Digital, Interoperabilidad y Subrogancia en Personal",
       "#0f2d59",
       true
     );
@@ -1051,15 +1049,15 @@ window.Presentation3D_Objects["anim_05"] = {
     const plaqueCenter = engine.createEngravedPlaque(
       0.54,
       0.20,
-      "PES DE CARLOS MATUS",
-      "Planificación Situacional",
-      ["JUEGO SOCIAL"],
+      "SUBROGANCIA AUTOMÁTICA",
+      "Evitar Cuellos de Botella en Firma",
+      ["CONTINUIDAD ADMINISTRATIVA"],
       { theme: "dark" }
     );
     plaqueCenter.position.set(0, -0.56, 0.04);
     centerGroup.add(plaqueCenter);
 
-    const labelCenter = engine.createLabelSprite("8. CRONOGRAMA", "7 Meses Continuos (2027)", "#0f2d59", false);
+    const labelCenter = engine.createLabelSprite("SUBROGANCIA", "Flujo sin Detenciones", "#0f2d59", false);
     labelCenter.position.set(0, 0.88, 0);
     centerGroup.add(labelCenter);
 
@@ -1099,15 +1097,15 @@ window.Presentation3D_Objects["anim_05"] = {
     const plaqueLeft = engine.createEngravedPlaque(
       0.48,
       0.18,
-      "POLIGOBERNANZA",
-      "Redes Multiactorales",
-      ["CAO & BLUTMAN"],
+      "FIRMA DIGITAL NATIVA",
+      "Despapelización Total e Inmediata",
+      ["VALIDEZ LEY 25.506"],
       { theme: "dark" }
     );
     plaqueLeft.position.set(0, -0.42, 0.035);
     leftPanel.add(plaqueLeft);
 
-    const labelLeft = engine.createLabelSprite("7. METODOLOGÍA", "Diseño Mixto • Operacionalización", "#0f2d59", false);
+    const labelLeft = engine.createLabelSprite("FIRMA DIGITAL", "Plena Eficacia Jurídica", "#0f2d59", false);
     labelLeft.position.set(0, -0.68, 0.08);
     leftPanel.add(labelLeft);
 
@@ -1156,15 +1154,15 @@ window.Presentation3D_Objects["anim_05"] = {
     const plaqueRight = engine.createEngravedPlaque(
       0.48,
       0.18,
-      "CAPACIDADES ESTATALES",
-      "Político • Administrativo • Técnico",
-      ["BERTRANOU (2015)"],
+      "INTEROPERABILIDAD",
+      "SUDOCU a SIU-Mapuche",
+      ["FIN DE LA DOBLE CARGA"],
       { theme: "dark" }
     );
     plaqueRight.position.set(0, -0.42, 0.035);
     rightPanel.add(plaqueRight);
 
-    const labelRight = engine.createLabelSprite("9. VIABILIDAD", "Humanos • Técnicos • Costo Cero", "#0f2d59", false);
+    const labelRight = engine.createLabelSprite("INTEROPERABILIDAD", "Integración Digital 100%", "#0f2d59", false);
     labelRight.position.set(0, -0.68, 0.08);
     rightPanel.add(labelRight);
 

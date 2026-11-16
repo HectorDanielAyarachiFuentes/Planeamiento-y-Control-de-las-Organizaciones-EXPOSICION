@@ -412,7 +412,7 @@ const PRESENTACION_DATA = {
         "⚖️ Jerarquía y Autonomía de Cátedra: Coexisten procedimientos administrativos centralizados y jerárquicos con una amplia autonomía académica y científica garantizada a los docentes por ley."
       ],
       "metadatosFooter": "Avance 1 • Burocracia Tradicional de Base Profesional • Weber / Abal Medina",
-      "escena3D": "anim_04",
+      "escena3D": "anim_08",
       "tiempoSugerido": "⏱️ ~35-40 seg",
       "guionOrador": "Respondiendo a la pregunta guía de si rige un modelo weberiano: constatamos que sí, en el CURZAS predomina una Burocracia Profesional Weberiana. Cada acto requiere expediente foliado y dictamen legal. Lejos de ser un defecto, esta burocracia asegura que tanto docentes como nodocentes ingresen por concurso público y gocen de estabilidad tutelada por sus convenios colectivos, evitando despidos arbitrarios."
     },
@@ -431,7 +431,7 @@ const PRESENTACION_DATA = {
         "💻 Incorporación Instrumental de Software: La modernización técnica de la NGP solo influyó en la incorporación operativa del ecosistema informático SIU, pero sin alterar la vocación pública de la entidad."
       ],
       "metadatosFooter": "Avance 1 • Análisis de Modelos de Gestión • Burocracia vs NGP • Cao & Blutman",
-      "escena3D": "anim_05",
+      "escena3D": "anim_04",
       "tiempoSugerido": "⏱️ ~35-40 seg",
       "guionOrador": "Para el entregable de comparar Burocracia Tradicional vs. Nueva Gestión Pública: respondimos categóricamente que en el CURZAS no rige la NGP. No existen vouchers ni estudiantes tratados como clientes. La educación es un bien público y un derecho social. La única influencia de las reformas modernizadoras fue instrumental: incorporar los sistemas informáticos del SIU, pero bajo una lógica de servicio estatal."
     },
@@ -450,7 +450,7 @@ const PRESENTACION_DATA = {
         "⚠️ Diagnóstico Crítico: El CURZAS cuenta con portal institucional, pero NO existe una Oficina formal de Transparencia Activa ni una plataforma de Datos Abiertos para consulta ciudadana."
       ],
       "metadatosFooter": "Avance 1 • Rendición de Cuentas y Transparencia Activa • Guillermo O'Donnell",
-      "escena3D": "anim_06",
+      "escena3D": "anim_11",
       "tiempoSugerido": "⏱️ ~35-40 seg",
       "guionOrador": "Sobre los mecanismos de rendición de cuentas solicitados en el entregable 2: constatamos una triple accountability: horizontal mediante auditorías de la UAI y la AGN; vertical mediante el voto obligatorio en las elecciones de claustros; y social publicando resoluciones. Sin embargo, respondiendo a la pregunta guía: no existe una Oficina formal de Transparencia ni portal de datos abiertos automatizado."
     },
@@ -469,7 +469,7 @@ const PRESENTACION_DATA = {
         "🚫 Ausencia Total de IA en Personal: NO existen normativas ni software predictivo/algorítmico en RR. HH.; la selección y el monitoreo se realizan exclusivamente por jurados humanos colegiados y paritarios."
       ],
       "metadatosFooter": "Avance 1 • El Estado en la Era Exponencial • Oscar Oszlak (2020)",
-      "escena3D": "anim_07",
+      "escena3D": "anim_13",
       "diagramaSVG": "assets/red-territorial-nodos.svg",
       "maqueta3D": "prueba_rionegro_3d.html",
       "tiempoSugerido": "⏱️ ~35-40 seg",
@@ -490,7 +490,7 @@ const PRESENTACION_DATA = {
         "🤝 Actores con Poder de Veto: Quien planifica no tiene el monopolio del poder; docentes y nodocentes son actores estratégicos con intereses propios; la viabilidad técnica exige concertación política paritaria."
       ],
       "metadatosFooter": "Avance 2 • Teoría de la Planificación Estratégica Situacional • Carlos Matus",
-      "escena3D": "anim_08",
+      "escena3D": "anim_18",
       "diagramaSVG": "assets/subsistemas_longo.svg",
       "tiempoSugerido": "⏱️ ~35-40 seg",
       "guionOrador": "Pasamos al Avance 2 respondiendo a la pregunta sobre el enfoque de planificación. Demostramos que el plan normativo clásico fracasó porque creía que la realidad se decretaba desde un escritorio. El CURZAS adopta el enfoque situacional de Carlos Matus: el poder está compartido y los trabajadores docentes y nodocentes son actores estratégicos con quienes hay que construir consensos paritarios."
@@ -510,7 +510,7 @@ const PRESENTACION_DATA = {
         "⚖️ Arenas de Negociación: Las decisiones sobre licencias, coberturas y concursos no son actos unilaterales, sino transacciones políticas reguladas por actas paritarias."
       ],
       "metadatosFooter": "Avance 2 • Mapeo de Stakeholders y Arenas de Poder • Carlos Matus",
-      "escena3D": "anim_09",
+      "escena3D": "anim_22",
       "tiempoSugerido": "⏱️ ~35-40 seg",
       "guionOrador": "En el entregable 2 realizamos el mapeo de actores clave en Recursos Humanos. Mapeamos a quienes concentran alto poder y alto interés: el Consejo Directivo, el Decanato, y fundamentalmente los sindicatos APUNC y ADUNC. En el territorio se suman los Asistentes Pedagógicos de los 10 nodos y los municipios. Ninguna medida de personal prospera sin concertar en estas arenas de poder compartido."
     },
@@ -529,7 +529,7 @@ const PRESENTACION_DATA = {
         "⚠️ Debilidades Internas Detectadas: Silos de información y fragmentación entre áreas, doble carga manual de datos (SIU/SIGEVA) y dispersión geográfica de las plantillas."
       ],
       "metadatosFooter": "Avance 2 • Matriz FODA Situada • Diagnóstico Operativo Interno 2026",
-      "escena3D": "anim_10",
+      "escena3D": "anim_21",
       "tiempoSugerido": "⏱️ ~35-40 seg",
       "guionOrador": "Respondiendo a la pregunta sobre la Matriz FODA y los factores internos: detectamos como principal fortaleza el extraordinario arraigo territorial del CURZAS y el compromiso de sus docentes y nodocentes; y como debilidad crítica la existencia de silos informáticos y la sobrecarga provocada por cargar los mismos datos dos y tres veces a mano en distintas plataformas."
     },
@@ -548,7 +548,7 @@ const PRESENTACION_DATA = {
         "💡 Conclusión Situacional: El valor público y la legitimidad social de la Red de 10 Nodos constituyen el escudo político del CURZAS para resistir los recortes de fondos de Nación."
       ],
       "metadatosFooter": "Avance 2 • Análisis del Entorno Situacional Patagónico • CURZAS - UNCo",
-      "escena3D": "anim_11",
+      "escena3D": "anim_06",
       "tiempoSugerido": "⏱️ ~35-40 seg",
       "guionOrador": "Completando el FODA en el plano externo: la gran oportunidad es la enorme demanda de carreras universitarias en parajes patagónicos y los convenios con intendencias locales. La gran amenaza es el severo recorte de fondos nacionales del Tesoro y la licuación de salarios. El CURZAS se defiende demostrando que su presencia territorial es indispensable para Río Negro."
     },
@@ -567,7 +567,7 @@ const PRESENTACION_DATA = {
         "📊 Capacidad Técnico-Analítica (MEDIA): Elevada solvencia en saberes disciplinares docentes, pero con déficit de herramientas para analítica de datos e inteligencia en RR. HH."
       ],
       "metadatosFooter": "Avance 2 • Metodología de Capacidades Estatales • Julián Bertranou (2015)",
-      "escena3D": "anim_12",
+      "escena3D": "anim_23",
       "tiempoSugerido": "⏱️ ~35-40 seg",
       "guionOrador": "En el entregable 3 aplicamos la metodología de Julián Bertranou para evaluar capacidades estatales. Diagnosticamos: Capacidad Político-Relacional Alta por la legitimidad democrática del co-gobierno; Capacidad Administrativa Media-Alta por el apego a la ley; y Capacidad Técnico-Analítica Media, donde detectamos la necesidad de incorporar analítica de datos en la gestión."
     },
@@ -586,7 +586,7 @@ const PRESENTACION_DATA = {
         "🛠️ Propuesta de Nivelación: Plan de formación continua acordado en paritaria particular UNCo-APUNC con certificación de competencias y soporte informático en nodos."
       ],
       "metadatosFooter": "Avance 2 • Diagnóstico de Competencias en Recursos Humanos • Bertranou",
-      "escena3D": "anim_13",
+      "escena3D": "anim_14",
       "tiempoSugerido": "⏱️ ~35-40 seg",
       "guionOrador": "Respondiendo a la pregunta sobre deficiencias en competencias técnicas: detectamos una brecha digital en agentes nodocentes de mayor antigüedad frente al uso obligatorio de SUDOCU y Mapuche. Esto se debió a que los sistemas se implementaron sin capacitación previa adecuada. Planteamos un programa de alfabetización digital obligatoria acordado en paritaria con el gremio APUNC."
     },
@@ -605,7 +605,7 @@ const PRESENTACION_DATA = {
         "🌐 La Red Territorial de Facto: En la realidad operativa, el CURZAS funciona como una red desconcentrada de 10 nodos territoriales coordinados por Asistentes Pedagógicos no formalizados en el organigrama."
       ],
       "metadatosFooter": "Avance 3 • Análisis de Estructuras Organizacionales • Organigrama Formal vs Real",
-      "escena3D": "anim_14",
+      "escena3D": "anim_15",
       "tiempoSugerido": "⏱️ ~35-40 seg",
       "guionOrador": "Ingresamos al Avance 3 respondiendo la pregunta sobre el organigrama. Nuestra respuesta es contundente: el organigrama formal no coincide con la realidad. La estructura oficial de papel muestra oficinas tradicionales en Viedma, pero en la realidad el CURZAS se despliega en una red viva de 10 nodos territoriales que sostienen carreras en toda la provincia sin estar dibujados en el organigrama formal."
     },
@@ -624,7 +624,7 @@ const PRESENTACION_DATA = {
         "🏛️ Desconcentración Operativa (CURZAS): El Decanato y el Consejo Directivo en Viedma autorizan contrataciones transitorias, llamados a concurso, licencias ordinarias y traslados de personal."
       ],
       "metadatosFooter": "Avance 3 • Niveles de Centralización y Desconcentración Operativa • CURZAS",
-      "escena3D": "anim_15",
+      "escena3D": "anim_07",
       "tiempoSugerido": "⏱️ ~35-40 seg",
       "guionOrador": "En el entregable 2 analizamos la centralización y cómo se gestionan las autorizaciones. Existe centralización normativa en Neuquén para crear cargos y fijar salarios; pero existe desconcentración operativa en el CURZAS Viedma, donde el Decanato y las Secretarías autorizan licencias, coberturas y designaciones mediante resoluciones decanales locales."
     },
@@ -662,7 +662,7 @@ const PRESENTACION_DATA = {
         "🛑 Cuello de Botella 2 (Doble Carga Manual): Desconexión técnica entre SUDOCU y SIU-Mapuche; los actos aprobados deben cargarse manualmente, provocando demoras en el pago de haberes."
       ],
       "metadatosFooter": "Avance 3 • Ecosistema Digital Universitario • SUDOCU vs GDE / SIU-Mapuche",
-      "escena3D": "anim_17",
+      "escena3D": "anim_10",
       "tiempoSugerido": "⏱️ ~35-40 seg",
       "guionOrador": "Respondiendo a la pregunta sobre el uso de GDE o TAD y cuellos de botella: en el CURZAS no se usa GDE nacional sino SUDOCU. Identificamos dos cuellos de botella críticos: primero, la parálisis de firmas por falta de subrogancia reglamentada si una autoridad viaja; y segundo, que el expediente aprobado en SUDOCU debe volver a cargarse a mano en Mapuche porque no interoperan."
     },
@@ -681,7 +681,7 @@ const PRESENTACION_DATA = {
         "🧩 Racionalidad Limitada y 'Salir del Paso' (Forester y Lindblom): Ante la urgencia de liquidar salarios, los operadores recurren a soluciones ad hoc y comunicaciones informales."
       ],
       "metadatosFooter": "Avance 3 • Inercia Estructural y Racionalidad Limitada • Campos / Forester",
-      "escena3D": "anim_18",
+      "escena3D": "anim_17",
       "tiempoSugerido": "⏱️ ~35-40 seg",
       "guionOrador": "Indagamos las causas profundas de estos cuellos de botella. Detectamos una 'falsa digitalización': se sigue pidiendo el certificado médico en papel para después escanearlo a PDF. Esto responde a la inercia estructural de la que hablan Campos y Carro: miedo a que una firma electrónica sea cuestionada. Para cumplir con los plazos salariales, el personal recurre a salir del paso como describe John Forester."
     },
@@ -700,7 +700,7 @@ const PRESENTACION_DATA = {
         "👥 4. Capacitación Paritaria Situada: Implementar talleres obligatorios en horario laboral con el gremio APUNC para nivelar competencias informáticas sin generar exclusión."
       ],
       "metadatosFooter": "Avance 3 • Propuestas Estratégicas de Rediseño • Firma Digital y Pasarelas API",
-      "escena3D": "anim_19",
+      "escena3D": "anim_05",
       "tiempoSugerido": "⏱️ ~35-40 seg",
       "guionOrador": "Para superar estos cuellos de botella formulamos cuatro propuestas concretas: implementar Firma Digital con plena validez de la Ley 25.506; crear una pasarela informática automática entre SUDOCU y SIU-Mapuche; dictar una ordenanza de subrogancia automática para que los expedientes no se frenen; y acordar en paritaria un plan de capacitación informática con APUNC."
     },
@@ -738,7 +738,7 @@ const PRESENTACION_DATA = {
         "🔒 Rigidez Presupuestaria Ineludible: Los salarios están tutelados por convenios paritarios y leyes nacionales; el Inciso 1 no es una variable de ajuste financiero."
       ],
       "metadatosFooter": "Avance 4 • Composición Salarial y Plus de Zona Patagónica • CCT 366/06 y 1246/15",
-      "escena3D": "anim_21",
+      "escena3D": "anim_09",
       "tiempoSugerido": "⏱️ ~35-40 seg",
       "guionOrador": "¿Por qué el gasto en personal es tan elevado? Principalmente por la Zona Desfavorable Patagónica, un plus del 40% fijado por ley que compensa el costo de vida del sur. Además, el 68% de esa masa salarial sostiene a los docentes que dictan clases y el 32% al personal nodocente que mantiene abiertas las aulas y laboratorios en Viedma y los nodos."
     },
@@ -757,7 +757,7 @@ const PRESENTACION_DATA = {
         "🔗 Cadena Insumo → Proceso → Producto (Marcos Makon / CEPAL): Los recursos financieros del Inciso 1 financian horas cátedra y laboratorios para producir graduados calificados y ciencia comunitaria."
       ],
       "metadatosFooter": "Avance 4 • Presupuesto por Programas y Matriz Insumo-Producto • Marcos Makon",
-      "escena3D": "anim_22",
+      "escena3D": "anim_19",
       "tiempoSugerido": "⏱️ ~35-40 seg",
       "guionOrador": "Respondiendo a la pregunta de cómo se estructuran los programas en la planilla oficial: aplicamos la metodología de Marcos Makon. Todo se encuadra en el Programa 26 nacional, 'Desarrollo de la Educación Superior'. Los insumos financieros se transforman en productos concretos: nuevos técnicos y licenciados graduados e investigaciones volcadas a Río Negro."
     },
@@ -776,7 +776,7 @@ const PRESENTACION_DATA = {
         "🛡️ Control de Legalidad Financiera: Fiscalización permanente de la Unidad de Auditoría Interna (UAI) y la Auditoría General de la Nación (AGN)."
       ],
       "metadatosFooter": "Avance 4 • Sistemas Integrados de Administración Financiera • Ley 24.156",
-      "escena3D": "anim_23",
+      "escena3D": "anim_12",
       "tiempoSugerido": "⏱️ ~35-40 seg",
       "guionOrador": "El recorrido de los fondos sigue el ciclo de la Ley 24.156 explicado por Guillermo Schweinheim. El presupuesto opera mediante sistemas informáticos cruzados: el SIU-Pilagá administra los fondos de funcionamiento, el SIU-Mapuche liquida los salarios y ambos se comunican con el e-SIDIF de Nación para recibir las partidas del Tesoro."
     },

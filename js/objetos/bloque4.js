@@ -19,133 +19,139 @@ window.Presentation3D_Objects = window.Presentation3D_Objects || {};
 // ──────────────────────────────────────────────────────────────────────────
 window.Presentation3D_Objects["anim_16"] = {
   build(engine, g) {
-    engine.createMuseumPlinth(g, 1.45, 0.22, -1.22);
+    engine.createMuseumPlinth(g, 1.75, 0.22, -1.22);
 
-    const adhGroup = new THREE.Group();
-    adhGroup.position.set(0, -0.15, 0);
+    const flowGroup = new THREE.Group();
+    flowGroup.position.set(0, -0.15, 0);
 
-    // Chasis de caoba noble
-    const chassis = engine.createMachinedChassis(1.72, 0.10, 0.76, { color: 0x1e293b });
-    chassis.position.y = -0.92;
-    adhGroup.add(chassis);
+    // Zócalo base
+    const baseDisk = new THREE.Mesh(
+      new THREE.CylinderGeometry(1.68, 1.72, 0.08, 48),
+      engine.graniteMat(0x0f172a, 0.35, 0.25)
+    );
+    baseDisk.position.y = -0.85;
+    flowGroup.add(baseDisk);
 
-    // Eje Central Giratorio: Gimbal de Tres Aros Concéntricos (Extensión, Investigación, Vinculación)
-    const gimbal = new THREE.Group();
-    gimbal.position.set(0, 0, 0);
-
-    const rings = [
-      { r: 0.72, w: 0.016, col: 0x0284c7 },
-      { r: 0.54, w: 0.014, col: 0xd4af37 },
-      { r: 0.38, w: 0.012, col: 0x10b981 }
+    // Las 6 Etapas del Flujograma de Trámite de Licencias en Personal
+    const steps = [
+      { num: "1. SOLICITUD", name: "Agente en SUDOCU", sub: "Inicio Electrónico", col: 0x0284c7, x: -1.25, z: 0.15 },
+      { num: "2. AVAL", name: "Director de Depto", sub: "Visto Bueno Cátedra", col: 0x38bdf8, x: -0.75, z: -0.15 },
+      { num: "3. CONTROL", name: "Dpto. de Personal", sub: "Verificación CCT", col: 0xf59e0b, x: -0.25, z: 0.15 },
+      { num: "4. AUTORIZACIÓN", name: "Secretaría Admin.", sub: "Cuello de Botella", col: 0xef4444, x: 0.25, z: -0.15 },
+      { num: "5. RESOLUCIÓN", name: "Decanato CURZAS", sub: "Acto Administrativo", col: 0xd4af37, x: 0.75, z: 0.15 },
+      { num: "6. LIQUIDACIÓN", name: "SIU-Mapuche", sub: "Cierre Salarial", col: 0x10b981, x: 1.25, z: -0.15 }
     ];
 
-    engine.anim16_rings = [];
+    engine.anim16_steps = [];
 
-    rings.forEach((rg, i) => {
-      const ringMesh = new THREE.Mesh(
-        new THREE.TorusGeometry(rg.r, rg.w, 16, 64),
-        engine.brassMat(rg.col)
+    steps.forEach((st) => {
+      const sGroup = new THREE.Group();
+      sGroup.position.set(st.x, -0.45, st.z);
+
+      // Columna de estación
+      const col = new THREE.Mesh(
+        new THREE.CylinderGeometry(0.12, 0.14, 0.60, 16),
+        engine.marbleMat(0xf8fafc, 0.25)
       );
-      ringMesh.rotation.x = Math.PI / 4 + i * 0.4;
-      gimbal.add(ringMesh);
-      engine.anim16_rings.push(ringMesh);
-    });
+      sGroup.add(col);
 
-    // 4 Cápsulas de Cristal de Proyectos Insignia en Órbita Adhocrática
-    const projects = [
-      { name: "NODOS EN RED", sub: "Pequeños Productores Valcheta/SAO", col: 0x10b981, angle: 0 },
-      { name: "MESA HÍDRICA DPA", sub: "Gestión de Cuencas y Riego", col: 0x0284c7, angle: Math.PI / 2 },
-      { name: "PROYECTO INTA", sub: "Innovación Agropecuaria Situada", col: 0xf59e0b, angle: Math.PI },
-      { name: "VINCULACIÓN MUN.", sub: "Aulas Híbridas y Logística", col: 0xd4af37, angle: (3 * Math.PI) / 2 }
-    ];
+      // Anillo con color de etapa
+      const ring = new THREE.Mesh(
+        new THREE.TorusGeometry(0.15, 0.015, 12, 24),
+        engine.brassMat(st.col)
+      );
+      ring.rotation.x = Math.PI / 2;
+      ring.position.y = 0.30;
+      sGroup.add(ring);
 
-    engine.anim16_pods = [];
-    const podR = 0.65;
-
-    projects.forEach((pj) => {
-      const podGroup = new THREE.Group();
-
-      const podMesh = new THREE.Mesh(
-        new THREE.OctahedronGeometry(0.09, 1),
+      // Gema de pulso
+      const gem = new THREE.Mesh(
+        new THREE.OctahedronGeometry(0.07, 1),
         new THREE.MeshStandardMaterial({
-          color: pj.col,
-          emissive: pj.col,
-          emissiveIntensity: 0.55,
-          roughness: 0.15,
+          color: st.col,
+          emissive: st.col,
+          emissiveIntensity: 0.7,
+          roughness: 0.1,
           metalness: 0.8
         })
       );
-      podGroup.add(podMesh);
+      gem.position.y = 0.44;
+      sGroup.add(gem);
 
-      // Cartela del proyecto
-      const label = engine.createLabelSprite(pj.name, pj.sub, "#0f2d59", false);
-      label.position.set(0, 0.18, 0);
-      podGroup.add(label);
+      // Placa de etapa
+      const plaque = engine.createEngravedPlaque(
+        0.32,
+        0.14,
+        st.num,
+        st.name,
+        [st.sub],
+        { theme: "dark" }
+      );
+      plaque.position.set(0, -0.05, 0.16);
+      sGroup.add(plaque);
 
-      gimbal.add(podGroup);
-      engine.anim16_pods.push({ group: podGroup, angle: pj.angle, mesh: podMesh });
+      flowGroup.add(sGroup);
+      engine.anim16_steps.push({ group: sGroup, gem });
     });
 
-    adhGroup.add(gimbal);
-    engine.anim16_gimbal = gimbal;
+    // Conductos de conexión entre etapas del circuito
+    for (let i = 0; i < steps.length - 1; i++) {
+      const p1 = steps[i];
+      const p2 = steps[i + 1];
+      const dx = p2.x - p1.x;
+      const dz = p2.z - p1.z;
+      const dist = Math.hypot(dx, dz);
+      const angle = Math.atan2(dz, dx);
 
-    // Placa frontal grabada
-    const plaque = engine.createEngravedPlaque(
-      0.82,
-      0.22,
-      "SECRETARÍAS COMO ADHOCRACIAS MATRICIALES",
-      "Extensión y CyT • Proyecto 'Nodos en Red' • Flexibilidad de Misión",
-      ["MINTZBERG • WEISBORD • UNCo"],
+      const pipe = new THREE.Mesh(
+        new THREE.CylinderGeometry(0.012, 0.012, dist, 12),
+        engine.brassMat(0xd4af37)
+      );
+      pipe.rotation.z = Math.PI / 2;
+      pipe.rotation.y = -angle;
+      pipe.position.set((p1.x + p2.x) / 2, -0.25, (p1.z + p2.z) / 2);
+      flowGroup.add(pipe);
+    }
+
+    // Placa monumental frontal
+    const frontPlaque = engine.createEngravedPlaque(
+      1.10,
+      0.24,
+      "FLUJOGRAMA DE PERSONAL: CIRCUITO DE LICENCIAS",
+      "Mapeo de las 6 Etapas desde la Solicitud Inicial en SUDOCU hasta la Liquidación",
+      ["DETECCIÓN DE CUELLOS DE BOTELLA BUROCRÁTICOS"],
       { theme: "dark" }
     );
-    plaque.position.set(0, -0.88, 0.48);
-    adhGroup.add(plaque);
+    frontPlaque.position.set(0, -0.66, 0.95);
+    frontPlaque.rotation.x = -Math.PI * 0.12;
+    flowGroup.add(frontPlaque);
 
     // Rótulo superior
     const headerTitle = engine.createLabelSprite(
-      "ADHOCRACIAS MATRICIALES EN CURZAS",
-      "Estructuras Flexibles de Proyecto Frente al Aislamiento Burocrático",
+      "CIRCUITO CLAVE DE PERSONAL: TRÁMITE DE LICENCIAS",
+      "Transición hacia SUDOCU • 6 Etapas y Cuello de Botella en Autorizaciones",
       "#0f2d59",
       true
     );
-    headerTitle.position.set(0, 1.20, 0);
+    headerTitle.position.set(0, 1.25, 0);
     g.add(headerTitle);
 
-    // Arte Algorítmico: Flujo de proyectos adhocráticos territoriales
-    if (engine.createVectorFlowParticles) {
-      const flow16 = engine.createVectorFlowParticles(240, 0.95, 1.2, 0x10b981, 0x0284c7);
-      flow16.position.set(0, 0.15, 0);
-      g.add(flow16);
-      engine.anim16_flow = flow16;
-    }
-
-    g.add(adhGroup);
+    g.add(flowGroup);
   },
 
   animate(engine, t) {
-    if (engine.anim16_gimbal) {
-      engine.anim16_gimbal.rotation.y = t * 0.4;
-    }
-    if (engine.anim16_rings) {
-      engine.anim16_rings.forEach((r, i) => {
-        r.rotation.z = t * (0.3 + i * 0.15);
-      });
-    }
-    if (engine.anim16_pods) {
-      const podR = 0.65;
-      engine.anim16_pods.forEach((p, i) => {
-        const a = p.angle + t * 0.6;
-        p.group.position.set(Math.cos(a) * podR, Math.sin(t * 2 + i) * 0.08, Math.sin(a) * podR);
-        if (p.mesh) p.mesh.rotation.y = t * 1.5;
+    if (engine.anim16_steps) {
+      engine.anim16_steps.forEach((s, i) => {
+        if (s.gem) {
+          s.gem.rotation.y = t * 1.5;
+          const sc = 1.0 + Math.sin(t * 3 + i) * 0.15;
+          s.gem.scale.set(sc, sc, sc);
+        }
       });
     }
   }
 };
 
-// ──────────────────────────────────────────────────────────────────────────
-// 17. PARADOJA DEL CO-GOBIERNO Y PUENTES DE POLIGOBERNANZA
-//     (Tiempos Deliberativos Colegiados vs. Demandas Operativas de Gestión)
-// ──────────────────────────────────────────────────────────────────────────
 window.Presentation3D_Objects["anim_17"] = {
   build(engine, g) {
     engine.createMuseumPlinth(g, 1.45, 0.22, -1.22);
@@ -407,10 +413,10 @@ window.Presentation3D_Objects["anim_19"] = {
 
     // 4 Escalones Helicoidales / Momentos del Método PES
     const moments = [
-      { y: -0.75, angle: 0, title: "M1: EXPLICATIVO", desc: "Fue, es y tiende a ser • Diagnóstico", col: 0xef4444 },
-      { y: -0.45, angle: Math.PI / 2, title: "M2: NORMATIVO", desc: "Debe ser • El Diseño de Objetivos", col: 0x0284c7 },
-      { y: -0.15, angle: Math.PI, title: "M3: ESTRATÉGICO", desc: "Puede ser • Viabilidad y Alianzas", col: 0xf59e0b },
-      { y: 0.15, angle: (3 * Math.PI) / 2, title: "M4: TÁCTICO", desc: "Hacer • Coyuntura y Operaciones", col: 0x10b981 }
+      { y: -0.75, angle: 0, title: "1. INSUMOS", desc: "Crédito Inciso 1 y Recursos Físicos", col: 0x0284c7 },
+      { y: -0.45, angle: Math.PI / 2, title: "2. PROCESOS", desc: "Actividades de Docencia y Gestión", col: 0xf59e0b },
+      { y: -0.15, angle: Math.PI, title: "3. PROD. INTERMEDIOS", desc: "Horas Cátedra, Aulas y Módulos", col: 0x10b981 },
+      { y: 0.15, angle: (3 * Math.PI) / 2, title: "4. PROD. TERMINALES", desc: "Graduados, Títulos y Transferencia", col: 0xd4af37 }
     ];
 
     engine.anim19_steps = [];
@@ -462,7 +468,7 @@ window.Presentation3D_Objects["anim_19"] = {
         0.16,
         m.title,
         m.desc,
-        [`MOMENTO ${idx + 1} PES`],
+        [`ETAPA ${idx + 1} MAKON`],
         { theme: "dark" }
       );
       plaque.position.set(0, -0.15, 0.18);
@@ -499,9 +505,7 @@ window.Presentation3D_Objects["anim_19"] = {
     const plaque = engine.createEngravedPlaque(
       0.82,
       0.22,
-      "LOS CUATRO MOMENTOS DEL MÉTODO PES",
-      "Proceso No Lineal • Bucle Continuo de Planificación y Gobierno",
-      ["METODOLOGÍA DE CARLOS MATUS"],
+      "PRESUPUESTO POR PROGRAMAS (MAKON)", "Cadena de Valor Público Universitario • Insumos a Productos", ["VINCULACIÓN PLAN-PRESUPUESTO"],
       { theme: "dark" }
     );
     plaque.position.set(0, -0.88, 0.48);
@@ -509,8 +513,7 @@ window.Presentation3D_Objects["anim_19"] = {
 
     // Rótulo superior
     const headerTitle = engine.createLabelSprite(
-      "LOS 4 MOMENTOS DE LA PES EN CURZAS",
-      "M1 Explicativo -> M2 Normativo -> M3 Estratégico -> M4 Táctico",
+      "PRESUPUESTO POR PROGRAMAS: CADENA INSUMO-PRODUCTO", "Insumos -> Procesos -> Productos Intermedios -> Productos Terminales",
       "#0f2d59",
       true
     );
@@ -542,109 +545,137 @@ window.Presentation3D_Objects["anim_19"] = {
 // ──────────────────────────────────────────────────────────────────────────
 window.Presentation3D_Objects["anim_20"] = {
   build(engine, g) {
-    engine.createMuseumPlinth(g, 1.45, 0.22, -1.22);
+    engine.createMuseumPlinth(g, 1.65, 0.22, -1.22);
 
-    const workerGroup = new THREE.Group();
-    workerGroup.position.set(0, -0.15, 0);
+    const budgetGroup = new THREE.Group();
+    budgetGroup.position.set(0, -0.15, 0);
 
-    // Chasis de caoba noble
-    const chassis = engine.createMachinedChassis(1.72, 0.10, 0.76, { color: 0x1e293b });
-    chassis.position.y = -0.92;
-    workerGroup.add(chassis);
-
-    // 1. Columna Izquierda: Estamento Nodocente (Soporte Técnico y Administrativo)
-    const colNodocente = engine.createClassicalColumn(0.95, 0.09, 0x0284c7, true);
-    colNodocente.position.set(-0.55, -0.38, 0);
-    workerGroup.add(colNodocente);
-
-    const plaqueNoDoc = engine.createEngravedPlaque(
-      0.48,
-      0.18,
-      "PERSONAL NODOCENTE",
-      "Soporte Administrativo y Aulas Híbridas",
-      ["ACTOR ESTRATÉGICO 1"],
-      { theme: "dark" }
+    // Zócalo base
+    const baseDisk = new THREE.Mesh(
+      new THREE.CylinderGeometry(1.58, 1.62, 0.08, 48),
+      engine.graniteMat(0x0f172a, 0.35, 0.25)
     );
-    plaqueNoDoc.position.set(-0.55, -0.85, 0.42);
-    workerGroup.add(plaqueNoDoc);
+    baseDisk.position.y = -0.85;
+    budgetGroup.add(baseDisk);
 
-    // 2. Columna Derecha: Estamento Docente (Academia e Investigación)
-    const colDocente = engine.createClassicalColumn(0.95, 0.09, 0xd4af37, true);
-    colDocente.position.set(0.55, -0.38, 0);
-    workerGroup.add(colDocente);
-
-    const plaqueDoc = engine.createEngravedPlaque(
-      0.48,
-      0.18,
-      "PERSONAL DOCENTE",
-      "Cátedras, Carreras y Extensión Territorial",
-      ["ACTOR ESTRATÉGICO 2"],
-      { theme: "dark" }
+    // 1. Torre Monumental Izquierda: Inciso 1 - Gastos en Personal (90,2% • $4.399 M)
+    const towerH = 1.28;
+    const towerPersonal = new THREE.Mesh(
+      new THREE.BoxGeometry(0.55, towerH, 0.55),
+      engine.marbleMat(0xf8fafc, 0.25)
     );
-    plaqueDoc.position.set(0.55, -0.85, 0.42);
-    workerGroup.add(plaqueDoc);
+    towerPersonal.position.set(-0.48, -0.81 + towerH / 2, 0);
+    budgetGroup.add(towerPersonal);
 
-    // 3. Arquitrabe de la Viabilidad Institucional sostenido por ambos estamentos
-    const architrave = new THREE.Mesh(
-      new THREE.BoxGeometry(1.45, 0.14, 0.35),
-      engine.marbleMat(0xf8fafc, 0.2)
-    );
-    architrave.position.set(0, 0.16, 0);
-    workerGroup.add(architrave);
-
-    // Frontispicio dorado con el lema de viabilidad
-    const tympanum = new THREE.Mesh(
-      new THREE.CylinderGeometry(0.12, 0.16, 1.45, 3),
+    // Corona dorada de la torre de personal
+    const personalCrown = new THREE.Mesh(
+      new THREE.BoxGeometry(0.60, 0.05, 0.60),
       engine.brassMat(0xd4af37)
     );
-    tympanum.rotation.z = Math.PI / 2;
-    tympanum.position.set(0, 0.30, 0);
-    workerGroup.add(tympanum);
+    personalCrown.position.set(-0.48, -0.81 + towerH + 0.025, 0);
+    budgetGroup.add(personalCrown);
 
-    // Gema central de Viabilidad Organizacional (Sin trabajadores, no hay viabilidad)
-    const viabilityGem = new THREE.Mesh(
-      new THREE.OctahedronGeometry(0.14, 1),
+    // Gema de valor humano
+    const personalGem = new THREE.Mesh(
+      new THREE.OctahedronGeometry(0.12, 1),
       new THREE.MeshStandardMaterial({
-        color: 0x10b981,
-        emissive: 0x059669,
+        color: 0xd4af37,
+        emissive: 0xb45309,
         emissiveIntensity: 0.8,
         roughness: 0.1,
         metalness: 0.85
       })
     );
-    viabilityGem.position.set(0, 0.52, 0);
-    workerGroup.add(viabilityGem);
-    engine.anim20_gem = viabilityGem;
+    personalGem.position.set(-0.48, -0.81 + towerH + 0.18, 0);
+    budgetGroup.add(personalGem);
+    engine.anim20_gem1 = personalGem;
 
-    // Placa frontal central
-    const plaque = engine.createEngravedPlaque(
-      0.82,
+    // Placa de la Torre de Personal
+    const plaquePersonal = engine.createEngravedPlaque(
+      0.52,
       0.22,
-      "LOS TRABAJADORES COMO SUJETOS ESTRATÉGICOS",
-      "No son meros ejecutores: son constructores de la viabilidad organizacional",
-      ["CLAVE DE ÉXITO EN LA GESTIÓN PÚBLICA"],
+      "INCISO 1: PERSONAL",
+      "90,2% DEL GASTO TOTAL",
+      ["$4.399.054.000 (SALARIOS Y ZONA)"],
       { theme: "dark" }
     );
-    plaque.position.set(0, -0.88, 0.48);
-    workerGroup.add(plaque);
+    plaquePersonal.position.set(-0.48, -0.35, 0.30);
+    budgetGroup.add(plaquePersonal);
+
+    // 2. Torre Compacta Derecha: Incisos 2, 3 y 4 - Bienes y Servicios (9,8% • $478 M)
+    const towerServH = 0.22;
+    const towerServicios = new THREE.Mesh(
+      new THREE.BoxGeometry(0.42, towerServH, 0.42),
+      engine.marbleMat(0x64748b, 0.35)
+    );
+    towerServicios.position.set(0.48, -0.81 + towerServH / 2, 0);
+    budgetGroup.add(towerServicios);
+
+    const servCrown = new THREE.Mesh(
+      new THREE.BoxGeometry(0.46, 0.03, 0.46),
+      engine.brassMat(0x0284c7)
+    );
+    servCrown.position.set(0.48, -0.81 + towerServH + 0.015, 0);
+    budgetGroup.add(servCrown);
+
+    const servGem = new THREE.Mesh(
+      new THREE.OctahedronGeometry(0.06, 1),
+      new THREE.MeshStandardMaterial({
+        color: 0x0284c7,
+        emissive: 0x0369a1,
+        emissiveIntensity: 0.6,
+        roughness: 0.1,
+        metalness: 0.8
+      })
+    );
+    servGem.position.set(0.48, -0.81 + towerServH + 0.10, 0);
+    budgetGroup.add(servGem);
+    engine.anim20_gem2 = servGem;
+
+    // Placa de Funcionamiento
+    const plaqueServ = engine.createEngravedPlaque(
+      0.44,
+      0.18,
+      "FUNCIONAMIENTO",
+      "9,8% RESTANTE",
+      ["$478.146.000"],
+      { theme: "dark" }
+    );
+    plaqueServ.position.set(0.48, -0.55, 0.24);
+    budgetGroup.add(plaqueServ);
+
+    // Placa frontal monumental
+    const frontPlaque = engine.createEngravedPlaque(
+      1.10,
+      0.24,
+      "PRESUPUESTO GENERAL CURZAS: $4.877 MILLONES",
+      "Centralidad Absoluta del Inciso 1 (90,2% a Salarios con 40% de Zona Desfavorable)",
+      ["EL PERSONAL COMO LA AUTÉNTICA CAPACIDAD ESTATAL"],
+      { theme: "dark" }
+    );
+    frontPlaque.position.set(0, -0.66, 0.90);
+    frontPlaque.rotation.x = -Math.PI * 0.12;
+    budgetGroup.add(frontPlaque);
 
     // Rótulo superior
     const headerTitle = engine.createLabelSprite(
-      "TRABAJADORES Y CONSTRUCCIÓN DE VIABILIDAD",
-      "El Personal Universitario como Sujeto Activo de la Planificación",
+      "PROGRAMACIÓN PRESUPUESTARIA: INCISO 1 Y FACTOR HUMANO",
+      "Presupuesto Total $4.877 M • 90,2% en Personal y 9,8% en Funcionamiento",
       "#0f2d59",
       true
     );
-    headerTitle.position.set(0, 1.20, 0);
+    headerTitle.position.set(0, 1.25, 0);
     g.add(headerTitle);
 
-    g.add(workerGroup);
+    g.add(budgetGroup);
   },
 
   animate(engine, t) {
-    if (engine.anim20_gem) {
-      engine.anim20_gem.rotation.y = t * 1.0;
-      engine.anim20_gem.position.y = 0.52 + Math.sin(t * 2.5) * 0.03;
+    if (engine.anim20_gem1) {
+      engine.anim20_gem1.rotation.y = t * 1.2;
+    }
+    if (engine.anim20_gem2) {
+      engine.anim20_gem2.rotation.y = -t * 1.5;
     }
   }
 };

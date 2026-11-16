@@ -159,12 +159,12 @@ window.Presentation3D_Objects["anim_12"] = {
 
     // 6 Nodos Policéntricos Multiactorales de Gobernanza
     const nodes = [
-      { name: "CURZAS (UNCo)", role: "Núcleo Universitario", col: 0xd4af37, x: 0, y: 0.10, z: 0 },
-      { name: "MUNICIPIOS", role: "10 Nodos Territoriales", col: 0x0284c7, x: -0.65, y: -0.20, z: 0.30 },
-      { name: "PROVINCIA R.N.", role: "Ministerios y DPA", col: 0x10b981, x: 0.65, y: -0.20, z: 0.30 },
-      { name: "PRODUCTORES", role: "Pequeños Productores", col: 0xf59e0b, x: -0.55, y: 0.35, z: -0.35 },
-      { name: "SINDICATOS", role: "APUNC / ADUNC", col: 0x8b5cf6, x: 0.55, y: 0.35, z: -0.35 },
-      { name: "ORGANISMOS CyT", role: "INTA / CONICET / CNEA", col: 0xec4899, x: 0, y: -0.55, z: -0.45 }
+      { name: "SIU-PILAGÁ", role: "Presupuesto y Contabilidad", col: 0xd4af37, x: 0, y: 0.10, z: 0 },
+      { name: "SIU-MAPUCHE", role: "Liquidación de Haberes (Inciso 1)", col: 0x0284c7, x: -0.65, y: -0.20, z: 0.30 },
+      { name: "e-SIDIF NACIONAL", role: "Ley 24.156 Adm. Financiera", col: 0x10b981, x: 0.65, y: -0.20, z: 0.30 },
+      { name: "CONTABILIDAD", role: "Conciliación de Partidas", col: 0xf59e0b, x: -0.55, y: 0.35, z: -0.35 },
+      { name: "TESORERÍA", role: "Pagos y Transferencias", col: 0x8b5cf6, x: 0.55, y: 0.35, z: -0.35 },
+      { name: "AUDITORÍA (UAI)", role: "Control Interno de Partidas", col: 0xec4899, x: 0, y: -0.55, z: -0.45 }
     ];
 
     engine.anim12_nodes = [];
@@ -232,9 +232,7 @@ window.Presentation3D_Objects["anim_12"] = {
     const plaque = engine.createEngravedPlaque(
       0.82,
       0.22,
-      "PARADIGMA DE LA POLIGOBERNANZA",
-      "Redes Multiactorales • Interdependencia de Recursos • Coordinación Policéntrica",
-      ["RHODES • KOOIMAN • CHAVANCE"],
+      "SISTEMAS FINANCIEROS INTEGRADOS", "Interconexión SIU-Pilagá, SIU-Mapuche y e-SIDIF (Ley 24.156)", ["ECOSISTEMA PRESUPUESTARIO"],
       { theme: "dark" }
     );
     plaque.position.set(0, -0.88, 0.48);
@@ -242,8 +240,7 @@ window.Presentation3D_Objects["anim_12"] = {
 
     // Rótulo superior
     const headerTitle = engine.createLabelSprite(
-      "POLIGOBERNANZA: COMPLEJIDAD Y REDES",
-      "De la Jerarquía Vertical a la Interdependencia de Recursos",
+      "EL CICLO PRESUPUESTARIO Y SISTEMAS INTEGRADOS", "Pilagá • Mapuche • e-SIDIF • Trazabilidad Financiera",
       "#0f2d59",
       true
     );

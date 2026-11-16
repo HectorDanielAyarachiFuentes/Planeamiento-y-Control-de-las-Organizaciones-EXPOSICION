@@ -925,9 +925,7 @@ window.Presentation3D_Objects["anim_09"] = {
     const lawBanner = engine.createEngravedPlaque(
       0.88,
       0.24,
-      "LEY DE EDUCACIÓN SUPERIOR N° 24.521",
-      "Art. 29: Autonomía Académica e Institucional • Autarquía Financiera",
-      ["BLINDAJE CONTRA LA GERENCIALIZACIÓN NGP"],
+      "ESTRUCTURA SALARIAL Y CLAUSTROS: ZONA DESFAVORABLE (40%)", "Distribución de Haberes en los Claustros Docente y Nodocente con Adicional Patagónico", ["INCISO 1: 90,2% DEL GASTO"],
       { theme: "dark" }
     );
     lawBanner.position.set(0, 0.42, 0.45);
@@ -963,8 +961,7 @@ window.Presentation3D_Objects["anim_09"] = {
 
     // Rótulo superior
     const headerTitle = engine.createLabelSprite(
-      "AUTONOMÍA UNIVERSITARIA (LES 24.521)",
-      "Co-Gobierno Cuadricameral • Freno a la Gerencialización de Mercado",
+      "FACTORES ESTRUCTURALES: ZONA DESFAVORABLE (40%) Y CLAUSTROS", "Docentes y Nodocentes bajo Régimen Patagónico • Inciso 1",
       "#0f2d59",
       true
     );

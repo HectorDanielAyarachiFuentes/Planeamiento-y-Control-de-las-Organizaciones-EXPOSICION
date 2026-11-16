@@ -565,9 +565,7 @@ window.Presentation3D_Objects["anim_24"] = {
     const plaque = engine.createEngravedPlaque(
       0.82,
       0.22,
-      "DICTAMEN DE VIABILIDAD ESTRATÉGICA",
-      "Viabilidad Política, Institucional y Tecnológica Plena para el CURZAS",
-      ["TESINA DE GRADO • APROBADA"],
+      "EL FACTOR HUMANO COMO CAPACIDAD ESTATAL", "Las personas son el servicio público en la educación superior", ["DOCENTES Y NODOCENTES"],
       { theme: "dark" }
     );
     plaque.position.set(0, -0.88, 0.48);
@@ -575,8 +573,7 @@ window.Presentation3D_Objects["anim_24"] = {
 
     // Rótulo superior
     const headerTitle = engine.createLabelSprite(
-      "SÍNTESIS Y DICTAMEN DE VIABILIDAD",
-      "Conclusiones Integrales del Avance 1 y Avance 2",
+      "EL FACTOR HUMANO: AUTÉNTICA CAPACIDAD ESTATAL", "Intensidad en Conocimiento • Base de la Capacidad Pública",
       "#0f2d59",
       true
     );

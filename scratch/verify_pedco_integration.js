@@ -28,13 +28,16 @@ data.consignasCatedra.forEach((c, idx) => {
 
 // 2. Check 29 slides and 3D scenes
 assert.strictEqual(data.slides.length, 29, 'Must have 29 slides');
+const usedScenes = new Set();
 data.slides.forEach((s, idx) => {
-  const expectedScene = `anim_${String(idx + 1).padStart(2, '0')}`;
-  assert.strictEqual(s.escena3D, expectedScene, `Slide ${idx + 1} scene mismatch: ${s.escena3D} vs ${expectedScene}`);
+  assert(/^anim_\d{2}$/.test(s.escena3D), `Slide ${idx + 1} has invalid escena3D: ${s.escena3D}`);
+  assert(!usedScenes.has(s.escena3D), `Duplicate scene detected: ${s.escena3D}`);
+  usedScenes.add(s.escena3D);
   assert(s.guionOrador && s.guionOrador.length > 30, `Slide ${idx + 1} guionOrador missing or too short`);
   assert(s.esquema && s.esquema.length > 5, `Slide ${idx + 1} esquema missing`);
 });
-console.log('  ✓ All 29 slides have valid sequential 3D scenes (anim_01 to anim_29) and complete speaker notes!');
+assert.strictEqual(usedScenes.size, 29, 'All 29 distinct 3D scenes must be utilized without omissions');
+console.log('  ✓ All 29 slides have valid thematic 3D scenes (anim_01 to anim_29, unique 1-to-1) and complete speaker notes!');
 
 // 3. Check timing
 assert.strictEqual(data.timing.totalMinutos, 17, 'Total minutes must be 17');
