@@ -2504,20 +2504,11 @@ class PresentationApp {
     const sessionId = this.ttsSessionId;
     this.ttsStopRequested = false;
 
-    // Detener cualquier temporizador secuencial previo
-    if (this.ttsSequentialTimer) {
+    // Detener cualquier temporizador secuencial previo si no estamos en lectura de notas
+    if (!this.ttsReadingNotes && this.ttsSequentialTimer) {
       clearTimeout(this.ttsSequentialTimer);
       this.ttsSequentialTimer = null;
     }
-
-    // En Chromium, si está pausado, llamar resume() antes de cancel() previene congelamiento
-    if (this.ttsSynth.paused) {
-      try { this.ttsSynth.resume(); } catch (e) {}
-    }
-
-    try {
-      this.ttsSynth.cancel();
-    } catch (e) {}
 
     // Gestionar resaltado visual
     document.querySelectorAll(".tts-reading-target").forEach(el => el.classList.remove("tts-reading-target"));
@@ -2575,11 +2566,25 @@ class PresentationApp {
     };
 
     this.ttsUtterance = utterance;
-    try {
-      this.ttsSynth.speak(utterance);
-    } catch (err) {
-      console.warn("Error al emitir síntesis de voz:", err);
+
+    // Cancelar cualquier audio nativo en cola antes de emitir la nueva locución
+    if (this.ttsSynth.paused) {
+      try { this.ttsSynth.resume(); } catch (e) {}
     }
+    try {
+      this.ttsSynth.cancel();
+    } catch (e) {}
+
+    // Pequeño retardo de 35ms para permitir que el hilo de audio del navegador procese la cancelación
+    setTimeout(() => {
+      if (this.ttsSessionId === sessionId && !this.ttsStopRequested) {
+        try {
+          this.ttsSynth.speak(utterance);
+        } catch (err) {
+          console.warn("Error al emitir síntesis de voz:", err);
+        }
+      }
+    }, 35);
   }
 
   /**
@@ -2986,9 +2991,16 @@ class PresentationApp {
       return;
     }
 
-    this.stopTTS();
+    if (this.ttsSequentialTimer) {
+      clearTimeout(this.ttsSequentialTimer);
+      this.ttsSequentialTimer = null;
+    }
+
+    this.ttsStopRequested = false;
     this.ttsReadingSlide = true;
+    this.ttsReadingNotes = false;
     this.updateSlideTTSButtonState(true);
+    this.updateNotesTTSButtonState(false);
 
     const slide = this.data.slides[this.currentSlideIndex];
     if (!slide) {
@@ -3041,12 +3053,18 @@ class PresentationApp {
       this.toggleNotes(true);
     }
 
-    // Detener cualquier locución previa antes de iniciar la secuencia
-    this.stopTTS();
+    // Cancelar temporizadores secuenciales previos
+    if (this.ttsSequentialTimer) {
+      clearTimeout(this.ttsSequentialTimer);
+      this.ttsSequentialTimer = null;
+    }
 
     // Activar estado y feedback visual inmediato en el botón (cambia a "Detener" en rojo)
+    this.ttsStopRequested = false;
     this.ttsReadingNotes = true;
+    this.ttsReadingSlide = false;
     this.updateNotesTTSButtonState(true);
+    this.updateSlideTTSButtonState(false);
 
     const paragraphs = [];
     if (slide.esquema) {
