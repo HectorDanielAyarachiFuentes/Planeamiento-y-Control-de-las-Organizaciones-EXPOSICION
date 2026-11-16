@@ -34,6 +34,13 @@ class PresentationApp {
         descripcion: "Distribución geográfica de la Sede Cabecera Viedma y los 10 Nodos Territoriales de Río Negro con sus divisiones departamentales y mediaciones tecnológicas."
       },
       {
+        id: "planificacion_matus_pes",
+        titulo: "Planificación Normativa vs. Situacional (Carlos Matus)",
+        autor: "Carlos Matus (1987) — PES (Avance 2)",
+        archivo: "assets/planificacion_matus_pes.svg",
+        descripcion: "Matriz comparativa de ruptura paradigmática: el planificador dentro del juego, incertidumbre y los trabajadores como actores estratégicos con poder de veto."
+      },
+      {
         id: "subsistemas_operativos",
         titulo: "Subsistemas de la Gestión de Recursos Humanos (Francisco Longo)",
         autor: "Francisco Longo (2006)",

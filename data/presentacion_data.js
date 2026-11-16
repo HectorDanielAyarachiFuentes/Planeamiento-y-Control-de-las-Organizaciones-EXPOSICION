@@ -491,7 +491,7 @@ const PRESENTACION_DATA = {
       ],
       "metadatosFooter": "Avance 2 • Teoría de la Planificación Estratégica Situacional • Carlos Matus",
       "escena3D": "anim_18",
-      "diagramaSVG": "assets/subsistemas_longo.svg",
+      "diagramaSVG": "assets/planificacion_matus_pes.svg",
       "tiempoSugerido": "⏱️ ~35-40 seg",
       "guionOrador": "Pasamos al Avance 2 respondiendo a la pregunta sobre el enfoque de planificación. Demostramos que el plan normativo clásico fracasó porque creía que la realidad se decretaba desde un escritorio. El CURZAS adopta el enfoque situacional de Carlos Matus: el poder está compartido y los trabajadores docentes y nodocentes son actores estratégicos con quienes hay que construir consensos paritarios."
     },
