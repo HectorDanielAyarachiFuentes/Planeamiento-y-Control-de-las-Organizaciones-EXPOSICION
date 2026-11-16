@@ -606,6 +606,7 @@ const PRESENTACION_DATA = {
       ],
       "metadatosFooter": "Avance 3 • Análisis de Estructuras Organizacionales • Organigrama Formal vs Real",
       "escena3D": "anim_15",
+      "diagramaSVG": "assets/organigrama.svg",
       "tiempoSugerido": "⏱️ ~35-40 seg",
       "guionOrador": "Ingresamos al Avance 3 respondiendo la pregunta sobre el organigrama. Nuestra respuesta es contundente: el organigrama formal no coincide con la realidad. La estructura oficial de papel muestra oficinas tradicionales en Viedma, pero en la realidad el CURZAS se despliega en una red viva de 10 nodos territoriales que sostienen carreras en toda la provincia sin estar dibujados en el organigrama formal."
     },

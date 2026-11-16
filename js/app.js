@@ -41,6 +41,13 @@ class PresentationApp {
         descripcion: "Matriz comparativa de ruptura paradigmática: el planificador dentro del juego, incertidumbre y los trabajadores como actores estratégicos con poder de veto."
       },
       {
+        id: "organigrama_curzas",
+        titulo: "Organigrama Institucional: Estructura Orgánico-Funcional vs. Real",
+        autor: "CURZAS — UNCo (Avance 3)",
+        archivo: "assets/organigrama.svg",
+        descripcion: "Mapeo Integral: Jerarquía de Gobierno, Conducción Ejecutiva, Departamentos (Ord. CS N° 0039/2010), Personal y Red Territorial de Facto."
+      },
+      {
         id: "subsistemas_operativos",
         titulo: "Subsistemas de la Gestión de Recursos Humanos (Francisco Longo)",
         autor: "Francisco Longo (2006)",
