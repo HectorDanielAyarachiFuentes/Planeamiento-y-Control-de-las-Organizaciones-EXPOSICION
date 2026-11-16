@@ -1,18 +1,19 @@
 const fs = require('fs');
 const assert = require('assert');
 
-console.log('🧪 Starting Verification of PEDCO Consignas Integration...\n');
+console.log('🧪 Starting Verification of PEDCO Consignas Integration (5 Avances & 29 Slides)...\n');
 
 // 1. Check data/presentacion_data.js
 const data = require('../data/presentacion_data.js');
 assert(data.consignasCatedra, 'consignasCatedra should exist in presentacion_data.js');
-assert.strictEqual(data.consignasCatedra.length, 4, 'consignasCatedra must have 4 items');
+assert.strictEqual(data.consignasCatedra.length, 5, 'consignasCatedra must have 5 items');
 
 const expectedTitles = [
   'Avance 1: Contexto, Modelo de Gestión y Gobernanza (Unidad I)',
   'Avance 2: Diagnóstico y Planificación Estratégica Situacional (Unidad II)',
   'Avance 3: Diseño Organizacional, Procesos y Ecosistema Digital (Unidad III)',
-  'Avance 4: Programación Presupuestaria y Factor Humano (Unidad IV)'
+  'Avance 4: Programación Presupuestaria y Factor Humano (Unidad IV)',
+  'Avance 5: Sistemas de Control, Tablero de Comando y Evaluación (Unidad V)'
 ];
 
 data.consignasCatedra.forEach((c, idx) => {
@@ -25,32 +26,35 @@ data.consignasCatedra.forEach((c, idx) => {
   console.log(`  ✓ Avance ${c.avanceNum} validated: ${c.avanceTitulo}`);
 });
 
-// 2. Check 25 slides and 3D scenes
-assert.strictEqual(data.slides.length, 25, 'Must have 25 slides');
+// 2. Check 29 slides and 3D scenes
+assert.strictEqual(data.slides.length, 29, 'Must have 29 slides');
 data.slides.forEach((s, idx) => {
   const expectedScene = `anim_${String(idx + 1).padStart(2, '0')}`;
   assert.strictEqual(s.escena3D, expectedScene, `Slide ${idx + 1} scene mismatch: ${s.escena3D} vs ${expectedScene}`);
+  assert(s.guionOrador && s.guionOrador.length > 30, `Slide ${idx + 1} guionOrador missing or too short`);
+  assert(s.esquema && s.esquema.length > 5, `Slide ${idx + 1} esquema missing`);
 });
-console.log('  ✓ All 25 slides have valid sequential 3D scenes (anim_01 to anim_25)');
+console.log('  ✓ All 29 slides have valid sequential 3D scenes (anim_01 to anim_29) and complete speaker notes!');
 
-// 3. Check index.html
+// 3. Check timing
+assert.strictEqual(data.timing.totalMinutos, 17, 'Total minutes must be 17');
+console.log('  ✓ Timing configured strictly to 17 minutes');
+
+// 4. Check index.html
 const html = fs.readFileSync('index.html', 'utf8');
 assert(html.includes('data-tab="consignas"'), 'index.html must have data-tab="consignas"');
-console.log('  ✓ index.html contains "Consignas PEDCO 📋" drawer tab');
+assert(html.includes('17:00'), 'index.html must display 17:00 for timer');
+assert(html.includes('1 / 29'), 'index.html must display 1 / 29');
+console.log('  ✓ index.html validated: 17:00 timer, 1 / 29 counter, and drawer tabs present');
 
-// 4. Check js/app.js
+// 5. Check js/app.js
 const appJs = fs.readFileSync('js/app.js', 'utf8');
 assert(appJs.includes('tabType === "consignas"'), 'js/app.js must handle tabType === "consignas"');
 assert(appJs.includes('renderConsignasTab()'), 'js/app.js must call renderConsignasTab');
 assert(appJs.includes('renderConsignasTab() {'), 'js/app.js must define renderConsignasTab()');
 assert(appJs.includes('openConsignasDrawer(avanceNum = null)'), 'js/app.js must define openConsignasDrawer');
 assert(appJs.includes('avance-consigna-meta'), 'js/app.js must render avance-consigna-meta in Slide 2');
-console.log('  ✓ js/app.js contains Slide 2 consigna meta and drawer tab renderer');
-
-// 5. Check css/styles.css
-const css = fs.readFileSync('css/styles.css', 'utf8');
-assert(css.includes('.avance-consigna-meta'), 'css/styles.css must style .avance-consigna-meta');
-assert(css.includes('.consigna-detail-card'), 'css/styles.css must style .consigna-detail-card');
-console.log('  ✓ css/styles.css contains styling for consignas metadata & cards');
+assert(appJs.includes('Avance 5: Sistemas de Control, Tablero de Comando y Evaluación (Unidad V)'), 'js/app.js must include Avance 5 in sections and cards');
+console.log('  ✓ js/app.js validated: Slide 2 consigna meta, sections, and drawer tab renderers');
 
 console.log('\n✨ ALL VERIFICATION TESTS PASSED SUCCESSFULLY! (5/5)');

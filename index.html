@@ -34,8 +34,8 @@
     <span class="node-radar-desc" id="node-radar-desc">Sede Cabecera</span>
   </div>
 
-  <!-- Barra de progreso general de la defensa académica (25 filminas) -->
-  <div class="presentation-progress-bar" id="presentation-progress-bar" role="progressbar" aria-valuemin="1" aria-valuemax="25" aria-valuenow="1"></div>
+  <!-- Barra de progreso general de la defensa académica (29 filminas) -->
+  <div class="presentation-progress-bar" id="presentation-progress-bar" role="progressbar" aria-valuemin="1" aria-valuemax="29" aria-valuenow="1"></div>
 
   <!-- Capa de Interfaz de Usuario (UI Glassmorphism de Alto Contraste) -->
   <div class="ui-layer">
@@ -52,24 +52,24 @@
 
       <!-- Centro: Contador de Filminas y Estaciones Interactivas -->
       <div class="stations-wrapper">
-        <button class="slide-counter-badge" id="slide-counter-badge" title="Índice Canónico de los 4 Avances y 25 Filminas (Tecla I)" aria-label="Abrir Índice de Filminas por Avances">
+        <button class="slide-counter-badge" id="slide-counter-badge" title="Índice Canónico de los 5 Avances y 29 Filminas (Tecla I)" aria-label="Abrir Índice de Filminas por Avances">
           <span class="badge-index-icon" aria-hidden="true">
             <svg viewBox="0 0 20 20" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 5h14M3 10h14M3 15h9"/></svg>
           </span>
-          <span class="slide-counter-text">Filmina <strong id="slide-counter">1 / 25</strong></span>
+          <span class="slide-counter-text">Filmina <strong id="slide-counter">1 / 29</strong></span>
           <svg class="counter-chevron" viewBox="0 0 20 20" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 7.5l5 5 5-5"/></svg>
         </button>
         <div class="stations-dock-divider" aria-hidden="true"></div>
-        <nav class="stations-indicator" id="stations-indicator" aria-label="Estaciones de la Defensa estructuradas en los 4 Avances"></nav>
+        <nav class="stations-indicator" id="stations-indicator" aria-label="Estaciones de la Defensa estructuradas en los 5 Avances"></nav>
       </div>
 
-      <!-- Cronómetro Académico de 30 minutos (Defensa Oficial) -->
+      <!-- Cronómetro Académico de 17 minutos (Defensa Oficial) -->
       <div class="timer-container" aria-label="Cronómetro de Defensa">
         <span class="timer-label">EXPOSICIÓN</span>
-        <span class="timer-display" id="timer-display">30:00</span>
+        <span class="timer-display" id="timer-display">17:00</span>
         <div class="timer-actions">
           <button id="btn-timer-toggle" title="Iniciar / Pausar Cronómetro (T)" aria-label="Iniciar / Pausar Cronómetro">▶</button>
-          <button id="btn-timer-reset" title="Reiniciar a 30:00" aria-label="Reiniciar Cronómetro">↺</button>
+          <button id="btn-timer-reset" title="Reiniciar a 17:00" aria-label="Reiniciar Cronómetro">↺</button>
         </div>
       </div>
     </header>
@@ -212,8 +212,8 @@
           <span>TELEPRÓMPTER • PANEL DEL ORADOR</span>
         </div>
         <div class="notes-meta-pills">
-          <span class="notes-slide-pill" id="notes-slide-num">Filmina 1 / 25</span>
-          <span class="notes-time-pill" id="notes-slide-time">⏱️ ~1.5 min</span>
+          <span class="notes-slide-pill" id="notes-slide-num">Filmina 1 / 29</span>
+          <span class="notes-time-pill" id="notes-slide-time">⏱️ ~35-40 seg</span>
         </div>
       </div>
       <div class="notes-header-right">
@@ -328,7 +328,7 @@
       <button class="drawer-tab" data-tab="faq">FAQ Jurado</button>
       <button class="drawer-tab" data-tab="svgs">Diagramas SVG</button>
       <button class="drawer-tab" data-tab="consignas">Consignas PEDCO 📋</button>
-      <button class="drawer-tab" data-tab="avance4">Avance 4 (PDF) 📑</button>
+      <button class="drawer-tab" data-tab="avance4">Avances (PDF) 📑</button>
       <button class="drawer-tab" data-tab="catedra">Material Cátedra 📚</button>
     </div>
 
@@ -362,7 +362,7 @@
       <div class="shortcut-row"><kbd>F</kbd><span>Pantalla Completa</span></div>
       <div class="shortcut-row"><kbd>T</kbd><span>Iniciar / Pausar Cronómetro</span></div>
       <div class="shortcut-row"><kbd>N</kbd><span>Guion / Notas del Orador</span></div>
-      <div class="shortcut-row"><kbd>I</kbd><span>Índice Canónico (4 Avances)</span></div>
+      <div class="shortcut-row"><kbd>I</kbd><span>Índice Canónico (5 Avances)</span></div>
       <div class="shortcut-row"><kbd>M</kbd><span>Respaldo Metodológico (Jurado)</span></div>
       <div class="shortcut-row"><kbd>B</kbd><span>Material Cátedra (95 Docs)</span></div>
       <div class="shortcut-row"><kbd>V</kbd><span>Visor de Diagramas SVG</span></div>
@@ -374,9 +374,9 @@
     </div>
   </aside>
 
-  <!-- Modal / Menú Desplegable: Índice Canónico de los 4 Avances (Atajo: I) -->
+  <!-- Modal / Menú Desplegable: Índice Canónico de los 5 Avances (Atajo: I) -->
   <div class="slides-index-backdrop" id="slides-index-backdrop"></div>
-  <aside class="slides-index-panel" id="slides-index-panel" aria-label="Índice Canónico de Filminas y 4 Avances">
+  <aside class="slides-index-panel" id="slides-index-panel" aria-label="Índice Canónico de Filminas y 5 Avances">
     <div class="slides-index-header">
       <div class="slides-index-title-group">
         <span class="slides-index-badge">SEMINARIO DE INTEGRACIÓN Y APLICACIÓN • CURZAS UNCo</span>
@@ -384,13 +384,13 @@
           <svg class="btn-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color: var(--gold-main); vertical-align: -2px; margin-right: 0.4rem;">
             <path d="M3 4.5h14M3 9.5h14M3 14.5h8"/>
           </svg>
-          Estructura de la Exposición • 4 Avances de Cátedra
+          Estructura de la Exposición • 5 Avances de Cátedra
         </h3>
       </div>
       <button class="btn-close" id="btn-close-slides-index" title="Cerrar índice (Esc)">✕</button>
     </div>
     <div class="slides-index-body" id="slides-index-body">
-      <!-- Se inyecta dinámicamente con los 4 Avances, Apertura y Cierre -->
+      <!-- Se inyecta dinámicamente con los 5 Avances, Apertura y Cierre -->
     </div>
     <div class="slides-index-footer">
       <span>💡 Atajo: Tecla <strong>I</strong> abre/cierra • Clic en cualquier filmina para saltar directamente • <strong>Esc</strong> para salir</span>
@@ -402,7 +402,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <!-- 2. Motor de Animación Profesional GSAP (GreenSock Animation Platform) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <!-- 3. Base de Datos Externa de Metadatos (25 Filminas + Enlaces SVG) -->
+  <!-- 3. Base de Datos Externa de Metadatos (29 Filminas + Enlaces SVG) -->
   <script src="data/catedra_data.js?v=4.9"></script>
   <script src="data/presentacion_data.js?v=4.9"></script>
   <!-- 4. Módulos de Esculturas 3D y Utilitarios -->

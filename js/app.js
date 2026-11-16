@@ -536,12 +536,22 @@ class PresentationApp {
         ejeNumber: 4
       },
       {
+        id: "avance5",
+        code: "AVANCE 5",
+        shortLabel: "Avance 5: Unidad V",
+        shortTitle: "AVANCE 5",
+        title: "Avance 5: Sistemas de Control, Tablero de Comando y Evaluación (Unidad V)",
+        range: [24, 27], // filminas 25 a 28
+        isEje: true,
+        ejeNumber: 5
+      },
+      {
         id: "cierre",
         code: "CIERRE",
         shortLabel: "Cierre y Defensa",
         shortTitle: "CIERRE",
         title: "Cierre: Conclusiones Integrales y Defensa de Cátedra",
-        range: [24, 24], // filmina 25
+        range: [28, 28], // filmina 29
         isEje: false
       }
     ];
@@ -771,6 +781,17 @@ class PresentationApp {
           text: "El 90,2% del gasto va a salarios (Inciso 1) con 40% de Zona Desfavorable; el personal es la auténtica capacidad estatal.",
           targetSlide: 19,
           slideRange: "20 a 24"
+        },
+        {
+          num: "AVANCE 5",
+          numVal: 5,
+          eje: "Unidad V",
+          title: "Sistemas de Control, Tablero de Comando y Evaluación",
+          objetivo: "Evaluar el control externo (AGN) e interno (UAI estatutaria, SIGEN), diseñar un Tablero de RR. HH. con 4 KPIs (Ramírez y Mayne) y bucle de retroalimentación (Feinstein).",
+          pregunta: "¿Qué organismos auditan y qué observaciones formularon a personal? ¿KPIs formales vigentes? ¿Cómo retroalimenta el control la gestión?",
+          text: "UAI con rango estatutario único y reactivación SIGEN (Res. 311/2026); diseño de 4 KPIs estratégicos para superar la brecha histórica de evaluación nodocente y aprendizaje institucional.",
+          targetSlide: 24,
+          slideRange: "25 a 28"
         }
       ];
 
@@ -817,7 +838,7 @@ class PresentationApp {
 
         this.bulletsElement.appendChild(li);
       });
-    } else if (index === 24 || slide.id === "slide_25" || slide.layout === "conclusion_summary") {
+    } else if (index === this.totalSlides - 1 || slide.id === "slide_29" || slide.layout === "conclusion_summary") {
       this.bulletsElement.classList.add("conclusion-mode");
       const conclusiones = [
         {
@@ -851,6 +872,14 @@ class PresentationApp {
           hicimos: "Analizamos el presupuesto por programas (Makon, Programa 26) y el impacto del Inciso 1 (Personal).",
           destacado: "El 90,2% del gasto va a salarios docentes/nodocentes, demostrando que las personas son la auténtica capacidad estatal del CURZAS.",
           problema: "Extrema rigidez presupuestaria (solo 9,8% para funcionamiento) y fuerte impacto del 40% de Zona Desfavorable ante el ajuste nacional."
+        },
+        {
+          num: "AVANCE 5",
+          unidad: "Unidad V",
+          titulo: "Sistemas de Control, Tablero de Comando y Evaluación",
+          hicimos: "Examinamos el ecosistema AGN/UAI/SIGEN (Res. 311/2026), diagnosticamos la evaluación laboral docente/nodocente y diseñamos un Tablero con 4 KPIs estratégicos.",
+          destacado: "Rango estatutario pionero de la UAI en UNCo y bucle de retroalimentación continua que transforma la auditoría punitiva en aprendizaje institucional (Feinstein).",
+          problema: "Diferimiento histórico en la aplicación del régimen de calificación nodocente (APUNC) y ausencia previa de un Tablero de Comando con metas de resultado."
         }
       ];
 
@@ -1038,7 +1067,7 @@ class PresentationApp {
 
     this.footerMetaElement.innerHTML = `
       <span>📌 ${slide.metadatosFooter}</span>
-      <span>⏱️ Ritmo sugerido: ~1.5 min</span>
+      <span>⏱️ Ritmo sugerido: ~35-40 seg</span>
     `;
 
     if (this.slideCounter) {
@@ -1051,7 +1080,7 @@ class PresentationApp {
     }
     const slideTimeEl = document.getElementById("notes-slide-time");
     if (slideTimeEl) {
-      slideTimeEl.textContent = slide.tiempoSugerido || "⏱️ ~1.5 min";
+      slideTimeEl.textContent = slide.tiempoSugerido || "⏱️ ~35-40 seg";
     }
 
     this.notesBody.innerHTML = `
@@ -2053,7 +2082,8 @@ class PresentationApp {
       1: { index: 2, range: "Filminas 3 a 7" },
       2: { index: 7, range: "Filminas 8 a 13" },
       3: { index: 13, range: "Filminas 14 a 19" },
-      4: { index: 19, range: "Filminas 20 a 24" }
+      4: { index: 19, range: "Filminas 20 a 24" },
+      5: { index: 24, range: "Filminas 25 a 28" }
     };
 
     consignas.forEach((c) => {
@@ -2117,7 +2147,7 @@ class PresentationApp {
     });
   }
 
-  openAvance4Drawer(avanceNum = 4) {
+  openAvance4Drawer(avanceNum = 5) {
     this.openDrawer();
     document.querySelectorAll(".drawer-tab").forEach(t => t.classList.remove("active"));
     const tabBtn = document.querySelector('.drawer-tab[data-tab="avance4"]');
@@ -2140,10 +2170,21 @@ class PresentationApp {
   }
 
   // ─── PESTAÑA: AVANCE 4 Y DOCUMENTOS OFICIALES ENTREGADOS (PDF) ─────────────
-  renderAvance4Tab(selectedAvanceNum = 4) {
+  renderAvance4Tab(selectedAvanceNum = 5) {
     this.drawerContent.innerHTML = "";
 
     const avancesDocs = [
+      {
+        num: 5,
+        unidad: "Unidad V",
+        titulo: "Avance 5: Sistemas de Control, Tablero de Comando y Evaluación (Unidad V)",
+        subtitulo: "Control Externo/Interno (AGN, UAI, SIGEN Res. 311/2026), 4 KPIs y Bucle de Retroalimentación",
+        ruta: "01_Actividades_Catedra/actividad_05/Avance 5 Sistemas de Control, Tablero de Comando y Evaluación (Unidad V).pdf",
+        nombre: "Avance 5 Sistemas de Control, Tablero de Comando y Evaluación (Unidad V).pdf",
+        tamano: "1.75 MB",
+        ext: "pdf",
+        desc: "Documento oficial consolidado (versión final octubre 2026). Analiza el ecosistema de fiscalización externa (AGN) e interna (UAI con rango estatutario único y reactivación SIGEN según Resoluciones 299 y 311/2026), la evaluación laboral docente y nodocente (CCT 366/06 y 1246/15), el diseño del Tablero de Control de RR. HH. con 4 KPIs estratégicos (Ramírez y Mayne) y el bucle de retroalimentación para el aprendizaje institucional."
+      },
       {
         num: 4,
         unidad: "Unidad IV",
@@ -2224,7 +2265,7 @@ class PresentationApp {
         <span class="switcher-label">Seleccionar Entrega:</span>
         ${avancesDocs.map(d => `
           <button class="btn-switch-avance ${d.num === currentDoc.num ? 'active' : ''}" data-avance="${d.num}">
-            Avance ${d.num} (${d.num === 4 ? 'Unidad IV' : d.num === 3 ? 'Unidad III' : d.num === 2 ? 'Unidad II' : 'Unidad I'})
+            Avance ${d.num} (${d.num === 5 ? 'Unidad V' : d.num === 4 ? 'Unidad IV' : d.num === 3 ? 'Unidad III' : d.num === 2 ? 'Unidad II' : 'Unidad I'})
           </button>
         `).join('')}
       </div>

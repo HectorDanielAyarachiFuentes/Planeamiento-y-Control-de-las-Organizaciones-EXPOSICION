@@ -265,7 +265,8 @@ class Presentation3D {
    * quirúrgicamente bajo demanda la primera vez que se visita (Zero overhead inicial).
    */
   buildAllScenes() {
-    for (let i = 1; i <= 25; i++) {
+    const total = window.PRESENTACION_DATA?.slides?.length || 29;
+    for (let i = 1; i <= total; i++) {
       const id = `anim_${String(i).padStart(2, "0")}`;
       this.getOrCreateScene(id);
     }
@@ -301,7 +302,8 @@ class Presentation3D {
     const num = parseInt(currentId.replace("anim_", ""), 10);
     if (isNaN(num)) return;
 
-    const nextId = `anim_${String(Math.min(25, num + 1)).padStart(2, "0")}`;
+    const total = window.PRESENTACION_DATA?.slides?.length || 29;
+    const nextId = `anim_${String(Math.min(total, num + 1)).padStart(2, "0")}`;
     const prevId = `anim_${String(Math.max(1, num - 1)).padStart(2, "0")}`;
 
     const idle = window.requestIdleCallback || ((cb) => setTimeout(cb, 80));

@@ -16,7 +16,7 @@ const PRESENTACION_DATA = {
     "carrera": "Licenciatura en Recursos Humanos",
     "materia": "Planeamiento y Control de las Organizaciones",
     "titulo": "Informe Integral de Planeamiento y Gestión Organizacional",
-    "subtitulo": "Diagnóstico Situado, Estructura Burocrática, Poligobernanza y Presupuesto en el CURZAS (UNCo) — Avances 1, 2, 3 y 4",
+    "subtitulo": "Diagnóstico Situado, Estructura Burocrática, Poligobernanza, Presupuesto, Control y Tablero de Comando en el CURZAS (UNCo) — Avances 1 a 5",
     "autor": "Tec. Sup. en RRHH Héctor Daniel Ayarachi Fuentes",
     "legajo": "Legajo N° 8252 — DNI N° 35.492.138",
     "email": "hectordanielayarachifuentes@gmail.com",
@@ -30,15 +30,15 @@ const PRESENTACION_DATA = {
         "rol": "Docente de Cátedra"
       }
     ],
-    "normativaMarco": "Estatuto General UNCo • Ley 24.521 • Ley 24.156 • Ley 25.506 • CCT Dec. 366/06 y 1246/15",
+    "normativaMarco": "Estatuto General UNCo (rango estatutario UAI) • Ley 24.521 • Ley 24.156 • CCT Dec. 366/06 y 1246/15 • Res. SIGEN 299 y 311/2026 • SISAC",
     "ano": "2026",
     "lugar": "Viedma, Río Negro — República Argentina"
   },
   "timing": {
-    "totalMinutos": 30,
-    "alertaAmarillaMinutos": 20,
-    "alertaRojaMinutos": 27,
-    "promedioPorSlideMin": 1.2
+    "totalMinutos": 17,
+    "alertaAmarillaMinutos": 12,
+    "alertaRojaMinutos": 15,
+    "promedioPorSlideMin": 0.58
   },
   "consignasCatedra": [
     {
@@ -126,6 +126,30 @@ const PRESENTACION_DATA = {
         "¿Cómo se estructuran los programas del organismo en la planilla presupuestaria oficial?"
       ],
       "respuestaSituada": "El presupuesto institucional del CURZAS asciende a $4.877 millones de pesos (sobre un total UNCo de $73.900M). El 90,2% está absorbido rígidamente por el Inciso 1 (Personal), condicionado por el impacto de ley del 40% de Zona Desfavorable. Se estructura bajo el Programa 26 (Desarrollo de la Educación Superior), evidenciando que las personas constituyen la auténtica capacidad operativa de la universidad pública."
+    },
+    {
+      "avanceNum": 5,
+      "avanceTitulo": "Avance 5: Sistemas de Control, Tablero de Comando y Evaluación (Unidad V)",
+      "unidad": "Unidad V",
+      "objetivo": "Evaluar los sistemas de control interno y externo de la entidad, analizar los mecanismos de evaluación laboral vigentes (CCT 366/06 y CCT 1246/15), diseñar un Tablero de Control preliminar de RR. HH. con KPIs estratégicos (Ramírez y Mayne) y estructurar el circuito de retroalimentación para el aprendizaje institucional (Feinstein).",
+      "entregables": [
+        "Identificar los organismos de control externo (AGN) e interno (UAI con rango estatutario, SIGEN) y relevar las observaciones formuladas a personal.",
+        "Diagnosticar los mecanismos de evaluación del desempeño laboral para docentes y nodocentes e identificar la brecha de medición estratégica.",
+        "Diseñar un Tablero de Control preliminar con 4 KPIs estratégicos para medir la eficiencia y cobertura territorial de los recursos humanos.",
+        "Mapear el circuito de control, auditoría (PAT 2027 en SISAC) y retroalimentación institucional para alimentar la toma de decisiones."
+      ],
+      "queBuscar": [
+        "Ley N° 24.156 de Administración Financiera (Arts. 104 y 117), Ley N° 24.521 (Art. 59 bis) y Estatuto UNCo (rango estatutario de la UAI).",
+        "Resoluciones SIGEN N° 299/2026 y N° 311/2026 (Lineamientos complementarios Universidades Nacionales - UAI 2027 y sistema SISAC).",
+        "Actas paritarias particulares UNCo-APUNC (CCT 366/06 Título IX) y convenios colectivos docentes (CCT 1246/15).",
+        "Informes de auditoría interna, registros en SIU-Mapuche y SUDOCU, e indicadores territoriales en nodos regionales."
+      ],
+      "preguntasGuia": [
+        "¿Qué organismos auditan externa e internamente al organismo y qué observaciones recientes se formularon sobre el factor humano?",
+        "¿Qué metas cuantitativas o indicadores clave de desempeño (KPIs) utiliza formalmente la entidad para evaluar el rendimiento laboral?",
+        "¿Cómo se articula el circuito de control para que las auditorías no sean punitivas sino que retroalimenten la planificación estratégica?"
+      ],
+      "respuestaSituada": "El CURZAS está sujeto a fiscalización externa de la AGN y a una UAI con rango estatutario único en el país. La reactivación de SIGEN (Res. 311/2026) exige priorizar la nómina salarial en el PAT 2027 y cargar alertas en SISAC. Se constata un diferimiento histórico en la evaluación nodocente ordinaria y una brecha de indicadores estratégicos. Se diseñan 4 KPIs (tiempos <=5d, liquidaciones >=99%, capacitación >=90% y continuidad en nodos >=95%) articulados a un bucle de retroalimentación para el aprendizaje institucional."
     }
   ],
   "fichasRespaldo": {
@@ -169,6 +193,18 @@ const PRESENTACION_DATA = {
       {
         "autor": "Juan Manuel Abal Medina (2014)",
         "concepto": "Modelos de administración pública: Burocracia weberiana profesional, críticas a la Nueva Gestión Pública (NGP) y dimensiones de rendición de cuentas."
+      },
+      {
+        "autor": "Telma I. Ramírez (2023)",
+        "concepto": "Indicadores de gestión y control en la administración financiera pública: Criterios de pertinencia, economía informativa y construcción de tableros de comando en el sector público."
+      },
+      {
+        "autor": "Osvaldo Feinstein (2016)",
+        "concepto": "La evaluación pragmática de políticas públicas: Superar el enfoque formalista o punitivo para priorizar el aprendizaje organizacional, la retroalimentación y la toma de decisiones basada en evidencia."
+      },
+      {
+        "autor": "Roberto Martínez Nogueira (2016)",
+        "concepto": "Fundamentos conceptuales y analíticos de la evaluación de políticas públicas: Evaluación de consistencia, implementación y efectos reales en contextos de alta complejidad institucional."
       }
     ],
     "normativa": [
@@ -203,6 +239,18 @@ const PRESENTACION_DATA = {
       {
         "norma": "Resolución CD-CURZA N° 196/2022",
         "descripcion": "Reglamenta las mediaciones tecnológicas, la presencialidad remota sincrónica y el soporte tutorial en la Red de 10 Nodos Territoriales."
+      },
+      {
+        "norma": "Resolución SIGEN N° 311/2026",
+        "descripcion": "Lineamientos complementarios y pautas gerenciales para Universidades Nacionales (PAT 2027). Instruye auditar prioritariamente Nómina Salarial y registrar observaciones en SISAC."
+      },
+      {
+        "norma": "Resolución SIGEN N° 299/2026",
+        "descripcion": "Normas y criterios técnicos de auditoría interna basada en riesgos para el sector público nacional (B.O. 02/10/2026)."
+      },
+      {
+        "norma": "Estatuto UNCo (Rango Estatutario UAI)",
+        "descripcion": "Otorga jerarquía estatutaria a la Unidad de Auditoría Interna, garantizando su independencia funcional y técnica respecto del Rectorado de turno."
       }
     ],
     "nodosTerritoriales": [
@@ -275,6 +323,18 @@ const PRESENTACION_DATA = {
       {
         "pregunta": "¿Por qué el 90,2% del presupuesto del CURZAS se concentra en el Inciso 1 (Personal)?",
         "respuesta": "Lejos de ser una ineficiencia contable, responde a la naturaleza de la educación superior (donde el servicio público son las personas) y a dos factores estructurales: el plus de Zona Desfavorable Patagónica (40% por ley) y la distribución estamental (68% docentes y 32% nodocentes). Esto confirma con Makon y Schweinheim que el factor humano es la auténtica capacidad estatal del organismo."
+      },
+      {
+        "pregunta": "¿Qué particularidad única tiene la Unidad de Auditoría Interna (UAI) de la UNCo?",
+        "respuesta": "A diferencia de la mayoría de las universidades nacionales, la UAI de la UNCo goza de rango estatutario consagrado en el Estatuto Universitario. Esto blinda su autonomía técnica y funcional, permitiéndole fiscalizar con independencia al Rectorado y formular sus Planes Anuales de Trabajo (PAT) con criterios rigurosos de riesgo."
+      },
+      {
+        "pregunta": "¿Qué impacto tiene la Resolución SIGEN N° 311/2026 en el área de Personal del CURZAS?",
+        "respuesta": "La resolución, sancionada en octubre de 2026, reactiva y consolida la fiscalización del órgano rector sobre las universidades, priorizando la auditoría de 'Personal y Nómina Salarial' para el PAT 2027 y exigiendo la carga de observaciones y planes de acción correctiva en el sistema informático SISAC."
+      },
+      {
+        "pregunta": "¿Por qué existe una 'brecha de medición' en la evaluación de desempeño y cómo la resuelve el Tablero de 4 KPIs?",
+        "respuesta": "Porque la institución ha dependido de registros de insumo y cumplimiento legal formal (cargos en Mapuche y títulos), sin medir tiempos ni calidad del servicio. El Tablero propuesto introduce 4 KPIs operativos: tramitación de novedades en <= 5 días, liquidaciones sin error >= 99%, capacitación nodocente >= 90% y continuidad en los 10 nodos >= 95%."
       }
     ]
   },
@@ -291,11 +351,12 @@ const PRESENTACION_DATA = {
         "Expositor: Téc. Sup. en Recursos Humanos Héctor Daniel Ayarachi Fuentes (Ciclo de Licenciatura • Legajo N° 8252)",
         "Casa de Estudios: CURZAS — Centro Universitario Regional Zona Atlántica y Sur (UNCo • Sede Viedma)",
         "Espacio de Cátedra: Planeamiento y Control de las Organizaciones 2026 (Mgter. Susana Lopez • Lic. Carlos Jauge)",
-        "Propósito de la Exposición: Defensa integral de los 4 Avances del Diagnóstico Situado Institucional"
+        "Propósito de la Exposición: Defensa integral de los 5 Avances del Diagnóstico Situado Institucional (17 Minutos)"
       ],
       "metadatosFooter": "Carátula Oficial y Presentación del Estudiante • Cátedra Planeamiento y Control 2026 • Viedma",
       "escena3D": "anim_01",
-      "guionOrador": "Muy buenos días, estimada profesora Mgter. Susana Lopez y estimado profesor Lic. Carlos Jauge. Mi nombre es Héctor Daniel Ayarachi Fuentes, soy Técnico Superior en Recursos Humanos y cursante de la Licenciatura aquí en el CURZAS. Hoy tengo el honor de presentarles la defensa integral de nuestro trabajo de cátedra, estructurado en 4 Avances. Nuestro objetivo fue analizar al CURZAS no como una teoría lejana, sino como una organización viva, patagónica y desafiante, examinando su modelo de gestión, su red territorial, sus procesos cotidianos y sus números presupuestarios."
+      "guionOrador": "Muy buenos días, estimada profesora Mgter. Susana Lopez y estimado profesor Lic. Carlos Jauge. Mi nombre es Héctor Daniel Ayarachi Fuentes, Técnico Superior en Recursos Humanos y cursante de la Licenciatura en el CURZAS. Hoy tengo el agrado de presentarles la defensa integral de nuestro trabajo de cátedra, articulado a lo largo de 5 Avances. En un tiempo de 17 minutos, recorreremos desde el modelo de gestión y la red territorial, hasta los procesos, el presupuesto salarial y el tablero de control de personal.",
+      "tiempoSugerido": "⏱️ ~35-40 seg"
     },
     {
       "id": "slide_2",
@@ -303,17 +364,19 @@ const PRESENTACION_DATA = {
       "bloque": "HOJA DE RUTA EJECUTIVA",
       "esquema": "Panorama Global de los 4 Avances",
       "badge": "RESUMEN DE LOS 4 AVANCES",
-      "titulo": "Los 4 Avances de Gestión: Diagnóstico Integral del CURZAS",
-      "subtitulo": "Lo Más Destacado y Revelador que Detectamos en Cada Etapa del Análisis",
+      "titulo": "Los 5 Avances de Gestión: Diagnóstico Integral del CURZAS",
+      "subtitulo": "Lo Más Destacado y Revelador que Detectamos en Cada Etapa del Análisis (Unidades I a V)",
       "puntosClave": [
         "Avance 1: Contexto, Modelo de Gestión y Gobernanza (Unidad I): Burocracia profesional que asegura legalidad y convenios paritarios, frente al reto de evitar el aislamiento en el co-gobierno.",
         "Avance 2: Diagnóstico y Planificación Estratégica Situacional (Unidad II): Red viva en 10 nodos provinciales, superando silos de datos con CONICET/INTA mediante concertación política situada (Matus).",
         "Avance 3: Diseño Organizacional, Procesos y Ecosistema Digital (Unidad III): El organigrama formal invisibiliza a los nodos; mapeamos el circuito de licencias y el choque entre digital y carga manual.",
-        "Avance 4: Programación Presupuestaria y Factor Humano (Unidad IV): El 90,2% del gasto va a salarios (Inciso 1) con 40% de Zona Desfavorable; el personal es la auténtica capacidad estatal."
+        "Avance 4: Programación Presupuestaria y Factor Humano (Unidad IV): El 90,2% del gasto va a salarios (Inciso 1) con 40% de Zona Desfavorable; el personal es la auténtica capacidad estatal.",
+        "Avance 5: Sistemas de Control, Tablero de Comando y Evaluación (Unidad V): Ecosistema AGN/UAI/SIGEN (Res. 311/2026), diseño de un Tablero de 4 KPIs y bucle de retroalimentación para el aprendizaje institucional."
       ],
-      "metadatosFooter": "Hoja de Ruta Ejecutiva • Resumen Somero de los 4 Avances • CURZAS - UNCo",
+      "metadatosFooter": "Hoja de Ruta Ejecutiva • Resumen Somero de los 5 Avances • CURZAS - UNCo",
       "escena3D": "anim_02",
-      "guionOrador": "Para ser rápidos y ordenados, resumimos en esta filmina los 4 hitos centrales del informe. En el Avance 1 descubrimos una burocracia profesional que cuida la legalidad y la estabilidad laboral. En el Avance 2 conectamos al CURZAS con el territorio mediante la poligobernanza y la planificación de Matus. En el Avance 3 desarmamos el organigrama y detectamos cuellos de botella críticos entre el expediente digital y los sistemas de personal. Y en el Avance 4 pusimos la lupa sobre las cuentas: el 90,2% del presupuesto se destina a salarios, confirmando que las personas no son un gasto, sino el servicio público en sí mismo."
+      "guionOrador": "Para ordenar nuestra exposición de 17 minutos, resumimos los 5 hitos centrales: en el Avance 1 examinamos la burocracia profesional que garantiza legalidad; en el Avance 2 articulamos la planificación situacional con la red de 10 nodos; en el Avance 3 mapeamos los procesos y cuellos de botella en licencias; en el Avance 4 demostramos que el 90,2% del gasto va a salarios; y en el Avance 5 consolidamos el control mediante la UAI estatutaria, la Resolución SIGEN 311/2026 y un Tablero de 4 KPIs estratégicos.",
+      "tiempoSugerido": "⏱️ ~35-40 seg"
     },
     {
       "id": "slide_3",
@@ -331,7 +394,8 @@ const PRESENTACION_DATA = {
       ],
       "metadatosFooter": "Avance 1 • Identificación Organizacional y Marco Normativo • CURZAS - UNCo",
       "escena3D": "anim_03",
-      "guionOrador": "Iniciamos el desarrollo del Avance 1. El CURZAS es una casa de altos estudios muy singular dentro de la UNCo. Desde Viedma proyecta su labor hacia parajes y ciudades donde antes estudiar una carrera de grado era casi imposible. Esta labor no depende del humor del gobierno de turno: está blindada por la autonomía universitaria consagrada en la Constitución Nacional y por un co-gobierno democrático donde participan todos los claustros."
+      "guionOrador": "Iniciamos el desarrollo del Avance 1. El CURZAS es una casa de altos estudios muy singular dentro de la UNCo. Desde Viedma proyecta su labor hacia parajes y ciudades donde antes estudiar una carrera de grado era casi imposible. Esta labor no depende del humor del gobierno de turno: está blindada por la autonomía universitaria consagrada en la Constitución Nacional y por un co-gobierno democrático donde participan todos los claustros.",
+      "tiempoSugerido": "⏱️ ~35-40 seg"
     },
     {
       "id": "slide_4",
@@ -349,7 +413,8 @@ const PRESENTACION_DATA = {
       ],
       "metadatosFooter": "Avance 1 • Burocracia Tradicional de Base Profesional • Weber / Abal Medina",
       "escena3D": "anim_04",
-      "guionOrador": "Al preguntarnos qué modelo administrativo rige al CURZAS, la respuesta es clara: una Burocracia Profesional Weberiana. Lejos de ser un defecto, la burocracia aquí es garantía de justicia y transparencia. Cada acto tiene respaldo jurídico y tanto docentes como nodocentes gozan de estabilidad garantizada por convenios colectivos nacionales, lo que evita despidos discrecionales o persecuciones políticas."
+      "guionOrador": "Al preguntarnos qué modelo administrativo rige al CURZAS, la respuesta es clara: una Burocracia Profesional Weberiana. Lejos de ser un defecto, la burocracia aquí es garantía de justicia y transparencia. Cada acto tiene respaldo jurídico y tanto docentes como nodocentes gozan de estabilidad garantizada por convenios colectivos nacionales, lo que evita despidos discrecionales o persecuciones políticas.",
+      "tiempoSugerido": "⏱️ ~35-40 seg"
     },
     {
       "id": "slide_5",
@@ -367,7 +432,8 @@ const PRESENTACION_DATA = {
       ],
       "metadatosFooter": "Avance 1 • Análisis Crítico de Modelos de Gestión • Cao & Blutman (2019)",
       "escena3D": "anim_05",
-      "guionOrador": "Un debate doctrinario indispensable fue separar la autonomía de la descentralización que pregonaba la Nueva Gestión Pública. La NGP intentó transformar la educación en una mercancía con vouchers y alumnos tratados como clientes. En el CURZAS sostenemos que la educación superior es un bien público y un derecho; por eso la autonomía es resguardo democrático y no gerencialismo de mercado."
+      "guionOrador": "Un debate doctrinario indispensable fue separar la autonomía de la descentralización que pregonaba la Nueva Gestión Pública. La NGP intentó transformar la educación en una mercancía con vouchers y alumnos tratados como clientes. En el CURZAS sostenemos que la educación superior es un bien público y un derecho; por eso la autonomía es resguardo democrático y no gerencialismo de mercado.",
+      "tiempoSugerido": "⏱️ ~35-40 seg"
     },
     {
       "id": "slide_6",
@@ -385,7 +451,8 @@ const PRESENTACION_DATA = {
       ],
       "metadatosFooter": "Avance 1 • Mecanismos de Rendición de Cuentas y Co-Gobierno • O'Donnell",
       "escena3D": "anim_06",
-      "guionOrador": "El control institucional en el CURZAS se despliega en tres planos: horizontal con auditorías de la AGN y la UAI; vertical mediante elecciones periódicas; y social publicando actos de gobierno. Sin embargo, advertimos una paradoja: el co-gobierno democrático puede volverse endogámico si se distrae en disputas de poder interno y pierde contacto con la sociedad que lo financia."
+      "guionOrador": "El control institucional en el CURZAS se despliega en tres planos: horizontal con auditorías de la AGN y la UAI; vertical mediante elecciones periódicas; y social publicando actos de gobierno. Sin embargo, advertimos una paradoja: el co-gobierno democrático puede volverse endogámico si se distrae en disputas de poder interno y pierde contacto con la sociedad que lo financia.",
+      "tiempoSugerido": "⏱️ ~35-40 seg"
     },
     {
       "id": "slide_7",
@@ -405,7 +472,8 @@ const PRESENTACION_DATA = {
       "escena3D": "anim_07",
       "diagramaSVG": "assets/red-territorial-nodos.svg",
       "maqueta3D": "prueba_rionegro_3d.html",
-      "guionOrador": "Como pueden ver en nuestra maqueta interactiva 3D, el CURZAS supera el aislamiento geográfico desplegando 10 nodos por la Línea Sur y la Costa. Gracias a convenios con municipios y al trabajo de los Asistentes Técnico-Pedagógicos, un estudiante de Ramos Mexía o Los Menucos puede cursar su carrera universitaria con soporte virtual sincrónico sin tener que abandonar su familia ni su pueblo."
+      "guionOrador": "Como pueden ver en nuestra maqueta interactiva 3D, el CURZAS supera el aislamiento geográfico desplegando 10 nodos por la Línea Sur y la Costa. Gracias a convenios con municipios y al trabajo de los Asistentes Técnico-Pedagógicos, un estudiante de Ramos Mexía o Los Menucos puede cursar su carrera universitaria con soporte virtual sincrónico sin tener que abandonar su familia ni su pueblo.",
+      "tiempoSugerido": "⏱️ ~35-40 seg"
     },
     {
       "id": "slide_8",
@@ -424,7 +492,8 @@ const PRESENTACION_DATA = {
       "metadatosFooter": "Avance 2 • Teoría de la Poligobernanza • Horacio Cao & Gustavo Blutman",
       "escena3D": "anim_08",
       "diagramaSVG": "assets/subsistemas_longo.svg",
-      "guionOrador": "Pasamos al Avance 2 incorporando la Poligobernanza de Horacio Cao y Gustavo Blutman. En la Patagonia, problemas como la desertificación o la falta de conectividad desbordan a cualquier burocracia cerrada. La universidad no puede pretender dirigir todo desde arriba: debe actuar como nodo facilitador en redes colaborativas donde el saber académico dialoga con el saber comunitario."
+      "guionOrador": "Pasamos al Avance 2 incorporando la Poligobernanza de Horacio Cao y Gustavo Blutman. En la Patagonia, problemas como la desertificación o la falta de conectividad desbordan a cualquier burocracia cerrada. La universidad no puede pretender dirigir todo desde arriba: debe actuar como nodo facilitador en redes colaborativas donde el saber académico dialoga con el saber comunitario.",
+      "tiempoSugerido": "⏱️ ~35-40 seg"
     },
     {
       "id": "slide_9",
@@ -442,7 +511,8 @@ const PRESENTACION_DATA = {
       ],
       "metadatosFooter": "Avance 2 • Eje 1: Interoperabilidad de Sistemas • Oscar Oszlak",
       "escena3D": "anim_09",
-      "guionOrador": "El primer desafío del Avance 2 es el Estado Plataforma. Oscar Oszlak plantea que el Estado debe compartir datos automáticamente para que nadie cargue dos veces la misma información. En el CURZAS demostramos que esto aún no se cumple: un docente que investiga en CONICET o INTA tiene que cargar a mano sus antecedentes dos o tres veces porque las plataformas no están comunicadas."
+      "guionOrador": "El primer desafío del Avance 2 es el Estado Plataforma. Oscar Oszlak plantea que el Estado debe compartir datos automáticamente para que nadie cargue dos veces la misma información. En el CURZAS demostramos que esto aún no se cumple: un docente que investiga en CONICET o INTA tiene que cargar a mano sus antecedentes dos o tres veces porque las plataformas no están comunicadas.",
+      "tiempoSugerido": "⏱️ ~35-40 seg"
     },
     {
       "id": "slide_10",
@@ -460,7 +530,8 @@ const PRESENTACION_DATA = {
       ],
       "metadatosFooter": "Avance 2 • Eje 2: Flexibilidad Matricial y Proyectos • Jorge Hintze",
       "escena3D": "anim_10",
-      "guionOrador": "El segundo desafío trata sobre los tramados ad hoc. Como los departamentos académicos tradicionales son lentos para armar respuestas inmediatas, las Secretarías de Extensión y de Ciencia y Técnica funcionan como estructuras matriciales ágiles. El proyecto 'Nodos en Red' en Valcheta y Conesa probó que es posible articular saberes rápidamente para apoyar a productores locales sin perderse en laberintos burocráticos."
+      "guionOrador": "El segundo desafío trata sobre los tramados ad hoc. Como los departamentos académicos tradicionales son lentos para armar respuestas inmediatas, las Secretarías de Extensión y de Ciencia y Técnica funcionan como estructuras matriciales ágiles. El proyecto 'Nodos en Red' en Valcheta y Conesa probó que es posible articular saberes rápidamente para apoyar a productores locales sin perderse en laberintos burocráticos.",
+      "tiempoSugerido": "⏱️ ~35-40 seg"
     },
     {
       "id": "slide_11",
@@ -478,7 +549,8 @@ const PRESENTACION_DATA = {
       ],
       "metadatosFooter": "Avance 2 • Planificación Estratégica Situacional • Carlos Matus",
       "escena3D": "anim_11",
-      "guionOrador": "En el Eje 3 adoptamos la Planificación Estratégica Situacional de Carlos Matus. La planificación clásica cree que el futuro se decreta con un plan rígido. Matus nos enseña que en una universidad el poder está compartido entre decanos, directores, gremios y estudiantes: planificar es un juego social de cálculo interactivo donde la viabilidad política de los trabajadores es condición indispensable del éxito."
+      "guionOrador": "En el Eje 3 adoptamos la Planificación Estratégica Situacional de Carlos Matus. La planificación clásica cree que el futuro se decreta con un plan rígido. Matus nos enseña que en una universidad el poder está compartido entre decanos, directores, gremios y estudiantes: planificar es un juego social de cálculo interactivo donde la viabilidad política de los trabajadores es condición indispensable del éxito.",
+      "tiempoSugerido": "⏱️ ~35-40 seg"
     },
     {
       "id": "slide_12",
@@ -496,7 +568,8 @@ const PRESENTACION_DATA = {
       ],
       "metadatosFooter": "Avance 2 • Matriz FODA Situada del CURZAS • Relevamiento Empírico 2026",
       "escena3D": "anim_12",
-      "guionOrador": "Construimos una Matriz FODA situada que refleja fielmente la coyuntura del CURZAS. En el frente interno, la gran fortaleza de los 10 nodos y la democracia convive con la debilidad de la sobrecarga de tareas. Y en el frente externo, las enormes ganas de estudiar de la comunidad patagónica chocan contra la amenaza del congelamiento presupuestario nacional."
+      "guionOrador": "Construimos una Matriz FODA situada que refleja fielmente la coyuntura del CURZAS. En el frente interno, la gran fortaleza de los 10 nodos y la democracia convive con la debilidad de la sobrecarga de tareas. Y en el frente externo, las enormes ganas de estudiar de la comunidad patagónica chocan contra la amenaza del congelamiento presupuestario nacional.",
+      "tiempoSugerido": "⏱️ ~35-40 seg"
     },
     {
       "id": "slide_13",
@@ -514,7 +587,8 @@ const PRESENTACION_DATA = {
       ],
       "metadatosFooter": "Avance 2 • Evaluación de Capacidades Estatales • Julián Bertranou (2015)",
       "escena3D": "anim_13",
-      "guionOrador": "Completamos el Avance 2 mapeando a los actores clave y midiendo capacidades con Julián Bertranou. La capacidad político-relacional del CURZAS es Alta gracias al co-gobierno y los acuerdos paritarios; la administrativa es Media-Alta en el manejo de rutinas; pero la técnico-analítica es Media, porque aún falta capacitar al personal en analítica de datos e inteligencia aplicada a la gestión."
+      "guionOrador": "Completamos el Avance 2 mapeando a los actores clave y midiendo capacidades con Julián Bertranou. La capacidad político-relacional del CURZAS es Alta gracias al co-gobierno y los acuerdos paritarios; la administrativa es Media-Alta en el manejo de rutinas; pero la técnico-analítica es Media, porque aún falta capacitar al personal en analítica de datos e inteligencia aplicada a la gestión.",
+      "tiempoSugerido": "⏱️ ~35-40 seg"
     },
     {
       "id": "slide_14",
@@ -532,7 +606,8 @@ const PRESENTACION_DATA = {
       ],
       "metadatosFooter": "Avance 3 • Organigrama Formal e Invisibilidad Territorial • CURZAS - UNCo",
       "escena3D": "anim_14",
-      "guionOrador": "En el Avance 3 analizamos la estructura interna del CURZAS. Al contrastar el organigrama formal con la práctica cotidiana saltó a la vista un dato sorprendente: los 10 nodos territoriales no figuran formalmente en el organigrama oficial aprobado. La mayor expansión democratizadora de la universidad funciona 'de hecho', apoyada en convenios y en el esfuerzo diario de sus trabajadores."
+      "guionOrador": "En el Avance 3 analizamos la estructura interna del CURZAS. Al contrastar el organigrama formal con la práctica cotidiana saltó a la vista un dato sorprendente: los 10 nodos territoriales no figuran formalmente en el organigrama oficial aprobado. La mayor expansión democratizadora de la universidad funciona 'de hecho', apoyada en convenios y en el esfuerzo diario de sus trabajadores.",
+      "tiempoSugerido": "⏱️ ~35-40 seg"
     },
     {
       "id": "slide_15",
@@ -550,7 +625,8 @@ const PRESENTACION_DATA = {
       ],
       "metadatosFooter": "Avance 3 • Niveles de Centralización y Descentralización • Zeller e Impala",
       "escena3D": "anim_15",
-      "guionOrador": "Examinamos cómo se distribuyen las decisiones entre Neuquén y Viedma. Existe una centralización normativa en el Rectorado para políticas generales y servidores centrales, pero la ejecución operativa está desconcentrada en el CURZAS. La Dirección de Personal de Viedma atiende el día a día a 1.000 kilómetros de distancia, absorbiendo una enorme carga administrativa."
+      "guionOrador": "Examinamos cómo se distribuyen las decisiones entre Neuquén y Viedma. Existe una centralización normativa en el Rectorado para políticas generales y servidores centrales, pero la ejecución operativa está desconcentrada en el CURZAS. La Dirección de Personal de Viedma atiende el día a día a 1.000 kilómetros de distancia, absorbiendo una enorme carga administrativa.",
+      "tiempoSugerido": "⏱️ ~35-40 seg"
     },
     {
       "id": "slide_16",
@@ -568,7 +644,8 @@ const PRESENTACION_DATA = {
       ],
       "metadatosFooter": "Avance 3 • Diagramación Algorítmica de Procesos • Circuito de Personal",
       "escena3D": "anim_16",
-      "guionOrador": "Mapeamos el circuito de licencias del personal, un proceso vital para la continuidad del servicio educativo. Diagramamos sus 4 pasos: desde que el agente presenta el certificado, pasando por la junta médica y la Dirección de Personal, hasta el dictado de la resolución por Decanato y su posterior impacto en el sistema de haberes."
+      "guionOrador": "Mapeamos el circuito de licencias del personal, un proceso vital para la continuidad del servicio educativo. Diagramamos sus 4 pasos: desde que el agente presenta el certificado, pasando por la junta médica y la Dirección de Personal, hasta el dictado de la resolución por Decanato y su posterior impacto en el sistema de haberes.",
+      "tiempoSugerido": "⏱️ ~35-40 seg"
     },
     {
       "id": "slide_17",
@@ -586,7 +663,8 @@ const PRESENTACION_DATA = {
       ],
       "metadatosFooter": "Avance 3 • Cuellos de Botella Burocráticos en la Transición Digital • CURZAS",
       "escena3D": "anim_17",
-      "guionOrador": "Aquí descubrimos un cuello de botella clave: el sistema de expedientes digitales SUDOCU fue un gran paso, pero no interoperabiliza con el SIU-Mapuche de sueldos. Cuando una licencia es aprobada digitalmente, un operador debe sentarse a cargarla otra vez a mano en Mapuche. Además, el simple escaneo de papeles no es verdadera digitalización: genera demoras y dobles chequeos."
+      "guionOrador": "Aquí descubrimos un cuello de botella clave: el sistema de expedientes digitales SUDOCU fue un gran paso, pero no interoperabiliza con el SIU-Mapuche de sueldos. Cuando una licencia es aprobada digitalmente, un operador debe sentarse a cargarla otra vez a mano en Mapuche. Además, el simple escaneo de papeles no es verdadera digitalización: genera demoras y dobles chequeos.",
+      "tiempoSugerido": "⏱️ ~35-40 seg"
     },
     {
       "id": "slide_18",
@@ -604,7 +682,8 @@ const PRESENTACION_DATA = {
       ],
       "metadatosFooter": "Avance 3 • Inercia Estructural y Prácticas de Gestión • Campos / Forester",
       "escena3D": "anim_18",
-      "guionOrador": "Los autores de la Unidad 3 explican por qué cuesta tanto modernizar: Campos habla de la 'inercia estructural', esa costumbre que hace que la gente prefiera el sello de goma al archivo digital. Y John Forester describe el hábito de 'salir del paso', donde la falta de tiempo obliga a emparchar problemas urgentes en lugar de rediseñar los procesos a fondo."
+      "guionOrador": "Los autores de la Unidad 3 explican por qué cuesta tanto modernizar: Campos habla de la 'inercia estructural', esa costumbre que hace que la gente prefiera el sello de goma al archivo digital. Y John Forester describe el hábito de 'salir del paso', donde la falta de tiempo obliga a emparchar problemas urgentes en lugar de rediseñar los procesos a fondo.",
+      "tiempoSugerido": "⏱️ ~35-40 seg"
     },
     {
       "id": "slide_19",
@@ -622,7 +701,8 @@ const PRESENTACION_DATA = {
       ],
       "metadatosFooter": "Avance 3 • Propuestas Estratégicas de Rediseño • Firma Digital y Pasarelas API",
       "escena3D": "anim_19",
-      "guionOrador": "Para superar estos cuellos de botella propusimos tres mejoras concretas: primero, implementar Firma Digital con plena validez legal para suprimir el papel; segundo, crear una pasarela informática automática entre SUDOCU y SIU-Mapuche; y tercero, fijar plazos automáticos de subrogancia para que ningún trámite quede trabado si una autoridad está de viaje."
+      "guionOrador": "Para superar estos cuellos de botella propusimos tres mejoras concretas: primero, implementar Firma Digital con plena validez legal para suprimir el papel; segundo, crear una pasarela informática automática entre SUDOCU y SIU-Mapuche; y tercero, fijar plazos automáticos de subrogancia para que ningún trámite quede trabado si una autoridad está de viaje.",
+      "tiempoSugerido": "⏱️ ~35-40 seg"
     },
     {
       "id": "slide_20",
@@ -640,7 +720,8 @@ const PRESENTACION_DATA = {
       ],
       "metadatosFooter": "Avance 4 • Ejecución Presupuestaria Oficial y Concentración en Personal • CURZAS",
       "escena3D": "anim_20",
-      "guionOrador": "En el Avance 4 abrimos los números presupuestarios. En 2025 el CURZAS administra cerca de $4.877 millones de pesos. El hallazgo más contundente es que el 90,2% de esos recursos se destina al Inciso 1, es decir, a pagar salarios de docentes y nodocentes. Nos queda menos de un 10% para afrontar tarifas de luz, gas, limpieza y viajes en toda la provincia."
+      "guionOrador": "En el Avance 4 abrimos los números presupuestarios. En 2025 el CURZAS administra cerca de $4.877 millones de pesos. El hallazgo más contundente es que el 90,2% de esos recursos se destina al Inciso 1, es decir, a pagar salarios de docentes y nodocentes. Nos queda menos de un 10% para afrontar tarifas de luz, gas, limpieza y viajes en toda la provincia.",
+      "tiempoSugerido": "⏱️ ~35-40 seg"
     },
     {
       "id": "slide_21",
@@ -658,7 +739,8 @@ const PRESENTACION_DATA = {
       ],
       "metadatosFooter": "Avance 4 • Composición Salarial y Plus de Zona Patagónica • CCT 366/06 y 1246/15",
       "escena3D": "anim_21",
-      "guionOrador": "¿Por qué el gasto en personal es tan elevado? Principalmente por la Zona Desfavorable Patagónica, un suplemento del 40% fijado por ley que compensa el costo de vida del sur. Además, el 68% de esa masa salarial sostiene a los docentes que dan clases y el 32% al personal nodocente que mantiene abiertas las aulas y laboratorios."
+      "guionOrador": "¿Por qué el gasto en personal es tan elevado? Principalmente por la Zona Desfavorable Patagónica, un suplemento del 40% fijado por ley que compensa el costo de vida del sur. Además, el 68% de esa masa salarial sostiene a los docentes que dan clases y el 32% al personal nodocente que mantiene abiertas las aulas y laboratorios.",
+      "tiempoSugerido": "⏱️ ~35-40 seg"
     },
     {
       "id": "slide_22",
@@ -676,7 +758,8 @@ const PRESENTACION_DATA = {
       ],
       "metadatosFooter": "Avance 4 • Presupuesto por Programas y Matriz Insumo-Producto • Marcos Makon",
       "escena3D": "anim_22",
-      "guionOrador": "Evaluamos el presupuesto con la técnica de Presupuesto por Programas de Marcos Makon. Todo se encuadra en el Programa 26 nacional. Los insumos financieros financian horas cátedra y tecnología que se transforman en productos concretos: nuevos técnicos y licenciados graduados e investigaciones volcadas al desarrollo de Río Negro."
+      "guionOrador": "Evaluamos el presupuesto con la técnica de Presupuesto por Programas de Marcos Makon. Todo se encuadra en el Programa 26 nacional. Los insumos financieros financian horas cátedra y tecnología que se transforman en productos concretos: nuevos técnicos y licenciados graduados e investigaciones volcadas al desarrollo de Río Negro.",
+      "tiempoSugerido": "⏱️ ~35-40 seg"
     },
     {
       "id": "slide_23",
@@ -694,7 +777,8 @@ const PRESENTACION_DATA = {
       ],
       "metadatosFooter": "Avance 4 • Sistemas Integrados de Administración Financiera • Ley 24.156",
       "escena3D": "anim_23",
-      "guionOrador": "El recorrido de los fondos sigue el ciclo de la Ley 24.156 explicado por Guillermo Schweinheim. El presupuesto opera mediante sistemas informáticos cruzados: el SIU-Pilagá administra los fondos de funcionamiento, el SIU-Mapuche liquida los salarios y ambos se comunican con el e-SIDIF de Nación para recibir las partidas del Tesoro."
+      "guionOrador": "El recorrido de los fondos sigue el ciclo de la Ley 24.156 explicado por Guillermo Schweinheim. El presupuesto opera mediante sistemas informáticos cruzados: el SIU-Pilagá administra los fondos de funcionamiento, el SIU-Mapuche liquida los salarios y ambos se comunican con el e-SIDIF de Nación para recibir las partidas del Tesoro.",
+      "tiempoSugerido": "⏱️ ~35-40 seg"
     },
     {
       "id": "slide_24",
@@ -712,26 +796,105 @@ const PRESENTACION_DATA = {
       ],
       "metadatosFooter": "Avance 4 • Síntesis Estratégica: Planificación, Presupuesto y Personas • CURZAS",
       "escena3D": "anim_24",
-      "guionOrador": "Llegamos a la conclusión medular del Avance 4: en una fábrica los salarios pueden ser un costo, pero en la universidad pública las personas son el servicio mismo. Sin el docente que viaja a Los Menucos o el nodocente que abre la sede en Viedma, no existe el CURZAS. Por eso, el 90,2% en salarios demuestra que el factor humano es la auténtica capacidad estatal de la universidad."
+      "guionOrador": "Llegamos a la conclusión medular del Avance 4: en una fábrica los salarios pueden ser un costo, pero en la universidad pública las personas son el servicio mismo. Sin el docente que viaja a Los Menucos o el nodocente que abre la sede en Viedma, no existe el CURZAS. Por eso, el 90,2% en salarios demuestra que el factor humano es la auténtica capacidad estatal de la universidad.",
+      "tiempoSugerido": "⏱️ ~35-40 seg"
     },
     {
       "id": "slide_25",
       "numero": 25,
-      "bloque": "CIERRE: CONCLUSIONES INTEGRALES Y DEFENSA",
-      "esquema": "Conclusión General de los 4 Avances",
-      "badge": "SÍNTESIS FINAL Y PREGUNTAS",
-      "titulo": "Conclusión General: Síntesis Crítica de los 4 Avances",
-      "subtitulo": "Qué Hicimos, Hallazgos Clave y el Principal Problema Detectado en Cada Unidad",
+      "bloque": "AVANCE 5: SISTEMAS DE CONTROL, TABLERO DE COMANDO Y EVALUACIÓN (UNIDAD V)",
+      "esquema": "Ecosistema de Control Externo e Interno",
+      "badge": "UNIDAD V • CONTROL Y AUDITORÍA",
+      "titulo": "Ecosistema de Control: AGN, UAI Estatutaria y Reactivación SIGEN",
+      "subtitulo": "Fiscalización Externa, Rango Estatutario Único y Resoluciones SIGEN N° 299 y 311/2026",
       "puntosClave": [
-        "Avance 1: Contexto, Modelo de Gestión y Gobernanza (Unidad I): Qué hicimos: Caracterizamos el marco institucional y la autonomía (Art. 75 inc. 19 CN) frente a la NGP • Lo más destacado: Burocracia Profesional que garantiza legalidad, estabilidad y convenios paritarios • Problema crítico detectado: Riesgo de endogamia en co-gobierno y gobernanza digital incipiente (sin datos abiertos ni IA en RRHH).",
-        "Avance 2: Diagnóstico y Planificación Estratégica Situacional (Unidad II): Qué hicimos: Diagnóstico situacional, matriz FODA, mapeo de actores y capacidades estatales (Bertranou) • Lo más destacado: Red viva de 10 Nodos en Río Negro y planificación PES (Matus) con los trabajadores • Problema crítico detectado: Silos de datos interinstitucionales (SIU/SIGEVA) y brecha digital en personal de mayor antigüedad frente a la dispersión.",
-        "Avance 3: Diseño Organizacional, Procesos y Ecosistema Digital (Unidad III): Qué hicimos: Mapeamos la estructura formal vs real, manual de funciones y flujograma de licencias • Lo más destacado: Visibilización de la red territorial real frente a un organigrama formal desactualizado • Problema crítico detectado: Parálisis de licencias por falta de subrogancia y falsa digitalización (papel escaneado sin interoperabilidad SUDOCU-Mapuche).",
-        "Avance 4: Programación Presupuestaria y Factor Humano (Unidad IV): Qué hicimos: Presupuesto por programas (Makon, Prog. 26) y centralidad del Inciso 1 (Personal) • Lo más destacado: El 90,2% del presupuesto va a salarios, demostrando que el personal es la auténtica capacidad estatal • Problema crítico detectado: Asfixia operativa (solo 9,8% para funcionamiento) y rigidez del 40% de Zona Desfavorable ante el ajuste fiscal nacional.",
-        "Apertura al Tribunal y Agradecimiento: Reconocimiento sincero a los docentes evaluadores Mgter. Susana Lopez y Lic. Carlos Jauge por su rigor y guía metodológica • Apertura a la deliberación y preguntas del Tribunal."
+        "Preguntas Guía Cátedra: ¿Qué organismos auditan externa e internamente al organismo? ¿Cuándo fue la última auditoría formal y qué observaciones se formularon al área de personal?",
+        "Control Externo de la AGN (Art. 85 CN y Ley 24.156): Auditoría posterior de estados contables y Cuenta de Inversión (SAF 809), canalizada institucionalmente en resguardo de la autonomía.",
+        "UAI con Rango Estatutario Propio: La UNCo blinda en su Estatuto la independencia técnica de su UAI (Cr. Oscar Rebolledo), formulando el PAT 2027 y auditoría de riesgos en todas las sedes.",
+        "Reactivación SIGEN (Res. N° 299 y 311/2026): El órgano rector instruye auditar con prioridad el rubro 'Personal y Nómina Salarial' e implementar el seguimiento de alertas en el sistema SISAC."
+      ],
+      "metadatosFooter": "Avance 5 • Ecosistema de Control Público • Ley 24.156, Estatuto UNCo y Res. SIGEN 311/2026",
+      "escena3D": "anim_25",
+      "tiempoSugerido": "⏱️ ~35-40 seg",
+      "guionOrador": "Iniciamos el Avance 5 examinando el ecosistema de control en el CURZAS. Contamos con el control externo de la AGN sobre la Cuenta de Inversión del SAF 809. Pero lo más distintivo es que la UNCo es pionera en otorgar rango estatutario a su Unidad de Auditoría Interna, garantizando su total independencia. Además, la reciente Resolución SIGEN 311 de octubre de 2026 reactiva la supervisión rectora, exigiendo auditar prioritariamente la masa salarial en el PAT 2027 y cargar el seguimiento de desvíos en el sistema SISAC."
+    },
+    {
+      "id": "slide_26",
+      "numero": 26,
+      "bloque": "AVANCE 5: SISTEMAS DE CONTROL, TABLERO DE COMANDO Y EVALUACIÓN (UNIDAD V)",
+      "esquema": "Evaluación Laboral y Brecha de Medición",
+      "badge": "UNIDAD V • EVALUACIÓN LABORAL",
+      "titulo": "Evaluación del Desempeño: CCT 366/06, Carrera Docente y Brecha de Medición",
+      "subtitulo": "Diferimiento en APUNC, Reválidas Académicas y la Necesidad de un Tablero Estratégico",
+      "puntosClave": [
+        "Estamento Nodocente (CCT Dec. 366/06 Título IX): Calificación anual formalmente prevista, pero con diferimiento histórico paritario entre UNCo y APUNC suplido por promociones por antigüedad.",
+        "Estamento Docente (CCT Dec. 1246/15): Evaluación periódica mediante concursos públicos, reválidas, informes anuales, SIGEVA y encuestas de cátedra en SIU-Guaraní.",
+        "Brecha de Medición Estratégica (Telma Ramírez): La institución opera con registros administrativos de insumo (cargos en Mapuche), sin indicadores de resultado, eficiencia o calidad.",
+        "Superación del Control Punitivo (Feinstein y Mayne): Es imprescindible pasar de la auditoría burocrática al análisis de contribución del factor humano al cumplimiento de la misión institucional."
+      ],
+      "metadatosFooter": "Avance 5 • Evaluación del Desempeño y Convenios Colectivos • CCT 366/06 y CCT 1246/15",
+      "escena3D": "anim_26",
+      "tiempoSugerido": "⏱️ ~35-40 seg",
+      "guionOrador": "Al analizar la evaluación laboral detectamos una marcada asimetría. Mientras el estamento docente rinde cuentas mediante concursos, reválidas periódicas y encuestas de cátedra, en el sector nodocente existe un diferimiento histórico en la aplicación de la calificación del CCT 366/06 acordado en paritaria con APUNC. Como advierte Telma Ramírez, el CURZAS administra cargos pero no mide resultados ni tiempos. Necesitamos superar el control punitivo y adoptar un análisis de contribución según John Mayne."
+    },
+    {
+      "id": "slide_27",
+      "numero": 27,
+      "bloque": "AVANCE 5: SISTEMAS DE CONTROL, TABLERO DE COMANDO Y EVALUACIÓN (UNIDAD V)",
+      "esquema": "Tablero de Control de RR. HH. (4 KPIs)",
+      "badge": "UNIDAD V • TABLERO DE COMANDO",
+      "titulo": "Tablero de Control de RR. HH.: Los 4 KPIs Estratégicos",
+      "subtitulo": "Medición de Tiempos, Calidad, Competencias Digitales y Cobertura Territorial",
+      "puntosClave": [
+        "Pregunta Guía Cátedra: Diseño de un Tablero de Control preliminar con KPIs específicos para medir la eficiencia de los recursos humanos (Ramírez, 2023).",
+        "KPI-1 (Eficiencia de Procesos): Tiempo medio de tramitación de novedades en personal (SUDOCU a Mapuche) — Línea base: ~12 días hábiles → Meta: <= 5 días hábiles.",
+        "KPI-2 (Calidad y Control Interno): Tasa de liquidaciones mensuales sin observaciones ni rectificativas — Línea base: ~94,0% → Meta: >= 99,0% (Monitoreo SISAC).",
+        "KPI-3 y KPI-4 (Formación y Territorio): Cobertura de capacitación digital nodocente (Meta: >= 90% anual) y Continuidad docente en los 10 nodos regionales (Meta: >= 95%)."
+      ],
+      "metadatosFooter": "Avance 5 • Tablero de Control de Gestión en Recursos Humanos • Telma Ramírez y John Mayne",
+      "escena3D": "anim_27",
+      "tiempoSugerido": "⏱️ ~35-40 seg",
+      "guionOrador": "Para cerrar esta brecha diseñamos un Tablero de Control con 4 KPIs estratégicos basados en Telma Ramírez. El KPI 1 reduce a menos de 5 días el trámite de novedades entre SUDOCU y Mapuche. El KPI 2 eleva al 99% las liquidaciones sin errores, previniendo observaciones de UAI y SISAC. El KPI 3 garantiza que el 90% del personal se capacite en competencias digitales con APUNC. Y el KPI 4 mide la contribución asegurando al menos un 95% de continuidad pedagógica en los 10 nodos de la provincia."
+    },
+    {
+      "id": "slide_28",
+      "numero": 28,
+      "bloque": "AVANCE 5: SISTEMAS DE CONTROL, TABLERO DE COMANDO Y EVALUACIÓN (UNIDAD V)",
+      "esquema": "Circuito de Control y Retroalimentación",
+      "badge": "UNIDAD V • BUCLE DE GESTIÓN",
+      "titulo": "Circuito de Control y Bucle de Retroalimentación Continua",
+      "subtitulo": "Articulación entre Operación, Tablero, Auditoría (PAT 2027) y Aprendizaje Institucional",
+      "puntosClave": [
+        "Eslabones Operativos (1 y 2): Registros diarios en SUDOCU/Mapuche y visualización semafórica de los 4 KPIs en el Tablero de Comando para alertas tempranas.",
+        "Auditoría Basada en Riesgos (Eslabón 3): Control preventivo de la UAI estatutaria bajo pautas de la Res. SIGEN 311/2026 y carga obligatoria de compromisos en SISAC.",
+        "Evaluación Pragmática (Eslabón 4 - Feinstein): Uso de los hallazgos para enriquecer la concertación paritaria UNCo–APUNC y reasignar soporte a los nodos territoriales.",
+        "Bucle de Retroalimentación Integral (↺): Los hallazgos del Tablero y SISAC corrigen la Planificación (Avance 2), los flujos digitales (Avance 3) y la defensa presupuestaria (Avance 4)."
+      ],
+      "metadatosFooter": "Avance 5 • Bucle de Retroalimentación y Aprendizaje Organizacional • Martínez Nogueira y Feinstein",
+      "escena3D": "anim_28",
+      "tiempoSugerido": "⏱️ ~35-40 seg",
+      "guionOrador": "La evaluación solo cobra sentido si retroalimenta la gestión. Modelamos un circuito en 4 eslabones: la operación diaria en SUDOCU y Mapuche alimenta el Tablero; la UAI audita con enfoque de riesgos bajo la Resolución 311 y reporta al SISAC; y finalmente, la conducción aplica una evaluación pragmática según Feinstein. El bucle de retroalimentación vuelve a conectar con el PES del Avance 2, la digitalización del Avance 3 y la asignación presupuestaria del Avance 4, logrando un auténtico aprendizaje institucional."
+    },
+    {
+      "id": "slide_29",
+      "numero": 29,
+      "bloque": "CIERRE: CONCLUSIONES INTEGRALES Y DEFENSA",
+      "esquema": "Conclusión General de los 5 Avances",
+      "badge": "SÍNTESIS FINAL Y PREGUNTAS",
+      "titulo": "Conclusión General: Síntesis Crítica de los 5 Avances",
+      "subtitulo": "Qué Hicimos, Hallazgos Clave y el Problema Detectado Más Importante en Cada Unidad",
+      "puntosClave": [
+        "Avance 1: Contexto, Modelo de Gestión y Gobernanza (Unidad I): Qué hicimos: Caracterizamos el modelo institucional y la autonomía • Lo más destacado: Burocracia Profesional que garantiza legalidad y convenios paritarios • Problema crítico: Riesgo de endogamia en co-gobierno y gobernanza digital incipiente (sin datos abiertos ni IA en RRHH).",
+        "Avance 2: Diagnóstico y Planificación Estratégica Situacional (Unidad II): Qué hicimos: Diagnóstico situacional, FODA, actores y capacidades estatales • Lo más destacado: Red viva de 10 Nodos en Río Negro y planificación PES (Matus) • Problema crítico: Silos de datos interinstitucionales (SIU/SIGEVA) y brecha digital territorial en personal nodocente.",
+        "Avance 3: Diseño Organizacional, Procesos y Ecosistema Digital (Unidad III): Qué hicimos: Mapeamos estructura formal vs real y flujograma de licencias • Lo más destacado: Visibilización de la estructura real desconcentrada en territorio frente al organigrama de jure • Problema crítico: Parálisis de licencias por falta de subrogancia y falsa digitalización (papel escaneado sin interoperabilidad).",
+        "Avance 4: Programación Presupuestaria y Factor Humano (Unidad IV): Qué hicimos: Presupuesto por programas (Prog. 26) y centralidad del Inciso 1 • Lo más destacado: El 90,2% del gasto va a salarios, confirmando que las personas son la capacidad estatal • Problema crítico: Asfixia operativa (solo 9,8% para funcionamiento) y rigidez del 40% de Zona Desfavorable ante el ajuste fiscal.",
+        "Avance 5: Sistemas de Control, Tablero de Comando y Evaluación (Unidad V): Qué hicimos: Ecosistema de control y diseño de Tablero de RR. HH. • Lo más destacado: UAI con rango estatutario único y reactivación SIGEN (Res. 311/2026 y SISAC) • Problema crítico: Diferimiento histórico en la evaluación nodocente (APUNC) y ausencia previa de un Tablero de Control de gestión.",
+        "Apertura al Tribunal y Agradecimiento: Reconocimiento sincero a los evaluadores Mgter. Susana Lopez y Lic. Carlos Jauge por su excelencia formativa • Apertura a la deliberación y preguntas del Tribunal."
       ],
       "metadatosFooter": "Téc. Sup. en RR. HH. Héctor Daniel Ayarachi Fuentes • Ciclo Lectivo 2026 • CURZAS - UNCo",
-      "escena3D": "anim_25",
-      "guionOrador": "Para concluir esta defensa integral, sintetizamos los hallazgos y desafíos neurálgicos de los 4 Avances:\nEn el Avance 1 abordamos el marco institucional: confirmamos una Burocracia Profesional sólida que defiende la legalidad y los convenios paritarios, blindándonos de las lógicas de mercado de la NGP; el problema crítico detectado es el riesgo de endogamia y lentitud procedimental en el co-gobierno, junto a una gobernanza inteligente sin portal de datos abiertos ni algoritmos de RRHH.\nEn el Avance 2 pasamos a la planificación estratégica: lo más potente es la red viva de 10 nodos democratizando la educación en Río Negro y el enfoque situacional de Matus; el problema detectado es la persistencia de silos de datos y la brecha digital en las plantillas nodocentes.\nEn el Avance 3 desarmamos la estructura y los procesos: demostramos que la realidad territorial desborda al organigrama de papel; los problemas críticos son la parálisis de licencias por falta de subrogancia y la falsa digitalización del papel escaneado sin interoperabilidad.\nY en el Avance 4 pusimos números a la realidad: el 90,2% del presupuesto va al Inciso 1, confirmando que las personas son la capacidad estatal misma del CURZAS; el gran problema es la asfixia del 9,8% de funcionamiento agravada por el 40% de Zona Desfavorable ante el recorte nacional.\nAgradezco sinceramente a la profesora Susana Lopez y al profesor Carlos Jauge por su excelencia formativa. Quedo a su entera disposición para responder las preguntas del Tribunal."
+      "escena3D": "anim_29",
+      "tiempoSugerido": "⏱️ ~35-40 seg",
+      "guionOrador": "Para concluir esta defensa integral en 17 minutos, sintetizamos los 5 Avances:\nEn el Avance 1 validamos una Burocracia Profesional que resguarda la legalidad y los convenios paritarios; el problema crítico detectado es el riesgo de endogamia y la falta de datos abiertos.\nEn el Avance 2 articulamos la planificación de Matus con la red de 10 nodos; el desafío detectado son los silos de datos y la dispersión geográfica.\nEn el Avance 3 contrastamos el organigrama con la realidad; detectamos los cuellos de botella por falta de subrogancia y la falsa digitalización del papel escaneado.\nEn el Avance 4 comprobamos que el 90,2% del presupuesto va al Inciso 1 por el plus de zona del 40%, demostrando que el personal es la auténtica capacidad del Estado; el problema es la asfixia del 9,8% de funcionamiento.\nY en el Avance 5 consolidamos el control con una UAI de rango estatutario y la Resolución SIGEN 311/2026, proponiendo un Tablero de 4 KPIs y un bucle de retroalimentación para superar la brecha histórica de evaluación nodocente.\nAgradezco sinceramente a la profesora Susana Lopez y al profesor Carlos Jauge por su acompañamiento académico. Quedo a su entera disposición para las preguntas del Tribunal."
     }
   ]
 };

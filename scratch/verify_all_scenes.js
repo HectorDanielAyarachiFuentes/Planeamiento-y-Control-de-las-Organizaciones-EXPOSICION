@@ -90,7 +90,7 @@ async function verifyAllScenes() {
   }, sandbox.Scene3DMaterials, sandbox.Scene3DHelpers);
 
   let successCount = 0;
-  for (let i = 1; i <= 25; i++) {
+  for (let i = 1; i <= 29; i++) {
     const id = 'anim_' + (i < 10 ? '0' + i : i);
     if (!objs[id]) {
       console.error(`MISSING: ${id}`);
@@ -99,7 +99,7 @@ async function verifyAllScenes() {
       try {
         objs[id].build(mockEngine, group);
         if (typeof objs[id].animate === 'function') {
-          objs[id].animate(0.5);
+          objs[id].animate(mockEngine, 0.5);
         }
         console.log(`[PASS] ${id}: built ${group.children.length} children, animated cleanly!`);
         successCount++;
@@ -109,7 +109,7 @@ async function verifyAllScenes() {
     }
   }
   console.log(`\n========================================`);
-  console.log(`Results: ${successCount} / 25 objects verified!`);
+  console.log(`Results: ${successCount} / 29 objects verified!`);
   console.log(`========================================`);
 }
 
