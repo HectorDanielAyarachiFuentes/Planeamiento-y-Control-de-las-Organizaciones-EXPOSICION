@@ -171,6 +171,18 @@
             <span class="tool-text">Respaldo</span>
             <span class="tool-key">M</span>
           </button>
+          <button class="btn-tool" id="btn-toggle-tts" title="Lector de Voz Accesible / Screen Reader (Tecla A)" aria-label="Modo Accesibilidad: Lector de Voz" aria-pressed="false">
+            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <!-- Icono Universal de Persona / Accesibilidad -->
+              <circle cx="12" cy="4.2" r="2.4"/>
+              <path d="M12 6.6v7.4"/>
+              <path d="M5.5 10.5h13"/>
+              <path d="M8 20.5l4-6.5 4 6.5"/>
+            </svg>
+            <span class="tool-text">Accesible</span>
+            <span class="tool-key">A</span>
+          </button>
+
         </div>
 
         <span class="tools-divider" aria-hidden="true"></span>
@@ -217,6 +229,13 @@
         </div>
       </div>
       <div class="notes-header-right">
+        <button class="btn-notes-action" id="btn-read-notes-tts" title="Leer guion y notas en voz alta (Voz nativa)">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+          </svg>
+          <span>Leer Guion</span>
+        </button>
         <div class="notes-font-controls" title="Ajustar tamaño de letra para leer de pie">
           <button class="btn-font-size" id="btn-notes-font-dec" title="Disminuir tamaño de letra">A-</button>
           <button class="btn-font-size" id="btn-notes-font-inc" title="Aumentar tamaño de letra">A+</button>
@@ -364,6 +383,7 @@
       <div class="shortcut-row"><kbd>N</kbd><span>Guion / Notas del Orador</span></div>
       <div class="shortcut-row"><kbd>I</kbd><span>Índice Canónico (5 Avances)</span></div>
       <div class="shortcut-row"><kbd>M</kbd><span>Respaldo Metodológico (Jurado)</span></div>
+      <div class="shortcut-row"><kbd>A</kbd><span>Lector de Voz Accesible (Cursor y Notas)</span></div>
       <div class="shortcut-row"><kbd>B</kbd><span>Material Cátedra (95 Docs)</span></div>
       <div class="shortcut-row"><kbd>V</kbd><span>Visor de Diagramas SVG</span></div>
       <div class="shortcut-row"><kbd>D</kbd><span>Ver Texto (Maximizar contenido)</span></div>
@@ -394,6 +414,46 @@
     </div>
     <div class="slides-index-footer">
       <span>💡 Atajo: Tecla <strong>I</strong> abre/cierra • Clic en cualquier filmina para saltar directamente • <strong>Esc</strong> para salir</span>
+    </div>
+  </aside>
+
+  
+  <!-- Dock Flotante de Accesibilidad y Control de Voz (TTS) -->
+  <aside class="tts-floating-dock" id="tts-floating-dock" aria-label="Control de Lectura de Voz Accesible" style="display: none;">
+    <div class="tts-dock-badge">
+      <span class="tts-dock-pulse" aria-hidden="true"></span>
+      <svg class="tts-dock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="4.2" r="2.4"/>
+        <path d="M12 6.6v7.4"/>
+        <path d="M5.5 10.5h13"/>
+        <path d="M8 20.5l4-6.5 4 6.5"/>
+      </svg>
+      <div class="tts-dock-text">
+        <span class="tts-dock-title">Lector de Voz Accesible Activo</span>
+        <span class="tts-dock-subtitle">Apunta con el cursor para escuchar el contenido</span>
+      </div>
+    </div>
+    <div class="tts-dock-actions">
+      <button class="tts-dock-btn" id="tts-btn-read-slide" title="Leer filmina actual en voz alta">
+        <svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><polygon points="6 4 16 10 6 16"/></svg>
+        <span>Filmina</span>
+      </button>
+      <button class="tts-dock-btn" id="tts-btn-read-notes" title="Leer guion y notas del orador">
+        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13">
+          <rect x="7" y="2.5" width="6" height="8.5" rx="3"/>
+          <path d="M4.5 8v1a5.5 5.5 0 0 0 11 0V8"/>
+        </svg>
+        <span>Notas</span>
+      </button>
+      <button class="tts-dock-btn" id="tts-btn-pause" title="Pausar o reanudar locución">
+        <svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><rect x="5" y="4" width="3.5" height="12"/><rect x="11.5" y="4" width="3.5" height="12"/></svg>
+        <span id="tts-btn-pause-text">Pausar</span>
+      </button>
+      <button class="tts-dock-btn tts-dock-btn-stop" id="tts-btn-stop" title="Detener lectura de voz">
+        <svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><rect x="5" y="5" width="10" height="10" rx="1"/></svg>
+        <span>Detener</span>
+      </button>
+      <button class="tts-dock-close" id="tts-btn-close" title="Desactivar modo accesibilidad (A)">✕</button>
     </div>
   </aside>
 
