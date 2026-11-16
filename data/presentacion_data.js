@@ -362,7 +362,7 @@ const PRESENTACION_DATA = {
       "id": "slide_2",
       "numero": 2,
       "bloque": "HOJA DE RUTA EJECUTIVA",
-      "esquema": "Panorama Global de los 4 Avances",
+      "esquema": "Panorama Global de los 5 Avances",
       "badge": "RESUMEN DE LOS 5 AVANCES",
       "titulo": "Los 5 Avances de Cátedra: Consignas Oficiales y Respuestas Situadas",
       "subtitulo": "Estructura Temática según los Objetivos y Entregables Fijados por la Cátedra (Unidades I a V)",

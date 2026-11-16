@@ -754,7 +754,7 @@ body {
   gap: 0.35rem;
 }
 
-/* ─── FILMINA 2: HOJA DE RUTA EJECUTIVA DE LOS 4 AVANCES (AVANCES-MODE) ─── */
+/* ─── FILMINA 2: HOJA DE RUTA EJECUTIVA DE LOS 5 AVANCES (AVANCES-MODE) ─── */
 .slide-bullets.avances-mode {
   display: flex !important;
   flex-direction: column !important;
@@ -4277,7 +4277,7 @@ body {
 }
 
 
-/* ─── FILMINA 25: CONCLUSIÓN GENERAL DE LOS 4 AVANCES (CONCLUSION-MODE) ─── */
+/* ─── FILMINA 25: CONCLUSIÓN GENERAL DE LOS 5 AVANCES (CONCLUSION-MODE) ─── */
 .slide-bullets.conclusion-mode {
   display: flex !important;
   flex-direction: column !important;
@@ -4970,4 +4970,23 @@ body.tts-mode-active .card-situada:hover {
   .tts-dock-subtitle {
     display: none;
   }
+}
+
+/* Resaltado de botones redondos y de cierre en modo accesible */
+button.btn-close.tts-reading-target,
+.tts-dock-close.tts-reading-target,
+.station-dot.tts-reading-target,
+.btn-tool-icon-only.tts-reading-target {
+  border-radius: 50% !important;
+  background-color: rgba(2, 132, 199, 0.22) !important;
+  outline-offset: 2px !important;
+}
+
+.btn-tool.tts-reading-target,
+.btn-nav.tts-reading-target,
+.drawer-tab.tts-reading-target,
+.tts-dock-btn.tts-reading-target {
+  background-color: rgba(2, 132, 199, 0.16) !important;
+  outline: 2.5px solid #0284c7 !important;
+  outline-offset: 2px !important;
 }
