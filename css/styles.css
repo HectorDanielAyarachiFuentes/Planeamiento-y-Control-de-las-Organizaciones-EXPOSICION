@@ -4800,10 +4800,31 @@ body.tts-mode-active .card-situada:hover {
 }
 
 .btn-notes-action.active-reading {
-  background: #0284c7 !important;
-  border-color: #0369a1 !important;
+  background: #dc2626 !important;
+  border-color: #b91c1c !important;
   color: #ffffff !important;
-  box-shadow: 0 0 10px rgba(2, 132, 199, 0.4);
+  box-shadow: 0 0 14px rgba(220, 38, 38, 0.55) !important;
+  cursor: pointer;
+  animation: pulseStopBtn 1.8s infinite ease-in-out;
+}
+
+.btn-notes-action.active-reading:hover {
+  background: #b91c1c !important;
+  border-color: #991b1b !important;
+  transform: translateY(-1px);
+}
+
+@keyframes pulseStopBtn {
+  0% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.6); }
+  70% { box-shadow: 0 0 0 7px rgba(220, 38, 38, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0); }
+}
+
+.tts-dock-btn.active-reading {
+  background: #dc2626 !important;
+  border-color: #b91c1c !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 10px rgba(220, 38, 38, 0.45) !important;
 }
 
 /* Dock flotante de accesibilidad y control de voz */

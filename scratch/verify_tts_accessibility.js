@@ -61,6 +61,14 @@ assert(appJs.includes('readCurrentNotes() {'), 'js/app.js implementa método rea
 assert(appJs.includes('handlePointerOverTTS(e) {'), 'js/app.js implementa escucha interactiva de cursor pointerover');
 assert(appJs.includes('handleFocusInTTS(e) {'), 'js/app.js implementa accesibilidad por foco de teclado');
 
+assert(appJs.includes('this.ttsSessionId = 0;'), 'js/app.js inicializa token de sesión ttsSessionId para prevenir carreras de audio');
+assert(appJs.includes('this.ttsStopRequested = false;'), 'js/app.js inicializa bandera ttsStopRequested');
+assert(appJs.includes('this.ttsReadingNotes = false;'), 'js/app.js inicializa estado ttsReadingNotes');
+assert(appJs.includes('updateNotesTTSButtonState(isReading) {'), 'js/app.js implementa updateNotesTTSButtonState() para alternar entre Leer Guion y Detener');
+assert(appJs.includes('updateSlideTTSButtonState(isReading) {'), 'js/app.js implementa updateSlideTTSButtonState()');
+assert(appJs.includes('this.stopTTS(); // Detener de inmediato cualquier locución activa de la filmina previa'), 'goToSlide detiene audio al cambiar de filmina');
+assert(appJs.includes('Si se cierra el teleprómpter y se estaba leyendo notas, detener la locución'), 'toggleNotes detiene el audio al cerrar el modal');
+
 // 4. Verificación de "5 Avances" en lugar de "4 Avances"
 assert(appJs.includes('title: "Defensa Integral de los 5 Avances"'), 'Filmina 1 introCards corregido a "Defensa Integral de los 5 Avances"');
 assert(appJs.includes('<span class="consigna-total-badge">5 Avances</span>'), 'Pestaña de consignas corregida a "5 Avances"');

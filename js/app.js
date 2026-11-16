@@ -147,7 +147,12 @@ class PresentationApp {
     this.ttsHoverTimeout = null;
     this.ttsCurrentTarget = null;
     this.ttsUtterance = null;
-    this.ttsSequentialTimer = null; // "default" | "text" | "object"
+    this.ttsSequentialTimer = null;
+    this.ttsSessionId = 0;
+    this.ttsNotesSequenceId = 0;
+    this.ttsStopRequested = false;
+    this.ttsReadingNotes = false;
+    this.ttsReadingSlide = false;
     this.btnViewText = document.getElementById("btn-view-text");
     this.btnView3d = document.getElementById("btn-view-3d");
 
@@ -536,6 +541,7 @@ class PresentationApp {
       } else if (e.key.toLowerCase() === "f") {
         this.toggleFullscreen();
       } else if (e.key === "Escape") {
+        this.stopTTS();
         this.closeSvgModal();
         this.toggleNotes(false);
         this.toggleDrawer(false);
@@ -1387,6 +1393,7 @@ class PresentationApp {
 
   goToSlide(index) {
     if (index === this.currentSlideIndex || index < 0 || index >= this.totalSlides) return;
+    this.stopTTS(); // Detener de inmediato cualquier locución activa de la filmina previa
     const direction = index >= this.currentSlideIndex ? 1 : -1;
     this.currentSlideIndex = index;
     this.renderSlide(index, direction);
@@ -1456,6 +1463,12 @@ class PresentationApp {
     const newState = forceState !== undefined ? forceState : !isOpen;
     this.notesModal.classList.toggle("open", newState);
     this.btnToggleNotes.classList.toggle("active", newState);
+    if (!newState) {
+      // Si se cierra el teleprómpter y se estaba leyendo notas, detener la locución
+      if (this.ttsReadingNotes || this.ttsIsSpeaking) {
+        this.stopTTS();
+      }
+    }
   }
 
   toggleDrawer(forceState) {
@@ -2486,12 +2499,25 @@ class PresentationApp {
     const cleanText = this.normalizeTextForSpeech(text);
     if (!cleanText || cleanText.length < 2) return;
 
-    // Detener cualquier locución previa
-    this.ttsSynth.cancel();
+    // Crear un nuevo ID de sesión único para esta locución específica
+    this.ttsSessionId = (this.ttsSessionId || 0) + 1;
+    const sessionId = this.ttsSessionId;
+    this.ttsStopRequested = false;
+
+    // Detener cualquier temporizador secuencial previo
     if (this.ttsSequentialTimer) {
       clearTimeout(this.ttsSequentialTimer);
       this.ttsSequentialTimer = null;
     }
+
+    // En Chromium, si está pausado, llamar resume() antes de cancel() previene congelamiento
+    if (this.ttsSynth.paused) {
+      try { this.ttsSynth.resume(); } catch (e) {}
+    }
+
+    try {
+      this.ttsSynth.cancel();
+    } catch (e) {}
 
     // Gestionar resaltado visual
     document.querySelectorAll(".tts-reading-target").forEach(el => el.classList.remove("tts-reading-target"));
@@ -2510,24 +2536,36 @@ class PresentationApp {
     utterance.pitch = 1.0;
 
     utterance.onstart = () => {
+      // Si la sesión fue cancelada mientras arrancaba la voz, abortar
+      if (this.ttsSessionId !== sessionId || this.ttsStopRequested) {
+        try { this.ttsSynth.cancel(); } catch (e) {}
+        return;
+      }
       this.ttsIsSpeaking = true;
       this.ttsIsPaused = false;
       this.updateTTSDockPlayPause(false);
     };
 
     utterance.onend = () => {
+      // Si la sesión no coincide o se solicitó parar, NO propagar callbacks
+      if (this.ttsSessionId !== sessionId || this.ttsStopRequested) {
+        return;
+      }
+
       this.ttsIsSpeaking = false;
       this.ttsIsPaused = false;
       if (targetElement) {
         targetElement.classList.remove("tts-reading-target");
       }
       this.updateTTSDockPlayPause(false);
+
       if (typeof onEndCallback === "function") {
         onEndCallback();
       }
     };
 
-    utterance.onerror = () => {
+    utterance.onerror = (e) => {
+      // Cancelaciones o interrupciones intencionales
       this.ttsIsSpeaking = false;
       this.ttsIsPaused = false;
       if (targetElement) {
@@ -2537,7 +2575,11 @@ class PresentationApp {
     };
 
     this.ttsUtterance = utterance;
-    this.ttsSynth.speak(utterance);
+    try {
+      this.ttsSynth.speak(utterance);
+    } catch (err) {
+      console.warn("Error al emitir síntesis de voz:", err);
+    }
   }
 
   /**
@@ -2545,36 +2587,132 @@ class PresentationApp {
    */
   pauseResumeTTS() {
     if (!this.ttsSynth) return;
-    if (this.ttsSynth.speaking) {
-      if (this.ttsSynth.paused) {
-        this.ttsSynth.resume();
-        this.ttsIsPaused = false;
-        this.updateTTSDockPlayPause(false);
+
+    // Si no está hablando ni en pausa, iniciar según contexto activo
+    if (!this.ttsIsSpeaking && !this.ttsIsPaused) {
+      if (this.notesModal && this.notesModal.classList.contains("open")) {
+        this.readCurrentNotes();
       } else {
+        this.readCurrentSlide();
+      }
+      return;
+    }
+
+    if (this.ttsSynth.paused || this.ttsIsPaused) {
+      try {
+        this.ttsSynth.resume();
+      } catch (e) {}
+      this.ttsIsPaused = false;
+      this.updateTTSDockPlayPause(false);
+    } else {
+      try {
         this.ttsSynth.pause();
-        this.ttsIsPaused = true;
-        this.updateTTSDockPlayPause(true);
+      } catch (e) {}
+      this.ttsIsPaused = true;
+      this.updateTTSDockPlayPause(true);
+    }
+  }
+
+  /**
+   * Detiene de inmediato cualquier locución activa, cancela secuencias y limpia estados visuales
+   */
+  stopTTS() {
+    this.ttsStopRequested = true;
+    this.ttsSessionId = (this.ttsSessionId || 0) + 1;
+    this.ttsNotesSequenceId = (this.ttsNotesSequenceId || 0) + 1;
+    this.ttsReadingNotes = false;
+    this.ttsReadingSlide = false;
+    this.ttsIsSpeaking = false;
+    this.ttsIsPaused = false;
+
+    if (this.ttsSequentialTimer) {
+      clearTimeout(this.ttsSequentialTimer);
+      this.ttsSequentialTimer = null;
+    }
+    if (this.ttsHoverTimeout) {
+      clearTimeout(this.ttsHoverTimeout);
+      this.ttsHoverTimeout = null;
+    }
+
+    if (this.ttsSynth) {
+      try {
+        if (this.ttsSynth.paused) {
+          this.ttsSynth.resume();
+        }
+        this.ttsSynth.cancel();
+      } catch (e) {
+        console.warn("Error al cancelar síntesis de voz:", e);
+      }
+    }
+
+    this.ttsUtterance = null;
+    this.ttsCurrentTarget = null;
+
+    // Quitar resaltado de cualquier elemento
+    document.querySelectorAll(".tts-reading-target").forEach(el => el.classList.remove("tts-reading-target"));
+
+    // Resetear botones a estado inactivo ("Leer Guion" / "Filmina")
+    this.updateNotesTTSButtonState(false);
+    this.updateSlideTTSButtonState(false);
+    this.updateTTSDockPlayPause(false);
+  }
+
+  /**
+   * Actualiza el texto, icono y feedback visual del botón de guion en el teleprómpter
+   */
+  updateNotesTTSButtonState(isReading) {
+    const btnNotes = document.getElementById("btn-read-notes-tts");
+    const dockNotes = document.getElementById("tts-btn-read-notes");
+
+    if (btnNotes) {
+      if (isReading) {
+        btnNotes.classList.add("active-reading");
+        btnNotes.setAttribute("title", "Detener lectura del guion (Clic para parar audio)");
+        btnNotes.setAttribute("aria-label", "Detener lectura del guion");
+        btnNotes.innerHTML = `
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+            <rect x="5" y="5" width="14" height="14" rx="2" />
+          </svg>
+          <span>Detener</span>
+        `;
+      } else {
+        btnNotes.classList.remove("active-reading");
+        btnNotes.setAttribute("title", "Leer guion y notas en voz alta (Voz nativa)");
+        btnNotes.setAttribute("aria-label", "Leer guion del orador en voz alta");
+        btnNotes.innerHTML = `
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+          </svg>
+          <span>Leer Guion</span>
+        `;
+      }
+    }
+
+    if (dockNotes) {
+      if (isReading) {
+        dockNotes.classList.add("active-reading");
+        dockNotes.setAttribute("title", "Detener lectura de notas (Audio activo)");
+      } else {
+        dockNotes.classList.remove("active-reading");
+        dockNotes.setAttribute("title", "Leer guion y notas del orador");
       }
     }
   }
 
   /**
-   * Detiene de inmediato la locución y limpia los resaltados
+   * Actualiza el estado visual del botón Leer Filmina en el dock flotante
    */
-  stopTTS() {
-    if (this.ttsSynth) {
-      this.ttsSynth.cancel();
+  updateSlideTTSButtonState(isReading) {
+    const btnSlide = document.getElementById("tts-btn-read-slide");
+    if (!btnSlide) return;
+    if (isReading) {
+      btnSlide.classList.add("active-reading");
+      btnSlide.setAttribute("title", "Detener lectura de la filmina (Audio activo)");
+    } else {
+      btnSlide.classList.remove("active-reading");
+      btnSlide.setAttribute("title", "Leer filmina actual en voz alta");
     }
-    if (this.ttsSequentialTimer) {
-      clearTimeout(this.ttsSequentialTimer);
-      this.ttsSequentialTimer = null;
-    }
-    this.ttsIsSpeaking = false;
-    this.ttsIsPaused = false;
-    document.querySelectorAll(".tts-reading-target").forEach(el => el.classList.remove("tts-reading-target"));
-    const btnNotes = document.getElementById("btn-read-notes-tts");
-    if (btnNotes) btnNotes.classList.remove("active-reading");
-    this.updateTTSDockPlayPause(false);
   }
 
   /**
@@ -2669,7 +2807,9 @@ class PresentationApp {
       if (btn.id === "btn-toggle-shortcuts") return "Botón: Ver atajos de teclado";
 
       // Controles del teleprómpter
-      if (btn.id === "btn-read-notes-tts") return "Botón: Leer guion del orador en voz alta";
+      if (btn.id === "btn-read-notes-tts") {
+        return this.ttsReadingNotes ? "Botón: Detener lectura del guion" : "Botón: Leer guion del orador en voz alta";
+      }
       if (btn.id === "btn-notes-font-inc") return "Botón: Aumentar tamaño de letra";
       if (btn.id === "btn-notes-font-dec") return "Botón: Disminuir tamaño de letra";
 
@@ -2681,8 +2821,12 @@ class PresentationApp {
       if (btn.id === "btn-svg-maximize" || btn.id === "btn-doc-maximize") return "Botón: Maximizar visor";
 
       // Controles del dock flotante
-      if (btn.id === "tts-btn-read-slide") return "Botón: Leer contenido de la filmina actual";
-      if (btn.id === "tts-btn-read-notes") return "Botón: Leer guion del orador";
+      if (btn.id === "tts-btn-read-slide") {
+        return this.ttsReadingSlide ? "Botón: Detener lectura de filmina" : "Botón: Leer contenido de la filmina actual";
+      }
+      if (btn.id === "tts-btn-read-notes") {
+        return this.ttsReadingNotes ? "Botón: Detener lectura del guion" : "Botón: Leer guion del orador";
+      }
       if (btn.id === "tts-btn-pause") return "Botón: Pausar o reanudar lectura de voz";
       if (btn.id === "tts-btn-stop") return "Botón: Detener voz";
       if (btn.id === "tts-btn-close") return "Botón: Desactivar modo accesibilidad";
@@ -2745,6 +2889,8 @@ class PresentationApp {
    */
   handlePointerOverTTS(e) {
     if (!this.ttsActive) return;
+    // Si se está ejecutando la lectura guiada de notas o filmina, no interrumpir con hover
+    if (this.ttsReadingNotes || this.ttsReadingSlide) return;
 
     // Selectores amplios que incluyen botones, controles interactivos y contenido
     const selector = [
@@ -2820,6 +2966,7 @@ class PresentationApp {
    */
   handleFocusInTTS(e) {
     if (!this.ttsActive) return;
+    if (this.ttsReadingNotes || this.ttsReadingSlide) return;
     const target = e.target;
     if (!target) return;
     const actionableTarget = target.closest("button, a, [role='button']") || target;
@@ -2833,8 +2980,22 @@ class PresentationApp {
    * Lee en voz alta la filmina actual completa (título, subtítulo y puntos clave)
    */
   readCurrentSlide() {
+    // Si ya está leyendo la filmina, alternar para detenerla (Toggle)
+    if (this.ttsReadingSlide) {
+      this.stopTTS();
+      return;
+    }
+
+    this.stopTTS();
+    this.ttsReadingSlide = true;
+    this.updateSlideTTSButtonState(true);
+
     const slide = this.data.slides[this.currentSlideIndex];
-    if (!slide) return;
+    if (!slide) {
+      this.ttsReadingSlide = false;
+      this.updateSlideTTSButtonState(false);
+      return;
+    }
 
     const parts = [
       `Filmina ${this.currentSlideIndex + 1} de ${this.totalSlides}.`,
@@ -2854,13 +3015,24 @@ class PresentationApp {
     }
 
     const fullText = parts.filter(p => p.trim()).join(". ");
-    this.speakText(fullText, this.cardElement);
+    this.speakText(fullText, this.cardElement, () => {
+      this.ttsReadingSlide = false;
+      this.updateSlideTTSButtonState(false);
+    });
   }
 
   /**
    * Lee en voz alta el guion sugerido para el orador y el objetivo pedagógico de la filmina
    */
   readCurrentNotes() {
+    const btnNotes = document.getElementById("btn-read-notes-tts");
+
+    // 1. SI YA ESTÁ LEYENDO O REPRODUCIENDO NOTAS -> DETENER DE INMEDIATO (TOGGLE)
+    if (this.ttsReadingNotes || (btnNotes && btnNotes.classList.contains("active-reading"))) {
+      this.stopTTS();
+      return;
+    }
+
     const slide = this.data.slides[this.currentSlideIndex];
     if (!slide) return;
 
@@ -2869,12 +3041,19 @@ class PresentationApp {
       this.toggleNotes(true);
     }
 
-    const btnNotes = document.getElementById("btn-read-notes-tts");
-    if (btnNotes) btnNotes.classList.add("active-reading");
+    // Detener cualquier locución previa antes de iniciar la secuencia
+    this.stopTTS();
+
+    // Activar estado y feedback visual inmediato en el botón (cambia a "Detener" en rojo)
+    this.ttsReadingNotes = true;
+    this.updateNotesTTSButtonState(true);
 
     const paragraphs = [];
     if (slide.esquema) {
-      paragraphs.push({ text: `Objetivo Pedagógico de la filmina ${this.currentSlideIndex + 1}: ${slide.esquema}`, el: document.querySelector(".teleprompter-obj-card") });
+      paragraphs.push({ 
+        text: `Objetivo Pedagógico de la filmina ${this.currentSlideIndex + 1}: ${slide.esquema}`, 
+        el: document.querySelector(".teleprompter-obj-card") 
+      });
     }
 
     const speechElements = document.querySelectorAll(".speech-para");
@@ -2888,15 +3067,28 @@ class PresentationApp {
     }
 
     if (paragraphs.length === 0) {
+      this.updateNotesTTSButtonState(false);
+      this.ttsReadingNotes = false;
       this.speakText("No hay notas ni guion registrado para esta filmina.");
       return;
     }
 
-    // Lectura secuencial párrafo a párrafo con auto-scroll y resaltado activo
+    // Identificador de sesión para toda la secuencia de párrafos
+    this.ttsNotesSequenceId = (this.ttsNotesSequenceId || 0) + 1;
+    const sequenceId = this.ttsNotesSequenceId;
+
     let currentIndex = 0;
     const readNext = () => {
+      // Si la secuencia fue cancelada, abortar de inmediato
+      if (!this.ttsReadingNotes || this.ttsNotesSequenceId !== sequenceId || this.ttsStopRequested) {
+        this.updateNotesTTSButtonState(false);
+        this.ttsReadingNotes = false;
+        return;
+      }
+
       if (currentIndex >= paragraphs.length) {
-        if (btnNotes) btnNotes.classList.remove("active-reading");
+        this.updateNotesTTSButtonState(false);
+        this.ttsReadingNotes = false;
         return;
       }
 
@@ -2907,7 +3099,12 @@ class PresentationApp {
 
       currentIndex++;
       this.speakText(item.text, item.el, () => {
-        this.ttsSequentialTimer = setTimeout(readNext, 350);
+        if (this.ttsReadingNotes && this.ttsNotesSequenceId === sequenceId && !this.ttsStopRequested) {
+          this.ttsSequentialTimer = setTimeout(readNext, 350);
+        } else {
+          this.updateNotesTTSButtonState(false);
+          this.ttsReadingNotes = false;
+        }
       });
     };
 
