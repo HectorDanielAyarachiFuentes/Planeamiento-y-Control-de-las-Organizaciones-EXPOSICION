@@ -62,21 +62,21 @@
   <!-- ══════════════════════════════════════════════════════════════════════════
        CABEZAL INSTITUCIONAL DEL DIAGRAMA
        ══════════════════════════════════════════════════════════════════════════ -->
-  <g transform="translate(24, 20)">
+  <g transform="translate(24, 18)">
     <!-- Barra superior dorada de nivel académico -->
-    <rect x="0" y="0" width="912" height="6" rx="3" fill="#d4af37" />
+    <rect x="0" y="0" width="912" height="5" rx="2.5" fill="#d4af37" />
 
-    <!-- Bloque de Título -->
-    <text x="0" y="28" class="font-serif" font-size="20" font-weight="700" fill="#0f2d59" letter-spacing="1">
-      PLANIFICACIÓN NORMATIVA vs. PLANIFICACIÓN ESTRATÉGICA SITUACIONAL (PES)
+    <!-- Bloque de Título con amplio espaciado -->
+    <text x="0" y="25" class="font-serif" font-size="16.5" font-weight="700" fill="#0f2d59" letter-spacing="0.5">
+      PLANIFICACIÓN NORMATIVA vs. SITUACIONAL (PES)
     </text>
-    <text x="0" y="48" class="font-main" font-size="12" font-weight="500" fill="#64748b">
-      Teoría del Cálculo Situacional de Carlos Matus • Respuesta al Entregable de Viabilidad y Actores Estratégicos (Avance 2)
+    <text x="0" y="44" class="font-main" font-size="11.5" font-weight="500" fill="#64748b">
+      Teoría del Cálculo Situacional de Carlos Matus • Viabilidad y Actores Estratégicos (Avance 2)
     </text>
 
-    <!-- Badge Oficial Avance 2 -->
-    <rect x="760" y="14" width="152" height="26" rx="13" fill="#0f2d59" filter="url(#badge-shadow)" />
-    <text x="836" y="31" class="font-main" font-size="10.5" font-weight="700" fill="#f8fafc" text-anchor="middle" letter-spacing="0.5">
+    <!-- Badge Oficial Avance 2 (Completamente despejado a la derecha) -->
+    <rect x="760" y="11" width="152" height="26" rx="13" fill="#0f2d59" filter="url(#badge-shadow)" />
+    <text x="836" y="28" class="font-main" font-size="10.5" font-weight="700" fill="#f8fafc" text-anchor="middle" letter-spacing="0.5">
       UNIDAD II • CURZAS UNCo
     </text>
   </g>
@@ -84,27 +84,27 @@
   <!-- ══════════════════════════════════════════════════════════════════════════
        COLUMNA IZQUIERDA: PLANIFICACIÓN NORMATIVA (TRADICIONAL / RÍGIDA)
        ══════════════════════════════════════════════════════════════════════════ -->
-  <g transform="translate(24, 82)">
+  <g transform="translate(24, 76)">
     <!-- Tarjeta Contenedora -->
-    <rect x="0" y="0" width="436" height="428" rx="12" fill="url(#norm-card-grad)" stroke="#fecaca" stroke-width="1.5" filter="url(#card-shadow)" />
+    <rect x="0" y="0" width="436" height="432" rx="12" fill="url(#norm-card-grad)" stroke="#fecaca" stroke-width="1.5" filter="url(#card-shadow)" />
 
     <!-- Cabezal de Tarjeta Normativa -->
     <rect x="0" y="0" width="436" height="52" rx="12" fill="url(#norm-banner-grad)" />
-    <rect x="0" y="44" width="436" height="8" fill="url(#norm-banner-grad)" /> <!-- Cuadra bordes inferiores -->
+    <rect x="0" y="44" width="436" height="8" fill="url(#norm-banner-grad)" />
     
-    <text x="20" y="26" class="font-serif" font-size="14.5" font-weight="700" fill="#ffffff" letter-spacing="0.8">
+    <text x="18" y="24" class="font-serif" font-size="13.5" font-weight="700" fill="#ffffff" letter-spacing="0.5">
       1. PLANIFICACIÓN NORMATIVA
     </text>
-    <text x="20" y="42" class="font-main" font-size="11" font-weight="400" fill="#fee2e2">
+    <text x="18" y="41" class="font-main" font-size="10.5" font-weight="400" fill="#fee2e2">
       Modelo Tradicional Rígido • El Deber Ser Libresco
     </text>
-    <rect x="330" y="14" width="90" height="22" rx="11" fill="#7f1d1d" />
-    <text x="375" y="29" class="font-main" font-size="9.5" font-weight="700" fill="#fca5a5" text-anchor="middle">
+    <rect x="330" y="14" width="92" height="22" rx="11" fill="#7f1d1d" />
+    <text x="376" y="29" class="font-main" font-size="9.5" font-weight="700" fill="#fca5a5" text-anchor="middle">
       SUPERADO ❌
     </text>
 
     <!-- Fila 1: Sujeto Planificador -->
-    <g transform="translate(18, 68)">
+    <g transform="translate(18, 66)">
       <rect x="0" y="0" width="400" height="62" rx="8" fill="#ffffff" stroke="#f1f5f9" stroke-width="1" />
       <circle cx="20" cy="20" r="11" fill="#fee2e2" />
       <text x="20" y="24" class="font-main" font-size="11" font-weight="700" fill="#b91c1c" text-anchor="middle">1</text>
@@ -118,7 +118,7 @@
     </g>
 
     <!-- Fila 2: Relación con el Poder -->
-    <g transform="translate(18, 138)">
+    <g transform="translate(18, 136)">
       <rect x="0" y="0" width="400" height="62" rx="8" fill="#ffffff" stroke="#f1f5f9" stroke-width="1" />
       <circle cx="20" cy="20" r="11" fill="#fee2e2" />
       <text x="20" y="24" class="font-main" font-size="11" font-weight="700" fill="#b91c1c" text-anchor="middle">2</text>
@@ -132,7 +132,7 @@
     </g>
 
     <!-- Fila 3: Visión del Futuro y Certeza -->
-    <g transform="translate(18, 208)">
+    <g transform="translate(18, 206)">
       <rect x="0" y="0" width="400" height="62" rx="8" fill="#ffffff" stroke="#f1f5f9" stroke-width="1" />
       <circle cx="20" cy="20" r="11" fill="#fee2e2" />
       <text x="20" y="24" class="font-main" font-size="11" font-weight="700" fill="#b91c1c" text-anchor="middle">3</text>
@@ -146,7 +146,7 @@
     </g>
 
     <!-- Fila 4: Rol de los Trabajadores -->
-    <g transform="translate(18, 278)">
+    <g transform="translate(18, 276)">
       <rect x="0" y="0" width="400" height="68" rx="8" fill="#fff1f2" stroke="#fecdd3" stroke-width="1.2" />
       <circle cx="20" cy="22" r="11" fill="#f43f5e" />
       <text x="20" y="26" class="font-main" font-size="11" font-weight="700" fill="#ffffff" text-anchor="middle">4</text>
@@ -160,10 +160,10 @@
     </g>
 
     <!-- Diagnóstico de Cierre Normativo -->
-    <g transform="translate(18, 356)">
-      <rect x="0" y="0" width="400" height="58" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1" />
-      <text x="14" y="22" class="font-main" font-size="10" font-weight="700" fill="#64748b" letter-spacing="0.5">SÍNTESIS DIAGNÓSTICA MATUS:</text>
-      <text x="14" y="40" class="font-main" font-size="11" font-weight="600" fill="#334155">
+    <g transform="translate(18, 354)">
+      <rect x="0" y="0" width="400" height="62" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1" />
+      <text x="14" y="20" class="font-main" font-size="10" font-weight="700" fill="#64748b" letter-spacing="0.5">SÍNTESIS DIAGNÓSTICA MATUS:</text>
+      <text x="14" y="38" class="font-main" font-size="11" font-weight="600" fill="#334155">
         "El plan termina archivado en un cajón porque confunde planificar
       </text>
       <text x="14" y="52" class="font-main" font-size="11" font-weight="700" fill="#dc2626">
@@ -175,7 +175,7 @@
   <!-- ══════════════════════════════════════════════════════════════════════════
        EJE VECTORIAL CENTRAL: FLECHA DE SALTO PARADIGMÁTICO
        ══════════════════════════════════════════════════════════════════════════ -->
-  <g transform="translate(468, 120)">
+  <g transform="translate(468, 116)">
     <!-- Barra vertical punteada -->
     <line x1="12" y1="20" x2="12" y2="340" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="4 4" />
     
@@ -199,27 +199,27 @@
   <!-- ══════════════════════════════════════════════════════════════════════════
        COLUMNA DERECHA: PLANIFICACIÓN ESTRATÉGICA SITUACIONAL (PES - MATUS)
        ══════════════════════════════════════════════════════════════════════════ -->
-  <g transform="translate(500, 82)">
+  <g transform="translate(500, 76)">
     <!-- Tarjeta Contenedora -->
-    <rect x="0" y="0" width="436" height="428" rx="12" fill="url(#pes-card-grad)" stroke="#bae6fd" stroke-width="1.8" filter="url(#card-shadow)" />
+    <rect x="0" y="0" width="436" height="432" rx="12" fill="url(#pes-card-grad)" stroke="#bae6fd" stroke-width="1.8" filter="url(#card-shadow)" />
 
-    <!-- Cabezal de Tarjeta Situacional -->
+    <!-- Cabezal de Tarjeta Situacional (Con holgura total entre título y badge) -->
     <rect x="0" y="0" width="436" height="52" rx="12" fill="url(#pes-banner-grad)" />
     <rect x="0" y="44" width="436" height="8" fill="url(#pes-banner-grad)" />
     
-    <text x="20" y="26" class="font-serif" font-size="14.5" font-weight="700" fill="#ffffff" letter-spacing="0.8">
-      2. PLANIFICACIÓN SITUACIONAL (PES)
+    <text x="18" y="24" class="font-serif" font-size="13" font-weight="700" fill="#ffffff" letter-spacing="0.4">
+      2. PLANIFICACIÓN SITUACIONAL
     </text>
-    <text x="20" y="42" class="font-main" font-size="11" font-weight="400" fill="#e0f2fe">
-      Carlos Matus • El Puede Ser y la Construcción de Viabilidad
+    <text x="18" y="41" class="font-main" font-size="10.5" font-weight="400" fill="#e0f2fe">
+      Carlos Matus • El Puede Ser y la Viabilidad
     </text>
-    <rect x="306" y="14" width="114" height="22" rx="11" fill="#0369a1" />
-    <text x="363" y="29" class="font-main" font-size="9.5" font-weight="700" fill="#ffffff" text-anchor="middle">
-      APLICADO EN CURZAS ✔️
+    <rect x="304" y="14" width="118" height="22" rx="11" fill="#0369a1" stroke="#38bdf8" stroke-width="0.8" />
+    <text x="363" y="29" class="font-main" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">
+      APLICADO EN CURZAS ✔
     </text>
 
     <!-- Fila 1: Sujeto Planificador -->
-    <g transform="translate(18, 68)">
+    <g transform="translate(18, 66)">
       <rect x="0" y="0" width="400" height="62" rx="8" fill="#ffffff" stroke="#e0f2fe" stroke-width="1" />
       <circle cx="20" cy="20" r="11" fill="#e0f2fe" />
       <text x="20" y="24" class="font-main" font-size="11" font-weight="700" fill="#0284c7" text-anchor="middle">1</text>
@@ -233,7 +233,7 @@
     </g>
 
     <!-- Fila 2: Relación con el Poder -->
-    <g transform="translate(18, 138)">
+    <g transform="translate(18, 136)">
       <rect x="0" y="0" width="400" height="62" rx="8" fill="#ffffff" stroke="#e0f2fe" stroke-width="1" />
       <circle cx="20" cy="20" r="11" fill="#e0f2fe" />
       <text x="20" y="24" class="font-main" font-size="11" font-weight="700" fill="#0284c7" text-anchor="middle">2</text>
@@ -247,7 +247,7 @@
     </g>
 
     <!-- Fila 3: Visión del Futuro e Incertidumbre -->
-    <g transform="translate(18, 208)">
+    <g transform="translate(18, 206)">
       <rect x="0" y="0" width="400" height="62" rx="8" fill="#ffffff" stroke="#e0f2fe" stroke-width="1" />
       <circle cx="20" cy="20" r="11" fill="#e0f2fe" />
       <text x="20" y="24" class="font-main" font-size="11" font-weight="700" fill="#0284c7" text-anchor="middle">3</text>
@@ -261,24 +261,24 @@
     </g>
 
     <!-- Fila 4: Rol de los Trabajadores (NÚCLEO DE LA RESPUESTA DE CÁTEDRA) -->
-    <g transform="translate(18, 278)">
+    <g transform="translate(18, 276)">
       <rect x="0" y="0" width="400" height="68" rx="8" fill="#ecfdf5" stroke="#a7f3d0" stroke-width="1.4" />
       <circle cx="20" cy="22" r="11" fill="#059669" />
       <text x="20" y="26" class="font-main" font-size="11" font-weight="700" fill="#ffffff" text-anchor="middle">4</text>
-      <text x="40" y="22" class="font-main" font-size="12" font-weight="700" fill="#065f46">Trabajadores: ACTORES ESTRATÉGICOS CON PODER DE VETO</text>
-      <text x="40" y="40" class="font-main" font-size="10.5" font-weight="500" fill="#047857">
+      <text x="38" y="21" class="font-main" font-size="11" font-weight="700" fill="#065f46">Trabajadores: Actores Estratégicos con Poder de Veto</text>
+      <text x="38" y="39" class="font-main" font-size="10.5" font-weight="500" fill="#047857">
         Docentes y Nodocentes tutelados por CCT (366/06 y 1246/15).
       </text>
-      <text x="40" y="56" class="font-main" font-size="10" font-weight="700" fill="#047857">
+      <text x="38" y="55" class="font-main" font-size="10" font-weight="700" fill="#047857">
         ⭐ Clave Cátedra: Sin consenso de los gremios no hay viabilidad política.
       </text>
     </g>
 
     <!-- Diagnóstico de Cierre Situacional -->
-    <g transform="translate(18, 356)">
-      <rect x="0" y="0" width="400" height="58" rx="8" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1" />
-      <text x="14" y="22" class="font-main" font-size="10" font-weight="700" fill="#166534" letter-spacing="0.5">APLICACIÓN CONCRETA AL CURZAS:</text>
-      <text x="14" y="40" class="font-main" font-size="11" font-weight="600" fill="#1e293b">
+    <g transform="translate(18, 354)">
+      <rect x="0" y="0" width="400" height="62" rx="8" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1" />
+      <text x="14" y="20" class="font-main" font-size="10" font-weight="700" fill="#166534" letter-spacing="0.5">APLICACIÓN CONCRETA AL CURZAS:</text>
+      <text x="14" y="38" class="font-main" font-size="11" font-weight="600" fill="#1e293b">
         "Toda política de personal (licencias, SUDOCU, guardias en nodos)
       </text>
       <text x="14" y="52" class="font-main" font-size="11" font-weight="700" fill="#059669">
@@ -290,32 +290,35 @@
   <!-- ══════════════════════════════════════════════════════════════════════════
        ZÓCALO INFERIOR: RESPUESTA DIRECTA A LA PREGUNTA GUÍA DOCENTE
        ══════════════════════════════════════════════════════════════════════════ -->
-  <g transform="translate(24, 524)">
-    <rect x="0" y="0" width="912" height="96" rx="10" fill="url(#footer-grad)" filter="url(#card-shadow)" />
+  <g transform="translate(24, 518)">
+    <rect x="0" y="0" width="912" height="106" rx="10" fill="url(#footer-grad)" filter="url(#card-shadow)" />
 
     <!-- Barra de acento dorado -->
-    <rect x="0" y="0" width="8" height="96" rx="4" fill="#d4af37" />
+    <rect x="0" y="0" width="7" height="106" rx="3.5" fill="#d4af37" />
 
-    <!-- Encabezado del Zócalo -->
-    <text x="24" y="24" class="font-main" font-size="11" font-weight="800" fill="#d4af37" letter-spacing="1">
-      DICTAMEN CONCLUSIVO PARA LA DEFENSA ORAL • RESPUESTA A LA PREGUNTA GUÍA DOCENTE
+    <!-- Encabezado del Zócalo: Título a la izquierda y Badge a la derecha en la MISMA fila superior -->
+    <text x="24" y="25" class="font-main" font-size="11" font-weight="800" fill="#d4af37" letter-spacing="0.8">
+      DICTAMEN CONCLUSIVO PARA LA DEFENSA ORAL • PREGUNTA GUÍA DOCENTE
     </text>
 
-    <!-- Contenido de la Respuesta Situada -->
-    <text x="24" y="46" class="font-main" font-size="12" font-weight="400" fill="#e2e8f0">
+    <!-- Badge de Carlos Matus en la cabecera superior derecha (Sin colisión con el texto inferior) -->
+    <rect x="754" y="11" width="144" height="24" rx="12" fill="#0284c7" stroke="#38bdf8" stroke-width="0.8" />
+    <text x="826" y="27" class="font-main" font-size="9.5" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="0.5">
+      CARLOS MATUS (1987)
+    </text>
+
+    <!-- Línea sutil de división en el cabezal del zócalo -->
+    <line x1="24" y1="41" x2="898" y2="41" stroke="#334155" stroke-width="0.8" />
+
+    <!-- Contenido de la Respuesta Situada (Espacio horizontal 100% libre sin solapamiento) -->
+    <text x="24" y="59" class="font-main" font-size="11.5" font-weight="400" fill="#e2e8f0">
       ¿Los planes vigentes son normativos o situacionales (PES)? <tspan font-weight="700" fill="#38bdf8">Son situacionales (PES).</tspan> El CURZAS reconoce que en una universidad
     </text>
-    <text x="24" y="64" class="font-main" font-size="12" font-weight="400" fill="#e2e8f0">
-      con <tspan font-weight="700" fill="#ffffff">co-gobierno cuadricameral y autonomía</tspan>, no existe una cúspide autocrática que dicte órdenes mecánicas. La viabilidad técnica de cualquier
+    <text x="24" y="77" class="font-main" font-size="11.5" font-weight="400" fill="#e2e8f0">
+      con <tspan font-weight="700" fill="#ffffff">co-gobierno cuadricameral y autonomía</tspan>, no existe una cúspide autocrática que dicte órdenes mecánicas. La viabilidad técnica
     </text>
-    <text x="24" y="82" class="font-main" font-size="12" font-weight="400" fill="#e2e8f0">
-      transformación depende ineludiblemente de la <tspan font-weight="700" fill="#4ade80">viabilidad política y paritaria acordada con los trabajadores</tspan>.
-    </text>
-
-    <!-- Mini badge de Carlos Matus -->
-    <rect x="760" y="58" width="136" height="24" rx="12" fill="#0369a1" />
-    <text x="828" y="74" class="font-main" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">
-      CARLOS MATUS (1987)
+    <text x="24" y="95" class="font-main" font-size="11.5" font-weight="400" fill="#e2e8f0">
+      de cualquier transformación depende ineludiblemente de la <tspan font-weight="700" fill="#4ade80">viabilidad política y paritaria acordada con los trabajadores</tspan>.
     </text>
   </g>
 </svg>
