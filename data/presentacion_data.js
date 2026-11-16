@@ -469,7 +469,7 @@ const PRESENTACION_DATA = {
         "🚫 Ausencia Total de IA en Personal: NO existen normativas ni software predictivo/algorítmico en RR. HH.; la selección y el monitoreo se realizan exclusivamente por jurados humanos colegiados y paritarios."
       ],
       "metadatosFooter": "Avance 1 • El Estado en la Era Exponencial • Oscar Oszlak (2020)",
-      "escena3D": "anim_13",
+      "escena3D": "anim_06",
       "diagramaSVG": "assets/red-territorial-nodos.svg",
       "maqueta3D": "prueba_rionegro_3d.html",
       "tiempoSugerido": "⏱️ ~35-40 seg",
@@ -548,7 +548,7 @@ const PRESENTACION_DATA = {
         "💡 Conclusión Situacional: El valor público y la legitimidad social de la Red de 10 Nodos constituyen el escudo político del CURZAS para resistir los recortes de fondos de Nación."
       ],
       "metadatosFooter": "Avance 2 • Análisis del Entorno Situacional Patagónico • CURZAS - UNCo",
-      "escena3D": "anim_06",
+      "escena3D": "anim_13",
       "tiempoSugerido": "⏱️ ~35-40 seg",
       "guionOrador": "Completando el FODA en el plano externo: la gran oportunidad es la enorme demanda de carreras universitarias en parajes patagónicos y los convenios con intendencias locales. La gran amenaza es el severo recorte de fondos nacionales del Tesoro y la licuación de salarios. El CURZAS se defiende demostrando que su presencia territorial es indispensable para Río Negro."
     },

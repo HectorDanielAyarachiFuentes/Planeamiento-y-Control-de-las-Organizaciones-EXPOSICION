@@ -58,7 +58,7 @@ class Presentation3D {
 
     // Control dinámico de encuadre y prioridad: 'default' | 'object' | 'text'
     this.focusMode = "default";
-    this.focusAnim = { centerXOffset: 0, scaleMultiplier: 1.0 };
+    this.focusAnim = { focusProgress: 0.0, centerXOffset: 0.0, scaleMultiplier: 1.0 };
 
     // Gestor de energía y reposo inteligente (Smart Battery / GPU Throttle)
     this.lastUserInteraction = performance.now();
@@ -75,7 +75,7 @@ class Presentation3D {
     // Atmósfera de galería clásica en blanco marfil con contraste suave
     this.scene.fog = new THREE.FogExp2(0xf4f6f9, 0.022);
 
-    this.camera = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 0.1, 100);
+    this.camera = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 0.04, 120);
     this.camera.position.copy(this.currentCamPos);
     this.updateCameraViewOffset();
 
@@ -238,26 +238,30 @@ class Presentation3D {
     this.updateCameraViewOffset();
 
     if (!this.focusAnim) {
-      this.focusAnim = { centerXOffset: 0, scaleMultiplier: 1.0 };
+      this.focusAnim = { focusProgress: 0.0, centerXOffset: 0.0, scaleMultiplier: 1.0 };
     }
 
-    const targetOffsetX = mode === "object" ? -1.72 : 0;
-    const targetScale = mode === "object" ? 1.45 : 1.0;
+    const isObj = (mode === "object");
+    const targetProgress = isObj ? 1.0 : 0.0;
+    const targetOffsetX = isObj ? -1.72 : 0.0;
+    const targetScale = isObj ? 1.62 : 1.0;
 
     if (window.gsap) {
       gsap.to(this.focusAnim, {
+        focusProgress: targetProgress,
         centerXOffset: targetOffsetX,
         scaleMultiplier: targetScale,
         duration: 0.65,
         ease: "power2.out"
       });
     } else {
+      this.focusAnim.focusProgress = targetProgress;
       this.focusAnim.centerXOffset = targetOffsetX;
       this.focusAnim.scaleMultiplier = targetScale;
     }
   }
 
-  /* ═══════════════════════════════════════════════════════════════════════════
+  /* ═
      CONSTRUCCIÓN MODULAR Y GESTIÓN BAJO DEMANDA (LAZY LOADING PRO)
      ═══════════════════════════════════════════════════════════════════════════ */
   /**
@@ -383,8 +387,8 @@ class Presentation3D {
     this.canvas.addEventListener("wheel", (e) => {
       e.preventDefault();
       this.lastUserInteraction = performance.now();
-      const zoomDelta = e.deltaY * 0.0022;
-      this.targetUserZoom = Math.max(-3.5, Math.min(4.5, this.targetUserZoom + zoomDelta));
+      const zoomDelta = e.deltaY * 0.0035;
+      this.targetUserZoom = Math.max(-8.5, Math.min(14.0, this.targetUserZoom + zoomDelta));
     }, { passive: false });
 
     // Doble clic para centrar la escultura
@@ -409,8 +413,8 @@ class Presentation3D {
           e.touches[0].clientX - e.touches[1].clientX,
           e.touches[0].clientY - e.touches[1].clientY
         );
-        const diff = (initialTouchDist - currentDist) * 0.006;
-        this.targetUserZoom = Math.max(-3.5, Math.min(4.5, this.targetUserZoom + diff));
+        const diff = (initialTouchDist - currentDist) * 0.008;
+        this.targetUserZoom = Math.max(-8.5, Math.min(14.0, this.targetUserZoom + diff));
         initialTouchDist = currentDist;
       }
     }, { passive: true });
@@ -599,20 +603,38 @@ class Presentation3D {
     this.userPan.x += (this.targetUserPan.x - this.userPan.x) * userFactor;
     this.userPan.y += (this.targetUserPan.y - this.userPan.y) * userFactor;
 
-    // 2. Zoom Progresivo con Rueda: Dolly de la cámara respecto al objeto (Zero GC)
-    this._tmpCamDir.subVectors(this.targetCamPos, this.targetLookAt).normalize();
-    const baseDist = this.targetCamPos.distanceTo(this.targetLookAt);
-    const effectiveDist = Math.max(2.2, Math.min(12.5, baseDist + this.userZoom));
+    // 2. Zoom Progresivo con Rueda y Centrado Dinámico según modo de enfoque
+    const fp = (this.focusAnim && typeof this.focusAnim.focusProgress === "number")
+      ? this.focusAnim.focusProgress
+      : (this.focusMode === "object" ? 1.0 : 0.0);
+
+    // En modo 'object' (Ver Objeto), centramos el objetivo de mira en X: 0
+    // y ajustamos la posición de la cámara para un encuadre 100% simétrico y balanceado
+    const lateralCamOffset = (this.targetCamPos.x - this.targetLookAt.x) * 0.25;
+    const activeLookAtX = THREE.MathUtils.lerp(this.targetLookAt.x, 0.0, fp);
+    const activeCamPosX = THREE.MathUtils.lerp(this.targetCamPos.x, lateralCamOffset, fp);
+    const activeCamPosZ = THREE.MathUtils.lerp(this.targetCamPos.z, this.targetCamPos.z * 0.88, fp);
+
+    if (!this._tmpCamLookAt) this._tmpCamLookAt = new THREE.Vector3();
+    if (!this._tmpTargetCamPos) this._tmpTargetCamPos = new THREE.Vector3();
+
+    this._tmpCamLookAt.set(activeLookAtX, this.targetLookAt.y, this.targetLookAt.z);
+    this._tmpTargetCamPos.set(activeCamPosX, this.targetCamPos.y, activeCamPosZ);
+
+    this._tmpCamDir.subVectors(this._tmpTargetCamPos, this._tmpCamLookAt).normalize();
+    const baseDist = this._tmpTargetCamPos.distanceTo(this._tmpCamLookAt);
+    // Rango de zoom ampliamente expandido: acercamiento hasta 0.60 para detalles microscópicos
+    const effectiveDist = Math.max(0.60, Math.min(22.0, baseDist + this.userZoom));
 
     this._tmpDesiredCamPos
-      .copy(this.targetLookAt)
+      .copy(this._tmpCamLookAt)
       .addScaledVector(this._tmpCamDir, effectiveDist);
 
     this._tmpDesiredCamPos.x += this.userPan.x;
     this._tmpDesiredCamPos.y += this.userPan.y;
 
     this._tmpDesiredLookAt
-      .copy(this.targetLookAt);
+      .copy(this._tmpCamLookAt);
     this._tmpDesiredLookAt.x += this.userPan.x;
     this._tmpDesiredLookAt.y += this.userPan.y;
 
@@ -637,7 +659,7 @@ class Presentation3D {
       const enter = this.transitionState?.enterOffset || { x: 0, y: 0, z: 0, scale: 1, rotY: 0 };
       const centerOffset = this.focusAnim?.centerXOffset || 0;
       const scaleMult = this.focusAnim?.scaleMultiplier || 1.0;
-      activeGroup.position.x = baseOffsetX + centerOffset + this.userPan.x + enter.x;
+      activeGroup.position.x = (baseOffsetX * (1.0 - fp)) + this.userPan.x + enter.x;
       activeGroup.position.y = baseElevationY + this.userPan.y + enter.y;
       activeGroup.position.z = enter.z;
       activeGroup.rotation.y = this.userRotation.y + enter.rotY;
@@ -652,7 +674,7 @@ class Presentation3D {
       const exit = this.transitionState.exitOffset;
       const centerOffset = this.focusAnim?.centerXOffset || 0;
       const scaleMult = this.focusAnim?.scaleMultiplier || 1.0;
-      exitingGroup.position.x = baseOffsetX + centerOffset + exit.x;
+      exitingGroup.position.x = (baseOffsetX * (1.0 - fp)) + exit.x;
       exitingGroup.position.y = baseElevationY + exit.y;
       exitingGroup.position.z = exit.z;
       const baseScale = exit.scale !== undefined ? exit.scale : 1;

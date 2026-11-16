@@ -315,10 +315,10 @@ window.Presentation3D_Objects["anim_13"] = {
 
     // 3. Cuatro Puertas / Conectores API Seguros (Hacia Sistemas Externos e Internos)
     const gates = [
-      { x: -0.45, z: 0.25, name: "API ACADÉMICA", sub: "Guaraní IOP", col: 0x0284c7 },
-      { x: 0.45, z: 0.25, name: "API PERSONAL", sub: "Mapuche & Haberes", col: 0x10b981 },
-      { x: -0.45, z: -0.25, name: "API EXPEDIENTES", sub: "SUDOCU Digital", col: 0xd4af37 },
-      { x: 0.45, z: -0.25, name: "API TERRITORIAL", sub: "Nodos Regionales", col: 0x8b5cf6 }
+      { x: -0.45, z: 0.25, name: "DEMANDA SOCIAL", sub: "Oportunidad Regional", col: 0x10b981 },
+      { x: 0.45, z: 0.25, name: "CONVENIOS R.N.", sub: "Alianzas Municipales", col: 0x0284c7 },
+      { x: -0.45, z: -0.25, name: "AJUSTE FISCAL", sub: "Amenaza Presupuestaria", col: 0xef4444 },
+      { x: 0.45, z: -0.25, name: "AULAS HÍBRIDAS", sub: "Resiliencia Territorial", col: 0xd4af37 }
     ];
 
     engine.anim13_gates = [];
@@ -374,9 +374,7 @@ window.Presentation3D_Objects["anim_13"] = {
     const plaque = engine.createEngravedPlaque(
       0.82,
       0.22,
-      "ESTADO PLATAFORMA & INTEROPERABILIDAD",
-      "Infraestructura Digital Compartida • APIs Abiertas • Desburocratización",
-      ["ARQUITECTURA DIGITAL CURZAS"],
+      "MATRIZ FODA: ENTORNO EXTERNO", "Oportunidades Territoriales frente al Severo Ajuste Fiscal Nacional", ["OPORTUNIDADES Y AMENAZAS EXTERNAS"],
       { theme: "dark" }
     );
     plaque.position.set(0, -0.88, 0.48);
@@ -384,8 +382,7 @@ window.Presentation3D_Objects["anim_13"] = {
 
     // Rótulo superior
     const headerTitle = engine.createLabelSprite(
-      "EL ESTADO PLATAFORMA (IOP)",
-      "Interoperabilidad Digital y Ecosistema de Servicios Integrados",
+      "FODA EXTERNO: DEMANDA TERRITORIAL Y AMENAZA FISCAL", "10 Nodos Regionales de Río Negro frente al Recorte del CIN/SPU",
       "#0f2d59",
       true
     );
