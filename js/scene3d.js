@@ -210,12 +210,35 @@ class Presentation3D {
   updateCameraViewOffset() {
     const w = window.innerWidth;
     const h = window.innerHeight;
+    const notesEl = document.getElementById("notes-modal");
+    const notesW = (this.notesOpen && notesEl)
+      ? (notesEl.offsetWidth || Math.min(500, Math.max(360, w * 0.32)))
+      : (this.notesOpen ? Math.min(500, Math.max(360, w * 0.32)) : 0);
+
+    // 1. MODO "VER OBJETO" (Tecla O):
     if (this.focusMode === "object") {
+      if (this.notesOpen && notesW > 0) {
+        // Cuando las notas están abiertas en el lateral derecho,
+        // centramos la escultura 3D en el espacio libre a la izquierda de las notas [0, w - notesW]
+        const offsetX = notesW * 0.5;
+        this.camera.setViewOffset(w, h, offsetX, 0, w, h);
+      } else {
+        // Si las notas están cerradas, centramos en la pantalla completa
+        this.camera.clearViewOffset();
+      }
+      return;
+    }
+
+    // 2. MODO BALANCEADO O TEXTO CON TELEPRÓMPTER ABIERTO:
+    if (this.notesOpen && notesW > 0) {
+      // Filmina a la izquierda (~32vw) y notas a la derecha (~32vw).
+      // La escultura 3D se ubica en el centro entre ambas (~50vw).
       this.camera.clearViewOffset();
       return;
     }
-    // Con la tarjeta de filmina ocupando el sector izquierdo (~50vw),
-    // desplazamos suavemente la vista para que el objeto 3D quede perfectamente centrado y completo en el sector derecho
+
+    // 3. MODO CANÓNICO (Teleprómpter cerrado):
+    // Filmina a la izquierda (~48-50vw) y escultura centrada en el sector derecho
     if (w > 1200) {
       const offsetX = -w * 0.22;
       this.camera.setViewOffset(w, h, offsetX, 0, w, h);
@@ -231,12 +254,11 @@ class Presentation3D {
   }
 
   /**
-   * Comunica al motor 3D si el teleprómpter / notas está abierto y de qué lado
+   * Comunica al motor 3D si el teleprómpter / notas está abierto
    * para reajustar el encuadre óptico y que la escultura 3D no sea tapada.
    */
-  setNotesState(isOpen, dockSide = "right") {
+  setNotesState(isOpen) {
     this.notesOpen = !!isOpen;
-    this.notesDock = dockSide;
     this.updateCameraViewOffset();
     this.camera.updateProjectionMatrix();
   }
@@ -665,7 +687,7 @@ class Presentation3D {
     // Escala y elevación calibradas: objeto ~18% más compacto y elevado para que el pedestal nunca se corte abajo
     const globalModelScale = 0.82;
     const baseElevationY = 0.22;
-    const baseOffsetX = 1.72;
+    const baseOffsetX = this.notesOpen ? 0.0 : 1.72;
 
     const activeGroup = this.scenes[this.currentSceneId];
     if (activeGroup) {

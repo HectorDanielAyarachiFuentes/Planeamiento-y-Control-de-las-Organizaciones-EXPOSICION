@@ -262,30 +262,6 @@ class PresentationApp {
       });
     }
 
-    const btnDockToggle = document.getElementById("btn-notes-dock-toggle");
-    if (btnDockToggle) {
-      this.notesDockMode = "bottom"; // 'bottom' | 'right' | 'left'
-      btnDockToggle.addEventListener("click", (e) => {
-        e.stopPropagation();
-        if (this.notesDockMode === "bottom") {
-          this.notesDockMode = "right";
-          this.notesModal.classList.remove("dock-left");
-          this.notesModal.classList.add("dock-right");
-        } else if (this.notesDockMode === "right") {
-          this.notesDockMode = "left";
-          this.notesModal.classList.remove("dock-right");
-          this.notesModal.classList.add("dock-left");
-        } else {
-          this.notesDockMode = "bottom";
-          this.notesModal.classList.remove("dock-right", "dock-left");
-        }
-        const dockText = document.getElementById("notes-dock-text");
-        if (dockText) {
-          dockText.textContent = this.notesDockMode === "bottom" ? "⬇️ Atril" : (this.notesDockMode === "right" ? "➡️ Der" : "⬅️ Izq");
-        }
-      });
-    }
-
     this.btnCloseNotes.addEventListener("click", () => this.toggleNotes(false));
 
     // Drawer de Respaldo Metodológico
@@ -1506,8 +1482,7 @@ class PresentationApp {
     this.btnToggleNotes.classList.toggle("active", newState);
     document.body.classList.toggle("teleprompter-open", newState);
 
-    if (!this.notesDockMode) this.notesDockMode = "bottom";
-    this.engine3D?.setNotesState(newState, this.notesDockMode);
+    this.engine3D?.setNotesState(newState);
 
     if (!newState) {
       // Si se cierra el teleprómpter y se estaba leyendo notas, detener la locución
