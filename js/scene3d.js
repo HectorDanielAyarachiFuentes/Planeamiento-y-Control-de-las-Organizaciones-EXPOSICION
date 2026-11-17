@@ -211,16 +211,20 @@ class Presentation3D {
     const w = window.innerWidth;
     const h = window.innerHeight;
     const notesEl = document.getElementById("notes-modal");
-    const notesW = (this.notesOpen && notesEl)
-      ? (notesEl.offsetWidth || Math.min(500, Math.max(360, w * 0.32)))
-      : (this.notesOpen ? Math.min(500, Math.max(360, w * 0.32)) : 0);
+    let occupiedRight = 0;
+    if (this.notesOpen && notesEl) {
+      const rect = notesEl.getBoundingClientRect();
+      occupiedRight = Math.max(0, w - rect.left);
+    } else if (this.notesOpen) {
+      occupiedRight = Math.min(520, Math.max(380, w * 0.33)) + 30;
+    }
 
     // 1. MODO "VER OBJETO" (Tecla O):
     if (this.focusMode === "object") {
-      if (this.notesOpen && notesW > 0) {
+      if (this.notesOpen && occupiedRight > 0) {
         // Cuando las notas están abiertas en el lateral derecho,
-        // centramos la escultura 3D en el espacio libre a la izquierda de las notas [0, w - notesW]
-        const offsetX = notesW * 0.5;
+        // centramos la escultura 3D exactamente en el espacio libre a la izquierda del panel [0, w - occupiedRight]
+        const offsetX = occupiedRight * 0.5;
         this.camera.setViewOffset(w, h, offsetX, 0, w, h);
       } else {
         // Si las notas están cerradas, centramos en la pantalla completa
@@ -230,8 +234,8 @@ class Presentation3D {
     }
 
     // 2. MODO BALANCEADO O TEXTO CON TELEPRÓMPTER ABIERTO:
-    if (this.notesOpen && notesW > 0) {
-      // Filmina a la izquierda (~32vw) y notas a la derecha (~32vw).
+    if (this.notesOpen && occupiedRight > 0) {
+      // Filmina a la izquierda (~30vw) y notas a la derecha (~33vw).
       // La escultura 3D se ubica en el centro entre ambas (~50vw).
       this.camera.clearViewOffset();
       return;

@@ -15,11 +15,12 @@ const html = fs.readFileSync('index.html', 'utf8');
 assert(!html.includes('id="btn-notes-dock-toggle"'), "btn-notes-dock-toggle should be removed from index.html");
 console.log("✓ index.html has clean header without dock toggle button");
 
-// 2. Verify css/styles.css positions teleprompter on the right sidebar
+// 2. Verify css/styles.css positions teleprompter on the right floating island
 assert(css.includes('.notes-modal.teleprompter-sidebar {'), "css must define .notes-modal.teleprompter-sidebar");
-assert(css.includes('right: 0 !important;'), "teleprompter sidebar must be docked to right: 0");
-assert(css.includes('width: clamp(360px, 32vw, 500px) !important;'), "teleprompter sidebar must have standard responsive width");
-console.log("✓ css/styles.css restores notes modal to right sidebar");
+assert(css.includes('right: clamp(1.2rem, 2vw, 2.5rem) !important;'), "teleprompter sidebar must have generous right margin");
+assert(css.includes('border-radius: 18px !important;'), "teleprompter must be fully rounded as an island card");
+assert(css.includes('padding: clamp(1.2rem, 2.2vh, 1.6rem)'), "notes body must have generous padding");
+console.log("✓ css/styles.css positions notes modal with generous margins and rounded corners");
 
 // 3. Verify css/styles.css handles body.teleprompter-open adaptation
 assert(css.includes('body.teleprompter-open .slide-card:not(.focus-text):not(.focus-object)'), "css must adapt normal card when notes are open");
@@ -28,7 +29,7 @@ console.log("✓ css/styles.css handles slide card adaptation when teleprompter 
 
 // 4. Verify js/scene3d.js updateCameraViewOffset accounts for notesOpen in focusMode === 'object'
 assert(scene3d.includes('if (this.focusMode === "object") {'), "scene3d must check focusMode === 'object'");
-assert(scene3d.includes('const offsetX = notesW * 0.5;'), "scene3d must offset camera by half notes width to center in left space");
+assert(scene3d.includes('const offsetX = occupiedRight * 0.5;'), "scene3d must offset camera by half occupied width to center in left space");
 assert(scene3d.includes('this.camera.setViewOffset(w, h, offsetX, 0, w, h);'), "scene3d must apply view offset");
 console.log("✓ scene3d.js centers 3D object in remaining left space when notes are open");
 
