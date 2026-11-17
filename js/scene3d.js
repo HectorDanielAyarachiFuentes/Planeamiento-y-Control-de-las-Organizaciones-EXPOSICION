@@ -214,14 +214,8 @@ class Presentation3D {
       this.camera.clearViewOffset();
       return;
     }
-    // Si el teleprómpter está abierto en modo split armónico:
-    // Centramos la escultura 3D en el viewport central entre la filmina y las notas
-    if (this.notesOpen) {
-      this.camera.clearViewOffset();
-      return;
-    }
-    // Con la tarjeta de filmina ocupando ~52vw (el rey de la pantalla),
-    // desplazamos suavemente la vista para que el objeto 3D quede perfectamente centrado en el sector derecho
+    // Con la tarjeta de filmina ocupando el sector izquierdo (~50vw),
+    // desplazamos suavemente la vista para que el objeto 3D quede perfectamente centrado y completo en el sector derecho
     if (w > 1200) {
       const offsetX = -w * 0.22;
       this.camera.setViewOffset(w, h, offsetX, 0, w, h);
