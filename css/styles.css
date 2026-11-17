@@ -1118,35 +1118,195 @@ body {
 
 .drawer-tabs {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 0.5rem;
-  margin-bottom: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(136px, 1fr));
+  gap: 0.55rem;
+  margin-bottom: 1.4rem;
 }
 
 .drawer-tab {
-  padding: 0.55rem 0.3rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 0.55rem 0.7rem;
   text-align: center;
-  background: #f1f5f9;
-  border: 1px solid var(--card-border-subtle);
-  color: var(--text-muted);
-  border-radius: 4px;
+  border-radius: 8px;
   font-family: var(--font-serif);
   font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
+  font-weight: 700;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   cursor: pointer;
-  transition: var(--transition-smooth);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  white-space: normal;
+  line-height: 1.25;
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.22s ease, background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  user-select: none;
 }
 
-.drawer-tab.active {
-  background: var(--gold-dim);
-  color: var(--gold-main);
+.drawer-tab .tab-svg-icon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.drawer-tab:hover {
+  transform: translateY(-2px);
+}
+
+.drawer-tab:hover .tab-svg-icon {
+  transform: scale(1.15);
+}
+
+.drawer-tab:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* ─── PALETAS SITUADAS POR PESTAÑA (RESPALDO TEÓRICO-METODOLÓGICO) ────────── */
+/* 1. Autores Clave (Azul Académico) */
+.drawer-tab[data-tab="autores"] {
+  background: #eff6ff;
+  border: 1.5px solid #bfdbfe;
+  color: #1d4ed8;
+}
+.drawer-tab[data-tab="autores"]:hover {
+  background: #dbeafe;
+  border-color: #93c5fd;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.16);
+}
+.drawer-tab[data-tab="autores"].active {
+  background: linear-gradient(135deg, #1d4ed8, #2563eb);
+  color: #ffffff;
+  border-color: #1e40af;
+  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.35);
+}
+
+/* 2. Normativa & Estatuto (Púrpura Jurídico) */
+.drawer-tab[data-tab="normativa"] {
+  background: #f5f3ff;
+  border: 1.5px solid #ddd6fe;
+  color: #6d28d9;
+}
+.drawer-tab[data-tab="normativa"]:hover {
+  background: #ede9fe;
+  border-color: #c4b5fd;
+  box-shadow: 0 4px 12px rgba(109, 40, 217, 0.16);
+}
+.drawer-tab[data-tab="normativa"].active {
+  background: linear-gradient(135deg, #6d28d9, #7c3aed);
+  color: #ffffff;
+  border-color: #5b21b6;
+  box-shadow: 0 4px 16px rgba(109, 40, 217, 0.35);
+}
+
+/* 3. Red Territorial (Cyan Patagónico) */
+.drawer-tab[data-tab="territorio"] {
+  background: #f0f9ff;
+  border: 1.5px solid #bae6fd;
+  color: #0369a1;
+}
+.drawer-tab[data-tab="territorio"]:hover {
+  background: #e0f2fe;
+  border-color: #7dd3fc;
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.16);
+}
+.drawer-tab[data-tab="territorio"].active {
+  background: linear-gradient(135deg, #0369a1, #0284c7);
+  color: #ffffff;
+  border-color: #075985;
+  box-shadow: 0 4px 16px rgba(2, 132, 199, 0.35);
+}
+
+/* 4. FAQ Jurado (Ámbar / Tribunal) */
+.drawer-tab[data-tab="faq"] {
+  background: #fffbeb;
+  border: 1.5px solid #fde68a;
+  color: #b45309;
+}
+.drawer-tab[data-tab="faq"]:hover {
+  background: #fef3c7;
+  border-color: #fcd34d;
+  box-shadow: 0 4px 12px rgba(217, 119, 6, 0.16);
+}
+.drawer-tab[data-tab="faq"].active {
+  background: linear-gradient(135deg, #b45309, #d97706);
+  color: #ffffff;
+  border-color: #92400e;
+  box-shadow: 0 4px 16px rgba(217, 119, 6, 0.35);
+}
+
+/* 5. Diagramas SVG (Rosa Tecnológico) */
+.drawer-tab[data-tab="svgs"] {
+  background: #fdf2f8;
+  border: 1.5px solid #fbcfe8;
+  color: #be185d;
+}
+.drawer-tab[data-tab="svgs"]:hover {
+  background: #fce7f3;
+  border-color: #f9a8d4;
+  box-shadow: 0 4px 12px rgba(219, 39, 119, 0.16);
+}
+.drawer-tab[data-tab="svgs"].active {
+  background: linear-gradient(135deg, #be185d, #db2777);
+  color: #ffffff;
+  border-color: #9d174d;
+  box-shadow: 0 4px 16px rgba(219, 39, 119, 0.35);
+}
+
+/* 6. Consignas PEDCO (Pizarra / Indigo Suave) */
+.drawer-tab[data-tab="consignas"] {
+  background: #f8fafc;
+  border: 1.5px solid #cbd5e1;
+  color: #334155;
+}
+.drawer-tab[data-tab="consignas"]:hover {
+  background: #f1f5f9;
+  border-color: #94a3b8;
+  box-shadow: 0 4px 12px rgba(71, 85, 105, 0.16);
+}
+.drawer-tab[data-tab="consignas"].active {
+  background: linear-gradient(135deg, #334155, #475569);
+  color: #ffffff;
+  border-color: #1e293b;
+  box-shadow: 0 4px 16px rgba(71, 85, 105, 0.35);
+}
+
+/* 7. Trabajo Final (VERDE ESMERALDA PROTAGONISTA) */
+.drawer-tab[data-tab="avance4"] {
+  background: #ecfdf5;
+  border: 1.6px solid #6ee7b7;
+  color: #047857;
   font-weight: 700;
-  border-color: var(--gold-main);
+  box-shadow: 0 2px 8px rgba(5, 150, 105, 0.1);
+}
+.drawer-tab[data-tab="avance4"]:hover {
+  background: #d1fae5;
+  border-color: #34d399;
+  box-shadow: 0 4px 16px rgba(5, 150, 105, 0.22);
+}
+.drawer-tab[data-tab="avance4"].active {
+  background: linear-gradient(135deg, #047857, #059669);
+  color: #ffffff;
+  border-color: #065f46;
+  box-shadow: 0 4px 18px rgba(5, 150, 105, 0.42);
+}
+
+/* 8. Material Cátedra (Borgoña / Rubí) */
+.drawer-tab[data-tab="catedra"] {
+  background: #fff1f2;
+  border: 1.5px solid #fecdd3;
+  color: #be123c;
+}
+.drawer-tab[data-tab="catedra"]:hover {
+  background: #ffe4e6;
+  border-color: #fda4af;
+  box-shadow: 0 4px 12px rgba(190, 18, 60, 0.16);
+}
+.drawer-tab[data-tab="catedra"].active {
+  background: linear-gradient(135deg, #9f1239, #be123c);
+  color: #ffffff;
+  border-color: #881337;
+  box-shadow: 0 4px 16px rgba(190, 18, 60, 0.35);
 }
 
 .drawer-content-box {
