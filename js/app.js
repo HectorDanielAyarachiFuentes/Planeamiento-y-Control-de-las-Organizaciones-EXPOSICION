@@ -81,7 +81,8 @@ class PresentationApp {
     // Configurar Eventos e Inicializar
     this.bindEvents();
     this.renderStationsIndicator();
-    this.renderSlide(0);
+    const initialSlide = this.getSavedSlideIndex();
+    this.renderSlide(initialSlide);
     this.populateDrawerContent();
     this.renderSlidesIndex();
   }
@@ -561,11 +562,25 @@ class PresentationApp {
         this.toggleTimer();
       } else if (e.key.toLowerCase() === "f") {
         this.toggleFullscreen();
+      } else if (e.key === "Home") {
+        e.preventDefault();
+        this.goToSlide(0);
+      } else if (e.key === "End") {
+        e.preventDefault();
+        this.goToSlide(this.totalSlides - 1);
       } else if (e.key === "Escape") {
         this.stopTTS();
         this.closeSvgModal();
         this.toggleNotes(false);
         this.toggleDrawer(false);
+      }
+    });
+
+    // Sincronizar navegación con historial y hash del navegador (Atrás / Adelante)
+    window.addEventListener("hashchange", () => {
+      const targetIndex = this.getSavedSlideIndex();
+      if (targetIndex !== this.currentSlideIndex) {
+        this.goToSlide(targetIndex);
       }
     });
   }
@@ -1206,6 +1221,7 @@ class PresentationApp {
     if (!slide) return;
 
     this.currentSlideIndex = index;
+    this.saveSlideState(index);
 
     // Actualizar visibilidad de HUD de red territorial (visible en mapa de territorio y red híbrida anim_06 / anim_07)
     const nodePill = document.getElementById("node-radar-pill");
@@ -1430,6 +1446,55 @@ class PresentationApp {
     const direction = index >= this.currentSlideIndex ? 1 : -1;
     this.currentSlideIndex = index;
     this.renderSlide(index, direction);
+  }
+
+  saveSlideState(index) {
+    try {
+      if (typeof window !== "undefined") {
+        if (window.localStorage) {
+          localStorage.setItem("pco_curzas_slide_index", String(index));
+        }
+        if (window.history && window.history.replaceState) {
+          const slideNum = index + 1;
+          const newHash = `#filmina-${slideNum}`;
+          if (window.location.hash !== newHash) {
+            window.history.replaceState(null, "", newHash);
+          }
+        }
+      }
+    } catch (e) {
+      // Ignorar restricciones en entornos aislados
+    }
+  }
+
+  getSavedSlideIndex() {
+    try {
+      if (typeof window !== "undefined") {
+        // 1. Prioridad: Hash en la URL (ej: #filmina-20, #slide-20, #20)
+        if (window.location && window.location.hash) {
+          const match = window.location.hash.match(/#(?:filmina-|slide-)?(\d+)/i);
+          if (match) {
+            const parsed = parseInt(match[1], 10) - 1;
+            if (!isNaN(parsed) && parsed >= 0 && parsed < this.totalSlides) {
+              return parsed;
+            }
+          }
+        }
+        // 2. Prioridad: localStorage
+        if (window.localStorage) {
+          const saved = localStorage.getItem("pco_curzas_slide_index");
+          if (saved !== null) {
+            const parsed = parseInt(saved, 10);
+            if (!isNaN(parsed) && parsed >= 0 && parsed < this.totalSlides) {
+              return parsed;
+            }
+          }
+        }
+      }
+    } catch (e) {
+      // Ignorar errores
+    }
+    return 0; // Por defecto Filmina 1
   }
 
 

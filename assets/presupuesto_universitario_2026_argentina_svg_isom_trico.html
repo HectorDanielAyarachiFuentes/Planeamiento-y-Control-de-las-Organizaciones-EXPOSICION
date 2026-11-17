@@ -3,7 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Presupuesto Universitario Nacional 2026 | República Argentina</title>
+  <title>Presupuesto Universitario Nacional 2026 | República Argentina & CURZAS (UNCo)</title>
+
+  <!-- Metadatos y Open Graph -->
+  <meta name="description" content="Dashboard Isométrico 3D Interactivo: Análisis Comparativo del Presupuesto Universitario Nacional 2026, las 61 Universidades y la Asignación Situada del CURZAS (UNCo).">
+  <meta name="author" content="Héctor Daniel Ayarachi Fuentes">
+  <meta name="theme-color" content="#050c17">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Presupuesto Universitario Nacional 2026 | Dashboard Isométrico 3D">
+  <meta property="og:description" content="Comparativa Macrofiscal Escalonada e Inciso 1 (Personal 90,2%) en el CURZAS — Sede Viedma, Río Negro.">
+  <meta property="og:image" content="CURZAS.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="CURZAS.png">
+  <link rel="icon" type="image/png" href="CURZAS.png">
+  <link rel="apple-touch-icon" href="CURZAS.png">
   <style>
     :root {
       --bg-noche: #050c17;
@@ -397,12 +410,52 @@
       margin-top: 2px;
     }
 
+    /* Sistema de Grillas y Subpaneles con Espaciado Generoso */
+    .grid-12 {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 24px;
+      align-items: start;
+      margin-bottom: 24px;
+    }
+
+    .col-6 {
+      grid-column: span 6;
+      width: 100%;
+    }
+
+    .col-12 {
+      grid-column: span 12;
+      width: 100%;
+    }
+
+    @media (max-width: 960px) {
+      .grid-12 {
+        grid-template-columns: 1fr;
+        gap: 22px;
+      }
+      .col-6, .col-12 {
+        grid-column: span 1;
+      }
+    }
+
+    .sub-panel {
+      background: var(--bg-card);
+      border: 1px solid var(--borde);
+      border-radius: 18px;
+      padding: 22px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.4);
+    }
+
     /* SVG Stage */
     .svg-stage {
       background: linear-gradient(180deg, #061020 0%, #0b1d36 100%);
       border: 1px solid rgba(56, 189, 248, 0.25);
-      border-radius: 14px;
-      padding: 10px;
+      border-radius: 16px;
+      padding: 18px;
       position: relative;
       overflow: hidden;
       display: flex;
@@ -827,28 +880,39 @@
     .reality-notes {
       display: flex;
       flex-direction: column;
-      gap: 11px;
+      gap: 16px;
     }
 
     .r-note {
-      background: rgba(10, 15, 28, 0.85);
+      background: rgba(10, 15, 28, 0.88);
       border-left: 4px solid var(--alerta);
-      border-top: 1px solid rgba(239, 68, 68, 0.25);
-      border-right: 1px solid rgba(239, 68, 68, 0.25);
-      border-bottom: 1px solid rgba(239, 68, 68, 0.25);
-      border-radius: 10px;
-      padding: 12px 14px;
+      border-top: 1px solid rgba(239, 68, 68, 0.3);
+      border-right: 1px solid rgba(239, 68, 68, 0.3);
+      border-bottom: 1px solid rgba(239, 68, 68, 0.3);
+      border-radius: 14px;
+      padding: 18px 20px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .r-note:hover {
+      transform: translateY(-2px);
+      border-color: rgba(239, 68, 68, 0.6);
+      box-shadow: 0 10px 24px rgba(239, 68, 68, 0.2);
     }
 
     .r-note strong {
       display: block;
-      font-size: 0.82rem;
+      font-size: 0.9rem;
+      font-weight: 800;
       color: #fecaca;
-      margin-bottom: 4px;
+      margin-bottom: 8px;
+      line-height: 1.35;
     }
 
     .r-note p {
-      font-size: 0.78rem;
+      font-size: 0.82rem;
+      line-height: 1.58;
       color: #cbd5e1;
     }
 
@@ -1348,9 +1412,9 @@
         </div>
       </div>
 
-      <div class="grid-12" style="align-items: center;">
+      <div class="grid-12" style="align-items: stretch; margin-top: 24px; margin-bottom: 24px;">
         <!-- Grafico Isometrico Comparativo: Presupuesto Ejecutado vs Mandato de Ley -->
-        <div class="col-6 svg-stage" style="border-color: rgba(239, 68, 68, 0.35);">
+        <div class="col-6 svg-stage" style="border-color: rgba(239, 68, 68, 0.35); padding: 22px; display: flex; flex-direction: column; justify-content: center;">
           <svg id="reality-iso-svg" viewBox="0 0 620 325" style="max-height: 315px;" aria-label="Gráfico isométrico de brecha presupuestaria e incumplimiento de la Ley 27.795">
             <g opacity="0.25" stroke="#f87171" stroke-width="0.8">
               <line x1="35" y1="268" x2="585" y2="268" />
@@ -2277,19 +2341,19 @@
         document.getElementById('hud-zoom-reset').addEventListener('click', handleZoomReset);
 
         document.getElementById('hud-rot-left').addEventListener('click', () => {
-          camera3D.yaw -= 0.14;
+          camera3D.yaw += 0.12;
           renderIsometricMap();
         });
         document.getElementById('hud-rot-right').addEventListener('click', () => {
-          camera3D.yaw += 0.14;
+          camera3D.yaw -= 0.12;
           renderIsometricMap();
         });
         document.getElementById('hud-tilt-up').addEventListener('click', () => {
-          camera3D.pitch = Math.min(1.02, camera3D.pitch + 0.045);
+          camera3D.pitch = Math.min(0.98, camera3D.pitch + 0.045);
           renderIsometricMap();
         });
         document.getElementById('hud-tilt-down').addEventListener('click', () => {
-          camera3D.pitch = Math.max(0.26, camera3D.pitch - 0.045);
+          camera3D.pitch = Math.max(0.28, camera3D.pitch - 0.045);
           renderIsometricMap();
         });
 
@@ -2328,9 +2392,9 @@
           }
 
           if (dragMode === 'orbit') {
-            // Rotacion orbital 360° (yaw) e inclinacion vertical 3D (pitch) con sensibilidad amortiguada
-            camera3D.yaw = startDragState.yaw + dxClient * 0.0032;
-            camera3D.pitch = Math.max(0.26, Math.min(1.02, startDragState.pitch + dyClient * 0.0012));
+            // Rotacion orbital 360° (yaw) e inclinacion vertical 3D (pitch) con direccion natural y velocidad calibrada
+            camera3D.yaw = startDragState.yaw - dxClient * 0.0014;
+            camera3D.pitch = Math.max(0.28, Math.min(0.98, startDragState.pitch - dyClient * 0.0008));
             renderIsometricMap();
           } else if (dragMode === 'pan') {
             const rect = svgMap.getBoundingClientRect();
@@ -2400,8 +2464,8 @@
             if (Math.hypot(t.clientX - pointerDownPos.x, t.clientY - pointerDownPos.y) > 4) {
               hasDraggedMap = true;
             }
-            camera3D.yaw = startDragState.yaw + dxClient * 0.0032;
-            camera3D.pitch = Math.max(0.26, Math.min(1.02, startDragState.pitch + dyClient * 0.0012));
+            camera3D.yaw = startDragState.yaw - dxClient * 0.0014;
+            camera3D.pitch = Math.max(0.28, Math.min(0.98, startDragState.pitch - dyClient * 0.0008));
             renderIsometricMap();
           } else if (e.touches.length === 2 && lastPinchDist && lastTouchMid) {
             const t1 = e.touches[0];
