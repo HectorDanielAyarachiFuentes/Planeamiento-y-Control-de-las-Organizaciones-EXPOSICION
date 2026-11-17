@@ -1165,7 +1165,7 @@ class PresentationApp {
           </div>
         </div>
       `;
-      const triggerModal2D = () => this.openSvgModal(slide.diagramaSVG, slide.titulo, null, false);
+      const triggerModal2D = () => this.openSvgModal(slide.diagramaSVG, slide.titulo, null, false, slide.maqueta3D);
       const triggerModal3D = () => this.openSvgModal(slide.diagramaSVG, slide.titulo, null, true, slide.maqueta3D);
 
       const frame = svgActionBox.querySelector(".slide-svg-img-frame");
@@ -1782,6 +1782,11 @@ class PresentationApp {
       this.svgModalTitle.textContent = title ? `📐 ${title}` : "📐 Diagrama Conceptual";
     }
 
+    // Asegurar siempre la asignación del source de la lámina 2D para que esté disponible de inmediato
+    if (this.svgModalImg && url) {
+      this.svgModalImg.src = url;
+    }
+
     if (maqueta && startIn3D) {
       this.isAnatomyModeActive = true;
       this.svgModal.classList.add("mode-3d-active");
@@ -1794,7 +1799,7 @@ class PresentationApp {
       }
       if (this.btnSvgToggleView) {
         this.btnSvgToggleView.style.display = "inline-flex";
-        this.btnSvgToggleView.textContent = "🗺️ Ver Lámina 2D";
+        this.btnSvgToggleView.textContent = (currentSlide && currentSlide.labelBoton2D) ? currentSlide.labelBoton2D : "🗺️ Ver Lámina 2D";
       }
       if (this.btnSvgNewTab) {
         this.btnSvgNewTab.href = maqueta;
@@ -1860,6 +1865,10 @@ class PresentationApp {
     const maqueta = this.currentModalMaqueta || (currentSlide && currentSlide.maqueta3D ? currentSlide.maqueta3D : null);
 
     if (isShowingIframe) {
+      const target2DUrl = this.currentModalUrl || (currentSlide && currentSlide.diagramaSVG ? currentSlide.diagramaSVG : "");
+      if (target2DUrl && this.svgModalImg) {
+        this.svgModalImg.src = target2DUrl;
+      }
       this.svgModalIframe.style.display = "none";
       this.svgModalImg.style.display = "block";
       this.svgModal.classList.remove("mode-3d-active");
@@ -1867,7 +1876,7 @@ class PresentationApp {
         this.btnSvgToggleView.textContent = maqueta ? (currentSlide && currentSlide.labelBoton3D ? currentSlide.labelBoton3D : "🌐 Ver Maqueta 3D") : "🔬 Modo 3D";
       }
       if (this.btnSvgNewTab) {
-        this.btnSvgNewTab.href = this.currentModalUrl || "#";
+        this.btnSvgNewTab.href = target2DUrl || "#";
       }
     } else {
       if (maqueta) {

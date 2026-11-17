@@ -45,6 +45,11 @@
       <stop offset="0%" stop-color="#1e3a8a" />
       <stop offset="100%" stop-color="#0f172a" />
     </linearGradient>
+
+    <linearGradient id="btn-banner-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0f3460" />
+      <stop offset="100%" stop-color="#0284c7" />
+    </linearGradient>
   </defs>
 
   <!-- Fondo Principal con Retícula Isométrica Tecnológica -->
@@ -195,7 +200,7 @@
 
     <!-- Botón / Banner Interactivo de Acceso al Dashboard -->
     <g transform="translate(24, 115)">
-      <rect width="848" height="42" rx="8" fill="linear-gradient(90deg, #0f3460, #0284c7)" stroke="#38bdf8" stroke-width="1" />
+      <rect width="848" height="42" rx="8" fill="url(#btn-banner-grad)" stroke="#38bdf8" stroke-width="1" />
       <text x="24" y="26" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="800" fill="#ffffff">
         🌐 DASHBOARD ISOMÉTRICO 3D COMPLETO: Mapa Nacional, Comparador de 61 Universidades y Gráficos Volumétricos
       </text>
