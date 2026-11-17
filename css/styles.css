@@ -3787,43 +3787,49 @@ body {
   transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease !important;
 }
 
-/* Botón flotante para restaurar */
+/* Botón flotante para restaurar a la filmina */
 .btn-floating-card-toggle {
   position: fixed;
-  bottom: 5.5rem;
+  bottom: clamp(4.5rem, 8.5vh, 6rem);
   left: 50%;
   transform: translateX(-50%) translateY(20px);
-  background: rgba(15, 23, 42, 0.9);
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
   color: #ffffff;
-  border: 1px solid var(--gold-main);
-  border-radius: 30px;
-  padding: 0.65rem 1.4rem;
+  border: 1.5px solid var(--gold-main);
+  border-radius: 999px;
+  padding: 0.65rem 1.6rem;
   font-family: var(--font-serif);
-  font-size: 0.82rem;
+  font-size: 0.84rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   cursor: pointer;
-  z-index: 50;
-  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.3);
-  display: flex;
+  z-index: 95 !important;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.35), 0 0 0 1px rgba(212, 175, 55, 0.4);
+  display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  justify-content: center;
+  gap: 0.55rem;
   opacity: 0;
   pointer-events: none;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-floating-card-toggle * {
+  pointer-events: none;
 }
 
 .btn-floating-card-toggle.visible {
   opacity: 1;
-  pointer-events: auto;
+  pointer-events: auto !important;
+  cursor: pointer !important;
   transform: translateX(-50%) translateY(0);
 }
 
 .btn-floating-card-toggle:hover {
   background: var(--gold-main);
   color: #ffffff;
-  box-shadow: 0 12px 30px rgba(180, 131, 36, 0.4);
+  box-shadow: 0 14px 35px rgba(180, 131, 36, 0.45);
   transform: translateX(-50%) translateY(-2px);
 }
 

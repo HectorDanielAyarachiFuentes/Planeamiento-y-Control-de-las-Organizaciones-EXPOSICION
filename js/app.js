@@ -343,7 +343,12 @@ class PresentationApp {
     }
 
     if (this.btnFloatingCardToggle) {
-      this.btnFloatingCardToggle.addEventListener("click", () => this.toggleMobile3dView(false));
+      this.btnFloatingCardToggle.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        this.setViewMode("default");
+        this.toggleMobile3dView(false);
+      });
     }
 
     // Gestos Táctiles (Swipe Izquierda / Derecha) para Celulares y Tablets
@@ -1582,6 +1587,9 @@ class PresentationApp {
       this.btnToggle3dView.classList.toggle("active", newState);
       const text = this.btnToggle3dView.querySelector(".tool-text");
       if (text) text.textContent = newState ? "Ver Texto" : "Ver 3D";
+    }
+    if (!newState && this.currentViewMode === "object") {
+      this.setViewMode("default");
     }
   }
 
