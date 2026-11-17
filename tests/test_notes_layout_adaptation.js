@@ -33,8 +33,8 @@ assert(scene3d.includes('const offsetX = occupiedRight * 0.5;'), "scene3d must o
 assert(scene3d.includes('this.camera.setViewOffset(w, h, offsetX, 0, w, h);'), "scene3d must apply view offset");
 console.log("✓ scene3d.js centers 3D object in remaining left space when notes are open");
 
-// 5. Verify js/scene3d.js baseOffsetX adapts when notes are open
-assert(scene3d.includes('const baseOffsetX = this.notesOpen ? 0.0 : 1.72;'), "baseOffsetX must be 0 when notes are open so object doesn't drift right");
-console.log("✓ scene3d.js centers object between card and notes when notes are open in balanced view");
+// 5. Verify js/scene3d.js baseOffsetX aligns with targetLookAt when notes are open
+assert(scene3d.includes('const baseOffsetX = this.notesOpen ? (this.targetLookAt?.x ?? 1.4) : 1.72;'), "baseOffsetX must align with targetLookAt when notes are open");
+console.log("✓ scene3d.js centers object precisely between card and notes when notes are open in balanced view");
 
 console.log("\n🎉 ALL NOTES LAYOUT ADAPTATION TESTS PASSED!");

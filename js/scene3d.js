@@ -234,9 +234,9 @@ class Presentation3D {
     }
 
     // 2. MODO BALANCEADO O TEXTO CON TELEPRÓMPTER ABIERTO:
-    if (this.notesOpen && occupiedRight > 0) {
+    if (this.notesOpen) {
       // Filmina a la izquierda (~30vw) y notas a la derecha (~33vw).
-      // La escultura 3D se ubica en el centro entre ambas (~50vw).
+      // La escultura 3D se ubica en el centro exacto entre ambas (~50vw).
       this.camera.clearViewOffset();
       return;
     }
@@ -689,9 +689,9 @@ class Presentation3D {
 
     // 4. Aplicar rotación orbital y desplazamiento interactivo a la escultura 3D activa
     // Escala y elevación calibradas: objeto ~18% más compacto y elevado para que el pedestal nunca se corte abajo
-    const globalModelScale = 0.82;
+    const globalModelScale = this.notesOpen ? 0.76 : 0.82;
     const baseElevationY = 0.22;
-    const baseOffsetX = this.notesOpen ? 0.0 : 1.72;
+    const baseOffsetX = this.notesOpen ? (this.targetLookAt?.x ?? 1.4) : 1.72;
 
     const activeGroup = this.scenes[this.currentSceneId];
     if (activeGroup) {
