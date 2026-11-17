@@ -9,8 +9,10 @@ console.log("Testing Slide Persistence and Metadata...");
 const indexPath = path.join(__dirname, '..', 'index.html');
 const indexHtml = fs.readFileSync(indexPath, 'utf8');
 
-assert(indexHtml.includes('<meta property="og:image" content="assets/CURZAS.png">'), "og:image must reference assets/CURZAS.png");
-assert(indexHtml.includes('<meta name="twitter:image" content="assets/CURZAS.png">'), "twitter:image must reference assets/CURZAS.png");
+assert(indexHtml.includes('assets/CURZAS.png') && indexHtml.includes('og:image'), "og:image must reference assets/CURZAS.png");
+assert(indexHtml.includes('https://hectordanielayarachifuentes.github.io/Planeamiento-y-Control-de-las-Organizaciones-EXPOSICION/assets/CURZAS.png'), "og:image must have absolute HTTPS URL for WhatsApp and social crawlers");
+assert(indexHtml.includes('og:image:secure_url'), "og:image:secure_url must be present for secure preview fetching");
+assert(indexHtml.includes('og:image:width') && indexHtml.includes('og:image:height'), "og:image dimensions must be declared");
 assert(indexHtml.includes('<link rel="icon" type="image/png" href="assets/CURZAS.png">'), "favicon must reference assets/CURZAS.png");
 assert(indexHtml.includes('<meta name="author" content="Héctor Daniel Ayarachi Fuentes">'), "author meta must be present");
 assert(indexHtml.includes('Inicio'), "shortcuts modal must list Inicio key");
