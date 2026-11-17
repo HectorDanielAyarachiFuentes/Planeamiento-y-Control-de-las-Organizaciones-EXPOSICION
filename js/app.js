@@ -261,6 +261,20 @@ class PresentationApp {
         this.nextSlide();
       });
     }
+
+    const btnDockToggle = document.getElementById("btn-notes-dock-toggle");
+    if (btnDockToggle) {
+      btnDockToggle.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const isLeft = this.notesModal.classList.toggle("dock-left");
+        const dockText = document.getElementById("notes-dock-text");
+        if (dockText) {
+          dockText.textContent = isLeft ? "⇄ Der" : "⇄ Lado";
+        }
+        this.engine3D?.setNotesState(true, isLeft ? "left" : "right");
+      });
+    }
+
     this.btnCloseNotes.addEventListener("click", () => this.toggleNotes(false));
 
     // Drawer de Respaldo Metodológico
@@ -1479,6 +1493,11 @@ class PresentationApp {
     const newState = forceState !== undefined ? forceState : !isOpen;
     this.notesModal.classList.toggle("open", newState);
     this.btnToggleNotes.classList.toggle("active", newState);
+    document.body.classList.toggle("teleprompter-open", newState);
+
+    const isDockLeft = this.notesModal.classList.contains("dock-left");
+    this.engine3D?.setNotesState(newState, isDockLeft ? "left" : "right");
+
     if (!newState) {
       // Si se cierra el teleprómpter y se estaba leyendo notas, detener la locución
       if (this.ttsReadingNotes || this.ttsIsSpeaking) {

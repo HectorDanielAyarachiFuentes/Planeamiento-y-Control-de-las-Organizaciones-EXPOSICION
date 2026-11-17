@@ -471,7 +471,7 @@ const PRESENTACION_DATA = {
       "metadatosFooter": "Avance 1 • El Estado en la Era Exponencial • Oscar Oszlak (2020)",
       "escena3D": "anim_06",
       "diagramaSVG": "assets/red-territorial-nodos.svg",
-      "maqueta3D": "prueba_rionegro_3d.html",
+      "maqueta3D": "assets/maqueta_rionegro_3d.html",
       "tiempoSugerido": "⏱️ ~35-40 seg",
       "guionOrador": "Para el entregable 3 sobre Gobernanza Inteligente e Inteligencia Artificial según Oscar Oszlak: evaluamos la madurez digital del CURZAS como media. Se usa expediente digital SUDOCU y Mapuche, pero respondiendo a la pregunta docente: no existen normativas ni algoritmos predictivos para seleccionar o monitorear personal. Todos los concursos se resuelven por comisiones humanas paritarias."
     },

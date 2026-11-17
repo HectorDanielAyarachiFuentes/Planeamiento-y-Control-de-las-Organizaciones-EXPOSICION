@@ -58,6 +58,8 @@ class Presentation3D {
 
     // Control dinámico de encuadre y prioridad: 'default' | 'object' | 'text'
     this.focusMode = "default";
+    this.notesOpen = false;
+    this.notesDock = "right";
     this.focusAnim = { focusProgress: 0.0, centerXOffset: 0.0, scaleMultiplier: 1.0 };
 
     // Gestor de energía y reposo inteligente (Smart Battery / GPU Throttle)
@@ -212,6 +214,12 @@ class Presentation3D {
       this.camera.clearViewOffset();
       return;
     }
+    // Si el teleprómpter está abierto en modo split armónico:
+    // Centramos la escultura 3D en el viewport central entre la filmina y las notas
+    if (this.notesOpen) {
+      this.camera.clearViewOffset();
+      return;
+    }
     // Con la tarjeta de filmina ocupando ~52vw (el rey de la pantalla),
     // desplazamos suavemente la vista para que el objeto 3D quede perfectamente centrado en el sector derecho
     if (w > 1200) {
@@ -226,6 +234,17 @@ class Presentation3D {
     } else {
       this.camera.clearViewOffset();
     }
+  }
+
+  /**
+   * Comunica al motor 3D si el teleprómpter / notas está abierto y de qué lado
+   * para reajustar el encuadre óptico y que la escultura 3D no sea tapada.
+   */
+  setNotesState(isOpen, dockSide = "right") {
+    this.notesOpen = !!isOpen;
+    this.notesDock = dockSide;
+    this.updateCameraViewOffset();
+    this.camera.updateProjectionMatrix();
   }
 
   /**

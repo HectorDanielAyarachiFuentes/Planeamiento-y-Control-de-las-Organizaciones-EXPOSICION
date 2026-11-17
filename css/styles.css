@@ -1180,19 +1180,19 @@ body {
   color: #0369a1;
 }
 
-/* ─── TELEPRÓMPTER LATERAL DERECHO (PRESENTER VIEW SIDEBAR / ATRIL DIGITAL) ─── */
+/* ─── TELEPRÓMPTER LATERAL DERECHO / IZQUIERDO (PRESENTER VIEW SIDEBAR / ATRIL DIGITAL) ─── */
 .notes-modal.teleprompter-sidebar {
   position: fixed;
   top: clamp(48px, 6.2vh, 62px);
   bottom: clamp(52px, 7vh, 70px);
   right: 0;
   left: auto !important;
-  width: clamp(380px, 34vw, 540px);
+  width: clamp(340px, 31vw, 480px);
   max-width: calc(100vw - 1rem);
   max-height: none !important;
-  background: rgba(255, 255, 255, 0.96);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
+  background: rgba(255, 255, 255, 0.90) !important;
+  backdrop-filter: blur(24px) !important;
+  -webkit-backdrop-filter: blur(24px) !important;
   border-left: 2.5px solid var(--gold-main);
   border-top: 1px solid var(--card-border-subtle);
   border-bottom: 1px solid var(--card-border-subtle);
@@ -1207,7 +1207,7 @@ body {
   display: flex !important;
   flex-direction: column !important;
   transform: translateX(105%);
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, left 0.3s ease, right 0.3s ease;
   pointer-events: none;
   visibility: hidden;
   overflow: hidden;
@@ -1218,6 +1218,64 @@ body {
   pointer-events: auto;
   visibility: visible;
   animation: none !important;
+}
+
+/* Acoplamiento al lateral izquierdo */
+.notes-modal.teleprompter-sidebar.dock-left {
+  right: auto !important;
+  left: 0 !important;
+  border-left: none !important;
+  border-right: 2.5px solid var(--gold-main) !important;
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+  border-top-right-radius: 12px !important;
+  border-bottom-right-radius: 12px !important;
+  transform: translateX(-105%);
+  box-shadow: 15px 0 45px rgba(15, 23, 42, 0.14), 2px 0 12px rgba(180, 131, 36, 0.08) !important;
+}
+
+.notes-modal.teleprompter-sidebar.dock-left.open {
+  transform: translateX(0) !important;
+}
+
+/* ─── MODO SPLIT ARMÓNICO: CONVIVENCIA PERFECTA FILMINA + ESCULTURA 3D CENTRADA + TELEPRÓMPTER ─── */
+@media (min-width: 900px) {
+  body.teleprompter-open .slide-card {
+    max-width: min(540px, 32vw) !important;
+    padding: clamp(0.9rem, 1.8vh, 1.5rem) clamp(1.1rem, 1.8vw, 1.6rem) !important;
+    transition: max-width 0.38s cubic-bezier(0.16, 1, 0.3, 1), padding 0.3s ease, transform 0.38s ease !important;
+  }
+
+  body.teleprompter-open .slide-card .slide-title {
+    font-size: clamp(1.25rem, 1.7vh + 0.25vw, 1.7rem) !important;
+    margin-bottom: 0.3rem !important;
+    line-height: 1.2 !important;
+  }
+
+  body.teleprompter-open .slide-card .slide-subtitle {
+    font-size: clamp(0.76rem, 1vh, 0.86rem) !important;
+    margin-bottom: 0.45rem !important;
+    line-height: 1.4 !important;
+  }
+
+  body.teleprompter-open .slide-card .slide-bullets {
+    gap: 0.35rem !important;
+  }
+
+  body.teleprompter-open .slide-card .slide-bullets li {
+    font-size: clamp(0.72rem, 0.95vh, 0.82rem) !important;
+    line-height: 1.38 !important;
+    margin-bottom: 0.25rem !important;
+  }
+
+  body.teleprompter-open .slide-card .bullet-concept {
+    font-size: clamp(0.72rem, 0.95vh, 0.82rem) !important;
+  }
+
+  /* Si las notas van a la izquierda, la filmina pasa suavemente a la derecha */
+  body.teleprompter-open.teleprompter-dock-left .main-stage {
+    justify-content: flex-end !important;
+  }
 }
 
 .notes-modal .notes-header {
@@ -4815,6 +4873,17 @@ body.tts-mode-active .card-situada:hover {
   color: #ffffff;
   transform: translateY(-1px);
   box-shadow: 0 4px 10px rgba(212, 175, 55, 0.25);
+}
+
+.btn-notes-dock {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  padding: 0.35rem 0.65rem;
+}
+
+.btn-notes-dock:hover {
+  background: rgba(212, 175, 55, 0.3);
+  border-color: var(--gold-main);
 }
 
 .btn-notes-action:hover svg {
