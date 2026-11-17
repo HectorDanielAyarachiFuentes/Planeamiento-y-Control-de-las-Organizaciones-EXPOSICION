@@ -109,6 +109,7 @@ class PresentationApp {
 
     this.btnPrev = document.getElementById("btn-prev");
     this.btnNext = document.getElementById("btn-next");
+    this.brandHomeLink = document.getElementById("brand-home-link");
     this.stationsContainer = document.getElementById("stations-indicator");
 
     this.notesModal = document.getElementById("notes-modal");
@@ -228,6 +229,21 @@ class PresentationApp {
     // Botones de Navegación
     this.btnPrev.addEventListener("click", () => this.prevSlide());
     this.btnNext.addEventListener("click", () => this.nextSlide());
+
+    // Clic en Logotipo/Emblema Institucional UNCo - CURZAS (Ir a Filmina 1)
+    if (this.brandHomeLink) {
+      this.brandHomeLink.addEventListener("click", (e) => {
+        e.preventDefault();
+        if (this.currentViewMode === "object") {
+          this.setViewMode("default");
+        }
+        this.closeSvgModal();
+        this.toggleNotes(false);
+        this.toggleDrawer(false);
+        this.toggleSlidesIndex(false);
+        this.goToSlide(0);
+      });
+    }
 
     // Cronómetro
     this.btnTimerToggle.addEventListener("click", () => this.toggleTimer());
