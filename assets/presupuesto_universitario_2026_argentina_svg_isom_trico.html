@@ -1,0 +1,2456 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Presupuesto Universitario Nacional 2026 | República Argentina</title>
+  <style>
+    :root {
+      --bg-noche: #050c17;
+      --bg-profundo: #0b182b;
+      --bg-panel: #10233d;
+      --bg-card: #0c1b30;
+      --borde: #1e3a5f;
+      --celeste: #38bdf8;
+      --azul: #0284c7;
+      --oro: #fbbf24;
+      --sol: #f59e0b;
+      --esmeralda: #10b981;
+      --alerta: #ef4444;
+      --alerta-suave: #fca5a5;
+      --texto: #f1f5f9;
+      --texto-sec: #94a3b8;
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--bg-noche);
+      color: var(--texto);
+      line-height: 1.48;
+      overflow-x: hidden;
+      background-image:
+        radial-gradient(circle at 18% 12%, rgba(56, 189, 248, 0.12) 0%, transparent 45%),
+        radial-gradient(circle at 82% 65%, rgba(251, 191, 36, 0.08) 0%, transparent 45%),
+        linear-gradient(to right, rgba(30, 58, 95, 0.22) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(30, 58, 95, 0.22) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 42px 42px, 42px 42px;
+    }
+
+    .container {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0 18px;
+    }
+
+    /* Barra superior de navegacion de filminas */
+    header {
+      background: rgba(5, 12, 23, 0.94);
+      border-bottom: 1px solid var(--borde);
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(8px);
+    }
+
+    .header-inner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .flag-badge {
+      width: 38px;
+      height: 26px;
+      border-radius: 6px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
+    }
+
+    .flag-stripe {
+      flex: 1;
+      background: #38bdf8;
+    }
+
+    .flag-stripe.white {
+      background: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .flag-sun {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #f59e0b;
+    }
+
+    .title-group h1 {
+      font-size: 1.02rem;
+      font-weight: 800;
+      color: #ffffff;
+    }
+
+    .title-group p {
+      font-size: 0.74rem;
+      color: var(--texto-sec);
+    }
+
+    .slide-nav {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-pill {
+      font-size: 0.74rem;
+      font-weight: 700;
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--borde);
+      background: var(--bg-panel);
+      color: #cbd5e1;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .nav-pill:hover {
+      border-color: var(--celeste);
+      color: #ffffff;
+      background: #163256;
+    }
+
+    .nav-pill.alert-pill {
+      border-color: rgba(239, 68, 68, 0.45);
+      color: var(--alerta-suave);
+    }
+
+    .nav-pill.alert-pill:hover {
+      background: rgba(239, 68, 68, 0.18);
+      border-color: var(--alerta);
+    }
+
+    /* Estructura de Filminas */
+    main {
+      padding: 26px 0 48px;
+      display: flex;
+      flex-direction: column;
+      gap: 34px;
+    }
+
+    .slide-section {
+      background: rgba(16, 35, 61, 0.93);
+      border: 1px solid var(--borde);
+      border-radius: 22px;
+      padding: 26px;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.48);
+      scroll-margin-top: 76px;
+    }
+
+    .slide-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 5px 12px;
+      border-radius: 999px;
+      background: rgba(56, 189, 248, 0.14);
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      color: var(--celeste);
+      margin-bottom: 12px;
+    }
+
+    .slide-badge.gold {
+      background: rgba(251, 191, 36, 0.15);
+      border-color: rgba(251, 191, 36, 0.45);
+      color: var(--oro);
+    }
+
+    .slide-badge.danger {
+      background: rgba(239, 68, 68, 0.16);
+      border-color: rgba(239, 68, 68, 0.48);
+      color: var(--alerta-suave);
+    }
+
+    /* FILMINA 1: HERO MONUMENTAL */
+    .hero-macro-box {
+      background: linear-gradient(135deg, #071326 0%, #0d2342 55%, #08182e 100%);
+      border: 1px solid rgba(56, 189, 248, 0.42);
+      border-radius: 18px;
+      padding: 26px 24px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-super-title {
+      font-size: clamp(1.65rem, 3.8vw, 2.85rem);
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      line-height: 1.12;
+      color: #ffffff;
+      margin-top: 4px;
+    }
+
+    .hero-super-title .highlight-num {
+      color: var(--celeste);
+      font-family: var(--font-mono);
+      display: inline-block;
+    }
+
+    .hero-sub {
+      max-width: 820px;
+      margin: 10px auto 0;
+      font-size: 0.92rem;
+      color: #cbd5e1;
+    }
+
+    .flow-connector {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 16px 0;
+      color: var(--oro);
+    }
+
+    .flow-line {
+      width: 2px;
+      height: 22px;
+      background: linear-gradient(180deg, var(--celeste), var(--oro));
+    }
+
+    .flow-label {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 4px 12px;
+      border-radius: 999px;
+      background: rgba(251, 191, 36, 0.14);
+      border: 1px solid rgba(251, 191, 36, 0.4);
+      color: var(--oro);
+      margin: 4px 0;
+    }
+
+    .secondary-hero-header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .secondary-hero-header h2 {
+      font-size: clamp(1.3rem, 2.7vw, 2.05rem);
+      font-weight: 900;
+      color: #ffffff;
+      letter-spacing: -0.01em;
+    }
+
+    .secondary-hero-header p {
+      font-size: 0.86rem;
+      color: var(--texto-sec);
+      max-width: 780px;
+      margin: 6px auto 0;
+    }
+
+    .dual-impact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin-bottom: 22px;
+    }
+
+    @media (max-width: 820px) {
+      .dual-impact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .impact-monument {
+      background: var(--bg-card);
+      border: 1px solid var(--borde);
+      border-radius: 16px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .impact-monument.gold {
+      border-color: rgba(251, 191, 36, 0.55);
+      background: linear-gradient(180deg, rgba(251, 191, 36, 0.08) 0%, rgba(12, 27, 48, 0.96) 100%);
+    }
+
+    .impact-monument.sky {
+      border-color: rgba(56, 189, 248, 0.55);
+      background: linear-gradient(180deg, rgba(56, 189, 248, 0.08) 0%, rgba(12, 27, 48, 0.96) 100%);
+    }
+
+    .impact-tag {
+      font-size: 0.74rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .impact-big-num {
+      font-family: var(--font-mono);
+      font-size: clamp(2rem, 3.6vw, 2.9rem);
+      font-weight: 900;
+      line-height: 1.05;
+    }
+
+    .impact-formula {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      padding: 6px 10px;
+      border-radius: 8px;
+      background: rgba(5, 12, 23, 0.75);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: #e2e8f0;
+    }
+
+    .impact-desc {
+      font-size: 0.82rem;
+      color: #cbd5e1;
+    }
+
+    .verify-box {
+      margin-top: 6px;
+      padding: 10px 12px;
+      border-radius: 10px;
+      background: rgba(5, 12, 23, 0.72);
+      border: 1px dashed rgba(251, 191, 36, 0.42);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .verify-title {
+      font-size: 0.69rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #fde68a;
+    }
+
+    .verify-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .verify-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: #38bdf8;
+      text-decoration: none;
+      padding: 4px 8px;
+      border-radius: 6px;
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      transition: all 0.2s ease;
+    }
+
+    .verify-chip:hover {
+      background: rgba(56, 189, 248, 0.24);
+      border-color: #7dd3fc;
+      color: #ffffff;
+    }
+
+    .section-header h3 {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #ffffff;
+    }
+
+    .section-header p {
+      font-size: 0.82rem;
+      color: var(--texto-sec);
+      margin-top: 2px;
+    }
+
+    /* SVG Stage */
+    .svg-stage {
+      background: linear-gradient(180deg, #061020 0%, #0b1d36 100%);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      border-radius: 14px;
+      padding: 10px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    svg {
+      display: block;
+      width: 100%;
+      height: auto;
+      user-select: none;
+    }
+
+    .iso-prov {
+      cursor: pointer;
+      transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), filter 0.2s ease;
+    }
+
+    .iso-prov:hover {
+      transform: translateY(-9px);
+      filter: drop-shadow(0 12px 16px rgba(56, 189, 248, 0.45));
+    }
+
+    .iso-prov.active {
+      transform: translateY(-14px);
+      filter: drop-shadow(0 16px 22px rgba(251, 191, 36, 0.55));
+    }
+
+    .iso-pillar {
+      cursor: pointer;
+      transition: transform 0.25s ease;
+    }
+
+    .iso-pillar:hover {
+      transform: translateY(-6px);
+    }
+
+    .iso-slice {
+      cursor: pointer;
+      transition: filter 0.2s ease;
+    }
+
+    .iso-slice:hover {
+      filter: brightness(1.16);
+    }
+
+    /* Tabs y Controles */
+    .tab-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      background: var(--bg-noche);
+      padding: 5px;
+      border-radius: 12px;
+      border: 1px solid var(--borde);
+      margin-bottom: 12px;
+    }
+
+    .tab-btn {
+      font-size: 0.74rem;
+      font-weight: 700;
+      padding: 7px 11px;
+      border-radius: 8px;
+      border: none;
+      background: transparent;
+      color: var(--texto-sec);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .tab-btn:hover {
+      color: #ffffff;
+    }
+
+    .tab-btn.active {
+      background: var(--celeste);
+      color: #050c17;
+    }
+
+    .pie-active-box {
+      background: var(--bg-noche);
+      border: 1px solid rgba(56, 189, 248, 0.45);
+      border-radius: 12px;
+      padding: 12px 14px;
+      margin-top: 12px;
+    }
+
+    .pie-legend-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      max-height: 210px;
+      overflow-y: auto;
+      margin-top: 10px;
+      padding-right: 4px;
+    }
+
+    .legend-item {
+      background: var(--bg-noche);
+      border: 1px solid rgba(30, 58, 95, 0.75);
+      border-radius: 9px;
+      padding: 7px 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      transition: all 0.18s ease;
+    }
+
+    .legend-item:hover, .legend-item.active {
+      border-color: var(--celeste);
+      background: #0e2442;
+    }
+
+    .color-dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 3px;
+      flex-shrink: 0;
+    }
+
+    /* Map Controls */
+    .map-toolbar {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .zoom-btn {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      border: 1px solid var(--borde);
+      background: var(--bg-noche);
+      color: var(--celeste);
+      font-weight: 800;
+      font-size: 0.88rem;
+      cursor: pointer;
+    }
+
+    .zoom-btn:hover {
+      background: #132c4e;
+      border-color: var(--celeste);
+    }
+
+    .map-viewport-box {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      border-radius: 10px;
+      touch-action: none;
+    }
+
+    .map-hud-bar {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      right: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      pointer-events: none;
+      z-index: 5;
+    }
+
+    .map-hud-hint {
+      pointer-events: auto;
+      background: rgba(5, 12, 23, 0.84);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      backdrop-filter: blur(6px);
+      border-radius: 8px;
+      padding: 5px 10px;
+      font-size: 0.69rem;
+      font-weight: 700;
+      color: #cbd5e1;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .map-hud-controls {
+      pointer-events: auto;
+      background: rgba(5, 12, 23, 0.88);
+      border: 1px solid rgba(56, 189, 248, 0.42);
+      backdrop-filter: blur(6px);
+      border-radius: 9px;
+      padding: 4px 6px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+    }
+
+    .hud-btn {
+      min-width: 26px;
+      height: 26px;
+      padding: 0 7px;
+      border-radius: 6px;
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      background: #0d213d;
+      color: #38bdf8;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      font-weight: 800;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .hud-btn:hover {
+      background: #173763;
+      color: #ffffff;
+      border-color: #7dd3fc;
+    }
+
+    .zoom-badge {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: var(--oro);
+      padding: 0 6px;
+      min-width: 46px;
+      text-align: center;
+    }
+
+    .smooth-cam {
+      transition: transform 0.36s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .orbit-pad {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      border-left: 1px solid rgba(56, 189, 248, 0.25);
+      padding-left: 6px;
+      margin-left: 2px;
+    }
+
+    .chip-btn {
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 5px 9px;
+      border-radius: 8px;
+      border: 1px solid var(--borde);
+      background: var(--bg-noche);
+      color: #cbd5e1;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .chip-btn:hover {
+      border-color: var(--celeste);
+      color: #ffffff;
+    }
+
+    .chip-btn.active {
+      background: var(--celeste);
+      border-color: var(--celeste);
+      color: #050c17;
+    }
+
+    .chip-btn.patagonia {
+      border-color: rgba(251, 191, 36, 0.45);
+      color: var(--oro);
+    }
+
+    .chip-btn.patagonia.active {
+      background: var(--oro);
+      color: #050c17;
+    }
+
+    .map-selected-strip {
+      margin-top: 12px;
+      background: var(--bg-noche);
+      border: 1px solid rgba(251, 191, 36, 0.4);
+      border-radius: 12px;
+      padding: 11px 14px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Tabla */
+    .table-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .input-ctrl {
+      background: var(--bg-noche);
+      border: 1px solid var(--borde);
+      border-radius: 10px;
+      padding: 8px 12px;
+      color: #ffffff;
+      font-size: 0.78rem;
+      outline: none;
+      min-width: 220px;
+    }
+
+    .input-ctrl:focus {
+      border-color: var(--celeste);
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--borde);
+      border-radius: 12px;
+      max-height: 360px;
+      overflow-y: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.78rem;
+    }
+
+    thead th {
+      position: sticky;
+      top: 0;
+      background: var(--bg-noche);
+      border-bottom: 1px solid var(--borde);
+      color: var(--texto-sec);
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      z-index: 2;
+    }
+
+    th, td {
+      padding: 9px 12px;
+    }
+
+    tbody tr {
+      border-bottom: 1px solid rgba(30, 58, 95, 0.5);
+      cursor: pointer;
+      transition: background 0.15s ease;
+    }
+
+    tbody tr:hover {
+      background: rgba(56, 189, 248, 0.1);
+    }
+
+    .sigla-pill {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      font-weight: 800;
+      padding: 2px 6px;
+      border-radius: 5px;
+      background: rgba(56, 189, 248, 0.16);
+      color: var(--celeste);
+    }
+
+    .text-right { text-align: right; }
+    .mono { font-family: var(--font-mono); }
+
+    /* FILMINA 3: REALIDAD ECONOMICA Y DESFINANCIAMIENTO */
+    .slide-reality {
+      background: linear-gradient(180deg, rgba(30, 12, 18, 0.94) 0%, rgba(15, 23, 42, 0.96) 100%);
+      border: 1px solid rgba(239, 68, 68, 0.45);
+    }
+
+    .reality-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    @media (max-width: 1024px) {
+      .reality-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 580px) {
+      .reality-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .reality-card {
+      background: rgba(10, 15, 28, 0.88);
+      border: 1px solid rgba(239, 68, 68, 0.35);
+      border-radius: 14px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .reality-card .r-label {
+      font-size: 0.7rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--alerta-suave);
+    }
+
+    .reality-card .r-num {
+      font-family: var(--font-mono);
+      font-size: 1.65rem;
+      font-weight: 900;
+      color: #f87171;
+      line-height: 1.1;
+    }
+
+    .reality-card .r-desc {
+      font-size: 0.77rem;
+      color: #cbd5e1;
+    }
+
+    .reality-notes {
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+    }
+
+    .r-note {
+      background: rgba(10, 15, 28, 0.85);
+      border-left: 4px solid var(--alerta);
+      border-top: 1px solid rgba(239, 68, 68, 0.25);
+      border-right: 1px solid rgba(239, 68, 68, 0.25);
+      border-bottom: 1px solid rgba(239, 68, 68, 0.25);
+      border-radius: 10px;
+      padding: 12px 14px;
+    }
+
+    .r-note strong {
+      display: block;
+      font-size: 0.82rem;
+      color: #fecaca;
+      margin-bottom: 4px;
+    }
+
+    .r-note p {
+      font-size: 0.78rem;
+      color: #cbd5e1;
+    }
+
+    /* Tooltip flotante */
+    #iso-tooltip {
+      position: fixed;
+      pointer-events: none;
+      z-index: 9999;
+      background: rgba(5, 12, 23, 0.96);
+      border: 1px solid var(--celeste);
+      border-radius: 10px;
+      padding: 10px 12px;
+      max-width: 280px;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.65);
+      display: none;
+    }
+
+    #iso-tooltip .tt-title { font-size: 0.8rem; font-weight: 800; color: #ffffff; }
+    #iso-tooltip .tt-sub { font-size: 0.7rem; color: var(--texto-sec); margin-top: 2px; }
+    #iso-tooltip .tt-val { font-family: var(--font-mono); font-size: 0.82rem; font-weight: 800; color: var(--oro); margin-top: 5px; }
+    #iso-tooltip .tt-desc { font-size: 0.69rem; color: #cbd5e1; margin-top: 4px; }
+
+    /* Footer con fuentes */
+    footer {
+      border-top: 1px solid var(--borde);
+      background: rgba(5, 12, 23, 0.97);
+      padding: 28px 0 36px;
+      font-size: 0.76rem;
+      color: var(--texto-sec);
+    }
+
+    .sources-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-top: 12px;
+    }
+
+    @media (max-width: 1024px) {
+      .sources-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 600px) {
+      .sources-grid { grid-template-columns: 1fr; }
+    }
+
+    .source-card {
+      background: var(--bg-card);
+      border: 1px solid var(--borde);
+      border-radius: 12px;
+      padding: 12px 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .source-card strong {
+      color: #f1f5f9;
+      font-size: 0.78rem;
+      display: block;
+    }
+
+    .source-card p {
+      font-size: 0.72rem;
+      color: #94a3b8;
+      margin-top: 3px;
+    }
+
+    .source-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 4px;
+    }
+
+    .source-link {
+      display: inline-flex;
+      align-items: center;
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: var(--celeste);
+      text-decoration: none;
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      padding: 4px 8px;
+      border-radius: 7px;
+      transition: all 0.2s ease;
+    }
+
+    .source-link:hover {
+      background: rgba(56, 189, 248, 0.22);
+      color: #ffffff;
+      border-color: var(--celeste);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Tooltip flotante interactivo -->
+  <div id="iso-tooltip">
+    <div class="tt-title" id="tt-title"></div>
+    <div class="tt-sub" id="tt-sub"></div>
+    <div class="tt-val" id="tt-val"></div>
+    <div class="tt-desc" id="tt-desc"></div>
+  </div>
+
+  <!-- Encabezado con navegacion por filminas -->
+  <header>
+    <div class="container header-inner">
+      <div class="brand">
+        <div class="flag-badge" aria-hidden="true">
+          <div class="flag-stripe"></div>
+          <div class="flag-stripe white"><div class="flag-sun"></div></div>
+          <div class="flag-stripe"></div>
+        </div>
+        <div class="title-group">
+          <h1>Presupuesto Universitario Nacional 2026 · Argentina</h1>
+          <p>Informe Visual Interactivo en SVG Isométrico · Actualizado a Noviembre 2026</p>
+        </div>
+      </div>
+
+      <nav class="slide-nav" aria-label="Navegación de filminas">
+        <a href="#filmina-1" class="nav-pill">1. Presupuesto Total y % PBI</a>
+        <a href="#filmina-2" class="nav-pill">2. Organización, Torta y Mapa</a>
+        <a href="#filmina-3" class="nav-pill alert-pill">3. Realidad Económica y Ley</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- =======================================================================
+         FILMINA 1: GRAN TITULO PRESUPUESTO TOTAL 2026 + % DEL PBI Y PRESUPUESTO
+         ======================================================================= -->
+    <section id="filmina-1" class="slide-section">
+      <div class="hero-macro-box">
+        <span class="slide-badge">FILMINA 01 · LEY DE PRESUPUESTO GENERAL 2026 (N° 27.798)</span>
+        <h2 class="hero-super-title">
+          PRESUPUESTO NACIONAL TOTAL 2026:<br />
+          <span class="highlight-num">$148,1 BILLONES DE PESOS</span>
+        </h2>
+        <p class="hero-sub">
+          Gasto total sancionado para la Administración Pública Nacional (APN) en el ejercicio 2026
+          (elevado a <strong style="color:#fff;">~$152,5 billones</strong> tras ampliaciones presupuestarias por DNU),
+          sobre un Producto Bruto Interno (PBI) estimado en <strong style="color:#fbbf24;">~$1.035 billones</strong>.
+        </p>
+      </div>
+
+      <!-- Conector jerarquico hacia el segundo gran titulo -->
+      <div class="flow-connector" aria-hidden="true">
+        <div class="flow-line"></div>
+        <span class="flow-label">DESGLOSE DE ASIGNACIÓN UNIVERSITARIA</span>
+        <div class="flow-line"></div>
+      </div>
+
+      <!-- Segundo gran titulo -->
+      <div class="secondary-hero-header">
+        <span class="slide-badge gold">PARTIDA UNIVERSITARIA NACIONAL: $4,87 BILLONES INICIALES ($6,17 B CON REFUERZOS)</span>
+        <h2>¿QUÉ PORCENTAJE DEL PBI Y DEL PRESUPUESTO SE VA PARA LAS UNIVERSIDADES?</h2>
+        <p>
+          La participación cambia según se mida contra toda la economía argentina (PBI) o contra el gasto que administra el Estado Nacional (Presupuesto APN).
+        </p>
+      </div>
+
+      <!-- Dos bloques monumentales: % PBI vs % Presupuesto -->
+      <div class="dual-impact-grid">
+        <div class="impact-monument gold">
+          <div>
+            <span class="impact-tag" style="color: #fcd34d;">A. Participación en el Producto Bruto Interno (PBI)</span>
+            <div class="impact-big-num" style="color: #fbbf24;">0,46% – 0,47% <span style="font-size: 1.25rem; color: #fde68a;">del PBI</span></div>
+          </div>
+          <div class="impact-formula">
+            $4,87 Billones (crédito inicial) / ~$1.035–$1.065 Billones PBI 2026 = <strong>0,457% – 0,470% del PBI</strong> (0,535% con refuerzos DNU).
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 6px; font-size: 0.8rem; color: #e2e8f0; background: rgba(5, 12, 23, 0.55); border: 1px solid rgba(251, 191, 36, 0.25); border-radius: 10px; padding: 10px 12px;">
+            <div style="display: flex; justify-content: space-between; gap: 8px; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 5px;">
+              <span style="color: #94a3b8;">Piso histórico anterior (2001–2004):</span>
+              <strong class="mono" style="color: #cbd5e1; text-align: right;">~0,45% – 0,48% PBI</strong>
+            </div>
+            <div style="display: flex; justify-content: space-between; gap: 8px; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 5px;">
+              <span style="color: #94a3b8;">Último año previo al ajuste (2023):</span>
+              <strong class="mono" style="color: #34d399; text-align: right;">0,718% PBI (prom. 16-23: 0,74%)</strong>
+            </div>
+            <div style="display: flex; justify-content: space-between; gap: 8px;">
+              <span style="color: #fde68a;">Piso actual (2026 · más bajo en 22 años):</span>
+              <strong class="mono" style="color: #fbbf24; text-align: right;">0,457% – 0,470% PBI (-0,25 pts)</strong>
+            </div>
+          </div>
+          <div class="verify-box">
+            <span class="verify-title">Verificar dato en noticias e informes técnicos:</span>
+            <div class="verify-links">
+              <a href="https://universidadeshoy.com.ar/nota/78356/el-presupuesto-universitario-para-2026-sera-el-mas-bajo-en-las-ultimas-dos-decadas/" target="_blank" rel="noopener noreferrer" class="verify-chip">Universidades Hoy (Piso 2 décadas) ↗</a>
+              <a href="https://fedun.com.ar/wp-content/uploads/2025/12/6to-Informe-CIICTI.pdf" target="_blank" rel="noopener noreferrer" class="verify-chip">Informe CIICTI / FEDUN (0,457% PBI) ↗</a>
+              <a href="https://www.infobae.com/educacion/2026/10/01/el-estado-nacional-invertira-el-077-del-pbi-en-educacion-en-2026-es-la-cifra-mas-baja-de-los-ultimos-20-anos/" target="_blank" rel="noopener noreferrer" class="verify-chip">Infobae (0,77% PBI Educación) ↗</a>
+              <a href="https://chequeado.com/el-explicador/el-presupuesto-educativo-2027-entre-los-mas-bajos-en-20-anos-se-preve-menos-fondos-para-universidades-becas-comedores-y-esi/" target="_blank" rel="noopener noreferrer" class="verify-chip">Chequeado (Serie desde 2005) ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="impact-monument sky">
+          <div>
+            <span class="impact-tag" style="color: #7dd3fc;">B. Participación en el Presupuesto Nacional Total (APN)</span>
+            <div class="impact-big-num" style="color: #38bdf8;">3,29% <span style="font-size: 1.25rem; color: #bae6fd;">del Presupuesto</span></div>
+          </div>
+          <div class="impact-formula">
+            $4,87 Billones (crédito base) / $148,1 Billones APN = 3,29% (~4,0% con DNU julio 2026)
+          </div>
+          <p class="impact-desc">
+            De cada <strong>$100 que gasta el Estado Nacional</strong>, inicialmente se asignaron <strong>$3,29</strong> a las 61 universidades nacionales (concentrando el <strong>63,2%</strong> de todo el presupuesto educativo nacional).
+          </p>
+        </div>
+      </div>
+
+      <!-- Grafico Volumetrico Isometrico Comparativo -->
+      <div class="svg-stage">
+        <svg id="macro-iso-svg" viewBox="0 0 760 295" style="max-height: 290px;" aria-label="Comparación volumétrica isométrica PBI vs Presupuesto Nacional vs Universidades">
+          <g opacity="0.25" stroke="#38bdf8" stroke-width="0.8">
+            <line x1="40" y1="250" x2="720" y2="250" />
+            <line x1="70" y1="266" x2="690" y2="266" />
+          </g>
+
+          <!-- Bloque 1: PBI Argentina -->
+          <g class="iso-pillar" data-tt-title="Producto Bruto Interno (PBI) 2026" data-tt-sub="Economía total de Argentina" data-tt-val="$1.035,0 Billones (100% PBI)" data-tt-desc="Las universidades nacionales ($4,87 B) equivalen al 0,47% de toda la economía argentina.">
+            <polygon points="85,58 155,26 225,58 155,90" fill="#1e3a8a" stroke="#60a5fa" stroke-width="1.2" />
+            <polygon points="85,58 155,90 155,240 85,208" fill="#172554" stroke="#3b82f6" stroke-width="1" />
+            <polygon points="225,58 155,90 155,240 225,208" fill="#1e40af" stroke="#3b82f6" stroke-width="1" />
+            <polygon points="85,58 155,90 155,96 85,64" fill="#fbbf24" />
+            <polygon points="225,58 155,90 155,96 225,64" fill="#d97706" />
+            <text x="155" y="18" text-anchor="middle" fill="#93c5fd" font-size="11" font-weight="800">PBI ARGENTINA 2026</text>
+            <text x="155" y="168" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="800" font-family="monospace">$1.035 B</text>
+            <text x="155" y="262" text-anchor="middle" fill="#fbbf24" font-size="11" font-weight="800" font-family="monospace">Universidades = 0,47% PBI</text>
+          </g>
+
+          <!-- Conector 1 -->
+          <g opacity="0.8">
+            <line x1="245" y1="150" x2="305" y2="150" stroke="#38bdf8" stroke-width="2" stroke-dasharray="4 3" />
+            <polygon points="305,145 316,150 305,155" fill="#38bdf8" />
+            <text x="280" y="138" text-anchor="middle" fill="#94a3b8" font-size="10" font-weight="700">14,3% PBI</text>
+          </g>
+
+          <!-- Bloque 2: Presupuesto Nacional APN -->
+          <g class="iso-pillar" data-tt-title="Presupuesto Nacional Total 2026" data-tt-sub="Administración Pública Nacional (Ley 27.798)" data-tt-val="$148,1 Billones (100% Presupuesto)" data-tt-desc="Las universidades nacionales representan el 3,29% del crédito inicial sancionado ($4,87 B / $148,1 B).">
+            <polygon points="330,115 390,88 450,115 390,142" fill="#0284c7" stroke="#7dd3fc" stroke-width="1.2" />
+            <polygon points="330,115 390,142 390,240 330,213" fill="#0c4a6e" stroke="#38bdf8" stroke-width="1" />
+            <polygon points="450,115 390,142 390,240 450,213" fill="#0369a1" stroke="#38bdf8" stroke-width="1" />
+            <polygon points="330,115 390,142 390,153 330,126" fill="#fbbf24" />
+            <polygon points="450,115 390,142 390,153 450,126" fill="#d97706" />
+            <text x="390" y="76" text-anchor="middle" fill="#7dd3fc" font-size="11" font-weight="800">PRESUPUESTO TOTAL 2026</text>
+            <text x="390" y="194" text-anchor="middle" fill="#ffffff" font-size="12.5" font-weight="800" font-family="monospace">$148,1 B</text>
+            <text x="390" y="262" text-anchor="middle" fill="#38bdf8" font-size="11" font-weight="800" font-family="monospace">Universidades = 3,29% APN</text>
+          </g>
+
+          <!-- Conector 2 -->
+          <g opacity="0.8">
+            <line x1="470" y1="178" x2="530" y2="178" stroke="#fbbf24" stroke-width="2" stroke-dasharray="4 3" />
+            <polygon points="530,173 541,178 530,183" fill="#fbbf24" />
+            <text x="505" y="166" text-anchor="middle" fill="#fde68a" font-size="10" font-weight="700">Escala 10×</text>
+          </g>
+
+          <!-- Bloque 3: Partida Universitaria -->
+          <g class="iso-pillar" data-tt-title="Partida Universidades Nacionales 2026" data-tt-sub="61 Instituciones Universitarias Nacionales" data-tt-val="$4,87 Billones iniciales ($6,17 B con DNU)" data-tt-desc="Concentra el 63,2% de toda la función Educación y Cultura del Estado Nacional ($7,70 Billones).">
+            <polygon points="555,142 610,117 665,142 610,167" fill="#fef08a" stroke="#f59e0b" stroke-width="1.2" />
+            <polygon points="555,142 610,167 610,240 555,215" fill="#fbbf24" stroke="#0f172a" stroke-width="0.8" />
+            <polygon points="665,142 610,167 610,240 665,215" fill="#d97706" stroke="#0f172a" stroke-width="0.8" />
+            <text x="610" y="105" text-anchor="middle" fill="#fde68a" font-size="11" font-weight="800">PARTIDA UNIVERSITARIA</text>
+            <text x="610" y="198" text-anchor="middle" fill="#0f172a" font-size="12" font-weight="900" font-family="monospace">$4,87 B</text>
+            <text x="610" y="262" text-anchor="middle" fill="#fbbf24" font-size="11" font-weight="800" font-family="monospace">61 Universidades Nacionales</text>
+          </g>
+        </svg>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         FILMINA 2: COMO ESTA ORGANIZADA (TORTA ISOMETRICA + MAPA DE ARGENTINA)
+         ======================================================================= -->
+    <section id="filmina-2" class="slide-section">
+      <div class="section-header">
+        <div>
+          <span class="slide-badge">FILMINA 02 · ESTRUCTURA INTERNA Y DISTRIBUCIÓN TERRITORIAL</span>
+          <h2>¿CÓMO ESTÁ ORGANIZADA Y DISTRIBUIDA LA PARTIDA UNIVERSITARIA?</h2>
+          <p>Explorá la torta isométrica 3D (por universidad, rubro de gasto y peso macro) junto al mapa geográfico de Argentina.</p>
+        </div>
+      </div>
+
+      <div class="grid-12" style="margin-bottom: 22px;">
+        <!-- Izquierda: Torta Isometrica 3D (6 cols) -->
+        <div class="col-6 sub-panel">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+              <h3 style="font-size: 1.02rem; font-weight: 800; color: #fff;">1. Torta Isométrica 3D Extruida</h3>
+              <span style="font-size: 0.7rem; color: var(--celeste); font-weight: 700;">Clic en porciones</span>
+            </div>
+
+            <div class="tab-group">
+              <button data-pie-mode="universidades" class="tab-btn active">Por Universidad</button>
+              <button data-pie-mode="rubros" class="tab-btn">Por Rubro Interno</button>
+              <button data-pie-mode="nacional" class="tab-btn">En Presupuesto (3,29%)</button>
+              <button data-pie-mode="pbi" class="tab-btn">En PBI (0,47%)</button>
+            </div>
+
+            <div class="svg-stage">
+              <svg id="iso-pie-svg" viewBox="0 0 620 375" style="max-height: 345px;" aria-label="Torta Isométrica 3D">
+                <ellipse cx="310" cy="216" rx="205" ry="110" fill="#030812" opacity="0.65" />
+                <g id="iso-pie-container"></g>
+              </svg>
+            </div>
+
+            <div class="pie-active-box">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span id="pie-card-tag" style="font-size: 0.66rem; font-weight: 800; text-transform: uppercase; color: var(--celeste);">Distribución</span>
+                <strong id="pie-card-pct" class="mono" style="font-size: 1.15rem; color: var(--oro);">16,71%</strong>
+              </div>
+              <h4 id="pie-card-title" style="font-size: 0.98rem; font-weight: 800; color: #fff; margin-top: 2px;">UBA (Buenos Aires)</h4>
+              <div id="pie-card-amount" class="mono" style="font-size: 0.86rem; font-weight: 700; color: #7dd3fc;">$799.443.392.572</div>
+              <p id="pie-card-desc" style="font-size: 0.74rem; color: #cbd5e1; margin-top: 5px;"></p>
+            </div>
+          </div>
+
+          <div id="pie-legend-list" class="pie-legend-list"></div>
+        </div>
+
+        <!-- Derecha: Mapa Geografico Real de Argentina en SVG Isometrico (6 cols) -->
+        <div class="col-6 sub-panel">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+              <div>
+                <h3 style="font-size: 1.02rem; font-weight: 800; color: #fff;">2. Mapa de Argentina en SVG Isométrico</h3>
+                <p style="font-size: 0.72rem; color: var(--texto-sec);">23 provincias, CABA y Malvinas + columnas de presupuesto</p>
+              </div>
+              <div class="map-toolbar">
+                <button id="zoom-in" class="zoom-btn" title="Acercar">+</button>
+                <button id="zoom-out" class="zoom-btn" title="Alejar">−</button>
+                <button id="zoom-reset" class="zoom-btn" style="width: auto; padding: 0 7px; font-size: 0.7rem;" title="Centrar vista">100%</button>
+              </div>
+            </div>
+
+            <div class="svg-stage">
+              <div class="map-viewport-box" id="map-viewport-box">
+                <div class="map-hud-bar">
+                  <div class="map-hud-hint">
+                    <span style="color: var(--celeste);">🎮</span>
+                    <span>Clic izq: <strong>Orbitar 3D / Rotar</strong> · Clic der o Shift: <strong>Mover</strong> · Rueda: <strong>Zoom</strong></span>
+                  </div>
+                  <div class="map-hud-controls">
+                    <button id="hud-zoom-out" class="hud-btn" title="Alejar (-)">−</button>
+                    <span id="zoom-level-indicator" class="zoom-badge">100%</span>
+                    <button id="hud-zoom-in" class="hud-btn" title="Acercar (+)">+</button>
+                    <div class="orbit-pad">
+                      <button id="hud-rot-left" class="hud-btn" title="Girar cámara izquierda (Q)">↺</button>
+                      <button id="hud-rot-right" class="hud-btn" title="Girar cámara derecha (E)">↻</button>
+                      <button id="hud-tilt-up" class="hud-btn" title="Más cenital">∠+</button>
+                      <button id="hud-tilt-down" class="hud-btn" title="Más rasante">∠−</button>
+                    </div>
+                    <button id="hud-zoom-reset" class="hud-btn" style="font-size: 0.68rem;" title="Restablecer cámara 3D">Reset 3D</button>
+                  </div>
+                </div>
+
+                <svg id="argentina-iso-map" viewBox="0 0 780 700" style="max-height: 510px; cursor: grab;" aria-label="Mapa Interactivo 3D Orbital de Argentina">
+                  <defs>
+                    <linearGradient id="provTopActive" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#fbbf24" />
+                      <stop offset="100%" stop-color="#d97706" />
+                    </linearGradient>
+                    <linearGradient id="pillarFront" x1="0%" y1="0%" x2="0%" y2="100%">
+                      <stop offset="0%" stop-color="#fde047" />
+                      <stop offset="100%" stop-color="#f59e0b" />
+                    </linearGradient>
+                    <linearGradient id="pillarSide" x1="0%" y1="0%" x2="0%" y2="100%">
+                      <stop offset="0%" stop-color="#d97706" />
+                      <stop offset="100%" stop-color="#92400e" />
+                    </linearGradient>
+                  </defs>
+
+                <g id="map-viewport-group">
+                  <g id="iso-grid-layer" opacity="0.36" stroke="#38bdf8" stroke-width="0.7"></g>
+                  <g id="iso-regions-layer"></g>
+                  <g id="iso-pillars-layer"></g>
+                  <g id="iso-labels-layer" pointer-events="none"></g>
+                </g>
+              </svg>
+              </div>
+
+              <div class="focus-bar">
+                <button data-focus="ALL" class="chip-btn active">Todo el País</button>
+                <button data-focus="CABA_AMBA" class="chip-btn">CABA y AMBA</button>
+                <button data-focus="PATAGONIA_UNCO" class="chip-btn patagonia">Patagonia / UNCo</button>
+                <button data-focus="CENTRO" class="chip-btn">Centro</button>
+                <button data-focus="NORTE" class="chip-btn">Norte</button>
+                <button data-focus="CUYO" class="chip-btn">Cuyo</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Resumen dinamico de jurisdiccion seleccionada en el mapa -->
+          <div class="map-selected-strip">
+            <div>
+              <span id="detail-badge" style="font-size: 0.66rem; font-weight: 800; text-transform: uppercase; color: var(--celeste); display: block;">Consolidado Nacional · 61 Universidades</span>
+              <strong id="detail-title" style="font-size: 0.96rem; color: #fff;">República Argentina (Total)</strong>
+            </div>
+            <div style="text-align: right;">
+              <span id="detail-amount" class="mono" style="font-size: 0.95rem; font-weight: 800; color: var(--oro); display: block;">$4.785.117.662.265</span>
+              <span style="font-size: 0.7rem; color: var(--texto-sec);">Participación: <strong id="detail-share" class="mono" style="color: #7dd3fc;">100,00%</strong></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Planilla Buscador de las 61 Universidades -->
+      <div class="sub-panel">
+        <div class="section-header" style="margin-bottom: 12px; padding-bottom: 10px;">
+          <div>
+            <h3>Planilla Oficial por Universidad Nacional (61 Instituciones)</h3>
+            <p>Créditos iniciales sancionados 2026. Hacé clic en cualquier fila para iluminarla en el mapa isométrico.</p>
+          </div>
+          <div class="table-controls">
+            <input id="uni-search" type="text" class="input-ctrl" placeholder="Buscar universidad o sigla (UBA, UTN, UNCo)..." />
+            <select id="uni-region-filter" class="input-ctrl" style="min-width: 185px;">
+              <option value="ALL">Todas las regiones</option>
+              <option value="CABA_AMBA">CABA y Conurbano (AMBA)</option>
+              <option value="BSAS_INT">Buenos Aires Interior y La Pampa</option>
+              <option value="CENTRO">Centro (Córdoba, Sta. Fe, E. Ríos)</option>
+              <option value="CUYO">Cuyo (Mendoza, San Juan, San Luis)</option>
+              <option value="NOA">Noroeste (NOA)</option>
+              <option value="NEA">Nordeste (NEA)</option>
+              <option value="PATAGONIA_N">Patagonia Norte (Neuquén y Río Negro)</option>
+              <option value="PATAGONIA_S">Patagonia Sur (Chubut, Sta. Cruz, TDF)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Universidad Nacional</th>
+                <th>Sigla</th>
+                <th>Jurisdicción</th>
+                <th class="text-right">Presupuesto 2026 ($)</th>
+                <th class="text-right">% Sistema</th>
+              </tr>
+            </thead>
+            <tbody id="uni-table-body"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         FILMINA 3: LA REALIDAD ECONOMICA Y EL DESFINANCIAMIENTO (NOVIEMBRE 2026)
+         ======================================================================= -->
+    <section id="filmina-3" class="slide-section slide-reality">
+      <div class="section-header" style="border-bottom-color: rgba(239, 68, 68, 0.35);">
+        <div>
+          <span class="slide-badge danger">FILMINA 03 · DIAGNÓSTICO ECONÓMICO Y CONFLICTIVIDAD A NOVIEMBRE 2026</span>
+          <h2>LA REALIDAD ECONÓMICA: IMPACTO DEL DESFINANCIAMIENTO Y EL INCUMPLIMIENTO DE LA LEY</h2>
+          <p>
+            Efectos reales de la caída presupuestaria y la no aplicación plena de la <strong>Ley N° 27.795 de Financiamiento Universitario</strong> sobre salarios, funcionamiento e investigación.
+          </p>
+        </div>
+      </div>
+
+      <!-- 4 Indicadores Criticos -->
+      <div class="reality-grid">
+        <div class="reality-card">
+          <span class="r-label">Caída Real del Presupuesto</span>
+          <div class="r-num">-25,3% a -40%</div>
+          <p class="r-desc">
+            Retroceso en términos reales frente a 2023. El presupuesto 2026 es el más bajo en más de dos décadas medido en porcentaje del PBI (0,47%–0,53%).
+          </p>
+        </div>
+
+        <div class="reality-card">
+          <span class="r-label">Brecha por Incumplimiento de Ley</span>
+          <div class="r-num">$8,3 Billones</div>
+          <p class="r-desc">
+            Monto necesario en 2026 para cumplir la Ley N° 27.795 frente a los $4,87 B sancionados ($6,17 B con refuerzos parciales por DNU).
+          </p>
+        </div>
+
+        <div class="reality-card">
+          <span class="r-label">Pérdida Salarial Docente/No Docente</span>
+          <div class="r-num">-24,2% a -35%</div>
+          <p class="r-desc">
+            Deterioro del poder adquisitivo frente a noviembre de 2023 (equivalente a ~12 sueldos perdidos). Se requiere +32% inmediato para empatar la inflación.
+          </p>
+        </div>
+
+        <div class="reality-card">
+          <span class="r-label">Becas Progresar Congeladas</span>
+          <div class="r-num">$35.000 / mes</div>
+          <p class="r-desc">
+            Monto bruto mensual congelado desde 2024/2025, licuado por la inflación acumulada y con fuertes recortes en ciencia, equipamiento e infraestructura.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid-12" style="align-items: center;">
+        <!-- Grafico Isometrico Comparativo: Presupuesto Ejecutado vs Mandato de Ley -->
+        <div class="col-6 svg-stage" style="border-color: rgba(239, 68, 68, 0.35);">
+          <svg id="reality-iso-svg" viewBox="0 0 620 325" style="max-height: 315px;" aria-label="Gráfico isométrico de brecha presupuestaria e incumplimiento de la Ley 27.795">
+            <g opacity="0.25" stroke="#f87171" stroke-width="0.8">
+              <line x1="35" y1="268" x2="585" y2="268" />
+              <line x1="65" y1="284" x2="555" y2="284" />
+            </g>
+
+            <!-- Columna 1: Nivel Real 2023 (Base 100 = ~$8,3 Billones) -->
+            <g class="iso-pillar" data-tt-title="Presupuesto Requerido por Ley N° 27.795" data-tt-sub="Equivalente real a 2023 actualizado por IPC" data-tt-val="$8,30 Billones (Base 100)" data-tt-desc="Es el monto estimado por el CIN y centros de estudio para sostener salarios y gastos operativos al nivel real de noviembre 2023.">
+              <polygon points="75,52 135,24 195,52 135,80" fill="#34d399" stroke="#a7f3d0" stroke-width="1.2" />
+              <polygon points="75,52 135,80 135,258 75,230" fill="#059669" stroke="#064e3b" stroke-width="1" />
+              <polygon points="195,52 135,80 135,258 195,230" fill="#047857" stroke="#064e3b" stroke-width="1" />
+              <text x="135" y="16" text-anchor="middle" fill="#6ee7b7" font-size="10.5" font-weight="800">MANDATO LEY 27.795</text>
+              <text x="135" y="165" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="900" font-family="monospace">$8,30 B</text>
+              <text x="135" y="278" text-anchor="middle" fill="#6ee7b7" font-size="10.5" font-weight="800" font-family="monospace">Índice Real = 100</text>
+            </g>
+
+            <!-- Columna 2: Credito Ejecutado con Refuerzos DNU (~$6,17 Billones) -->
+            <g class="iso-pillar" data-tt-title="Crédito 2026 con Refuerzos por DNU" data-tt-sub="Asignación base ($4,87 B) + ampliaciones parciales" data-tt-val="~$6,17 Billones (Índice ~74,7)" data-tt-desc="Aun sumando los refuerzos administrativos de mitad de año, persiste una caída real del 25,3% respecto de 2023.">
+              <polygon points="250,104 310,76 370,104 310,132" fill="#fbbf24" stroke="#fef08a" stroke-width="1.2" />
+              <polygon points="250,104 310,132 310,258 250,230" fill="#d97706" stroke="#78350f" stroke-width="1" />
+              <polygon points="370,104 310,132 310,258 370,230" fill="#b45309" stroke="#78350f" stroke-width="1" />
+              <text x="310" y="66" text-anchor="middle" fill="#fde68a" font-size="10.5" font-weight="800">CON REFUERZOS DNU</text>
+              <text x="310" y="192" text-anchor="middle" fill="#0f172a" font-size="12.5" font-weight="900" font-family="monospace">$6,17 B</text>
+              <text x="310" y="278" text-anchor="middle" fill="#fbbf24" font-size="10.5" font-weight="800" font-family="monospace">-25,3% Real vs 2023</text>
+            </g>
+
+            <!-- Columna 3: Presupuesto Inicial Sancionado ($4,87 Billones) -->
+            <g class="iso-pillar" data-tt-title="Presupuesto Inicial Sancionado 2026" data-tt-sub="Ley de Presupuesto N° 27.798" data-tt-val="$4,87 Billones (Índice ~59)" data-tt-desc="El crédito inicial fijado por el Gobierno representó un recorte superior al 40% en términos reales respecto de 2023.">
+              <polygon points="425,138 485,110 545,138 485,166" fill="#f87171" stroke="#fecaca" stroke-width="1.2" />
+              <polygon points="425,138 485,166 485,258 425,230" fill="#dc2626" stroke="#7f1d1d" stroke-width="1" />
+              <polygon points="545,138 485,166 485,258 545,230" fill="#991b1b" stroke="#7f1d1d" stroke-width="1" />
+              <text x="485" y="100" text-anchor="middle" fill="#fca5a5" font-size="10.5" font-weight="800">PRESUPUESTO INICIAL</text>
+              <text x="485" y="210" text-anchor="middle" fill="#ffffff" font-size="12.5" font-weight="900" font-family="monospace">$4,87 B</text>
+              <text x="485" y="278" text-anchor="middle" fill="#f87171" font-size="10.5" font-weight="800" font-family="monospace">-41,3% Brecha vs Ley</text>
+            </g>
+          </svg>
+          <div style="font-size: 0.72rem; color: #fca5a5; margin-top: 4px; text-align: center;">
+            Comparación volumétrica en pesos constantes 2026: Mandato Legal ($8,30 B) vs. Asignación Efectiva ($4,87 B – $6,17 B)
+          </div>
+        </div>
+
+        <!-- Analisis de la Realidad Economica y Judicial -->
+        <div class="col-6 reality-notes">
+          <div class="r-note">
+            <strong>1. Judicialización e incumplimiento de la Ley N° 27.795</strong>
+            <p>
+              Pese a que la Justicia Federal ratificó la vigencia y constitucionalidad de la Ley de Financiamiento Universitario (que obliga a recomponer salarios y gastos de funcionamiento según la inflación acumulada desde noviembre de 2023), el Poder Ejecutivo apeló las medidas cautelares y mantuvo suspendida su ejecución plena invocando la regla fiscal.
+            </p>
+          </div>
+
+          <div class="r-note">
+            <strong>2. Salarios debajo de la línea de pobreza y fuga de investigadores</strong>
+            <p>
+              Con una pérdida real superior al 24%–35%, un docente auxiliar de primera con 10 años de antigüedad y dedicación simple percibe alrededor de <strong>$421.236</strong> frente a los <strong>~$556.000</strong> que corresponderían por ley (+32% pendiente). Esto provocó renuncias masivas de docentes e investigadores jóvenes y parálisis en proyectos del CONICET y laboratorios universitarios.
+            </p>
+          </div>
+
+          <div class="r-note">
+            <strong>3. Ahogo operativo y conflictividad activa (noviembre 2026)</strong>
+            <p>
+              El 90% del presupuesto se absorbe en sueldos licuados, dejando márgenes críticos para hospitales escuela (Clínicas, Roffo, Lanari), mantenimiento edilicio y becas estudiantiles. En noviembre de 2026 continúan los paros nacionales de <strong>CONADU Histórica, AGD-UBA, FAGDUT (UTN) y FATUN</strong> exigiendo el cumplimiento inmediato de la ley.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- PIE DE PAGINA CON FUENTES OFICIALES Y TECNICAS -->
+  <footer>
+    <div class="container">
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px; padding-bottom: 14px; border-bottom: 1px solid rgba(30, 58, 95, 0.7);">
+        <span style="font-weight: 800; color: #f1f5f9;">Fuentes Oficiales, Presupuestarias y de Seguimiento Económico (2026)</span>
+        <span class="mono" style="color: var(--oro);">Datos verificados a Noviembre 2026</span>
+      </div>
+
+      <div class="sources-grid">
+        <div class="source-card">
+          <div>
+            <strong>1. Oficina Nacional de Presupuesto (ONP)</strong>
+            <p>Ley de Presupuesto General 2026 N° 27.798, Planillas Anexas y Portal de Presupuesto Abierto (Ministerio de Economía).</p>
+          </div>
+          <div class="source-links">
+            <a href="https://www.presupuestoabierto.gob.ar/sici/" target="_blank" rel="noopener noreferrer" class="source-link">Presupuesto Abierto ↗</a>
+            <a href="https://www.economia.gob.ar/onp/presupuestos/presupuestos" target="_blank" rel="noopener noreferrer" class="source-link">ONP Presupuestos ↗</a>
+          </div>
+        </div>
+
+        <div class="source-card">
+          <div>
+            <strong>2. Subsecretaría de Políticas Universitarias y CIN</strong>
+            <p>Distribución de créditos por Universidad Nacional y comunicados del Consejo Interuniversitario Nacional (CIN).</p>
+          </div>
+          <div class="source-links">
+            <a href="https://www.argentina.gob.ar/educacion/universidades" target="_blank" rel="noopener noreferrer" class="source-link">Portal Universidades ↗</a>
+            <a href="https://www.cin.edu.ar/" target="_blank" rel="noopener noreferrer" class="source-link">Sitio Oficial CIN ↗</a>
+          </div>
+        </div>
+
+        <div class="source-card">
+          <div>
+            <strong>3. Noticias e Informes sobre el Piso Histórico (% PBI)</strong>
+            <p>Verificación periodística y técnica del piso universitario (0,46%–0,47% PBI) y educativo nacional (0,77% PBI).</p>
+          </div>
+          <div class="source-links">
+            <a href="https://universidadeshoy.com.ar/nota/78356/el-presupuesto-universitario-para-2026-sera-el-mas-bajo-en-las-ultimas-dos-decadas/" target="_blank" rel="noopener noreferrer" class="source-link">Universidades Hoy ↗</a>
+            <a href="https://www.infobae.com/educacion/2026/10/01/el-estado-nacional-invertira-el-077-del-pbi-en-educacion-en-2026-es-la-cifra-mas-baja-de-los-ultimos-20-anos/" target="_blank" rel="noopener noreferrer" class="source-link">Infobae ↗</a>
+            <a href="https://chequeado.com/el-explicador/el-presupuesto-educativo-2027-entre-los-mas-bajos-en-20-anos-se-preve-menos-fondos-para-universidades-becas-comedores-y-esi/" target="_blank" rel="noopener noreferrer" class="source-link">Chequeado ↗</a>
+          </div>
+        </div>
+
+        <div class="source-card">
+          <div>
+            <strong>4. Grupo EPC-CIICTI / FEDUN y CEPA (2026)</strong>
+            <p>Informes técnicos de seguimiento de ejecución presupuestaria universitaria, salarios docentes y función Ciencia y Técnica.</p>
+          </div>
+          <div class="source-links">
+            <a href="https://fedun.com.ar/wp-content/uploads/2025/12/6to-Informe-CIICTI.pdf" target="_blank" rel="noopener noreferrer" class="source-link">Informe CIICTI (PDF) ↗</a>
+            <a href="https://centrocepa.com.ar/" target="_blank" rel="noopener noreferrer" class="source-link">Centro CEPA ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      try {
+        const TOTAL_PRESUPUESTO_UNIV = 4785117662265;
+
+        const fmtARS = new Intl.NumberFormat('es-AR', {
+          style: 'currency',
+          currency: 'ARS',
+          maximumFractionDigits: 0
+        });
+
+        function formatShortARS(val) {
+          if (val >= 1e12) return '$' + (val / 1e12).toFixed(2).replace('.', ',') + ' Billones';
+          if (val >= 1e9) return '$' + (val / 1e9).toFixed(1).replace('.', ',') + ' mil M';
+          if (val >= 1e6) return '$' + (val / 1e6).toFixed(1).replace('.', ',') + ' M';
+          return fmtARS.format(val);
+        }
+
+        // Tooltip helpers
+        const tooltipEl = document.getElementById('iso-tooltip');
+        function showTooltip(e, title, sub, val, desc) {
+          document.getElementById('tt-title').textContent = title || '';
+          document.getElementById('tt-sub').textContent = sub || '';
+          document.getElementById('tt-val').textContent = val || '';
+          document.getElementById('tt-desc').textContent = desc || '';
+          tooltipEl.style.display = 'block';
+          moveTooltip(e);
+        }
+
+        function moveTooltip(e) {
+          const x = Math.min(window.innerWidth - 295, e.clientX + 14);
+          const y = Math.min(window.innerHeight - 140, e.clientY + 14);
+          tooltipEl.style.left = x + 'px';
+          tooltipEl.style.top = y + 'px';
+        }
+
+        function hideTooltip() {
+          tooltipEl.style.display = 'none';
+        }
+
+        // Conectar tooltips de los graficos isometricos estaticos (Filmina 1 y Filmina 3)
+        document.querySelectorAll('#macro-iso-svg .iso-pillar, #reality-iso-svg .iso-pillar').forEach(el => {
+          el.addEventListener('mouseenter', e => {
+            showTooltip(
+              e,
+              el.getAttribute('data-tt-title'),
+              el.getAttribute('data-tt-sub'),
+              el.getAttribute('data-tt-val'),
+              el.getAttribute('data-tt-desc')
+            );
+          });
+          el.addEventListener('mousemove', moveTooltip);
+          el.addEventListener('mouseleave', hideTooltip);
+        });
+
+        // Proyeccion 3D Orbital (Yaw + Pitch + Zoom + Pan) de Argentina
+        let camera3D = {
+          yaw: 0.44,      // Rotacion horizontal 360 grados (radianes)
+          pitch: 0.68,    // Inclinacion vertical (0.28 rasante GTA a 1.0 cenital)
+          scale: 1.0,
+          tx: 0,
+          ty: 0
+        };
+
+        function projectIso(lon, lat) {
+          const dx = (lon - (-64.5)) * 16.5;
+          const dy = ((-36.5) - lat) * 16.5;
+          const cosY = Math.cos(camera3D.yaw);
+          const sinY = Math.sin(camera3D.yaw);
+          const rx = dx * cosY - dy * sinY;
+          const ry = (dx * sinY + dy * cosY) * camera3D.pitch;
+          return [395 + rx, 345 + ry];
+        }
+
+        const PROVINCES_GEO = [
+          { id: 'JUJUY', name: 'Jujuy', region: 'NOA', color: '#0284c7', raw: [[-67.2,-22.0],[-65.1,-22.0],[-64.3,-23.5],[-65.4,-24.5],[-67.0,-24.2]] },
+          { id: 'SALTA', name: 'Salta', region: 'NOA', color: '#0369a1', raw: [[-68.5,-24.2],[-67.0,-24.2],[-65.4,-24.5],[-64.3,-23.5],[-65.1,-22.0],[-62.3,-22.0],[-62.3,-24.2],[-63.8,-26.1],[-66.2,-26.2],[-68.4,-25.6]] },
+          { id: 'FORMOSA', name: 'Formosa', region: 'NEA', color: '#0ea5e9', raw: [[-62.3,-22.0],[-60.5,-22.8],[-57.7,-25.3],[-58.6,-26.8],[-61.6,-25.2],[-62.3,-24.2]] },
+          { id: 'CHACO', name: 'Chaco', region: 'NEA', color: '#0284c7', raw: [[-63.4,-24.2],[-61.6,-25.2],[-58.6,-26.8],[-58.9,-28.0],[-61.7,-28.0],[-63.4,-26.0]] },
+          { id: 'MISIONES', name: 'Misiones', region: 'NEA', color: '#0ea5e9', raw: [[-56.0,-27.4],[-54.1,-25.6],[-53.6,-26.3],[-54.2,-27.6],[-55.8,-28.1]] },
+          { id: 'CORRIENTES', name: 'Corrientes', region: 'NEA', color: '#0369a1', raw: [[-58.9,-27.3],[-56.0,-27.4],[-55.8,-28.1],[-57.6,-30.2],[-59.6,-30.3],[-59.5,-28.0]] },
+          { id: 'TUCUMAN', name: 'Tucuman', region: 'NOA', color: '#38bdf8', raw: [[-66.1,-26.2],[-64.5,-26.1],[-64.6,-27.9],[-66.0,-27.8]] },
+          { id: 'SANTIAGO', name: 'Santiago del Estero', region: 'NOA', color: '#075985', raw: [[-64.5,-26.1],[-61.7,-26.0],[-61.7,-28.0],[-61.8,-30.4],[-64.8,-30.1],[-64.6,-27.9]] },
+          { id: 'CATAMARCA', name: 'Catamarca', region: 'NOA', color: '#0284c7', raw: [[-69.0,-25.5],[-66.2,-26.2],[-66.0,-27.8],[-64.8,-30.1],[-66.4,-29.6],[-68.6,-28.2]] },
+          { id: 'LA_RIOJA', name: 'La Rioja', region: 'NOA', color: '#0369a1', raw: [[-69.5,-28.0],[-66.4,-29.6],[-65.4,-31.8],[-67.4,-31.9],[-68.8,-30.3]] },
+          { id: 'SAN_JUAN', name: 'San Juan', region: 'CUYO', color: '#0284c7', raw: [[-70.3,-28.5],[-68.8,-30.3],[-67.4,-31.9],[-68.4,-32.5],[-70.5,-32.3]] },
+          { id: 'CORDOBA', name: 'Cordoba', region: 'CENTRO', color: '#0ea5e9', raw: [[-65.4,-30.1],[-62.1,-30.4],[-61.8,-34.9],[-65.1,-34.9],[-65.4,-31.8]] },
+          { id: 'SANTA_FE', name: 'Santa Fe', region: 'CENTRO', color: '#0284c7', raw: [[-61.7,-28.0],[-58.9,-28.0],[-59.6,-30.3],[-60.3,-32.9],[-61.8,-34.4],[-62.1,-30.4]] },
+          { id: 'ENTRE_RIOS', name: 'Entre Rios', region: 'CENTRO', color: '#0369a1', raw: [[-59.6,-30.3],[-57.6,-30.2],[-58.1,-33.3],[-59.5,-33.8],[-60.3,-32.9]] },
+          { id: 'MENDOZA', name: 'Mendoza', region: 'CUYO', color: '#0369a1', raw: [[-70.5,-32.3],[-67.4,-32.4],[-66.6,-35.0],[-68.2,-37.4],[-70.4,-36.2]] },
+          { id: 'SAN_LUIS', name: 'San Luis', region: 'CUYO', color: '#075985', raw: [[-67.4,-31.9],[-65.4,-31.8],[-65.1,-35.9],[-66.6,-35.9],[-67.4,-33.8]] },
+          { id: 'LA_PAMPA', name: 'La Pampa', region: 'BSAS_INT', color: '#075985', raw: [[-68.2,-35.9],[-63.4,-35.9],[-63.4,-39.0],[-65.0,-38.8],[-68.2,-37.5]] },
+          { id: 'BUENOS_AIRES', name: 'Provincia de Buenos Aires', region: 'BSAS_INT', color: '#1d4ed8', raw: [[-63.4,-34.4],[-60.3,-33.4],[-58.2,-34.6],[-56.8,-36.4],[-57.5,-38.1],[-60.5,-38.9],[-62.2,-40.9],[-63.4,-39.0]] },
+          { id: 'CABA', name: 'CABA y Conurbano (AMBA)', region: 'CABA_AMBA', color: '#38bdf8', raw: [[-58.85,-34.35],[-58.15,-34.45],[-58.20,-34.88],[-58.88,-34.78]] },
+          { id: 'NEUQUEN', name: 'Neuquen', region: 'PATAGONIA_N', color: '#0ea5e9', raw: [[-70.5,-36.2],[-68.2,-37.5],[-68.2,-38.9],[-70.0,-40.5],[-71.8,-40.8],[-71.2,-38.0]] },
+          { id: 'RIO_NEGRO', name: 'Rio Negro', region: 'PATAGONIA_N', color: '#0284c7', raw: [[-68.2,-37.5],[-63.4,-39.0],[-62.8,-41.0],[-65.1,-41.1],[-65.1,-42.0],[-71.8,-42.0],[-71.8,-40.8],[-68.2,-38.9]] },
+          { id: 'CHUBUT', name: 'Chubut', region: 'PATAGONIA_S', color: '#0369a1', raw: [[-71.8,-42.0],[-65.1,-42.0],[-63.6,-42.6],[-65.4,-44.5],[-67.5,-46.0],[-71.7,-46.0]] },
+          { id: 'SANTA_CRUZ', name: 'Santa Cruz', region: 'PATAGONIA_S', color: '#075985', raw: [[-71.7,-46.0],[-67.5,-46.0],[-65.8,-47.8],[-68.6,-52.3],[-72.4,-51.8],[-73.3,-48.8]] },
+          { id: 'TIERRA_DEL_FUEGO', name: 'Tierra del Fuego', region: 'PATAGONIA_S', color: '#0284c7', raw: [[-68.6,-52.7],[-65.2,-54.6],[-66.5,-55.1],[-68.6,-54.8]] },
+          { id: 'MALVINAS', name: 'Islas Malvinas', region: 'PATAGONIA_S', color: '#0ea5e9', raw: [[-61.3,-51.3],[-57.8,-51.4],[-58.1,-52.3],[-61.1,-52.2]] }
+        ];
+
+        const UNIVERSITIES = [
+          { rank: 1, name: 'Universidad de Buenos Aires', sigla: 'UBA', provId: 'CABA', region: 'CABA_AMBA', prov: 'CABA', amount: 799443392572, lonLat: [-58.42, -34.60], isMainNode: true },
+          { rank: 2, name: 'Universidad Tecnologica Nacional', sigla: 'UTN', provId: 'CABA', region: 'CABA_AMBA', prov: 'Nacional / CABA', amount: 336048537300, lonLat: [-58.65, -34.53], isMainNode: true },
+          { rank: 3, name: 'Universidad Nacional de La Plata', sigla: 'UNLP', provId: 'BUENOS_AIRES', region: 'BSAS_INT', prov: 'Buenos Aires', amount: 322996335363, lonLat: [-57.95, -35.15], isMainNode: true },
+          { rank: 4, name: 'Universidad Nacional de Cordoba', sigla: 'UNC', provId: 'CORDOBA', region: 'CENTRO', prov: 'Cordoba', amount: 304666095978, lonLat: [-64.18, -31.42], isMainNode: true },
+          { rank: 5, name: 'Universidad Nacional de Rosario', sigla: 'UNR', provId: 'SANTA_FE', region: 'CENTRO', prov: 'Santa Fe', amount: 237298391675, lonLat: [-60.65, -32.95], isMainNode: true },
+          { rank: 6, name: 'Universidad Nacional de Tucuman', sigla: 'UNT', provId: 'TUCUMAN', region: 'NOA', prov: 'Tucuman', amount: 212671332696, lonLat: [-65.22, -26.82], isMainNode: true },
+          { rank: 7, name: 'Universidad Nacional de Cuyo', sigla: 'UNCUYO', provId: 'MENDOZA', region: 'CUYO', prov: 'Mendoza', amount: 171893165743, lonLat: [-68.85, -32.89], isMainNode: true },
+          { rank: 8, name: 'Universidad Nacional del Nordeste', sigla: 'UNNE', provId: 'CORRIENTES', region: 'NEA', prov: 'Corrientes / Chaco', amount: 128112323620, lonLat: [-58.83, -27.47], isMainNode: true },
+          { rank: 9, name: 'Universidad Nacional de San Juan', sigla: 'UNSJ', provId: 'SAN_JUAN', region: 'CUYO', prov: 'San Juan', amount: 120651160116, lonLat: [-68.53, -31.53], isMainNode: true },
+          { rank: 10, name: 'Universidad Nacional del Litoral', sigla: 'UNL', provId: 'SANTA_FE', region: 'CENTRO', prov: 'Santa Fe', amount: 106628801882, lonLat: [-60.70, -31.63], isMainNode: true },
+          { rank: 11, name: 'Universidad Nacional de Mar del Plata', sigla: 'UNMDP', provId: 'BUENOS_AIRES', region: 'BSAS_INT', prov: 'Buenos Aires', amount: 106611411655, lonLat: [-57.55, -38.00], isMainNode: true },
+          { rank: 12, name: 'Universidad Nacional del Comahue', sigla: 'UNCo', provId: 'NEUQUEN', region: 'PATAGONIA_N', prov: 'Neuquen / Rio Negro', amount: 94220720173, lonLat: [-68.06, -38.95], isMainNode: true },
+          { rank: 13, name: 'Universidad Nacional de La Matanza', sigla: 'UNLaM', provId: 'CABA', region: 'CABA_AMBA', prov: 'Buenos Aires (AMBA)', amount: 82673198860, lonLat: [-58.56, -34.67], isMainNode: false },
+          { rank: 14, name: 'Universidad Nacional del Sur', sigla: 'UNS', provId: 'BUENOS_AIRES', region: 'BSAS_INT', prov: 'Buenos Aires', amount: 82142716420, lonLat: [-62.27, -38.72], isMainNode: true },
+          { rank: 15, name: 'Universidad Nacional de la Patagonia San Juan Bosco', sigla: 'UNPSJB', provId: 'CHUBUT', region: 'PATAGONIA_S', prov: 'Chubut', amount: 75069178831, lonLat: [-67.50, -45.86], isMainNode: true },
+          { rank: 16, name: 'Universidad Nacional del Centro de la Prov. de Bs. As.', sigla: 'UNICEN', provId: 'BUENOS_AIRES', region: 'BSAS_INT', prov: 'Buenos Aires', amount: 72755410200, lonLat: [-59.13, -37.32], isMainNode: false },
+          { rank: 17, name: 'Universidad Nacional de Salta', sigla: 'UNSa', provId: 'SALTA', region: 'NOA', prov: 'Salta', amount: 68863520110, lonLat: [-65.41, -24.78], isMainNode: true },
+          { rank: 18, name: 'Universidad Nacional de Lomas de Zamora', sigla: 'UNLZ', provId: 'CABA', region: 'CABA_AMBA', prov: 'Buenos Aires (AMBA)', amount: 64523890400, lonLat: [-58.45, -34.77], isMainNode: false },
+          { rank: 19, name: 'Universidad Nacional de Entre Rios', sigla: 'UNER', provId: 'ENTRE_RIOS', region: 'CENTRO', prov: 'Entre Rios', amount: 62631440890, lonLat: [-58.23, -32.48], isMainNode: true },
+          { rank: 20, name: 'Universidad Nacional de Misiones', sigla: 'UNaM', provId: 'MISIONES', region: 'NEA', prov: 'Misiones', amount: 61480912300, lonLat: [-55.89, -27.36], isMainNode: true },
+          { rank: 21, name: 'Universidad Nacional de Catamarca', sigla: 'UNCA', provId: 'CATAMARCA', region: 'NOA', prov: 'Catamarca', amount: 58893120450, lonLat: [-65.78, -28.47], isMainNode: false },
+          { rank: 22, name: 'Universidad Nacional de San Luis', sigla: 'UNSL', provId: 'SAN_LUIS', region: 'CUYO', prov: 'San Luis', amount: 57920415800, lonLat: [-66.33, -33.30], isMainNode: true },
+          { rank: 23, name: 'Universidad Nacional de La Pampa', sigla: 'UNLPam', provId: 'LA_PAMPA', region: 'BSAS_INT', prov: 'La Pampa', amount: 53281718720, lonLat: [-64.29, -36.62], isMainNode: true },
+          { rank: 24, name: 'Universidad Nacional de Jujuy', sigla: 'UNJu', provId: 'JUJUY', region: 'NOA', prov: 'Jujuy', amount: 49812650300, lonLat: [-65.30, -24.18], isMainNode: false },
+          { rank: 25, name: 'Universidad Nacional de la Patagonia Austral', sigla: 'UNPA', provId: 'SANTA_CRUZ', region: 'PATAGONIA_S', prov: 'Santa Cruz', amount: 44981326920, lonLat: [-69.21, -51.62], isMainNode: true },
+          { rank: 26, name: 'Universidad Nacional de Quilmes', sigla: 'UNQ', provId: 'CABA', region: 'CABA_AMBA', prov: 'Buenos Aires (AMBA)', amount: 44118950600, lonLat: [-58.27, -34.70], isMainNode: false },
+          { rank: 27, name: 'Universidad Nacional de Santiago del Estero', sigla: 'UNSE', provId: 'SANTIAGO', region: 'NOA', prov: 'Santiago del Estero', amount: 42772840120, lonLat: [-64.26, -27.79], isMainNode: false },
+          { rank: 28, name: 'Universidad Nacional de General San Martin', sigla: 'UNSAM', provId: 'CABA', region: 'CABA_AMBA', prov: 'Buenos Aires (AMBA)', amount: 42510320800, lonLat: [-58.52, -34.57], isMainNode: false },
+          { rank: 29, name: 'Universidad Nacional de Lujan', sigla: 'UNLu', provId: 'BUENOS_AIRES', region: 'BSAS_INT', prov: 'Buenos Aires', amount: 41890450100, lonLat: [-59.11, -34.56], isMainNode: false },
+          { rank: 30, name: 'Universidad Nacional de La Rioja', sigla: 'UNLaR', provId: 'LA_RIOJA', region: 'NOA', prov: 'La Rioja', amount: 41250680900, lonLat: [-66.85, -29.41], isMainNode: false },
+          { rank: 31, name: 'Universidad Nacional de Rio Cuarto', sigla: 'UNRC', provId: 'CORDOBA', region: 'CENTRO', prov: 'Cordoba', amount: 40980310500, lonLat: [-64.35, -33.12], isMainNode: false },
+          { rank: 32, name: 'Universidad Nacional de Rio Negro', sigla: 'UNRN', provId: 'RIO_NEGRO', region: 'PATAGONIA_N', prov: 'Rio Negro', amount: 36153032028, lonLat: [-65.00, -40.81], isMainNode: true },
+          { rank: 33, name: 'Universidad Nacional de Lanus', sigla: 'UNLa', provId: 'CABA', region: 'CABA_AMBA', prov: 'Buenos Aires (AMBA)', amount: 34890210400, lonLat: [-58.39, -34.71], isMainNode: false },
+          { rank: 34, name: 'Universidad Nacional de Tres de Febrero', sigla: 'UNTREF', provId: 'CABA', region: 'CABA_AMBA', prov: 'Buenos Aires (AMBA)', amount: 33920450700, lonLat: [-58.56, -34.60], isMainNode: false },
+          { rank: 35, name: 'Universidad Nacional de General Sarmiento', sigla: 'UNGS', provId: 'CABA', region: 'CABA_AMBA', prov: 'Buenos Aires (AMBA)', amount: 31450890200, lonLat: [-58.70, -34.52], isMainNode: false },
+          { rank: 36, name: 'Universidad Nacional de las Artes', sigla: 'UNA', provId: 'CABA', region: 'CABA_AMBA', prov: 'CABA', amount: 29840120500, lonLat: [-58.41, -34.59], isMainNode: false },
+          { rank: 37, name: 'Universidad Nacional de Villa Maria', sigla: 'UNVM', provId: 'CORDOBA', region: 'CENTRO', prov: 'Cordoba', amount: 26780940300, lonLat: [-63.24, -32.41], isMainNode: false },
+          { rank: 38, name: 'Universidad Nacional de Formosa', sigla: 'UNaF', provId: 'FORMOSA', region: 'NEA', prov: 'Formosa', amount: 24910320600, lonLat: [-58.17, -26.18], isMainNode: false },
+          { rank: 39, name: 'Universidad Nacional del Noroeste de la Prov. de Bs. As.', sigla: 'UNNOBA', provId: 'BUENOS_AIRES', region: 'BSAS_INT', prov: 'Buenos Aires', amount: 22450810900, lonLat: [-60.95, -34.58], isMainNode: false },
+          { rank: 40, name: 'Universidad Nacional de Tierra del Fuego', sigla: 'UNTDF', provId: 'TIERRA_DEL_FUEGO', region: 'PATAGONIA_S', prov: 'Tierra del Fuego', amount: 20755256112, lonLat: [-68.30, -54.80], isMainNode: true },
+          { rank: 41, name: 'Universidad Nacional Arturo Jauretche', sigla: 'UNAJ', provId: 'CABA', region: 'CABA_AMBA', prov: 'Buenos Aires (AMBA)', amount: 20410890400, lonLat: [-58.26, -34.77], isMainNode: false },
+          { rank: 42, name: 'Universidad Nacional de Jose C. Paz', sigla: 'UNPAZ', provId: 'CABA', region: 'CABA_AMBA', prov: 'Buenos Aires (AMBA)', amount: 18920340800, lonLat: [-58.74, -34.51], isMainNode: false },
+          { rank: 43, name: 'Universidad Nacional de Avellaneda', sigla: 'UNDAV', provId: 'CABA', region: 'CABA_AMBA', prov: 'Buenos Aires (AMBA)', amount: 18450710200, lonLat: [-58.36, -34.66], isMainNode: false },
+          { rank: 44, name: 'Universidad Nacional de Moreno', sigla: 'UNM', provId: 'CABA', region: 'CABA_AMBA', prov: 'Buenos Aires (AMBA)', amount: 17680920500, lonLat: [-58.79, -34.65], isMainNode: false },
+          { rank: 45, name: 'Universidad Nacional del Oeste', sigla: 'UNO', provId: 'CABA', region: 'CABA_AMBA', prov: 'Buenos Aires (AMBA)', amount: 16540280300, lonLat: [-58.72, -34.66], isMainNode: false },
+          { rank: 46, name: 'Universidad Nacional de Hurlingham', sigla: 'UNAHUR', provId: 'CABA', region: 'CABA_AMBA', prov: 'Buenos Aires (AMBA)', amount: 16210490600, lonLat: [-58.63, -34.59], isMainNode: false },
+          { rank: 47, name: 'Universidad Nacional del Chaco Austral', sigla: 'UNCAUS', provId: 'CHACO', region: 'NEA', prov: 'Chaco', amount: 15890450200, lonLat: [-60.44, -26.78], isMainNode: false },
+          { rank: 48, name: 'Universidad Nacional de Chilecito', sigla: 'UNdeC', provId: 'LA_RIOJA', region: 'NOA', prov: 'La Rioja', amount: 14320890100, lonLat: [-67.49, -29.16], isMainNode: false },
+          { rank: 49, name: 'Universidad Autonoma de Entre Rios (Transf.)', sigla: 'UADER', provId: 'ENTRE_RIOS', region: 'CENTRO', prov: 'Entre Rios', amount: 13980450700, lonLat: [-60.52, -31.73], isMainNode: false },
+          { rank: 50, name: 'Universidad Nacional de Villa Mercedes', sigla: 'UNViMe', provId: 'SAN_LUIS', region: 'CUYO', prov: 'San Luis', amount: 11850620400, lonLat: [-65.46, -33.67], isMainNode: false },
+          { rank: 51, name: 'Universidad Nacional de los Comechingones', sigla: 'UNLC', provId: 'SAN_LUIS', region: 'CUYO', prov: 'San Luis', amount: 9420310800, lonLat: [-65.01, -32.34], isMainNode: false },
+          { rank: 52, name: 'Universidad Nacional de Rafaela', sigla: 'UNRaf', provId: 'SANTA_FE', region: 'CENTRO', prov: 'Santa Fe', amount: 9150480200, lonLat: [-61.49, -31.25], isMainNode: false },
+          { rank: 53, name: 'Universidad Nacional del Alto Uruguay', sigla: 'UNAU', provId: 'MISIONES', region: 'NEA', prov: 'Misiones', amount: 8640210900, lonLat: [-54.48, -27.29], isMainNode: false },
+          { rank: 54, name: 'Universidad Nacional de San Antonio de Areco', sigla: 'UNSAdA', provId: 'BUENOS_AIRES', region: 'BSAS_INT', prov: 'Buenos Aires', amount: 8210450300, lonLat: [-59.47, -34.25], isMainNode: false },
+          { rank: 55, name: 'Universidad Nacional Guillermo Brown', sigla: 'UNaB', provId: 'CABA', region: 'CABA_AMBA', prov: 'Buenos Aires (AMBA)', amount: 7980320600, lonLat: [-58.39, -34.81], isMainNode: false },
+          { rank: 56, name: 'Universidad Nacional Raul Scalabrini Ortiz', sigla: 'UNSO', provId: 'CABA', region: 'CABA_AMBA', prov: 'Buenos Aires (AMBA)', amount: 7450190400, lonLat: [-58.51, -34.47], isMainNode: false },
+          { rank: 57, name: 'Universidad Provincial de Ezeiza', sigla: 'UPE', provId: 'CABA', region: 'CABA_AMBA', prov: 'Buenos Aires (AMBA)', amount: 4210500000, lonLat: [-58.52, -34.85], isMainNode: false },
+          { rank: 58, name: 'Universidad Nacional Madres de Plaza de Mayo', sigla: 'UNMa', provId: 'CABA', region: 'CABA_AMBA', prov: 'CABA', amount: 3150000000, lonLat: [-58.38, -34.61], isMainNode: false },
+          { rank: 59, name: 'Universidad Nacional del Delta', sigla: 'UNDelta', provId: 'CABA', region: 'CABA_AMBA', prov: 'Buenos Aires (AMBA)', amount: 1850000000, lonLat: [-58.58, -34.42], isMainNode: false },
+          { rank: 60, name: 'Universidad Nacional de Pilar', sigla: 'UNPilar', provId: 'CABA', region: 'CABA_AMBA', prov: 'Buenos Aires (AMBA)', amount: 1650000000, lonLat: [-58.91, -34.45], isMainNode: false },
+          { rank: 61, name: 'Universidad Nacional de Rio Tercero', sigla: 'UNRT', provId: 'CORDOBA', region: 'CENTRO', prov: 'Cordoba', amount: 1450000000, lonLat: [-64.11, -32.17], isMainNode: false }
+        ];
+
+        function updateProjectedGeometry() {
+          PROVINCES_GEO.forEach(p => {
+            p.poly = p.raw.map(([lon, lat]) => projectIso(lon, lat));
+            const sx = p.poly.reduce((a, pt) => a + pt[0], 0);
+            const sy = p.poly.reduce((a, pt) => a + pt[1], 0);
+            p.centroid = [sx / p.poly.length, sy / p.poly.length];
+          });
+          UNIVERSITIES.forEach(u => {
+            u.coords = projectIso(u.lonLat[0], u.lonLat[1]);
+          });
+        }
+
+        function shadeColor(hex, percent) {
+          let num = parseInt(hex.replace('#', ''), 16);
+          let amt = Math.round(2.55 * percent);
+          let R = Math.max(0, Math.min(255, (num >> 16) + amt));
+          let G = Math.max(0, Math.min(255, ((num >> 8) & 0x00FF) + amt));
+          let B = Math.max(0, Math.min(255, (num & 0x0000FF) + amt));
+          return '#' + (0x1000000 + R * 0x10000 + G * 0x100 + B).toString(16).slice(1);
+        }
+
+        const PIE_MODES = {
+          universidades: {
+            title: 'Distribución por Universidad Nacional (2026)',
+            items: [
+              { label: 'UBA (Buenos Aires)', value: 799443392572, pct: 16.71, color: '#38bdf8', desc: 'Mayor casa de estudios del país: concentra el 16,71% del crédito inicial, incluyendo hospitales universitarios y 13 facultades.' },
+              { label: 'UTN (Tecnológica Nacional)', value: 336048537300, pct: 7.02, color: '#0284c7', desc: 'Red federal de 30 facultades regionales de ingeniería distribuidas en todo el territorio argentino.' },
+              { label: 'UNLP (La Plata)', value: 322996335363, pct: 6.75, color: '#f59e0b', desc: 'Segunda universidad presencial más grande, con fuerte peso en investigación científica y colegios preuniversitarios.' },
+              { label: 'UNC (Córdoba)', value: 304666095978, pct: 6.37, color: '#10b981', desc: 'Universidad más antigua del país, pilar académico y científico de la región Centro.' },
+              { label: 'UNR (Rosario)', value: 237298391675, pct: 4.96, color: '#6366f1', desc: 'Principal nodo universitario de Santa Fe con 12 facultades y escuelas medias.' },
+              { label: 'UNT (Tucumán)', value: 212671332696, pct: 4.44, color: '#ec4899', desc: 'Referente histórico y presupuestario del Noroeste Argentino (NOA).' },
+              { label: 'UNCUYO (Cuyo)', value: 171893165743, pct: 3.59, color: '#14b8a6', desc: 'Principal institución universitaria de la región de Cuyo con sede central en Mendoza.' },
+              { label: 'UNCo (Comahue - Patagonia)', value: 94220720173, pct: 1.97, color: '#fbbf24', desc: 'Principal universidad de la Patagonia Norte (Neuquén y Río Negro), puesto 12° a nivel nacional.' },
+              { label: 'Resto del Sistema (53 UUNN)', value: 2305879690765, pct: 48.19, color: '#475569', desc: 'Incluye UNNE, UNSJ, UNL, UNMDP, UNLaM, UNS, UNPSJB y las restantes 46 universidades nacionales del país.' }
+            ]
+          },
+          rubros: {
+            title: 'Composición Interna del Gasto Universitario',
+            items: [
+              { label: 'Salarios Docentes y No Docentes (89,4%)', value: 4277895190065, pct: 89.40, color: '#38bdf8', desc: 'Remuneraciones y cargas sociales del personal docente, investigador y nodocente de las 61 instituciones.' },
+              { label: 'Gastos de Funcionamiento (7,2%)', value: 344528471683, pct: 7.20, color: '#f59e0b', desc: 'Servicios públicos (luz, gas, agua), mantenimiento edilicio, limpieza, seguridad, becas e insumos básicos.' },
+              { label: 'Salud y Hospitales Escuela (2,4%)', value: 114842823894, pct: 2.40, color: '#ec4899', desc: 'Sostenimiento asistencial de hospitales universitarios (Hospital de Clínicas, Instituto Roffo, Lanari, etc.).' },
+              { label: 'Ciencia y Técnica (1,0%)', value: 47851176623, pct: 1.00, color: '#10b981', desc: 'Proyectos de investigación aplicada, laboratorios y equipamiento científico.' }
+            ]
+          },
+          nacional: {
+            title: 'Peso en el Presupuesto Nacional Total ($148,1 B)',
+            items: [
+              { label: 'Universidades Nacionales (3,29%)', value: 4870000000000, pct: 3.29, color: '#fbbf24', desc: 'Crédito inicial sancionado ($4,87 billones) dentro del Presupuesto Nacional total ($148,1 billones).' },
+              { label: 'Resto Educación y Cultura (1,91%)', value: 2830000000000, pct: 1.91, color: '#38bdf8', desc: 'Becas Progresar, planes educativos y cultura (toda la función Educación y Cultura suma 5,20%).' },
+              { label: 'Seguridad Social y Jubilaciones (45,17%)', value: 66900000000000, pct: 45.17, color: '#1e3a8a', desc: 'Principal partida del gasto público nacional (ANSES, jubilaciones, pensiones y asignaciones).' },
+              { label: 'Resto Administración Nacional (49,63%)', value: 73500000000000, pct: 49.63, color: '#334155', desc: 'Servicios de deuda, transferencias a provincias, subsidios, salud, defensa y seguridad.' }
+            ]
+          },
+          pbi: {
+            title: 'Peso en el PBI de Argentina ($1.035 Billones)',
+            items: [
+              { label: 'Universidades Nacionales (0,47% PBI)', value: 4870000000000, pct: 0.47, color: '#fbbf24', desc: 'Piso histórico más bajo desde 2001 frente al 0,71% del PBI alcanzado en 2023.' },
+              { label: 'Resto Educación Nacional (0,26% PBI)', value: 2830000000000, pct: 0.26, color: '#38bdf8', desc: 'Resto de programas educativos y culturales de la Administración Nacional.' },
+              { label: 'Resto Gasto Público Nacional (13,57% PBI)', value: 140400000000000, pct: 13.57, color: '#0284c7', desc: 'Demás funciones del Presupuesto Nacional.' },
+              { label: 'Economía Privada y Provincias (85,70% PBI)', value: 886900000000000, pct: 85.70, color: '#1e293b', desc: 'Sector privado y presupuestos provinciales/municipales.' }
+            ]
+          }
+        };
+
+        // =========================================================================
+        // ESTADO Y RENDER DEL MAPA ISOMETRICO 3D ORBITAL DE ARGENTINA
+        // =========================================================================
+        let selectedFocus = 'ALL';
+        let selectedProvId = null;
+        let selectedUniSigla = null;
+        let hasDraggedMap = false;
+        let currentPieMode = 'universidades';
+        let activeSliceIndex = 0;
+
+        function updateFocusChips(activeKey) {
+          document.querySelectorAll('.focus-bar .chip-btn').forEach(btn => {
+            if (btn.dataset.focus === activeKey) {
+              btn.classList.add('active');
+            } else {
+              btn.classList.remove('active');
+            }
+          });
+        }
+
+        function updateMapStrip(badge, title, list) {
+          const total = list.reduce((acc, u) => acc + u.amount, 0);
+          const pct = ((total / TOTAL_PRESUPUESTO_UNIV) * 100).toFixed(2).replace('.', ',');
+          document.getElementById('detail-badge').textContent = badge;
+          document.getElementById('detail-title').textContent = title;
+          document.getElementById('detail-share').textContent = pct + '%';
+          document.getElementById('detail-amount').textContent = fmtARS.format(total);
+        }
+
+        function selectFocusPreset(focusKey) {
+          selectedFocus = focusKey;
+          selectedProvId = null;
+          selectedUniSigla = null;
+          updateFocusChips(focusKey);
+
+          let list = UNIVERSITIES;
+          let title = 'República Argentina (Total Nacional)';
+          let badge = 'Consolidado Nacional · 61 Universidades';
+
+          if (focusKey === 'ALL') {
+            camera3D = { yaw: 0.44, pitch: 0.68, scale: 1, tx: 0, ty: 0 };
+          } else if (focusKey === 'CABA_AMBA') {
+            list = UNIVERSITIES.filter(u => u.region === 'CABA_AMBA');
+            title = 'CABA y Conurbano Bonaerense (AMBA)';
+            badge = 'Enfoque Metropolitano · AMBA y CABA';
+            camera3D = { yaw: 0.44, pitch: 0.68, scale: 1.5, tx: -320, ty: -195 };
+          } else if (focusKey === 'PATAGONIA_UNCO') {
+            list = UNIVERSITIES.filter(u => u.region === 'PATAGONIA_N' || u.region === 'PATAGONIA_S');
+            title = 'Patagonia Argentina (Foco Neuquén - UNCo)';
+            badge = 'Enfoque Regional · 6 Universidades Patagónicas';
+            camera3D = { yaw: 0.44, pitch: 0.68, scale: 1.4, tx: -55, ty: -285 };
+            selectedUniSigla = 'UNCo';
+          } else if (focusKey === 'CENTRO') {
+            list = UNIVERSITIES.filter(u => u.region === 'CENTRO');
+            title = 'Región Centro (Córdoba, Santa Fe, Entre Ríos)';
+            badge = 'Enfoque Regional · Región Centro';
+            camera3D = { yaw: 0.44, pitch: 0.68, scale: 1.45, tx: -225, ty: -135 };
+          } else if (focusKey === 'NORTE') {
+            list = UNIVERSITIES.filter(u => u.region === 'NOA' || u.region === 'NEA');
+            title = 'Norte Grande Argentino (NOA + NEA)';
+            badge = 'Enfoque Regional · 10 Provincias del Norte';
+            camera3D = { yaw: 0.44, pitch: 0.68, scale: 1.35, tx: -205, ty: 15 };
+          } else if (focusKey === 'CUYO') {
+            list = UNIVERSITIES.filter(u => u.region === 'CUYO');
+            title = 'Región de Cuyo (Mendoza, San Juan, San Luis)';
+            badge = 'Enfoque Regional · Región de Cuyo';
+            camera3D = { yaw: 0.44, pitch: 0.68, scale: 1.45, tx: -135, ty: -150 };
+          }
+
+          updateMapStrip(badge, title, list);
+          renderIsometricMap();
+          applyMapTransform(true);
+        }
+
+        function selectProvince(provId) {
+          selectedProvId = provId;
+          selectedFocus = 'CUSTOM';
+          selectedUniSigla = null;
+          updateFocusChips('');
+
+          const provObj = PROVINCES_GEO.find(p => p.id === provId);
+          const list = UNIVERSITIES.filter(u => u.provId === provId);
+          updateMapStrip('Jurisdicción Provincial (' + list.length + ' UUNN)', provObj.name, list);
+          renderIsometricMap();
+        }
+
+        function focusUniversity(uni) {
+          selectedProvId = uni.provId;
+          selectedUniSigla = uni.sigla;
+          const uPct = ((uni.amount / TOTAL_PRESUPUESTO_UNIV) * 100).toFixed(2).replace('.', ',');
+          document.getElementById('detail-badge').textContent = 'Institución Seleccionada · Ranking #' + uni.rank;
+          document.getElementById('detail-title').textContent = uni.name + ' (' + uni.sigla + ')';
+          document.getElementById('detail-share').textContent = uPct + '%';
+          document.getElementById('detail-amount').textContent = fmtARS.format(uni.amount);
+          renderIsometricMap();
+        }
+
+        function clampMapTransform() {
+          const minScale = 0.6;
+          const maxScale = 4.5;
+          camera3D.scale = Math.max(minScale, Math.min(maxScale, camera3D.scale));
+          camera3D.pitch = Math.max(0.26, Math.min(1.02, camera3D.pitch));
+          const maxPanX = 560 * camera3D.scale;
+          const maxPanY = 520 * camera3D.scale;
+          camera3D.tx = Math.max(-maxPanX, Math.min(480, camera3D.tx));
+          camera3D.ty = Math.max(-maxPanY, Math.min(440, camera3D.ty));
+        }
+
+        function applyMapTransform(smooth) {
+          clampMapTransform();
+          const vp = document.getElementById('map-viewport-group');
+          if (vp) {
+            if (smooth) {
+              vp.classList.add('smooth-cam');
+            } else {
+              vp.classList.remove('smooth-cam');
+            }
+            vp.setAttribute('transform', 'translate(' + camera3D.tx.toFixed(2) + ', ' + camera3D.ty.toFixed(2) + ') scale(' + camera3D.scale.toFixed(3) + ')');
+          }
+          const badge = document.getElementById('zoom-level-indicator');
+          if (badge) {
+            const deg = Math.round(((camera3D.yaw * 180 / Math.PI) % 360 + 360) % 360);
+            badge.textContent = Math.round(camera3D.scale * 100) + '% · ' + deg + '°';
+          }
+        }
+
+        function zoomAtSvgPoint(factor, svgX, svgY, smooth) {
+          const prevScale = camera3D.scale;
+          const nextScale = Math.max(0.6, Math.min(4.5, +(prevScale * factor).toFixed(3)));
+          if (nextScale === prevScale) return;
+
+          const worldX = (svgX - camera3D.tx) / prevScale;
+          const worldY = (svgY - camera3D.ty) / prevScale;
+
+          camera3D.scale = nextScale;
+          camera3D.tx = svgX - worldX * nextScale;
+          camera3D.ty = svgY - worldY * nextScale;
+          applyMapTransform(smooth);
+        }
+
+        function clientToSvgCoords(clientX, clientY) {
+          const svgEl = document.getElementById('argentina-iso-map');
+          const rect = svgEl.getBoundingClientRect();
+          const svgX = ((clientX - rect.left) / rect.width) * 780;
+          const svgY = ((clientY - rect.top) / rect.height) * 700;
+          return { x: svgX, y: svgY };
+        }
+
+        function renderGrid3D() {
+          const gridLayer = document.getElementById('iso-grid-layer');
+          if (!gridLayer) return;
+          gridLayer.innerHTML = '';
+
+          const lons = [-74, -69, -64, -59, -54];
+          const lats = [-21, -28, -35, -42, -49, -56];
+
+          const c1 = projectIso(lons[0], lats[0]);
+          const c2 = projectIso(lons[lons.length - 1], lats[0]);
+          const c3 = projectIso(lons[lons.length - 1], lats[lats.length - 1]);
+          const c4 = projectIso(lons[0], lats[lats.length - 1]);
+
+          const platform = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
+          platform.setAttribute('points', [c1, c2, c3, c4].map(p => p.map(v => v.toFixed(1)).join(',')).join(' '));
+          platform.setAttribute('fill', '#07152b');
+          platform.setAttribute('stroke', '#1e3a5f');
+          platform.setAttribute('stroke-width', '1.6');
+          gridLayer.appendChild(platform);
+
+          lons.forEach(lon => {
+            const pStart = projectIso(lon, lats[0]);
+            const pEnd = projectIso(lon, lats[lats.length - 1]);
+            const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+            line.setAttribute('x1', pStart[0].toFixed(1));
+            line.setAttribute('y1', pStart[1].toFixed(1));
+            line.setAttribute('x2', pEnd[0].toFixed(1));
+            line.setAttribute('y2', pEnd[1].toFixed(1));
+            gridLayer.appendChild(line);
+          });
+
+          lats.forEach(lat => {
+            const pStart = projectIso(lons[0], lat);
+            const pEnd = projectIso(lons[lons.length - 1], lat);
+            const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+            line.setAttribute('x1', pStart[0].toFixed(1));
+            line.setAttribute('y1', pStart[1].toFixed(1));
+            line.setAttribute('x2', pEnd[0].toFixed(1));
+            line.setAttribute('y2', pEnd[1].toFixed(1));
+            gridLayer.appendChild(line);
+          });
+
+          const northPt = projectIso(-62, -20.2);
+          const nTxt = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+          nTxt.setAttribute('x', northPt[0].toFixed(1));
+          nTxt.setAttribute('y', northPt[1].toFixed(1));
+          nTxt.setAttribute('text-anchor', 'middle');
+          nTxt.setAttribute('fill', '#38bdf8');
+          nTxt.setAttribute('font-size', '10');
+          nTxt.setAttribute('font-weight', '800');
+          nTxt.textContent = '▲ NORTE';
+          gridLayer.appendChild(nTxt);
+        }
+
+        function renderIsometricMap() {
+          updateProjectedGeometry();
+          renderGrid3D();
+
+          const regionsLayer = document.getElementById('iso-regions-layer');
+          const pillarsLayer = document.getElementById('iso-pillars-layer');
+          const labelsLayer = document.getElementById('iso-labels-layer');
+
+          regionsLayer.innerHTML = '';
+          pillarsLayer.innerHTML = '';
+          labelsLayer.innerHTML = '';
+
+          const tiltFactor = Math.max(0.35, 1.35 - camera3D.pitch);
+          const extrudeDepth = Math.round(16 * tiltFactor);
+          const sortedProvs = [...PROVINCES_GEO].sort((a, b) => a.centroid[1] - b.centroid[1]);
+
+          sortedProvs.forEach(prov => {
+            const provUnis = UNIVERSITIES.filter(u => u.provId === prov.id);
+            const provTotal = provUnis.reduce((acc, u) => acc + u.amount, 0);
+            const provPct = ((provTotal / TOTAL_PRESUPUESTO_UNIV) * 100).toFixed(2).replace('.', ',');
+
+            const isHighlighted =
+              selectedProvId === prov.id ||
+              (selectedFocus === 'CABA_AMBA' && prov.id === 'CABA') ||
+              (selectedFocus === 'PATAGONIA_UNCO' && (prov.id === 'NEUQUEN' || prov.id === 'RIO_NEGRO')) ||
+              (selectedFocus === 'CENTRO' && prov.region === 'CENTRO') ||
+              (selectedFocus === 'NORTE' && (prov.region === 'NOA' || prov.region === 'NEA')) ||
+              (selectedFocus === 'CUYO' && prov.region === 'CUYO');
+
+            const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+            g.setAttribute('class', 'iso-prov' + (isHighlighted ? ' active' : ''));
+
+            const pts = prov.poly;
+            const visibleEdges = [];
+            for (let i = 0; i < pts.length; i++) {
+              const p1 = pts[i];
+              const p2 = pts[(i + 1) % pts.length];
+              if (p2[0] < p1[0] || Math.abs(p2[1] - p1[1]) > 1.5) {
+                visibleEdges.push({ p1, p2, midY: (p1[1] + p2[1]) / 2, idx: i });
+              }
+            }
+            visibleEdges.sort((a, b) => a.midY - b.midY);
+
+            visibleEdges.forEach(edge => {
+              const { p1, p2, idx } = edge;
+              const side = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
+              const sidePts = p1[0].toFixed(1) + ',' + p1[1].toFixed(1) + ' ' + p2[0].toFixed(1) + ',' + p2[1].toFixed(1) + ' ' + p2[0].toFixed(1) + ',' + (p2[1] + extrudeDepth).toFixed(1) + ' ' + p1[0].toFixed(1) + ',' + (p1[1] + extrudeDepth).toFixed(1);
+              side.setAttribute('points', sidePts);
+              side.setAttribute('fill', isHighlighted ? '#b45309' : (idx % 2 === 0 ? '#082f49' : '#0c4a6e'));
+              side.setAttribute('stroke', '#041226');
+              side.setAttribute('stroke-width', '0.6');
+              g.appendChild(side);
+            });
+
+            const topFace = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
+            topFace.setAttribute('points', pts.map(p => p[0].toFixed(1) + ',' + p[1].toFixed(1)).join(' '));
+            topFace.setAttribute('fill', isHighlighted ? 'url(#provTopActive)' : prov.color);
+            topFace.setAttribute('stroke', isHighlighted ? '#fef08a' : '#7dd3fc');
+            topFace.setAttribute('stroke-width', isHighlighted ? '1.8' : '0.9');
+            topFace.setAttribute('fill-opacity', isHighlighted ? '0.96' : '0.86');
+            g.appendChild(topFace);
+
+            g.addEventListener('mouseenter', e => {
+              showTooltip(
+                e,
+                prov.name,
+                provUnis.length + ' Universidad(es) Nacional(es) con sede',
+                provTotal > 0 ? formatShortARS(provTotal) + ' (' + provPct + '%)' : 'Sedes regionales y extensiones áulicas',
+                provUnis.length > 0 ? provUnis.slice(0, 3).map(u => u.sigla).join(', ') + (provUnis.length > 3 ? '...' : '') : 'Cobertura universitaria nacional'
+              );
+            });
+            g.addEventListener('mousemove', moveTooltip);
+            g.addEventListener('mouseleave', hideTooltip);
+            g.addEventListener('click', () => {
+              if (hasDraggedMap) return;
+              selectProvince(prov.id);
+            });
+
+            regionsLayer.appendChild(g);
+          });
+
+          const maxAmount = UNIVERSITIES[0].amount;
+          const mainNodes = UNIVERSITIES.filter(u => u.isMainNode).sort((a, b) => a.coords[1] - b.coords[1]);
+
+          mainNodes.forEach(uni => {
+            const [cx, cy] = uni.coords;
+            const h = Math.max(14, Math.round((uni.amount / maxAmount) * 125 * tiltFactor));
+            const w = uni.sigla === 'UBA' ? 7.5 : 5.5;
+            const isSelected = selectedUniSigla === uni.sigla;
+
+            const gPillar = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+            gPillar.setAttribute('class', 'iso-pillar');
+
+            const dy = w * camera3D.pitch * 0.85;
+            const baseRing = document.createElementNS('http://www.w3.org/2000/svg', 'ellipse');
+            baseRing.setAttribute('cx', cx.toFixed(1));
+            baseRing.setAttribute('cy', cy.toFixed(1));
+            baseRing.setAttribute('rx', (w + 3.5).toFixed(1));
+            baseRing.setAttribute('ry', ((w + 3.5) * camera3D.pitch * 0.85).toFixed(1));
+            baseRing.setAttribute('fill', isSelected ? '#fef08a' : '#fbbf24');
+            baseRing.setAttribute('opacity', isSelected ? '0.95' : '0.4');
+            gPillar.appendChild(baseRing);
+
+            const topY = cy - h;
+
+            const leftFace = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
+            leftFace.setAttribute('points', (cx - w).toFixed(1) + ',' + cy.toFixed(1) + ' ' + cx.toFixed(1) + ',' + (cy + dy).toFixed(1) + ' ' + cx.toFixed(1) + ',' + (topY + dy).toFixed(1) + ' ' + (cx - w).toFixed(1) + ',' + topY.toFixed(1));
+            leftFace.setAttribute('fill', isSelected ? '#38bdf8' : 'url(#pillarFront)');
+            leftFace.setAttribute('stroke', '#0f172a');
+            leftFace.setAttribute('stroke-width', '0.6');
+            gPillar.appendChild(leftFace);
+
+            const rightFace = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
+            rightFace.setAttribute('points', cx.toFixed(1) + ',' + (cy + dy).toFixed(1) + ' ' + (cx + w).toFixed(1) + ',' + cy.toFixed(1) + ' ' + (cx + w).toFixed(1) + ',' + topY.toFixed(1) + ' ' + cx.toFixed(1) + ',' + (topY + dy).toFixed(1));
+            rightFace.setAttribute('fill', isSelected ? '#0284c7' : 'url(#pillarSide)');
+            rightFace.setAttribute('stroke', '#0f172a');
+            rightFace.setAttribute('stroke-width', '0.6');
+            gPillar.appendChild(rightFace);
+
+            const topCap = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
+            topCap.setAttribute('points', cx.toFixed(1) + ',' + (topY - dy).toFixed(1) + ' ' + (cx + w).toFixed(1) + ',' + topY.toFixed(1) + ' ' + cx.toFixed(1) + ',' + (topY + dy).toFixed(1) + ' ' + (cx - w).toFixed(1) + ',' + topY.toFixed(1));
+            topCap.setAttribute('fill', isSelected ? '#bae6fd' : '#fef08a');
+            topCap.setAttribute('stroke', '#0f172a');
+            topCap.setAttribute('stroke-width', '0.6');
+            gPillar.appendChild(topCap);
+
+            const pct = ((uni.amount / TOTAL_PRESUPUESTO_UNIV) * 100).toFixed(2).replace('.', ',');
+            gPillar.addEventListener('mouseenter', e => {
+              e.stopPropagation();
+              showTooltip(
+                e,
+                uni.sigla + ' · ' + uni.name,
+                'Jurisdicción: ' + uni.prov + ' · Ranking #' + uni.rank,
+                fmtARS.format(uni.amount),
+                'Representa el ' + pct + '% del presupuesto universitario total'
+              );
+            });
+            gPillar.addEventListener('mousemove', moveTooltip);
+            gPillar.addEventListener('mouseleave', hideTooltip);
+            gPillar.addEventListener('click', e => {
+              e.stopPropagation();
+              if (hasDraggedMap) return;
+              focusUniversity(uni);
+            });
+
+            pillarsLayer.appendChild(gPillar);
+
+            if (uni.amount >= 75000000000 || uni.sigla === 'UNRN' || uni.sigla === 'UNPA' || uni.sigla === 'UNTDF' || isSelected) {
+              const label = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+              const isLeftSide = cx < 395;
+              const offsetX = isLeftSide ? -w - 5 : w + 5;
+              label.setAttribute('x', (cx + offsetX).toFixed(1));
+              label.setAttribute('y', (topY + 2).toFixed(1));
+              label.setAttribute('text-anchor', isLeftSide ? 'end' : 'start');
+              label.setAttribute('fill', isSelected ? '#38bdf8' : '#f8fafc');
+              label.setAttribute('font-size', uni.sigla === 'UBA' ? '11' : '9.5');
+              label.setAttribute('font-weight', '800');
+              label.setAttribute('font-family', 'monospace');
+              label.textContent = uni.sigla;
+              labelsLayer.appendChild(label);
+            }
+          });
+
+          applyMapTransform(false);
+        }
+
+        function renderIsometricPie(modeKey) {
+          currentPieMode = modeKey;
+          const modeData = PIE_MODES[modeKey];
+          const container = document.getElementById('iso-pie-container');
+          const legendList = document.getElementById('pie-legend-list');
+          container.innerHTML = '';
+          legendList.innerHTML = '';
+
+          const cx = 310;
+          const cy = 172;
+          const rx = 195;
+          const ry = 104;
+          const depth = 32;
+
+          const totalVal = modeData.items.reduce((s, it) => s + it.value, 0);
+          let startAngle = -Math.PI / 2;
+
+          const slices = modeData.items.map((item, idx) => {
+            const rawAngle = (item.value / totalVal) * Math.PI * 2;
+            const visualAngle = Math.max(0.08, rawAngle);
+            return { item, idx, rawAngle, visualAngle };
+          });
+
+          const totalVisual = slices.reduce((s, sl) => s + sl.visualAngle, 0);
+          slices.forEach(sl => {
+            const scaledAngle = (sl.visualAngle / totalVisual) * Math.PI * 2;
+            sl.startAngle = startAngle;
+            sl.endAngle = startAngle + scaledAngle;
+            sl.midAngle = startAngle + scaledAngle / 2;
+            startAngle = sl.endAngle;
+          });
+
+          const renderOrder = [...slices].sort((a, b) => Math.sin(a.midAngle) - Math.sin(b.midAngle));
+
+          renderOrder.forEach(s => {
+            const { item, idx, startAngle: a1, endAngle: a2, midAngle } = s;
+            const isSelected = idx === activeSliceIndex;
+            const explodeDist = isSelected ? 15 : 0;
+            const ox = cx + Math.cos(midAngle) * explodeDist;
+            const oy = cy + Math.sin(midAngle) * (explodeDist * 0.6);
+
+            const x1 = ox + rx * Math.cos(a1);
+            const y1 = oy + ry * Math.sin(a1);
+            const x2 = ox + rx * Math.cos(a2);
+            const y2 = oy + ry * Math.sin(a2);
+            const largeArc = (a2 - a1) > Math.PI ? 1 : 0;
+
+            const gSlice = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+            gSlice.setAttribute('class', 'iso-slice');
+
+            const darkColor = shadeColor(item.color, -32);
+            const midDarkColor = shadeColor(item.color, -20);
+
+            const wall1 = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
+            wall1.setAttribute('points', ox + ',' + oy + ' ' + x1 + ',' + y1 + ' ' + x1 + ',' + (y1 + depth) + ' ' + ox + ',' + (oy + depth));
+            wall1.setAttribute('fill', midDarkColor);
+            gSlice.appendChild(wall1);
+
+            const wall2 = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
+            wall2.setAttribute('points', ox + ',' + oy + ' ' + x2 + ',' + y2 + ' ' + x2 + ',' + (y2 + depth) + ' ' + ox + ',' + (oy + depth));
+            wall2.setAttribute('fill', darkColor);
+            gSlice.appendChild(wall2);
+
+            const outerWall = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+            outerWall.setAttribute('d', 'M ' + x1 + ' ' + y1 + ' A ' + rx + ' ' + ry + ' 0 ' + largeArc + ' 1 ' + x2 + ' ' + y2 + ' L ' + x2 + ' ' + (y2 + depth) + ' A ' + rx + ' ' + ry + ' 0 ' + largeArc + ' 0 ' + x1 + ' ' + (y1 + depth) + ' Z');
+            outerWall.setAttribute('fill', darkColor);
+            outerWall.setAttribute('stroke', '#050c17');
+            outerWall.setAttribute('stroke-width', '0.7');
+            gSlice.appendChild(outerWall);
+
+            const topSlice = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+            topSlice.setAttribute('d', 'M ' + ox + ' ' + oy + ' L ' + x1 + ' ' + y1 + ' A ' + rx + ' ' + ry + ' 0 ' + largeArc + ' 1 ' + x2 + ' ' + y2 + ' Z');
+            topSlice.setAttribute('fill', item.color);
+            topSlice.setAttribute('stroke', isSelected ? '#ffffff' : '#0b182b');
+            topSlice.setAttribute('stroke-width', isSelected ? '1.8' : '1');
+            gSlice.appendChild(topSlice);
+
+            if (item.pct >= 4.5) {
+              const lx = ox + (rx * 0.64) * Math.cos(midAngle);
+              const ly = oy + (ry * 0.64) * Math.sin(midAngle);
+              const txt = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+              txt.setAttribute('x', lx);
+              txt.setAttribute('y', ly + 4);
+              txt.setAttribute('text-anchor', 'middle');
+              txt.setAttribute('fill', '#ffffff');
+              txt.setAttribute('font-size', '10.5');
+              txt.setAttribute('font-weight', '800');
+              txt.setAttribute('font-family', 'monospace');
+              txt.setAttribute('pointer-events', 'none');
+              txt.textContent = item.pct.toFixed(1).replace('.', ',') + '%';
+              gSlice.appendChild(txt);
+            }
+
+            gSlice.addEventListener('mouseenter', e => {
+              showTooltip(
+                e,
+                item.label,
+                modeData.title,
+                fmtARS.format(item.value) + ' (' + item.pct.toFixed(2).replace('.', ',') + '%)',
+                item.desc
+              );
+            });
+            gSlice.addEventListener('mousemove', moveTooltip);
+            gSlice.addEventListener('mouseleave', hideTooltip);
+            gSlice.addEventListener('click', () => {
+              activeSliceIndex = idx;
+              renderIsometricPie(currentPieMode);
+            });
+
+            container.appendChild(gSlice);
+          });
+
+          const activeItem = modeData.items[activeSliceIndex] || modeData.items[0];
+          document.getElementById('pie-card-tag').textContent = modeData.title;
+          document.getElementById('pie-card-pct').textContent = activeItem.pct.toFixed(2).replace('.', ',') + '%';
+          document.getElementById('pie-card-title').textContent = activeItem.label;
+          document.getElementById('pie-card-amount').textContent = fmtARS.format(activeItem.value);
+          document.getElementById('pie-card-desc').textContent = activeItem.desc;
+
+          modeData.items.forEach((item, idx) => {
+            const isSel = idx === activeSliceIndex;
+            const row = document.createElement('div');
+            row.className = 'legend-item' + (isSel ? ' active' : '');
+            row.innerHTML =
+              '<div style="display:flex; align-items:center; gap:8px; min-width:0;">' +
+                '<span class="color-dot" style="background:' + item.color + ';"></span>' +
+                '<span style="font-size:0.74rem; font-weight:700; color:#f1f5f9; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">' + item.label + '</span>' +
+              '</div>' +
+              '<div style="text-align:right; flex-shrink:0;">' +
+                '<span class="mono" style="font-size:0.74rem; font-weight:800; color:#fbbf24;">' + item.pct.toFixed(2).replace('.', ',') + '%</span>' +
+              '</div>';
+            row.addEventListener('click', () => {
+              activeSliceIndex = idx;
+              renderIsometricPie(currentPieMode);
+            });
+            legendList.appendChild(row);
+          });
+        }
+
+        // =========================================================================
+        // TABLA Y BUSCADOR DE UNIVERSIDADES
+        // =========================================================================
+        function renderUniversitiesTable() {
+          const searchVal = document.getElementById('uni-search').value.toLowerCase().trim();
+          const regionVal = document.getElementById('uni-region-filter').value;
+          const tbody = document.getElementById('uni-table-body');
+          tbody.innerHTML = '';
+
+          const filtered = UNIVERSITIES.filter(u => {
+            const matchText = u.name.toLowerCase().includes(searchVal) ||
+                              u.sigla.toLowerCase().includes(searchVal) ||
+                              u.prov.toLowerCase().includes(searchVal);
+            const matchReg = regionVal === 'ALL' || u.region === regionVal;
+            return matchText && matchReg;
+          });
+
+          filtered.forEach(uni => {
+            const pct = ((uni.amount / TOTAL_PRESUPUESTO_UNIV) * 100).toFixed(2).replace('.', ',');
+            const tr = document.createElement('tr');
+            tr.innerHTML =
+              '<td class="mono" style="color:#94a3b8; font-weight:700;">' + uni.rank + '</td>' +
+              '<td style="font-weight:700; color:#f1f5f9;">' + uni.name + '</td>' +
+              '<td><span class="sigla-pill">' + uni.sigla + '</span></td>' +
+              '<td style="color:#94a3b8;">' + uni.prov + '</td>' +
+              '<td class="text-right mono" style="font-weight:700; color:#fbbf24;">' + fmtARS.format(uni.amount) + '</td>' +
+              '<td class="text-right mono" style="color:#38bdf8;">' + pct + '%</td>';
+
+            tr.addEventListener('click', () => {
+              focusUniversity(uni);
+              document.getElementById('argentina-iso-map').scrollIntoView({ behavior: 'smooth', block: 'center' });
+            });
+            tbody.appendChild(tr);
+          });
+        }
+
+        // Eventos de enfoque rapido
+        document.querySelectorAll('.focus-bar .chip-btn').forEach(btn => {
+          btn.addEventListener('click', () => {
+            selectFocusPreset(btn.dataset.focus);
+          });
+        });
+
+        function handleZoomStep(factor) {
+          zoomAtSvgPoint(factor, 390, 350, true);
+        }
+
+        function handleZoomReset() {
+          camera3D = { yaw: 0.44, pitch: 0.68, scale: 1, tx: 0, ty: 0 };
+          renderIsometricMap();
+          applyMapTransform(true);
+        }
+
+        document.getElementById('zoom-in').addEventListener('click', () => handleZoomStep(1.25));
+        document.getElementById('zoom-out').addEventListener('click', () => handleZoomStep(0.8));
+        document.getElementById('zoom-reset').addEventListener('click', handleZoomReset);
+
+        document.getElementById('hud-zoom-in').addEventListener('click', () => handleZoomStep(1.25));
+        document.getElementById('hud-zoom-out').addEventListener('click', () => handleZoomStep(0.8));
+        document.getElementById('hud-zoom-reset').addEventListener('click', handleZoomReset);
+
+        document.getElementById('hud-rot-left').addEventListener('click', () => {
+          camera3D.yaw -= 0.14;
+          renderIsometricMap();
+        });
+        document.getElementById('hud-rot-right').addEventListener('click', () => {
+          camera3D.yaw += 0.14;
+          renderIsometricMap();
+        });
+        document.getElementById('hud-tilt-up').addEventListener('click', () => {
+          camera3D.pitch = Math.min(1.02, camera3D.pitch + 0.045);
+          renderIsometricMap();
+        });
+        document.getElementById('hud-tilt-down').addEventListener('click', () => {
+          camera3D.pitch = Math.max(0.26, camera3D.pitch - 0.045);
+          renderIsometricMap();
+        });
+
+        const svgMap = document.getElementById('argentina-iso-map');
+        let dragMode = null; // 'orbit' (clic izq) o 'pan' (clic der / shift / medio)
+        let pointerDownPos = { x: 0, y: 0 };
+        let startDragState = { x: 0, y: 0, tx: 0, ty: 0, yaw: 0.44, pitch: 0.68 };
+        let lastPinchDist = null;
+        let lastTouchMid = null;
+
+        svgMap.addEventListener('contextmenu', e => e.preventDefault());
+
+        svgMap.addEventListener('mousedown', e => {
+          if (e.button !== 0 && e.button !== 1 && e.button !== 2) return;
+          dragMode = (e.button === 2 || e.button === 1 || e.shiftKey) ? 'pan' : 'orbit';
+          hasDraggedMap = false;
+          pointerDownPos = { x: e.clientX, y: e.clientY };
+          startDragState = {
+            x: e.clientX,
+            y: e.clientY,
+            tx: camera3D.tx,
+            ty: camera3D.ty,
+            yaw: camera3D.yaw,
+            pitch: camera3D.pitch
+          };
+          svgMap.style.cursor = 'grabbing';
+          hideTooltip();
+        });
+
+        window.addEventListener('mousemove', e => {
+          if (!dragMode) return;
+          const dxClient = e.clientX - startDragState.x;
+          const dyClient = e.clientY - startDragState.y;
+          if (Math.hypot(e.clientX - pointerDownPos.x, e.clientY - pointerDownPos.y) > 4) {
+            hasDraggedMap = true;
+          }
+
+          if (dragMode === 'orbit') {
+            // Rotacion orbital 360° (yaw) e inclinacion vertical 3D (pitch) con sensibilidad amortiguada
+            camera3D.yaw = startDragState.yaw + dxClient * 0.0032;
+            camera3D.pitch = Math.max(0.26, Math.min(1.02, startDragState.pitch + dyClient * 0.0012));
+            renderIsometricMap();
+          } else if (dragMode === 'pan') {
+            const rect = svgMap.getBoundingClientRect();
+            const scaleRatioX = (780 / rect.width) * 0.65;
+            const scaleRatioY = (700 / rect.height) * 0.65;
+            camera3D.tx = startDragState.tx + dxClient * scaleRatioX;
+            camera3D.ty = startDragState.ty + dyClient * scaleRatioY;
+            applyMapTransform(false);
+          }
+        });
+
+        window.addEventListener('mouseup', () => {
+          if (!dragMode) return;
+          dragMode = null;
+          svgMap.style.cursor = 'grab';
+          setTimeout(() => {
+            hasDraggedMap = false;
+          }, 40);
+        });
+
+        // Zoom con rueda del mouse centrado en el cursor (paso suave)
+        svgMap.addEventListener('wheel', e => {
+          e.preventDefault();
+          hideTooltip();
+          const pt = clientToSvgCoords(e.clientX, e.clientY);
+          const factor = e.deltaY < 0 ? 1.075 : 0.93;
+          zoomAtSvgPoint(factor, pt.x, pt.y, false);
+        }, { passive: false });
+
+        // Doble clic para acercar en el punto cliqueado
+        svgMap.addEventListener('dblclick', e => {
+          e.preventDefault();
+          const pt = clientToSvgCoords(e.clientX, e.clientY);
+          zoomAtSvgPoint(1.25, pt.x, pt.y, true);
+        });
+
+        // Soporte tactil: 1 dedo orbita 3D, 2 dedos hacen pan + pinch-to-zoom
+        svgMap.addEventListener('touchstart', e => {
+          if (e.touches.length === 1) {
+            const t = e.touches[0];
+            dragMode = 'orbit';
+            hasDraggedMap = false;
+            pointerDownPos = { x: t.clientX, y: t.clientY };
+            startDragState = {
+              x: t.clientX,
+              y: t.clientY,
+              tx: camera3D.tx,
+              ty: camera3D.ty,
+              yaw: camera3D.yaw,
+              pitch: camera3D.pitch
+            };
+          } else if (e.touches.length === 2) {
+            dragMode = null;
+            const t1 = e.touches[0];
+            const t2 = e.touches[1];
+            lastPinchDist = Math.hypot(t2.clientX - t1.clientX, t2.clientY - t1.clientY);
+            lastTouchMid = { x: (t1.clientX + t2.clientX) / 2, y: (t1.clientY + t2.clientY) / 2 };
+          }
+        }, { passive: false });
+
+        svgMap.addEventListener('touchmove', e => {
+          e.preventDefault();
+          if (e.touches.length === 1 && dragMode === 'orbit') {
+            const t = e.touches[0];
+            const dxClient = t.clientX - startDragState.x;
+            const dyClient = t.clientY - startDragState.y;
+            if (Math.hypot(t.clientX - pointerDownPos.x, t.clientY - pointerDownPos.y) > 4) {
+              hasDraggedMap = true;
+            }
+            camera3D.yaw = startDragState.yaw + dxClient * 0.0032;
+            camera3D.pitch = Math.max(0.26, Math.min(1.02, startDragState.pitch + dyClient * 0.0012));
+            renderIsometricMap();
+          } else if (e.touches.length === 2 && lastPinchDist && lastTouchMid) {
+            const t1 = e.touches[0];
+            const t2 = e.touches[1];
+            const dist = Math.hypot(t2.clientX - t1.clientX, t2.clientY - t1.clientY);
+            const midClientX = (t1.clientX + t2.clientX) / 2;
+            const midClientY = (t1.clientY + t2.clientY) / 2;
+
+            const rect = svgMap.getBoundingClientRect();
+            camera3D.tx += (midClientX - lastTouchMid.x) * (780 / rect.width);
+            camera3D.ty += (midClientY - lastTouchMid.y) * (700 / rect.height);
+            lastTouchMid = { x: midClientX, y: midClientY };
+
+            const pt = clientToSvgCoords(midClientX, midClientY);
+            const factor = dist / lastPinchDist;
+            lastPinchDist = dist;
+            zoomAtSvgPoint(factor, pt.x, pt.y, false);
+          }
+        }, { passive: false });
+
+        svgMap.addEventListener('touchend', () => {
+          dragMode = null;
+          lastPinchDist = null;
+          lastTouchMid = null;
+          setTimeout(() => {
+            hasDraggedMap = false;
+          }, 40);
+        });
+
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+          btn.addEventListener('click', () => {
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            activeSliceIndex = 0;
+            renderIsometricPie(btn.dataset.pieMode);
+          });
+        });
+
+        document.getElementById('uni-search').addEventListener('input', renderUniversitiesTable);
+        document.getElementById('uni-region-filter').addEventListener('change', renderUniversitiesTable);
+
+        // Inicializacion
+        selectFocusPreset('ALL');
+        renderIsometricPie('universidades');
+        renderUniversitiesTable();
+      } catch (err) {
+        console.error('Error al inicializar el tablero:', err);
+      }
+    });
+  </script>
+</body>
+</html>

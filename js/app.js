@@ -55,6 +55,14 @@ class PresentationApp {
         descripcion: "Diagrama arquitectónico central que modela la alineación estratégica, la planificación, el rendimiento, la compensación y las relaciones laborales en el empleo público."
       },
       {
+        id: "presupuesto_isometrico_dashboard",
+        titulo: "Presupuesto Universitario Nacional 2026 y Centralidad CURZAS",
+        autor: "Ley de Presupuesto APN 2026 & CURZAS (Avance 4)",
+        archivo: "assets/presupuesto_isometrico_preview.svg",
+        maqueta3D: "assets/presupuesto_universitario_2026_argentina_svg_isom_trico.html",
+        descripcion: "Comparativa macrofiscal escalonada: PBI ($1.035 B), Presupuesto APN ($148,1 B), Sistema Universitario ($4,87 B) y CURZAS ($4.877 M) con absorción del 90,2% en salarios (Inciso 1)."
+      },
+      {
         id: "rionegro_departamental",
         titulo: "División Departamental de Río Negro",
         autor: "CURZAS — UNCo",
@@ -1112,11 +1120,14 @@ class PresentationApp {
       const svgActionBox = document.createElement("div");
       svgActionBox.className = "slide-svg-action";
       const hasMaqueta = Boolean(slide.maqueta3D);
+      const badgeText = slide.badgeGrafico || (hasMaqueta ? "📐 LÁMINA CARTOGRÁFICA & MAQUETA 3D" : "📐 DIAGRAMA VECTORIAL VISIBLE");
+      const label2D = slide.labelBoton2D || "🔍 Lámina Oficial 2D";
+      const label3D = slide.labelBoton3D || "🌐 Maqueta 3D Real";
 
       svgActionBox.innerHTML = `
         <div class="slide-svg-inline-container" title="Haga clic para agrandar en pantalla completa (Atajo: V)">
           <div class="slide-svg-inline-header">
-            <span class="slide-svg-badge">${hasMaqueta ? "📐 LÁMINA CARTOGRÁFICA & MAQUETA 3D" : "📐 DIAGRAMA VECTORIAL VISIBLE"}</span>
+            <span class="slide-svg-badge">${badgeText}</span>
             <span class="shortcut-pill">Atajo: V ${hasMaqueta ? "• 3D: 3" : ""}</span>
           </div>
           <div class="slide-svg-img-frame">
@@ -1127,12 +1138,12 @@ class PresentationApp {
           </div>
           <div class="slide-svg-btn-row" style="display:flex;gap:6px;padding:6px 8px;background:rgba(15,45,89,0.03);">
             <button class="btn-open-svg btn-action-2d" style="flex:1;" title="Agrandar y Explorar Diagrama SVG en Alta Definición (Atajo: V)">
-              <span>🔍 Lámina Oficial 2D</span>
+              <span>${label2D}</span>
               <span class="shortcut-pill">V</span>
             </button>
             ${hasMaqueta ? `
-            <button class="btn-open-svg btn-action-3d" style="flex:1;background:linear-gradient(135deg,#0f3460,#0284c7);color:#ffffff;border-color:#38bdf8;" title="Explorar Maqueta 3D Interactiva con Relieve y Nodos (Atajo: 3)">
-              <span>🌐 Maqueta 3D Real</span>
+            <button class="btn-open-svg btn-action-3d" style="flex:1;background:linear-gradient(135deg,#0f3460,#0284c7);color:#ffffff;border-color:#38bdf8;" title="Explorar Dashboard / Maqueta 3D Interactiva (Atajo: 3)">
+              <span>${label3D}</span>
               <span class="shortcut-pill" style="background:rgba(255,255,255,0.2);color:#ffffff;">3</span>
             </button>
             ` : ""}
@@ -1788,7 +1799,7 @@ class PresentationApp {
       this.svgModalImg.style.display = "block";
       this.svgModal.classList.remove("mode-3d-active");
       if (this.btnSvgToggleView) {
-        this.btnSvgToggleView.textContent = maqueta ? "🌐 Ver Maqueta 3D" : "🔬 Modo 3D";
+        this.btnSvgToggleView.textContent = maqueta ? (currentSlide && currentSlide.labelBoton3D ? currentSlide.labelBoton3D : "🌐 Ver Maqueta 3D") : "🔬 Modo 3D";
       }
       if (this.btnSvgNewTab) {
         this.btnSvgNewTab.href = this.currentModalUrl || "#";
@@ -1801,7 +1812,7 @@ class PresentationApp {
       this.svgModalImg.style.display = "none";
       this.svgModal.classList.add("mode-3d-active");
       if (this.btnSvgToggleView) {
-        this.btnSvgToggleView.textContent = "🗺️ Ver Lámina 2D";
+        this.btnSvgToggleView.textContent = (currentSlide && currentSlide.labelBoton2D) ? currentSlide.labelBoton2D : "🗺️ Ver Lámina 2D";
       }
       if (this.btnSvgNewTab) {
         this.btnSvgNewTab.href = maqueta || "#";

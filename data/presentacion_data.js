@@ -722,8 +722,13 @@ const PRESENTACION_DATA = {
       ],
       "metadatosFooter": "Avance 4 • Ejecución Presupuestaria Oficial y Concentración en Personal • CURZAS",
       "escena3D": "anim_20",
+      "diagramaSVG": "assets/presupuesto_isometrico_preview.svg",
+      "maqueta3D": "assets/presupuesto_universitario_2026_argentina_svg_isom_trico.html",
+      "badgeGrafico": "📊 DASHBOARD PRESUPUESTARIO & COMPARATIVA 3D",
+      "labelBoton2D": "🔍 Resumen Isométrico 2D",
+      "labelBoton3D": "🌐 Dashboard Interactivo 3D",
       "tiempoSugerido": "⏱️ ~35-40 seg",
-      "guionOrador": "En el Avance 4 abrimos los números presupuestarios respondiendo a la pregunta guía: el CURZAS administra $4.877 millones de pesos. El hallazgo más contundente es que el 90,2% de esos fondos se destina al Inciso 1, es decir, a pagar salarios de docentes y nodocentes. Nos queda menos de un 10% para afrontar tarifas de luz, gas, limpieza y viajes en toda la provincia."
+      "guionOrador": "En el Avance 4 abrimos los números presupuestarios respondiendo a la pregunta guía: el CURZAS administra $4.877 millones de pesos. El hallazgo más contundente es que el 90,2% de esos fondos se destina al Inciso 1, es decir, a pagar salarios de docentes y nodocentes. Nos queda menos de un 10% para afrontar tarifas de luz, gas, limpieza y viajes en toda la provincia. En pantalla disponemos de la vista previa isométrica y podemos acceder con la tecla 3 al Dashboard 3D interactivo para explorar la comparativa del PBI nacional, las 61 universidades y los números del CURZAS."
     },
     {
       "id": "slide_21",
