@@ -917,33 +917,37 @@ class PresentationApp {
           num: "AVANCE 1",
           unidad: "Unidad I",
           titulo: "Contexto, Modelo de Gestión y Gobernanza",
-          hicimos: "Caracterizamos el marco institucional, la autonomía (Art. 75 inc. 19 CN) y la Burocracia Profesional frente a la NGP.",
-          destacado: "Burocracia Profesional sólida que tutela la legalidad, estabilidad laboral y convenios paritarios, blindada del gerencialismo mercantil.",
-          problema: "Riesgo de endogamia en co-gobierno y gobernanza digital incipiente (sin portal de datos abiertos ni IA en RRHH)."
+          hicimos: "Caracterizamos el marco institucional (Ley 19.648, Estatuto UNCo), la autonomía universitaria (Art. 75 inc. 19 CN) y la Burocracia Profesional frente a la NGP.",
+          destacado: "Burocracia Profesional sólida que tutela la legalidad, estabilidad laboral y convenios paritarios (CCT 366/06 y 1246/15), blindada del gerencialismo mercantil.",
+          problema: "Riesgo de endogamia y autorreferencialidad corporativa en el co-gobierno cuatripartito cerrado sobre sí mismo, sumado a una gobernanza digital incipiente (sin portal de datos abiertos ni IA en RRHH).",
+          solucion: "Institucionalizar mecanismos de Accountability Social activa: portal web de datos abiertos sobre cargos y presupuesto accesible a la ciudadanía rionegrina, y comisiones consultivas abiertas en los 10 nodos."
         },
         {
           num: "AVANCE 2",
           unidad: "Unidad II",
           titulo: "Diagnóstico y Planificación Estratégica Situacional",
-          hicimos: "Elaboramos FODA situado, mapeo de actores clave y evaluación de capacidades estatales según Bertranou.",
-          destacado: "Despliegue territorial democratizador de la Red de 10 Nodos en Río Negro y adopción del PES (Matus) con los trabajadores.",
-          problema: "Persistencia de silos de datos interinstitucionales (doble carga SIU/SIGEVA) y brecha digital en personal de mayor antigüedad."
+          hicimos: "Elaboramos FODA situado, mapeo de actores clave con poder de veto y evaluación de capacidades estatales según Bertranou y el PES de Carlos Matus.",
+          destacado: "Despliegue territorial democratizador de la Red de 10 Nodos en Río Negro y adopción del PES reconociendo a los gremios (APUNC y ADUNC) como actores estratégicos.",
+          problema: "Persistencia de silos de datos e inconsistencia intersistemas (doble carga manual SIU vs. SIGEVA) y brecha digital en personal nodocente de mayor antigüedad.",
+          solucion: "Diseñar una API de interoperabilidad técnica automática entre sistemas y acordar en paritaria un plan continuo de capacitación y alfabetización informática situada."
         },
         {
           num: "AVANCE 3",
           unidad: "Unidad III",
           titulo: "Diseño Organizacional, Procesos y Ecosistema Digital",
           hicimos: "Mapeamos estructura formal vs real, manual de funciones y flujograma del circuito clave de licencias del personal.",
-          destacado: "Visibilización de la estructura real desconcentrada en territorio frente a un organigrama formal desactualizado.",
-          problema: "Parálisis del trámite por falta de subrogancia ante ausencia de jefaturas y falsa digitalización (papel escaneado sin interoperabilidad)."
+          destacado: "Visibilización de la estructura real desconcentrada en territorio frente a un organigrama formal desactualizado y centralizado en Viedma.",
+          problema: "Parálisis de trámites por falta de subrogancia formal ante ausencia de jefaturas y falsa digitalización (trámites mixtos de papel escaneado en SUDOCU sin interoperabilidad).",
+          solucion: "Aprobar ordenanza de subrogancia automática para puestos clave de despacho y digitalizar el trámite de licencias de punta a punta con validación automática en SIU-Mapuche."
         },
         {
           num: "AVANCE 4",
           unidad: "Unidad IV",
           titulo: "Programación Presupuestaria y Factor Humano",
-          hicimos: "Analizamos el presupuesto por programas (Makon, Programa 26) y el impacto del Inciso 1 (Personal).",
-          destacado: "El 90,2% del gasto va a salarios docentes/nodocentes, demostrando que las personas son la auténtica capacidad estatal del CURZAS.",
-          problema: "Extrema rigidez presupuestaria (solo 9,8% para funcionamiento) y fuerte impacto del 40% de Zona Desfavorable ante el ajuste nacional."
+          hicimos: "Analizamos el presupuesto por programas (Makon, Programa 26) y el impacto del Inciso 1 (Personal) con el plus de zona desfavorable.",
+          destacado: "El 90,2% del gasto va a salarios docentes y nodocentes, confirmando que las personas constituyen la auténtica capacidad estatal del CURZAS.",
+          problema: "Extrema rigidez y asfixia operativa (solo 9,8% para funcionamiento e infraestructura) y fuerte impacto del 40% de Zona Desfavorable ante el ajuste nacional.",
+          solucion: "Reclamar en paritaria nacional la actualización indexada de partidas de funcionamiento (Inciso 2, 3 y 4) y conveniar con municipios la cogestión de costos operativos en los nodos."
         },
         {
           num: "AVANCE 5",
@@ -951,7 +955,8 @@ class PresentationApp {
           titulo: "Sistemas de Control, Tablero de Comando y Evaluación",
           hicimos: "Examinamos el ecosistema AGN/UAI/SIGEN (Res. 311/2026), diagnosticamos la evaluación laboral docente/nodocente y diseñamos un Tablero con 4 KPIs estratégicos.",
           destacado: "Rango estatutario pionero de la UAI en UNCo y bucle de retroalimentación continua que transforma la auditoría punitiva en aprendizaje institucional (Feinstein).",
-          problema: "Diferimiento histórico en la aplicación del régimen de calificación nodocente (APUNC) y ausencia previa de un Tablero de Comando con metas de resultado."
+          problema: "Asimetría estructural en evaluación laboral: docentes evaluados periódicamente vs. régimen nodocente CCT 366 históricamente diferido en paritaria con APUNC; se administran cargos en Mapuche pero se carece de medición de resultados (Telma Ramírez).",
+          solucion: "Implementar el Tablero de 4 KPIs estratégicos propuesto (tiempos de licencias, calidad salarial SISAC, capacitación digital y continuidad en nodos) con fines formativos y paritarios."
         }
       ];
 
@@ -974,8 +979,12 @@ class PresentationApp {
               <span class="conclusion-text">${c.destacado}</span>
             </div>
             <div class="conclusion-row problema">
-              <span class="conclusion-label">⚠️ Problema crítico:</span>
+              <span class="conclusion-label">⚠️ Situación observada:</span>
               <span class="conclusion-text">${c.problema}</span>
+            </div>
+            <div class="conclusion-row solucion">
+              <span class="conclusion-label">💡 Cómo solucionarlo:</span>
+              <span class="conclusion-text">${c.solucion}</span>
             </div>
           </div>
         `;

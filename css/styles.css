@@ -4378,6 +4378,10 @@ body {
   color: #b91c1c;
 }
 
+.conclusion-row.solucion .conclusion-label {
+  color: #047857;
+}
+
 .conclusion-text {
   font-family: var(--font-body);
   font-weight: 400;
@@ -4386,6 +4390,11 @@ body {
 
 .conclusion-row.problema .conclusion-text {
   color: #451a03;
+}
+
+.conclusion-row.solucion .conclusion-text {
+  color: #064e3b;
+  font-weight: 500;
 }
 
 .slide-bullets.conclusion-mode li.conclusion-closing-card {
