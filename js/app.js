@@ -2379,13 +2379,13 @@ class PresentationApp {
       {
         num: 5,
         unidad: "Unidad V",
-        titulo: "Avance 5: Sistemas de Control, Tablero de Comando y Evaluación (Unidad V)",
+        titulo: "Trabajo Final Integrador: Sistemas de Control, Tablero de Comando y Evaluación (Unidad V)",
         subtitulo: "Control Externo/Interno (AGN, UAI, SIGEN Res. 311/2026), 4 KPIs y Bucle de Retroalimentación",
         ruta: "01_Actividades_Catedra/actividad_05/Avance 5 Sistemas de Control, Tablero de Comando y Evaluación (Unidad V).pdf",
         nombre: "Avance 5 Sistemas de Control, Tablero de Comando y Evaluación (Unidad V).pdf",
-        tamano: "1.75 MB",
+        tamano: "1.76 MB",
         ext: "pdf",
-        desc: "Documento oficial consolidado (versión final octubre 2026). Analiza el ecosistema de fiscalización externa (AGN) e interna (UAI con rango estatutario único y reactivación SIGEN según Resoluciones 299 y 311/2026), la evaluación laboral docente y nodocente (CCT 366/06 y 1246/15), el diseño del Tablero de Control de RR. HH. con 4 KPIs estratégicos (Ramírez y Mayne) y el bucle de retroalimentación para el aprendizaje institucional."
+        desc: "Documento oficial consolidado y versión final integrada del Trabajo Final (octubre-noviembre 2026). Analiza el ecosistema de fiscalización externa (AGN) e interna (UAI con rango estatutario único y reactivación SIGEN según Resoluciones 299 y 311/2026), la evaluación laboral docente y nodocente (CCT 366/06 y 1246/15), el diseño del Tablero de Control de RR. HH. con 4 KPIs estratégicos (Ramírez y Mayne) y el bucle de retroalimentación para el aprendizaje institucional."
       },
       {
         num: 4,
@@ -2443,7 +2443,7 @@ class PresentationApp {
       <!-- Encabezado con información del Documento Oficial -->
       <div class="avance-pdf-header-box">
         <div class="avance-pdf-title-row">
-          <span class="avance-pdf-badge">DOCUMENTO OFICIAL ENTREGADO • AVANCE ${currentDoc.num}</span>
+          <span class="avance-pdf-badge">${currentDoc.num === 5 ? 'TRABAJO FINAL OFICIAL • INFORME INTEGRAL' : `DOCUMENTO OFICIAL ENTREGADO • AVANCE ${currentDoc.num}`}</span>
           <span class="avance-pdf-size">${currentDoc.tamano} • PDF OFICIAL</span>
         </div>
         <h3 class="avance-pdf-title">${currentDoc.titulo}</h3>
@@ -2462,12 +2462,12 @@ class PresentationApp {
         </div>
       </div>
 
-      <!-- Barra selectora de Avances Entregados -->
+      <!-- Barra selectora de Entregas y Trabajo Final -->
       <div class="avance-switcher-bar">
         <span class="switcher-label">Seleccionar Entrega:</span>
         ${avancesDocs.map(d => `
           <button class="btn-switch-avance ${d.num === currentDoc.num ? 'active' : ''}" data-avance="${d.num}">
-            Avance ${d.num} (${d.num === 5 ? 'Unidad V' : d.num === 4 ? 'Unidad IV' : d.num === 3 ? 'Unidad III' : d.num === 2 ? 'Unidad II' : 'Unidad I'})
+            ${d.num === 5 ? 'Trabajo Final (Avance 5)' : `Avance ${d.num}`} (${d.num === 5 ? 'Unidad V' : d.num === 4 ? 'Unidad IV' : d.num === 3 ? 'Unidad III' : d.num === 2 ? 'Unidad II' : 'Unidad I'})
           </button>
         `).join('')}
       </div>
@@ -2902,7 +2902,7 @@ class PresentationApp {
           "faq": "Preguntas frecuentes del jurado",
           "svgs": "Diagramas y dispositivos",
           "consignas": "Consignas oficiales PEDCO",
-          "avance4": "Avance 4 Presupuesto",
+          "avance4": "Trabajo Final",
           "catedra": "Material de cátedra"
         };
         const tabKey = btn.getAttribute("data-tab");

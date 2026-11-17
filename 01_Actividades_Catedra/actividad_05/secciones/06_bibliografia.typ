@@ -34,10 +34,10 @@
   - *Cao, Horacio y Blutman, Gustavo (2021).* _Escenarios futuros para la administración pública: Poligobernanza y Neoweberianismo._ Documentos de Trabajo del INAP.
   - *CONICET (2009).* _Módulo de Interoperabilidad del Sistema Integral de Gestión y Evaluación (SIGEVA)._ Buenos Aires: CONICET.
   - *Consejo Interuniversitario Nacional — CIN (2024).* _Metodología y Pautas de Formulación del Presupuesto Universitario Nacional: Presentación ante la Comisión de Presupuesto y Hacienda de la H. Cámara de Diputados de la Nación._ Buenos Aires: CIN / Portal Universidad.
-  - *CRUB — Universidad Nacional del Comahue (2024).* _Con el presupuesto 2025 del gobierno “peligra todo lo que hace la UNCo”: Informe de la Rectora Beatriz Gentile ante el Consejo Superior._ Bariloche: CRUB - UNCo. Disponible en: `https://app.crub.uncoma.edu.ar/inicio/novedad/19587`.
   - *CURZAS — Universidad Nacional del Comahue (2023/2024).* _Proyecto Nodos CURZAS UNCo Región Sur y Proyectos de Extensión._ Viedma: CURZAS - UNCo.
   - *Dirección General de Presupuesto Público (2024).* _Guía Metodológica para el Diseño de Compromisos, Indicadores y Metas (Programa de Incentivos PI - 2027)._ Dirección de Calidad del Gasto Público.
   - *Feinstein, Osvaldo (2016).* _La evaluación pragmática de políticas públicas._ En _Evaluación de políticas públicas: Fundamentos conceptuales y analíticos_, pp. 27-48. Buenos Aires: INAP / CAF.
+  - *Gentile, Beatriz (2024).* _Con el presupuesto 2025 del gobierno “peligra todo lo que hace la UNCo”: Informe de la Rectora ante el Consejo Superior._ Bariloche: CRUB - UNCo. Disponible en: `https://app.crub.uncoma.edu.ar/inicio/novedad/19587`.
   - *Forester, John (1984).* _La racionalidad limitada y la política de salir del paso._ Public Administration Review, Vol. 44, N° 1, pp. 23-31.
   - *Hintze, Jorge (2001/2018).* _Modelos organizativos, redes institucionales y gestión por procesos en la administración pública._ Buenos Aires: TOP / INAP.
   - *INAP — Instituto Nacional de la Administración Pública (1997).* _Organizaciones Públicas: La innovación y el análisis organizacional._ Serie Documentos de Apoyo, Tomo 2. Buenos Aires: INAP.

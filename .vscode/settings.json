@@ -1,5 +1,6 @@
 {
   "git.ignoredRepositories": [
     "03_Herramientas_Vibecoding/Anatomy_Kit"
-  ]
+  ],
+  "liveServer.settings.port": 5501
 }
