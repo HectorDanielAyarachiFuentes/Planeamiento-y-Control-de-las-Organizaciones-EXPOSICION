@@ -687,6 +687,13 @@ const PRESENTACION_DATA = {
       "escena3D": "anim_15",
       "diagramaSVG": "assets/organigrama.svg",
       "tiempoSugerido": "⏱️ ~35-40 seg",
+      "consignasCatedra": [
+        {
+          "tipo": "📑 ENTREGABLE 1 & PREGUNTA GUÍA (ORGANIGRAMA)",
+          "punto": "¿El organigrama real coincide con la estructura formal de dependencias y delegaciones del CURZAS? (Relevamiento y análisis del Organigrama y manual de funciones)",
+          "respuesta": "• Diagnóstico al grano: NO coincide. El organigrama formal aprobado por ordenanza centraliza todo en Viedma bajo un esquema departamental clásico y no contempla la red de 10 nodos territoriales.\n• Realidad operativa: Funciona de facto una red territorial sostenida por Asistentes Técnico-Pedagógicos y convenios municipales no formalizados en la estructura orgánica.\n• Factor Humano: Se administran cargos burocráticos en SIU-Mapuche (Telma Ramírez) sin medir desempeño nodocente por diferimiento paritario (CCT 366/06), visibilizando una asimetría con la carrera docente (CCT 1246/15)."
+        }
+      ],
       "guionOrador": "Ingresamos al Avance 3 contrastando el organigrama formal con la realidad operativa. Primer hallazgo: no coincide. La estructura formal centraliza todo en Viedma y omite a los 10 nodos territoriales que sostienen la presencia universitaria en Río Negro.\nSegundo hallazgo clave para la defensa: la Dirección de Personal y Despacho en este organigrama están diseñadas bajo la burocracia tradicional. Como advierte Telma Ramírez, el CURZAS administra cargos burocráticos y liquida en SIU-Mapuche, pero la estructura carece de áreas e indicadores de resultado o calidad.\nEsta estructura formal refleja una asimetría institucional: la docencia concursa y revalida por CCT 1246, mientras que la carrera nodocente del CCT 366 no aplica evaluación de desempeño por diferimiento paritario con APUNC. Por eso nuestro trabajo propone formalizar la red territorial y dotar a la estructura del Tablero de Control del Avance 5."
     },
     {
@@ -706,6 +713,13 @@ const PRESENTACION_DATA = {
       "metadatosFooter": "Avance 3 • Niveles de Centralización y Desconcentración Operativa • CURZAS",
       "escena3D": "anim_07",
       "tiempoSugerido": "⏱️ ~35-40 seg",
+      "consignasCatedra": [
+        {
+          "tipo": "📑 ENTREGABLE 2 & PREGUNTA GUÍA (CENTRALIZACIÓN)",
+          "punto": "¿Cuáles son los niveles de centralización o descentralización y cómo se gestionan las autorizaciones internas en la entidad?",
+          "respuesta": "• Centralización Normativa (Neuquén): El Rectorado y Consejo Superior concentran la aprobación de plantas de cargos, paritarias generales y techos presupuestarios máximos.\n• Desconcentración Operativa (Viedma): El Decanato y Consejo Directivo del CURZAS autorizan contrataciones transitorias, llamados a concurso, licencias ordinarias y traslados mediante resoluciones decanales locales.\n• Conclusión al grano: Rige una descentralización desconcentrada donde Viedma ejecuta la gestión directa del personal pero subordinada a la política salarial y presupuestaria centralizada en Sede Central."
+        }
+      ],
       "guionOrador": "En el entregable 2 analizamos la centralización y cómo se gestionan las autorizaciones. Existe centralización normativa en Neuquén para crear cargos y fijar salarios; pero existe desconcentración operativa en el CURZAS Viedma, donde el Decanato y las Secretarías autorizan licencias, coberturas y designaciones mediante resoluciones decanales locales."
     },
     {
@@ -725,6 +739,13 @@ const PRESENTACION_DATA = {
       "metadatosFooter": "Avance 3 • Flujograma de Procesos de Personal • Relevamiento Situado 2026",
       "escena3D": "anim_16",
       "tiempoSugerido": "⏱️ ~35-40 seg",
+      "consignasCatedra": [
+        {
+          "tipo": "📑 ENTREGABLE 3 (FLUJOGRAMA DE PROCESOS)",
+          "punto": "Diseño y modelado de un Flujograma de un proceso clave dentro del área de personal (Circuito de trámite de licencias médicas).",
+          "respuesta": "• Circuito mapeado en 6 etapas:\n1. Solicitud electrónica iniciada por el agente en SUDOCU.\n2. Presentación y adjunción de certificado médico.\n3. Intervención y dictamen de la Junta Médica laboral.\n4. Visto bueno y control jerárquico del superior directo.\n5. Emisión de Resolución Decanal de otorgamiento.\n6. Impacto y cómputo de haberes en SIU-Mapuche.\n• Tiempo de tramitación: Insume entre 12 y 18 días hábiles, dilatándose en agentes radicados en los nodos de la Región Sur."
+        }
+      ],
       "guionOrador": "Para el entregable 3 modelamos el flujograma del circuito de licencias médicas del personal. Relevamos 6 etapas: desde que el agente solicita la licencia y presenta el certificado, pasando por la junta médica y el visto bueno de la jefatura, hasta la resolución decanal y su impacto en SIU-Mapuche. El proceso demora entre 12 y 18 días hábiles debido a la dispersión geográfica."
     },
     {
@@ -744,6 +765,13 @@ const PRESENTACION_DATA = {
       "metadatosFooter": "Avance 3 • Ecosistema Digital Universitario • SUDOCU vs GDE / SIU-Mapuche",
       "escena3D": "anim_10",
       "tiempoSugerido": "⏱️ ~35-40 seg",
+      "consignasCatedra": [
+        {
+          "tipo": "❓ PREGUNTAS GUÍA (GDE/TAD Y TRABAS BUROCRÁTICAS)",
+          "punto": "¿Se utiliza de forma exclusiva el Sistema GDE o TAD? ¿Qué cuellos de botella burocráticos persisten en el circuito de licencias, designaciones o ascensos?",
+          "respuesta": "• Ecosistema Digital: NO se usa GDE ni TAD del Poder Ejecutivo Nacional; la UNCo implementó de forma exclusiva SUDOCU (CIN) para expedientes y SIU-Mapuche para recursos humanos.\n• Cuello de Botella 1 (Parálisis de Firmas): Falta de subrogancia reglamentada; ante licencias o viajes oficiales de autoridades, los trámites quedan frenados sin firma supletoria automática.\n• Cuello de Botella 2 (Doble Carga Manual): Ausencia de pasarela API entre SUDOCU y SIU-Mapuche; el personal debe transcribir manualmente cada licencia aprobada al sistema liquidatorio."
+        }
+      ],
       "guionOrador": "Respondiendo a la pregunta sobre el uso de GDE o TAD y cuellos de botella: en el CURZAS no se usa GDE nacional sino SUDOCU. Identificamos dos cuellos de botella críticos: primero, la parálisis de firmas por falta de subrogancia reglamentada si una autoridad viaja; y segundo, que el expediente aprobado en SUDOCU debe volver a cargarse a mano en Mapuche porque no interoperan."
     },
     {
@@ -763,6 +791,13 @@ const PRESENTACION_DATA = {
       "metadatosFooter": "Avance 3 • Inercia Estructural y Racionalidad Limitada • Campos / Forester",
       "escena3D": "anim_17",
       "tiempoSugerido": "⏱️ ~35-40 seg",
+      "consignasCatedra": [
+        {
+          "tipo": "🔍 QUÉ BUSCAR (DESPAPELIZACIÓN & INERCIA)",
+          "punto": "¿Qué normas de despapelización rigen y cuáles son las causas organizacionales de la persistencia del papel y la falsa digitalización en Recursos Humanos?",
+          "respuesta": "• Falsa Digitalización: Los certificados médicos aún se expiden en papel y se escanean a PDF para cargarlos en SUDOCU; se digitalizó el soporte pero no el acto médico de origen.\n• Inercia Estructural (Campos et al.): Persiste el apego al sello físico y al expediente impreso por temor a impugnaciones legales o reclamos gremiales ante la falta de firma digital criptográfica.\n• Racionalidad y 'Salir del Paso' (Forester y Lindblom): Ante plazos perentorios de liquidación salarial, los administrativos apelan a vías informales (WhatsApp, llamados) para sortear trabas del sistema."
+        }
+      ],
       "guionOrador": "Indagamos las causas profundas de estos cuellos de botella. Detectamos una 'falsa digitalización': se sigue pidiendo el certificado médico en papel para después escanearlo a PDF. Esto responde a la inercia estructural de la que hablan Campos y Carro: miedo a que una firma electrónica sea cuestionada. Para cumplir con los plazos salariales, el personal recurre a salir del paso como describe John Forester."
     },
     {
@@ -782,6 +817,13 @@ const PRESENTACION_DATA = {
       "metadatosFooter": "Avance 3 • Propuestas Estratégicas de Rediseño • Firma Digital y Pasarelas API",
       "escena3D": "anim_05",
       "tiempoSugerido": "⏱️ ~35-40 seg",
+      "consignasCatedra": [
+        {
+          "tipo": "💡 PROPUESTAS DE REDISEÑO (SOLUCIÓN A TRABAS)",
+          "punto": "¿Qué propuestas concretas de rediseño se formulan para eliminar los cuellos de botella relevados en el circuito de personal?",
+          "respuesta": "• 4 Propuestas Estratégicas Situadas:\n1. Firma Digital Criptográfica (Ley 25.506): Validez legal plena con infraestructura PKI, erradicando el certificado físico escaneado.\n2. Pasarela API SUDOCU → SIU-Mapuche: Interoperabilidad automática de actos administrativos hacia liquidación sin carga manual.\n3. Ordenanza de Subrogancia Automática: Despacho automático de expedientes a la autoridad supletoria tras 48 hs de inactividad.\n4. Capacitación Paritaria Situada: Plan de alfabetización digital en horario laboral acordado con APUNC para cerrar la brecha informática."
+        }
+      ],
       "guionOrador": "Para superar estos cuellos de botella formulamos cuatro propuestas concretas: implementar Firma Digital con plena validez de la Ley 25.506; crear una pasarela informática automática entre SUDOCU y SIU-Mapuche; dictar una ordenanza de subrogancia automática para que los expedientes no se frenen; y acordar en paritaria un plan de capacitación informática con APUNC."
     },
     {
