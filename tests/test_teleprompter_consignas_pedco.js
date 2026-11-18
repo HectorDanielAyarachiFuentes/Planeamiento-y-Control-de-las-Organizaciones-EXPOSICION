@@ -57,43 +57,37 @@ assert.ok(c5.respuesta.includes("Bien Público") && (c5.respuesta.includes("vouc
 console.log("✓ Filmina 5: Comparación Burocracia vs. NGP y respuesta anti-mercantil integradas.");
 
 // Slide 6: Accountability y Oficina de Transparencia / Datos Abiertos
-assert.ok(Array.isArray(s6.consignasCatedra) && s6.consignasCatedra.length >= 2, "slide_6 debe tener al menos 2 consignas (accountability y datos abiertos)");
-const c6_acc = s6.consignasCatedra.find(c => c.punto.includes("accountability") || c.punto.includes("rendición de cuentas"));
-const c6_transp = s6.consignasCatedra.find(c => c.punto.includes("Transparencia") || c.punto.includes("datos abiertos"));
-assert.ok(c6_acc, "slide_6 debe tener consigna de rendición de cuentas (accountability)");
-assert.ok(c6_transp, "slide_6 debe tener pregunta guía sobre Oficina de Transparencia / Datos Abiertos");
-assert.ok(c6_acc.respuesta.includes("Horizontal") && c6_acc.respuesta.includes("Vertical") && c6_acc.respuesta.includes("Social"), "slide_6 debe responder con la triple accountability");
-assert.ok(c6_transp.respuesta.includes("NO existe una Oficina formal de Transparencia"), "slide_6 debe responder con el diagnóstico crítico sobre datos abiertos");
-console.log("✓ Filmina 6: Entregable de Accountability (triple control) y Pregunta Guía de Transparencia integrados.");
+assert.ok(Array.isArray(s6.consignasCatedra) && s6.consignasCatedra.length >= 1, "slide_6 debe tener consignasCatedra");
+const c6 = s6.consignasCatedra[0];
+assert.ok(c6.punto.includes("rendición de cuentas") && c6.punto.includes("Transparencia"), "slide_6 debe incluir accountability y transparencia");
+assert.ok(c6.respuesta.includes("Horizontal") && c6.respuesta.includes("Vertical") && c6.respuesta.includes("Social"), "slide_6 debe responder con la triple accountability");
+assert.ok(c6.respuesta.includes("NO existe una Oficina formal de Transparencia"), "slide_6 debe responder con el diagnóstico crítico sobre datos abiertos");
+console.log("✓ Filmina 6: Entregable de Accountability (triple control) y Pregunta Guía de Transparencia integrados de forma limpia.");
 
 // Slide 7: Gobernanza Inteligente (Oszlak), Software predictivo en personal y Paradoja del Co-Gobierno
-assert.ok(Array.isArray(s7.consignasCatedra) && s7.consignasCatedra.length >= 3, "slide_7 debe tener 3 items de cátedra");
-const c7_ia = s7.consignasCatedra.find(c => c.punto.includes("algoritmos") || c.punto.includes("software predictivo"));
-const c7_oszlak = s7.consignasCatedra.find(c => c.punto.includes("Oszlak") || c.punto.includes("Gobernanza"));
-const c7_paradox = s7.consignasCatedra.find(c => c.punto.includes("Paradoja") || c.punto.includes("Co-Gobierno"));
-assert.ok(c7_ia, "slide_7 debe responder a la pregunta sobre algoritmos / software predictivo en personal");
-assert.ok(c7_oszlak, "slide_7 debe evaluar Gobernanza Inteligente de Oszlak");
-assert.ok(c7_paradox, "slide_7 debe abordar la Paradoja del Co-Gobierno (Cao & Blutman)");
-assert.ok(c7_ia.respuesta.includes("NO existen normativas ni incorporación de algoritmos"), "slide_7 respuesta de IA debe certificar ausencia de software predictivo en personal");
-assert.ok(c7_paradox.respuesta.includes("Cao") && c7_paradox.respuesta.includes("nodos"), "slide_7 debe articular la superación territorial con los 10 nodos");
+assert.ok(Array.isArray(s7.consignasCatedra) && s7.consignasCatedra.length >= 1, "slide_7 debe tener consignasCatedra");
+const c7 = s7.consignasCatedra[0];
+assert.ok(c7.punto.includes("Gobernanza") && c7.punto.includes("personal") && c7.punto.includes("Co-Gobierno"), "slide_7 debe integrar gobernanza, IA y co-gobierno");
+assert.ok(c7.respuesta.includes("NO existen normativas ni IA/algoritmos"), "slide_7 respuesta de IA debe certificar ausencia de software predictivo en personal");
+assert.ok(c7.punto.includes("Cao") && c7.respuesta.includes("nodos"), "slide_7 debe articular la superación territorial con los 10 nodos");
 console.log("✓ Filmina 7: Gobernanza Inteligente (Oszlak), IA en Personal y Paradoja del Co-Gobierno integrados.");
 
 // 2. Validar js/app.js
 const appPath = path.join(__dirname, '..', 'js', 'app.js');
 const appCode = fs.readFileSync(appPath, 'utf8');
 
-assert.ok(appCode.includes("teleprompter-consignas-container"), "app.js debe generar el contenedor .teleprompter-consignas-container");
-assert.ok(appCode.includes("teleprompter-qa-card"), "app.js debe generar la tarjeta .teleprompter-qa-card");
-assert.ok(appCode.includes("qa-block-question") && appCode.includes("qa-block-answer"), "app.js debe estructurar los bloques de pregunta y respuesta");
-console.log("✓ js/app.js: Lógica de renderizado de Q&A de cátedra validada en teleprompter.");
+assert.ok(appCode.includes("teleprompter-qa-clean"), "app.js debe generar el contenedor .teleprompter-qa-clean");
+assert.ok(appCode.includes("qa-clean-card"), "app.js debe generar la tarjeta limpia .qa-clean-card");
+assert.ok(appCode.includes("qa-clean-question") && appCode.includes("qa-clean-answer"), "app.js debe estructurar los bloques de pregunta y respuesta");
+console.log("✓ js/app.js: Lógica de renderizado limpio y no rebuscado validada en teleprompter.");
 
 // 3. Validar css/styles.css
 const cssPath = path.join(__dirname, '..', 'css', 'styles.css');
 const cssContent = fs.readFileSync(cssPath, 'utf8');
 
-assert.ok(cssContent.includes(".teleprompter-consignas-container"), "styles.css debe incluir .teleprompter-consignas-container");
-assert.ok(cssContent.includes(".teleprompter-qa-card"), "styles.css debe incluir .teleprompter-qa-card");
-assert.ok(cssContent.includes(".qa-block-answer"), "styles.css debe incluir .qa-block-answer");
-console.log("✓ css/styles.css: Reglas CSS para tarjetas de preguntas y respuestas verificadas con contraste WCAG.");
+assert.ok(cssContent.includes(".teleprompter-qa-clean"), "styles.css debe incluir .teleprompter-qa-clean");
+assert.ok(cssContent.includes(".qa-clean-card"), "styles.css debe incluir .qa-clean-card");
+assert.ok(cssContent.includes(".qa-clean-answer"), "styles.css debe incluir .qa-clean-answer");
+console.log("✓ css/styles.css: Reglas CSS para tarjetas de preguntas y respuestas verificadas con contraste WCAG y diseño no rebuscado.");
 
 console.log("\n🎉 TODOS LOS TESTS DE CONSIGNAS Y PREGUNTAS GUÍA EN NOTAS PASARON EXITOSAMENTE!");

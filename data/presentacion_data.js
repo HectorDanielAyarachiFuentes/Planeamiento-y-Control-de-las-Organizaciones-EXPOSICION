@@ -475,14 +475,9 @@ const PRESENTACION_DATA = {
       "tiempoSugerido": "⏱️ ~35-40 seg",
       "consignasCatedra": [
         {
-          "tipo": "📑 ENTREGABLE ESPECÍFICO (CÁTEDRA)",
-          "punto": "Analizar los mecanismos de rendición de cuentas (accountability) horizontal, vertical o social vigentes.",
-          "respuesta": "Rige un esquema de Triple Accountability (Guillermo O'Donnell):\n1. Horizontal: Control interno estatutario por la Unidad de Auditoría Interna (UAI) y control externo republicano por la Auditoría General de la Nación (AGN) y SIGEN.\n2. Vertical: Elecciones periódicas y obligatorias de co-gobierno cada 2 y 4 años donde la comunidad universitaria reelige o castiga la gestión.\n3. Social: Sesiones públicas de los Consejos Directivo y Superior, boletines oficiales y publicaciones institucionales periódicas."
-        },
-        {
-          "tipo": "❓ PREGUNTA GUÍA (CÁTEDRA)",
-          "punto": "¿Existe una Oficina de Transparencia o sección de datos abiertos para la rendición de cuentas (accountability)?",
-          "respuesta": "Diagnóstico crítico: NO existe una Oficina formal de Transparencia Activa ni un portal institucional de datos abiertos automatizado para consulta ciudadana masiva. El acceso a la información opera de forma reactiva ante solicitudes formales o auditorías de los órganos de control."
+          "tipo": "📑 ENTREGABLE & PREGUNTA GUÍA (ACCOUNTABILITY)",
+          "punto": "¿Cuáles son los mecanismos de rendición de cuentas vigentes y existe una Oficina de Transparencia o sección de datos abiertos?",
+          "respuesta": "• Triple Accountability: Horizontal (UAI interna estatutaria y AGN externa), Vertical (elecciones de co-gobierno cada 2 y 4 años) y Social (boletines oficiales y sesiones públicas).\n• Diagnóstico crítico: NO existe una Oficina formal de Transparencia Activa ni un portal institucional de Datos Abiertos automatizado; el acceso a la información opera de forma reactiva."
         }
       ],
       "guionOrador": "Sobre los mecanismos de rendición de cuentas solicitados en el entregable 2: constatamos una triple accountability: horizontal mediante auditorías de la UAI y la AGN; vertical mediante el voto obligatorio en las elecciones de claustros; y social publicando resoluciones. Sin embargo, respondiendo a la pregunta guía: no existe una Oficina formal de Transparencia ni portal de datos abiertos automatizado."
@@ -509,19 +504,9 @@ const PRESENTACION_DATA = {
       "tiempoSugerido": "⏱️ ~35-40 seg",
       "consignasCatedra": [
         {
-          "tipo": "📑 ENTREGABLE ESPECÍFICO (CÁTEDRA)",
-          "punto": "Evaluar el nivel de Gobernanza Pública Inteligente o si existen iniciativas preliminares de automatización o gestión algorítmica/IA según los postulados de Oszlak.",
-          "respuesta": "Nivel de madurez digital intermedio/transicional (Oscar Oszlak): Se cuenta con plataformas de expediente digital (SUDOCU) y aplicativos de gestión (SIU-Mapuche, Guaraní, Sanavirón), pero funcionan como islas o silos desconectados con interoperabilidad fragmentada, sin plataformas de analítica predictiva ni gobernanza inteligente en tiempo real."
-        },
-        {
-          "tipo": "❓ PREGUNTA GUÍA (CÁTEDRA)",
-          "punto": "¿Cuenta el área con normativas vigentes sobre la incorporación de algoritmos o software predictivo en la selección o monitoreo de personal?",
-          "respuesta": "NO existen normativas ni incorporación de algoritmos o software predictivo para selección, evaluación ni monitoreo del personal. Todos los procesos de ingreso, permanencia, ascensos y licencias son 100% humanos, concursales y regulados por los convenios paritarios docentes y nodocentes (CCT Dec. 366/06 y 1246/15)."
-        },
-        {
-          "tipo": "⚖️ ANÁLISIS CRÍTICO (CAO & BLUTMAN)",
-          "punto": "La Paradoja del Co-Gobierno: ¿Cómo conciliar la democracia de claustros con la respuesta a las demandas territoriales?",
-          "respuesta": "El co-gobierno es un logro democrático fundamental pero encierra la 'Paradoja del Co-Gobierno' de Cao y Blutman: el riesgo de convertirse en un 'silo corporativo endogámico' si la energía se desgasta en la puja facciosa interna. La superación exige una gobernanza inteligente articulada en poligobernanza territorial con los 10 nodos y municipios rionegrinos."
+          "tipo": "📑 ENTREGABLE & PREGUNTA GUÍA (GOBERNANZA & IA)",
+          "punto": "¿Cuál es el nivel de Gobernanza Inteligente (Oszlak), rigen algoritmos en personal y cómo impacta la Paradoja del Co-Gobierno (Cao & Blutman)?",
+          "respuesta": "• Gobernanza e IA: Madurez digital media en silos (SUDOCU y SIU sin analítica en tiempo real). NO existen normativas ni IA/algoritmos en personal; los concursos y ascensos son 100% humanos y paritarios por CCT.\n• Paradoja del Co-Gobierno: La democracia de claustros arriesga volverse un silo corporativo endogámico si se agota en la disputa interna; se supera articulando una poligobernanza territorial con los 10 nodos y municipios rionegrinos."
         }
       ],
       "guionOrador": "Para cerrar el Avance 1 analizamos la Gobernanza Inteligente según Oscar Oszlak. Constatamos una madurez digital media con SUDOCU y SIU-Mapuche operando en silos desconectados. Respondiendo a la consigna de cátedra: no existe inteligencia artificial ni software predictivo en personal; los concursos y ascensos son 100% humanos y paritarios por CCT.\nPero además, articulamos la 'Paradoja del Co-Gobierno' de Cao y Blutman: el co-gobierno es un logro democrático indiscutible, pero encierra la paradoja de volverse endogámico si se agota en la disputa interna de claustros. Por eso planteamos que la verdadera gobernanza exige abrirse a la poligobernanza territorial con los 10 nodos rionegrinos."
@@ -529,6 +514,136 @@ const PRESENTACION_DATA = {
     {
       "id": "slide_8",
       "numero": 8,
+      "bloque": "AVANCE 2: DIAGNÓSTICO Y PLANIFICACIÓN ESTRATÉGICA SITUACIONAL (UNIDAD II)",
+      "esquema": "Matriz FODA Situada (Interna)",
+      "badge": "AVANCE 2 • ENTREGABLE 1: FODA",
+      "titulo": "Matriz FODA Situada: Fortalezas y Debilidades Operativas",
+      "subtitulo": "Respuesta a la Pregunta Guía sobre Fortalezas y Debilidades Internas en el CURZAS",
+      "puntosClave": [
+        "📑 Entregable Específico Cátedra: Elaboración de una Matriz FODA situada en el contexto actual del organismo.",
+        "❓ Pregunta Guía Cátedra: ¿Cuáles son las principales fortalezas y debilidades operativas manifestadas de forma interna (insumo directo para la matriz FODA)?",
+        "⭐ Fortalezas Internas Detectadas: Fuerte arraigo territorial en 10 nodos de Río Negro, gratuidad universitaria, estabilidad de planta paritaria y alta vocación de servicio.",
+        "⚠️ Debilidades Internas Detectadas: Silos de información y fragmentación entre áreas, doble carga manual de datos (SIU/SIGEVA) y dispersión geográfica de las plantillas."
+      ],
+      "metadatosFooter": "Avance 2 • Matriz FODA Situada • Diagnóstico Operativo Interno 2026",
+      "escena3D": "anim_21",
+      "tiempoSugerido": "⏱️ ~35-40 seg",
+      "consignasCatedra": [
+        {
+          "tipo": "📑 ENTREGABLE 1 & PREGUNTA GUÍA (FODA)",
+          "punto": "¿Cuáles son las principales fortalezas y debilidades operativas manifestadas de forma interna (insumo directo para la matriz FODA)?",
+          "respuesta": "• Fortalezas Internas (F): Arraigo territorial en 10 nodos de Río Negro, gratuidad universitaria, estabilidad de planta por CCT (Dec. 366/06 y 1246/15) y alta vocación de servicio del personal.\n• Debilidades Internas (D): Fragmentación de sistemas en silos desconectados, doble y triple carga manual de datos (SUDOCU, SIU-Mapuche, SIGEVA) y dispersión geográfica que retrasa coberturas y reemplazos inmediatos."
+        }
+      ],
+      "guionOrador": "Iniciamos el Avance 2 respondiendo a la primera consigna de la cátedra: la Matriz FODA situada. En el plano interno detectamos como principal fortaleza el extraordinario arraigo territorial en 10 nodos rionegrinos y el compromiso de docentes y nodocentes; y como debilidad operativa crítica la existencia de silos informáticos y la sobrecarga por cargar los mismos datos varias veces a mano."
+    },
+    {
+      "id": "slide_9",
+      "numero": 9,
+      "bloque": "AVANCE 2: DIAGNÓSTICO Y PLANIFICACIÓN ESTRATÉGICA SITUACIONAL (UNIDAD II)",
+      "esquema": "Matriz FODA Situada (Externa)",
+      "badge": "AVANCE 2 • FODA: ENTORNO",
+      "titulo": "Matriz FODA Situada: Oportunidades y Amenazas Externas",
+      "subtitulo": "Demanda Territorial Regional frente al Severo Ajuste Presupuestario Nacional",
+      "puntosClave": [
+        "📑 Entregable Específico Cátedra: Completar el análisis situacional incorporando las variables del entorno externo que condicionan la gestión.",
+        "🚀 Oportunidades Externas: Creciente demanda comunitaria de educación universitaria en parajes aislados, alianzas estratégicas con municipios y expansión de aulas híbridas.",
+        "🛑 Amenazas Externas Críticas: Ajuste presupuestario nacional del CIN/SPU, congelamiento salarial, caída del poder adquisitivo y aumento severo de costos de energía y transporte en sedes.",
+        "💡 Conclusión Situacional: El valor público y la legitimidad social de la Red de 10 Nodos constituyen el escudo político del CURZAS para resistir los recortes de fondos de Nación."
+      ],
+      "metadatosFooter": "Avance 2 • Análisis del Entorno Situacional Patagónico • CURZAS - UNCo",
+      "escena3D": "anim_13",
+      "tiempoSugerido": "⏱️ ~35-40 seg",
+      "consignasCatedra": [
+        {
+          "tipo": "📑 ENTREGABLE 1 (FODA EXTERNO)",
+          "punto": "En la Matriz FODA, ¿cuáles son las principales oportunidades y amenazas del entorno externo del CURZAS?",
+          "respuesta": "• Oportunidades Externas (O): Alta demanda de carreras en Línea Sur y Costa Atlántica, alianzas de co-gestión con intendencias y aulas híbridas bimodales.\n• Amenazas Externas (A): Severo ajuste presupuestario del Gobierno Nacional (recorte CIN/SPU), congelamiento salarial, inflación e incremento en tarifas de mantenimiento de sedes. La legitimidad social de los 10 nodos es el escudo político del CURZAS para resistir el ajuste central."
+        }
+      ],
+      "guionOrador": "Completando el FODA en el plano externo: la gran oportunidad es la enorme demanda de carreras universitarias en parajes patagónicos y los convenios con intendencias locales. La gran amenaza es el severo recorte de fondos nacionales del Tesoro y la licuación de salarios. El CURZAS se defiende demostrando que su presencia territorial es indispensable para Río Negro."
+    },
+    {
+      "id": "slide_10",
+      "numero": 10,
+      "bloque": "AVANCE 2: DIAGNÓSTICO Y PLANIFICACIÓN ESTRATÉGICA SITUACIONAL (UNIDAD II)",
+      "esquema": "Mapeo de Actores Clave en RR. HH.",
+      "badge": "AVANCE 2 • ENTREGABLE 2: ACTORES",
+      "titulo": "Mapeo de Actores Clave (Stakeholders) en Recursos Humanos",
+      "subtitulo": "Fuerzas Políticas, Gremiales e Institucionales que Inciden en las Decisiones de Personal",
+      "puntosClave": [
+        "📑 Entregable Específico Cátedra: Desarrollo de un Mapeo de Actores Clave (stakeholders) que influyen en las decisiones del área de Recursos Humanos.",
+        "🏛️ Claustros de Alto Poder e Interés: Consejo Directivo (aprueba plantas y llamados a concurso), Decanato, gremio nodocente APUNC y gremios docentes ADUNC / CEDIUNCO.",
+        "🌐 Actores de Despliegue Territorial: Asistentes Técnico-Pedagógicos de los 10 nodos provinciales e intendencias municipales asociadas en la Línea Sur y Costa.",
+        "⚖️ Arenas de Negociación: Las decisiones sobre licencias, coberturas y concursos no son actos unilaterales, sino transacciones políticas reguladas por actas paritarias."
+      ],
+      "metadatosFooter": "Avance 2 • Mapeo de Stakeholders y Arenas de Poder • Carlos Matus",
+      "escena3D": "anim_22",
+      "tiempoSugerido": "⏱️ ~35-40 seg",
+      "consignasCatedra": [
+        {
+          "tipo": "📑 ENTREGABLE 2 (ACTORES CLAVE)",
+          "punto": "Desarrollo de un Mapeo de Actores Clave (stakeholders) que influyen en las decisiones del área de Recursos Humanos.",
+          "respuesta": "• Actores con Alto Poder y Alto Interés: Consejo Directivo (aprueba plantas y concursos), Decanato, gremio nodocente APUNC y gremios docentes ADUNC / CEDIUNCO.\n• Actores Territoriales: Asistentes Técnico-Pedagógicos de los 10 nodos provinciales e intendencias asociadas en la Línea Sur y Costa Atlántica.\n• Conclusión al grano: Las decisiones en Recursos Humanos (licencias, coberturas, promociones) no son resoluciones burocráticas aisladas, sino transacciones políticas reguladas paritariamente en arenas de poder compartido."
+        }
+      ],
+      "guionOrador": "En el entregable 2 realizamos el mapeo de actores clave en Recursos Humanos. Mapeamos a quienes concentran alto poder y alto interés: el Consejo Directivo, el Decanato, y fundamentalmente los sindicatos APUNC y ADUNC. En el territorio se suman los Asistentes Pedagógicos de los 10 nodos y los municipios. Ninguna medida de personal prospera sin concertar en estas arenas de poder compartido."
+    },
+    {
+      "id": "slide_11",
+      "numero": 11,
+      "bloque": "AVANCE 2: DIAGNÓSTICO Y PLANIFICACIÓN ESTRATÉGICA SITUACIONAL (UNIDAD II)",
+      "esquema": "Capacidades Estatales (Bertranou)",
+      "badge": "AVANCE 2 • ENTREGABLE 3: CAPACIDAD",
+      "titulo": "Evaluación de Capacidades Estatales según Julián Bertranou",
+      "subtitulo": "Diagnóstico en Tres Dimensiones: Político-Relacional, Administrativa y Técnico-Analítica",
+      "puntosClave": [
+        "📑 Entregable Específico Cátedra: Evaluación de las capacidades estatales del organismo siguiendo la metodología de Bertranou.",
+        "🤝 Capacidad Político-Relacional (ALTA): Excelente capacidad de concertación democrática en co-gobierno, acuerdos paritarios sólidos y alianzas fluidas con municipios rionegrinos.",
+        "📋 Capacidad Administrativo-Organizacional (MEDIA-ALTA): Riguroso apego a la legalidad y trámites estandarizados, pero ralentizada por la inercia del papel.",
+        "📊 Capacidad Técnico-Analítica (MEDIA): Elevada solvencia en saberes disciplinares docentes, pero con déficit de herramientas para analítica de datos e inteligencia en RR. HH."
+      ],
+      "metadatosFooter": "Avance 2 • Metodología de Capacidades Estatales • Julián Bertranou (2015)",
+      "escena3D": "anim_23",
+      "tiempoSugerido": "⏱️ ~35-40 seg",
+      "consignasCatedra": [
+        {
+          "tipo": "📑 ENTREGABLE 3 (CAPACIDADES ESTATALES)",
+          "punto": "Evaluación de las capacidades estatales del organismo siguiendo la metodología de Bertranou.",
+          "respuesta": "• Tres dimensiones de Bertranou aplicadas al CURZAS:\n1. Capacidad Político-Relacional (ALTA): Sólida legitimidad democrática por co-gobierno cuatripartito, articulación paritaria permanente con APUNC/ADUNC y convenios intergubernamentales con municipios.\n2. Capacidad Administrativo-Organizacional (MEDIA-ALTA): Riguroso apego a la legalidad y formalidad, pero afectada por la inercia del soporte papel y lentitud en circuitos de expedientes complejos.\n3. Capacidad Técnico-Analítica (MEDIA): Gran solvencia en saberes disciplinares docentes, pero con déficit de herramientas para analítica de datos, tableros de control e inteligencia en RR. HH."
+        }
+      ],
+      "guionOrador": "En el entregable 3 aplicamos la metodología de Julián Bertranou para evaluar capacidades estatales. Diagnosticamos: Capacidad Político-Relacional Alta por la legitimidad democrática del co-gobierno; Capacidad Administrativa Media-Alta por el apego a la ley; y Capacidad Técnico-Analítica Media, donde detectamos la necesidad de incorporar analítica de datos en la gestión."
+    },
+    {
+      "id": "slide_12",
+      "numero": 12,
+      "bloque": "AVANCE 2: DIAGNÓSTICO Y PLANIFICACIÓN ESTRATÉGICA SITUACIONAL (UNIDAD II)",
+      "esquema": "Competencias Técnicas en Plantillas",
+      "badge": "AVANCE 2 • COMPETENCIAS TÉCNICAS",
+      "titulo": "Diagnóstico de Competencias Técnicas y Brecha Digital en Personal",
+      "subtitulo": "Respuesta a la Pregunta Guía sobre Deficiencias Críticas en las Plantillas Actuales",
+      "puntosClave": [
+        "❓ Pregunta Guía Cátedra: ¿Existen deficiencias críticas detectadas en las competencias técnicas de las plantillas actuales (capacidad estatal)?",
+        "🏛️ Respuesta Situada en CURZAS: Sí, se constató una brecha digital en sectores del personal nodocente de mayor antigüedad frente a la obligatoriedad de los sistemas SUDOCU y SIU.",
+        "🔍 Causa Raíz Diagnosticada: La implementación del expediente electrónico se ejecutó de forma abrupta sin planes sistemáticos previos de alfabetización informática situada.",
+        "🛠️ Propuesta de Nivelación: Plan de formación continua acordado en paritaria particular UNCo-APUNC con certificación de competencias y soporte informático en nodos."
+      ],
+      "metadatosFooter": "Avance 2 • Diagnóstico de Competencias en Recursos Humanos • Bertranou",
+      "escena3D": "anim_14",
+      "tiempoSugerido": "⏱️ ~35-40 seg",
+      "consignasCatedra": [
+        {
+          "tipo": "❓ PREGUNTA GUÍA (COMPETENCIAS TÉCNICAS)",
+          "punto": "¿Existen deficiencias críticas detectadas en las competencias técnicas de las plantillas actuales (capacidad estatal)?",
+          "respuesta": "• Diagnóstico al grano: Sí. Se constató una brecha digital crítica en sectores del personal nodocente de mayor antigüedad frente a la obligatoriedad abrupta del sistema de expediente digital SUDOCU y aplicativos SIU.\n• Causa raíz: La digitalización se implementó aceleradamente sin planes previos sistemáticos de alfabetización informática situada y con soporte técnico desigual entre Viedma y los nodos.\n• Solución paritaria: Implementación de un Programa de Capacitación Continua y Alfabetización Digital acordado en paritaria con APUNC, con certificación de competencias y tutorías personalizadas."
+        }
+      ],
+      "guionOrador": "Respondiendo a la pregunta sobre deficiencias en competencias técnicas: detectamos una brecha digital en agentes nodocentes de mayor antigüedad frente al uso obligatorio de SUDOCU y Mapuche. Esto se debió a que los sistemas se implementaron sin capacitación previa adecuada. Planteamos un programa de alfabetización digital obligatoria acordado en paritaria con el gremio APUNC."
+    },
+    {
+      "id": "slide_13",
+      "numero": 13,
       "bloque": "AVANCE 2: DIAGNÓSTICO Y PLANIFICACIÓN ESTRATÉGICA SITUACIONAL (UNIDAD II)",
       "esquema": "Planificación Normativa vs. PES (Matus)",
       "badge": "AVANCE 2 • PES MATUS",
@@ -544,102 +659,14 @@ const PRESENTACION_DATA = {
       "escena3D": "anim_18",
       "diagramaSVG": "assets/planificacion_matus_pes.svg",
       "tiempoSugerido": "⏱️ ~35-40 seg",
-      "guionOrador": "Pasamos al Avance 2 respondiendo a la pregunta sobre el enfoque de planificación. Demostramos que el plan normativo clásico fracasó porque creía que la realidad se decretaba desde un escritorio. El CURZAS adopta el enfoque situacional de Carlos Matus: el poder está compartido y los trabajadores docentes y nodocentes son actores estratégicos con quienes hay que construir consensos paritarios."
-    },
-    {
-      "id": "slide_9",
-      "numero": 9,
-      "bloque": "AVANCE 2: DIAGNÓSTICO Y PLANIFICACIÓN ESTRATÉGICA SITUACIONAL (UNIDAD II)",
-      "esquema": "Mapeo de Actores Clave en RR. HH.",
-      "badge": "AVANCE 2 • ENTREGABLE 2: ACTORES",
-      "titulo": "Mapeo de Actores Clave (Stakeholders) en Recursos Humanos",
-      "subtitulo": "Fuerzas Políticas, Gremiales e Institucionales que Inciden en las Decisiones de Personal",
-      "puntosClave": [
-        "📑 Entregable Específico Cátedra: Desarrollo de un Mapeo de Actores Clave (stakeholders) que influyen en las decisiones del área de Recursos Humanos.",
-        "🏛️ Claustros de Alto Poder e Interés: Consejo Directivo (aprueba plantas y llamados a concurso), Decanato, gremio nodocente APUNC y gremios docentes ADUNC / CEDIUNCO.",
-        "🌐 Actores de Despliegue Territorial: Asistentes Técnico-Pedagógicos de los 10 nodos provinciales e intendencias municipales asociadas en la Línea Sur y Costa.",
-        "⚖️ Arenas de Negociación: Las decisiones sobre licencias, coberturas y concursos no son actos unilaterales, sino transacciones políticas reguladas por actas paritarias."
+      "consignasCatedra": [
+        {
+          "tipo": "🎯 OBJETIVO & PREGUNTA GUÍA (PES MATUS)",
+          "punto": "¿Los planes vigentes son normativos (rígidos) o adoptan un enfoque situacional (PES) que considera a los trabajadores como actores estratégicos?",
+          "respuesta": "• Diagnóstico al grano: Adoptan el Enfoque Situacional (PES de Carlos Matus). El modelo normativo clásico tradicional fracasó porque creía que la realidad se ordenaba por decreto.\n• Fundamento clave: Quien gestiona no tiene el monopolio del poder. Docentes y nodocentes son actores estratégicos con recursos, intereses y capacidad de veto; la viabilidad técnica exige concertación paritaria y legitimidad en el co-gobierno."
+        }
       ],
-      "metadatosFooter": "Avance 2 • Mapeo de Stakeholders y Arenas de Poder • Carlos Matus",
-      "escena3D": "anim_22",
-      "tiempoSugerido": "⏱️ ~35-40 seg",
-      "guionOrador": "En el entregable 2 realizamos el mapeo de actores clave en Recursos Humanos. Mapeamos a quienes concentran alto poder y alto interés: el Consejo Directivo, el Decanato, y fundamentalmente los sindicatos APUNC y ADUNC. En el territorio se suman los Asistentes Pedagógicos de los 10 nodos y los municipios. Ninguna medida de personal prospera sin concertar en estas arenas de poder compartido."
-    },
-    {
-      "id": "slide_10",
-      "numero": 10,
-      "bloque": "AVANCE 2: DIAGNÓSTICO Y PLANIFICACIÓN ESTRATÉGICA SITUACIONAL (UNIDAD II)",
-      "esquema": "Matriz FODA Situada (Interna)",
-      "badge": "AVANCE 2 • ENTREGABLE 1: FODA",
-      "titulo": "Matriz FODA Situada: Fortalezas y Debilidades Operativas",
-      "subtitulo": "Respuesta a la Pregunta Guía sobre Fortalezas y Debilidades Internas en el CURZAS",
-      "puntosClave": [
-        "📑 Entregable Específico Cátedra: Elaboración de una Matriz FODA situada en el contexto actual del organismo.",
-        "❓ Pregunta Guía Cátedra: ¿Cuáles son las principales fortalezas y debilidades operativas manifestadas de forma interna (insumo directo para la matriz FODA)?",
-        "⭐ Fortalezas Internas Detectadas: Fuerte arraigo territorial en 10 nodos de Río Negro, gratuidad universitaria, estabilidad de planta paritaria y alta vocación de servicio.",
-        "⚠️ Debilidades Internas Detectadas: Silos de información y fragmentación entre áreas, doble carga manual de datos (SIU/SIGEVA) y dispersión geográfica de las plantillas."
-      ],
-      "metadatosFooter": "Avance 2 • Matriz FODA Situada • Diagnóstico Operativo Interno 2026",
-      "escena3D": "anim_21",
-      "tiempoSugerido": "⏱️ ~35-40 seg",
-      "guionOrador": "Respondiendo a la pregunta sobre la Matriz FODA y los factores internos: detectamos como principal fortaleza el extraordinario arraigo territorial del CURZAS y el compromiso de sus docentes y nodocentes; y como debilidad crítica la existencia de silos informáticos y la sobrecarga provocada por cargar los mismos datos dos y tres veces a mano en distintas plataformas."
-    },
-    {
-      "id": "slide_11",
-      "numero": 11,
-      "bloque": "AVANCE 2: DIAGNÓSTICO Y PLANIFICACIÓN ESTRATÉGICA SITUACIONAL (UNIDAD II)",
-      "esquema": "Matriz FODA Situada (Externa)",
-      "badge": "AVANCE 2 • FODA: ENTORNO",
-      "titulo": "Matriz FODA Situada: Oportunidades y Amenazas Externas",
-      "subtitulo": "Demanda Territorial Regional frente al Severo Ajuste Presupuestario Nacional",
-      "puntosClave": [
-        "📑 Entregable Específico Cátedra: Completar el análisis situacional incorporando las variables del entorno externo que condicionan la gestión.",
-        "🚀 Oportunidades Externas: Creciente demanda comunitaria de educación universitaria en parajes aislados, alianzas estratégicas con municipios y expansión de aulas híbridas.",
-        "🛑 Amenazas Externas Críticas: Ajuste presupuestario nacional del CIN/SPU, congelamiento salarial, caída del poder adquisitivo y aumento severo de costos de energía y transporte en sedes.",
-        "💡 Conclusión Situacional: El valor público y la legitimidad social de la Red de 10 Nodos constituyen el escudo político del CURZAS para resistir los recortes de fondos de Nación."
-      ],
-      "metadatosFooter": "Avance 2 • Análisis del Entorno Situacional Patagónico • CURZAS - UNCo",
-      "escena3D": "anim_13",
-      "tiempoSugerido": "⏱️ ~35-40 seg",
-      "guionOrador": "Completando el FODA en el plano externo: la gran oportunidad es la enorme demanda de carreras universitarias en parajes patagónicos y los convenios con intendencias locales. La gran amenaza es el severo recorte de fondos nacionales del Tesoro y la licuación de salarios. El CURZAS se defiende demostrando que su presencia territorial es indispensable para Río Negro."
-    },
-    {
-      "id": "slide_12",
-      "numero": 12,
-      "bloque": "AVANCE 2: DIAGNÓSTICO Y PLANIFICACIÓN ESTRATÉGICA SITUACIONAL (UNIDAD II)",
-      "esquema": "Capacidades Estatales (Bertranou)",
-      "badge": "AVANCE 2 • ENTREGABLE 3: CAPACIDAD",
-      "titulo": "Evaluación de Capacidades Estatales según Julián Bertranou",
-      "subtitulo": "Diagnóstico en Tres Dimensiones: Político-Relacional, Administrativa y Técnico-Analítica",
-      "puntosClave": [
-        "📑 Entregable Específico Cátedra: Evaluación de las capacidades estatales del organismo siguiendo la metodología de Bertranou.",
-        "🤝 Capacidad Político-Relacional (ALTA): Excelente capacidad de concertación democrática en co-gobierno, acuerdos paritarios sólidos y alianzas fluidas con municipios rionegrinos.",
-        "📋 Capacidad Administrativo-Organizacional (MEDIA-ALTA): Riguroso apego a la legalidad y trámites estandarizados, pero ralentizada por la inercia del papel.",
-        "📊 Capacidad Técnico-Analítica (MEDIA): Elevada solvencia en saberes disciplinares docentes, pero con déficit de herramientas para analítica de datos e inteligencia en RR. HH."
-      ],
-      "metadatosFooter": "Avance 2 • Metodología de Capacidades Estatales • Julián Bertranou (2015)",
-      "escena3D": "anim_23",
-      "tiempoSugerido": "⏱️ ~35-40 seg",
-      "guionOrador": "En el entregable 3 aplicamos la metodología de Julián Bertranou para evaluar capacidades estatales. Diagnosticamos: Capacidad Político-Relacional Alta por la legitimidad democrática del co-gobierno; Capacidad Administrativa Media-Alta por el apego a la ley; y Capacidad Técnico-Analítica Media, donde detectamos la necesidad de incorporar analítica de datos en la gestión."
-    },
-    {
-      "id": "slide_13",
-      "numero": 13,
-      "bloque": "AVANCE 2: DIAGNÓSTICO Y PLANIFICACIÓN ESTRATÉGICA SITUACIONAL (UNIDAD II)",
-      "esquema": "Competencias Técnicas en Plantillas",
-      "badge": "AVANCE 2 • COMPETENCIAS TÉCNICAS",
-      "titulo": "Diagnóstico de Competencias Técnicas y Brecha Digital en Personal",
-      "subtitulo": "Respuesta a la Pregunta Guía sobre Deficiencias Críticas en las Plantillas Actuales",
-      "puntosClave": [
-        "❓ Pregunta Guía Cátedra: ¿Existen deficiencias críticas detectadas en las competencias técnicas de las plantillas actuales (capacidad estatal)?",
-        "🏛️ Respuesta Situada en CURZAS: Sí, se constató una brecha digital en sectores del personal nodocente de mayor antigüedad frente a la obligatoriedad de los sistemas SUDOCU y SIU.",
-        "🔍 Causa Raíz Diagnosticada: La implementación del expediente electrónico se ejecutó de forma abrupta sin planes sistemáticos previos de alfabetización informática situada.",
-        "🛠️ Propuesta de Nivelación: Plan de formación continua acordado en paritaria particular UNCo-APUNC con certificación de competencias y soporte informático en nodos."
-      ],
-      "metadatosFooter": "Avance 2 • Diagnóstico de Competencias en Recursos Humanos • Bertranou",
-      "escena3D": "anim_14",
-      "tiempoSugerido": "⏱️ ~35-40 seg",
-      "guionOrador": "Respondiendo a la pregunta sobre deficiencias en competencias técnicas: detectamos una brecha digital en agentes nodocentes de mayor antigüedad frente al uso obligatorio de SUDOCU y Mapuche. Esto se debió a que los sistemas se implementaron sin capacitación previa adecuada. Planteamos un programa de alfabetización digital obligatoria acordado en paritaria con el gremio APUNC."
+      "guionOrador": "Para cerrar el Avance 2 articulamos el enfoque de planificación que da sustento a todo el diagnóstico. Demostramos que el plan normativo tradicional fracasó porque creía que la realidad se decretaba desde un escritorio. El CURZAS adopta el enfoque situacional de Carlos Matus: el poder está compartido y los trabajadores docentes y nodocentes son actores estratégicos con quienes hay que construir consensos paritarios."
     },
     {
       "id": "slide_14",

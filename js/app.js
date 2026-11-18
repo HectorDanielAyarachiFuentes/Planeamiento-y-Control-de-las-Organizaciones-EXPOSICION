@@ -1214,25 +1214,19 @@ class PresentationApp {
 
     let consignasHtml = "";
     if (slide.consignasCatedra && Array.isArray(slide.consignasCatedra) && slide.consignasCatedra.length > 0) {
-      const avanceTag = slide.badge ? slide.badge.split("•")[0].trim() : "AVANCE CÁTEDRA";
       consignasHtml = `
-        <div class="teleprompter-consignas-container">
-          <div class="teleprompter-consignas-header">
-            <span class="consigna-main-badge">📋 CONSIGNAS & PREGUNTAS GUÍA (PEDCO)</span>
-            <span class="consigna-tag-pill">${avanceTag}</span>
-          </div>
+        <div class="teleprompter-qa-clean">
           ${slide.consignasCatedra.map((item) => `
-            <div class="teleprompter-qa-card">
-              <div class="qa-header">
-                <span class="qa-badge-tipo">${item.tipo || 'PUNTO DE CÁTEDRA'}</span>
+            <div class="qa-clean-card">
+              <div class="qa-clean-header">
+                <span class="qa-clean-badge">${item.tipo || 'CONSIGNA DE CÁTEDRA'}</span>
               </div>
-              <div class="qa-block-question">
-                <div class="qa-label-title">🎯 Consigna / Pregunta Guía Cátedra:</div>
-                <div class="qa-text-prompt">${item.punto.replace(/\n/g, '<br>')}</div>
+              <div class="qa-clean-question">
+                <span class="qa-prefix">Pregunta:</span> ${item.punto.replace(/\n/g, '<br>')}
               </div>
-              <div class="qa-block-answer">
-                <div class="qa-label-title answer-label">💡 Respuesta Corta y Concisa:</div>
-                <div class="qa-text-answer">${item.respuesta.replace(/\n/g, '<br>')}</div>
+              <div class="qa-clean-answer">
+                <span class="qa-prefix-ans">Respuesta al grano:</span>
+                <div class="qa-ans-body">${item.respuesta.replace(/\n/g, '<br>')}</div>
               </div>
             </div>
           `).join('')}
@@ -3101,9 +3095,10 @@ class PresentationApp {
       ".teleprompter-obj-card",
       ".teleprompter-obj-title",
       ".teleprompter-obj-text",
-      ".teleprompter-qa-card",
-      ".qa-text-prompt",
-      ".qa-text-answer",
+      ".qa-clean-card",
+      ".qa-clean-question",
+      ".qa-clean-answer",
+      ".qa-ans-body",
       // Drawer y referencias
       ".drawer-card",
       ".biblio-item",
