@@ -395,6 +395,13 @@ const PRESENTACION_DATA = {
       "metadatosFooter": "Avance 1 • Caracterización Institucional y Marco Legal • Ley 19.648 y Estatuto UNCo",
       "escena3D": "anim_03",
       "tiempoSugerido": "⏱️ ~35-40 seg",
+      "consignasCatedra": [
+        {
+          "tipo": "🎯 OBJETIVO & QUÉ BUSCAR (CÁTEDRA)",
+          "punto": "Objetivo: Caracterizar el marco institucional de la organización.\nQué buscar: Ley de creación del organismo, misiones y funciones institucionales impresas, o cartas de compromiso ciudadano.",
+          "respuesta": "• Organismo: Centro Universitario Regional Zona Atlántica (CURZAS), unidad académica descentralizada de la Universidad Nacional del Comahue (UNCo) con sede en Viedma.\n• Marco Legal: Creada por Ley N° 19.648/1972 y regida por el Estatuto Universitario (Ord. N° 470/93).\n• Autonomía y Misión: Autonomía académica e institucional y autarquía financiera tuteladas por el Art. 75 inc. 19 de la Constitución Nacional. Misión de democratizar la educación superior pública y gratuita en la comarca y la Patagonia Norte bajo co-gobierno democrático cuatripartito (docentes, nodocentes, graduados y estudiantes)."
+        }
+      ],
       "guionOrador": "Iniciamos el Avance 1 respondiendo al objetivo de caracterizar el marco institucional. Buscamos la ley de creación 19.648 y el Estatuto de la UNCo. Constatamos que el CURZAS opera como una unidad académica descentralizada con sede en Viedma, cuya misión democratizadora en la Patagonia está blindada por la autonomía universitaria del artículo 75 inciso 19 de la Constitución y por un co-gobierno democrático cuatripartito."
     },
     {
@@ -414,6 +421,13 @@ const PRESENTACION_DATA = {
       "metadatosFooter": "Avance 1 • Burocracia Tradicional de Base Profesional • Weber / Abal Medina",
       "escena3D": "anim_08",
       "tiempoSugerido": "⏱️ ~35-40 seg",
+      "consignasCatedra": [
+        {
+          "tipo": "❓ PREGUNTA GUÍA (CÁTEDRA)",
+          "punto": "¿El organismo se rige bajo estructuras estrictamente centralizadas y jerárquicas (modelo weberiano)?",
+          "respuesta": "• Diagnóstico: Sí. Rige una Burocracia Profesional Weberiana con apego estricto a la legalidad formal, expediente foliado y dictamen jurídico vinculante previo.\n• Sentido protector: La estructura jerárquica no es arbitraria ni inercial; garantiza el ingreso por concurso público y la estabilidad laboral protegida por convenios colectivos (CCT Nodocente Dec. 366/06 y CCT Docente Dec. 1246/15), blindando la función pública de la discrecionalidad política.\n• Convivencia funcional: Coexisten procedimientos administrativos centralizados y jerárquicos con una amplia autonomía académica y de cátedra docente."
+        }
+      ],
       "guionOrador": "Respondiendo a la pregunta guía de si rige un modelo weberiano: constatamos que sí, en el CURZAS predomina una Burocracia Profesional Weberiana. Cada acto requiere expediente foliado y dictamen legal. Lejos de ser un defecto, esta burocracia asegura que tanto docentes como nodocentes ingresen por concurso público y gocen de estabilidad tutelada por sus convenios colectivos, evitando despidos arbitrarios."
     },
     {
@@ -433,6 +447,13 @@ const PRESENTACION_DATA = {
       "metadatosFooter": "Avance 1 • Análisis de Modelos de Gestión • Burocracia vs NGP • Cao & Blutman",
       "escena3D": "anim_04",
       "tiempoSugerido": "⏱️ ~35-40 seg",
+      "consignasCatedra": [
+        {
+          "tipo": "📑 ENTREGABLE ESPECÍFICO (CÁTEDRA)",
+          "punto": "Identificar el modelo de administración predominante en la entidad (Burocracia tradicional vs. Nueva Gestión Pública).",
+          "respuesta": "• Modelo predominante: Burocracia Tradicional Profesional de Bien Público.\n• Rechazo tajante a la NGP: No aplican las doctrinas de la Nueva Gestión Pública (NGP); la educación es un bien público y derecho social indelegable, no una mercancía de mercado. No existen vouchers, aranceles, lucro ni contratos atados a productividad individual.\n• Rol tecnológico instrumental: Las reformas modernizadoras solo influyeron en la adopción instrumental del ecosistema informático SIU (Guaraní, Mapuche, Pilagá), pero supeditado a la misión pública y no a una lógica mercantil."
+        }
+      ],
       "guionOrador": "Para el entregable de comparar Burocracia Tradicional vs. Nueva Gestión Pública: respondimos categóricamente que en el CURZAS no rige la NGP. No existen vouchers ni estudiantes tratados como clientes. La educación es un bien público y un derecho social. La única influencia de las reformas modernizadoras fue instrumental: incorporar los sistemas informáticos del SIU, pero bajo una lógica de servicio estatal."
     },
     {
@@ -452,28 +473,58 @@ const PRESENTACION_DATA = {
       "metadatosFooter": "Avance 1 • Rendición de Cuentas y Transparencia Activa • Guillermo O'Donnell",
       "escena3D": "anim_11",
       "tiempoSugerido": "⏱️ ~35-40 seg",
+      "consignasCatedra": [
+        {
+          "tipo": "📑 ENTREGABLE ESPECÍFICO (CÁTEDRA)",
+          "punto": "Analizar los mecanismos de rendición de cuentas (accountability) horizontal, vertical o social vigentes.",
+          "respuesta": "Rige un esquema de Triple Accountability (Guillermo O'Donnell):\n1. Horizontal: Control interno estatutario por la Unidad de Auditoría Interna (UAI) y control externo republicano por la Auditoría General de la Nación (AGN) y SIGEN.\n2. Vertical: Elecciones periódicas y obligatorias de co-gobierno cada 2 y 4 años donde la comunidad universitaria reelige o castiga la gestión.\n3. Social: Sesiones públicas de los Consejos Directivo y Superior, boletines oficiales y publicaciones institucionales periódicas."
+        },
+        {
+          "tipo": "❓ PREGUNTA GUÍA (CÁTEDRA)",
+          "punto": "¿Existe una Oficina de Transparencia o sección de datos abiertos para la rendición de cuentas (accountability)?",
+          "respuesta": "Diagnóstico crítico: NO existe una Oficina formal de Transparencia Activa ni un portal institucional de datos abiertos automatizado para consulta ciudadana masiva. El acceso a la información opera de forma reactiva ante solicitudes formales o auditorías de los órganos de control."
+        }
+      ],
       "guionOrador": "Sobre los mecanismos de rendición de cuentas solicitados en el entregable 2: constatamos una triple accountability: horizontal mediante auditorías de la UAI y la AGN; vertical mediante el voto obligatorio en las elecciones de claustros; y social publicando resoluciones. Sin embargo, respondiendo a la pregunta guía: no existe una Oficina formal de Transparencia ni portal de datos abiertos automatizado."
     },
     {
       "id": "slide_7",
       "numero": 7,
       "bloque": "AVANCE 1: CONTEXTO, MODELO DE GESTIÓN Y GOBERNANZA (UNIDAD I)",
-      "esquema": "Gobernanza Inteligente e IA (Oszlak)",
-      "badge": "AVANCE 1 • ENTREGABLE 3: IA",
-      "titulo": "Gobernanza Inteligente y Gestión Algorítmica / IA (Oszlak)",
-      "subtitulo": "Respuesta a la Pregunta Guía sobre Normativas de Software Predictivo en RR. HH.",
+      "esquema": "Gobernanza Inteligente, IA y Paradoja del Co-Gobierno",
+      "badge": "AVANCE 1 • ENTREGABLE 3: IA & GOBERNANZA",
+      "titulo": "Gobernanza Inteligente, IA y la Paradoja del Co-Gobierno",
+      "subtitulo": "Respuesta sobre Software Predictivo (Oszlak) y Riesgo Endogámico (Cao & Blutman)",
       "puntosClave": [
-        "📑 Entregable Específico Cátedra: Evaluar el nivel de Gobernanza Pública Inteligente o si existen iniciativas preliminares de automatización o gestión algorítmica/IA según Oszlak.",
-        "❓ Pregunta Guía Cátedra: ¿Cuenta el área con normativas vigentes sobre la incorporación de algoritmos o software predictivo en la selección o monitoreo de personal?",
-        "🏛️ Respuesta Situada en CURZAS: Madurez digital media: implementación de SUDOCU (expedientes) y SIU-Mapuche, pero operando en silos desconectados sin interoperabilidad inteligente en tiempo real.",
-        "🚫 Ausencia Total de IA en Personal: NO existen normativas ni software predictivo/algorítmico en RR. HH.; la selección y el monitoreo se realizan exclusivamente por jurados humanos colegiados y paritarios."
+        "📑 Entregable y Pregunta Guía: Evaluar nivel de Gobernanza Inteligente (Oszlak) y vigencia de software predictivo o algoritmos en RR. HH.",
+        "🚫 Blindaje Paritario (Sin IA en Personal): En el CURZAS NO existe IA ni algoritmos en selección o monitoreo; rige la garantía humana y paritaria de los CCTs.",
+        "💻 Madurez Digital Media: Coexisten SUDOCU y SIU-Mapuche en silos desconectados, sin analítica de datos en tiempo real.",
+        "⚖️ La Paradoja del Co-Gobierno (Cao & Blutman): La democracia cuatripartita de claustros es pionera, pero arriesga encerrarse en un 'silo corporativo endogámico' autorreferencial si agota su energía en disputas internas.",
+        "🌐 Salida Hacia la Poligobernanza: Superar el aislamiento burocrático conectando el co-gobierno con los 10 nodos regionales de la Línea Sur y Costa Atlántica."
       ],
-      "metadatosFooter": "Avance 1 • El Estado en la Era Exponencial • Oscar Oszlak (2020)",
+      "metadatosFooter": "Avance 1 • Gobernanza Inteligente vs. Paradoja Endogámica • Oszlak, Cao & Blutman",
       "escena3D": "anim_06",
       "diagramaSVG": "assets/red-territorial-nodos.svg",
       "maqueta3D": "assets/maqueta_rionegro_3d.html",
       "tiempoSugerido": "⏱️ ~35-40 seg",
-      "guionOrador": "Para el entregable 3 sobre Gobernanza Inteligente e Inteligencia Artificial según Oscar Oszlak: evaluamos la madurez digital del CURZAS como media. Se usa expediente digital SUDOCU y Mapuche, pero respondiendo a la pregunta docente: no existen normativas ni algoritmos predictivos para seleccionar o monitorear personal. Todos los concursos se resuelven por comisiones humanas paritarias."
+      "consignasCatedra": [
+        {
+          "tipo": "📑 ENTREGABLE ESPECÍFICO (CÁTEDRA)",
+          "punto": "Evaluar el nivel de Gobernanza Pública Inteligente o si existen iniciativas preliminares de automatización o gestión algorítmica/IA según los postulados de Oszlak.",
+          "respuesta": "Nivel de madurez digital intermedio/transicional (Oscar Oszlak): Se cuenta con plataformas de expediente digital (SUDOCU) y aplicativos de gestión (SIU-Mapuche, Guaraní, Sanavirón), pero funcionan como islas o silos desconectados con interoperabilidad fragmentada, sin plataformas de analítica predictiva ni gobernanza inteligente en tiempo real."
+        },
+        {
+          "tipo": "❓ PREGUNTA GUÍA (CÁTEDRA)",
+          "punto": "¿Cuenta el área con normativas vigentes sobre la incorporación de algoritmos o software predictivo en la selección o monitoreo de personal?",
+          "respuesta": "NO existen normativas ni incorporación de algoritmos o software predictivo para selección, evaluación ni monitoreo del personal. Todos los procesos de ingreso, permanencia, ascensos y licencias son 100% humanos, concursales y regulados por los convenios paritarios docentes y nodocentes (CCT Dec. 366/06 y 1246/15)."
+        },
+        {
+          "tipo": "⚖️ ANÁLISIS CRÍTICO (CAO & BLUTMAN)",
+          "punto": "La Paradoja del Co-Gobierno: ¿Cómo conciliar la democracia de claustros con la respuesta a las demandas territoriales?",
+          "respuesta": "El co-gobierno es un logro democrático fundamental pero encierra la 'Paradoja del Co-Gobierno' de Cao y Blutman: el riesgo de convertirse en un 'silo corporativo endogámico' si la energía se desgasta en la puja facciosa interna. La superación exige una gobernanza inteligente articulada en poligobernanza territorial con los 10 nodos y municipios rionegrinos."
+        }
+      ],
+      "guionOrador": "Para cerrar el Avance 1 analizamos la Gobernanza Inteligente según Oscar Oszlak. Constatamos una madurez digital media con SUDOCU y SIU-Mapuche operando en silos desconectados. Respondiendo a la consigna de cátedra: no existe inteligencia artificial ni software predictivo en personal; los concursos y ascensos son 100% humanos y paritarios por CCT.\nPero además, articulamos la 'Paradoja del Co-Gobierno' de Cao y Blutman: el co-gobierno es un logro democrático indiscutible, pero encierra la paradoja de volverse endogámico si se agota en la disputa interna de claustros. Por eso planteamos que la verdadera gobernanza exige abrirse a la poligobernanza territorial con los 10 nodos rionegrinos."
     },
     {
       "id": "slide_8",

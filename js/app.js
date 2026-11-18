@@ -1212,6 +1212,34 @@ class PresentationApp {
       slideTimeEl.textContent = slide.tiempoSugerido || "⏱️ ~35-40 seg";
     }
 
+    let consignasHtml = "";
+    if (slide.consignasCatedra && Array.isArray(slide.consignasCatedra) && slide.consignasCatedra.length > 0) {
+      const avanceTag = slide.badge ? slide.badge.split("•")[0].trim() : "AVANCE CÁTEDRA";
+      consignasHtml = `
+        <div class="teleprompter-consignas-container">
+          <div class="teleprompter-consignas-header">
+            <span class="consigna-main-badge">📋 CONSIGNAS & PREGUNTAS GUÍA (PEDCO)</span>
+            <span class="consigna-tag-pill">${avanceTag}</span>
+          </div>
+          ${slide.consignasCatedra.map((item) => `
+            <div class="teleprompter-qa-card">
+              <div class="qa-header">
+                <span class="qa-badge-tipo">${item.tipo || 'PUNTO DE CÁTEDRA'}</span>
+              </div>
+              <div class="qa-block-question">
+                <div class="qa-label-title">🎯 Consigna / Pregunta Guía Cátedra:</div>
+                <div class="qa-text-prompt">${item.punto.replace(/\n/g, '<br>')}</div>
+              </div>
+              <div class="qa-block-answer">
+                <div class="qa-label-title answer-label">💡 Respuesta Corta y Concisa:</div>
+                <div class="qa-text-answer">${item.respuesta.replace(/\n/g, '<br>')}</div>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      `;
+    }
+
     this.notesBody.innerHTML = `
       <div class="teleprompter-obj-card">
         <div class="teleprompter-obj-header">
@@ -1220,10 +1248,13 @@ class PresentationApp {
         <h4 class="teleprompter-obj-title">${slide.titulo}</h4>
         <p class="teleprompter-obj-text">${slide.esquema}</p>
       </div>
+
+      ${consignasHtml}
+
       <div class="teleprompter-speech-card">
         <div class="speech-card-header">
           <span class="speech-card-badge">🗣️ Guion Sugerido para la Exposición</span>
-          <span class="speech-reading-mode">Oratoria Guiada</span>
+          <span class="speech-reading-mode">Oratoria Guiada (~35-40 seg)</span>
         </div>
         <div class="speech-card-content" id="speech-card-content">
           ${slide.guionOrador ? slide.guionOrador.split('\n').filter(p => p.trim()).map(p => `<p class="speech-para">${p}</p>`).join('') : '<p>Sin guion registrado para esta filmina.</p>'}
@@ -3070,6 +3101,9 @@ class PresentationApp {
       ".teleprompter-obj-card",
       ".teleprompter-obj-title",
       ".teleprompter-obj-text",
+      ".teleprompter-qa-card",
+      ".qa-text-prompt",
+      ".qa-text-answer",
       // Drawer y referencias
       ".drawer-card",
       ".biblio-item",

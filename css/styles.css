@@ -1632,6 +1632,129 @@ body {
   line-height: 1.5;
 }
 
+/* ─── TELEPRÓMPTER: TARJETA DE CONSIGNAS Y PREGUNTAS GUÍA DE CÁTEDRA ─── */
+.teleprompter-consignas-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.teleprompter-consignas-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.15rem 0.25rem;
+}
+
+.consigna-main-badge {
+  font-family: var(--font-serif);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #1e3a8a;
+  background: #eff6ff;
+  border: 1px solid rgba(59, 130, 246, 0.35);
+  padding: 3px 10px;
+  border-radius: 9999px;
+  letter-spacing: 0.04em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.consigna-tag-pill {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #065f46;
+  background: #d1fae5;
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  padding: 2px 8px;
+  border-radius: 9999px;
+  letter-spacing: 0.03em;
+}
+
+.teleprompter-qa-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-left: 4.5px solid #2563eb;
+  border-radius: 12px;
+  padding: 0.95rem 1.15rem;
+  box-shadow: 0 3px 14px rgba(15, 23, 42, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.teleprompter-qa-card:hover {
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.08);
+  border-color: #cbd5e1;
+}
+
+.qa-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.qa-badge-tipo {
+  font-family: var(--font-serif);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #1d4ed8;
+  background: rgba(219, 234, 254, 0.7);
+  border: 1px solid rgba(191, 219, 254, 0.8);
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+.qa-block-question {
+  background: rgba(248, 250, 252, 0.9);
+  border-radius: 8px;
+  padding: 0.55rem 0.75rem;
+  border: 1px solid #e2e8f0;
+}
+
+.qa-label-title {
+  font-family: var(--font-title);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #475569;
+  margin-bottom: 0.25rem;
+}
+
+.qa-label-title.answer-label {
+  color: #047857;
+}
+
+.qa-text-prompt {
+  font-family: var(--font-body);
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: #0f172a;
+  line-height: 1.45;
+}
+
+.qa-block-answer {
+  background: #f0fdf4;
+  border: 1px solid rgba(74, 222, 128, 0.35);
+  border-left: 3.5px solid #10b981;
+  border-radius: 8px;
+  padding: 0.65rem 0.85rem;
+}
+
+.qa-text-answer {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: #064e3b;
+  line-height: 1.55;
+}
+
 .teleprompter-speech-card {
   background: #ffffff;
   border: 1px solid #e2e8f0;
