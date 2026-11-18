@@ -64,9 +64,11 @@
     }
 
     .container {
+      width: 100%;
       max-width: 1320px;
       margin: 0 auto;
-      padding: 0 18px;
+      padding: 0 clamp(20px, 3.5vw, 44px);
+      box-sizing: border-box;
     }
 
     /* Barra superior de navegacion de filminas */
@@ -179,10 +181,13 @@
     .slide-section {
       background: rgba(16, 35, 61, 0.93);
       border: 1px solid var(--borde);
-      border-radius: 22px;
-      padding: 26px;
+      border-radius: 20px;
+      padding: clamp(20px, 2.5vw, 32px);
       box-shadow: 0 18px 40px rgba(0, 0, 0, 0.48);
       scroll-margin-top: 76px;
+      box-sizing: border-box;
+      width: 100%;
+      max-width: 100%;
     }
 
     .slide-badge {
@@ -417,23 +422,27 @@
     /* Sistema de Grillas y Subpaneles con Espaciado Generoso */
     .grid-12 {
       display: grid;
-      grid-template-columns: repeat(12, 1fr);
+      grid-template-columns: repeat(12, minmax(0, 1fr));
       gap: 24px;
       align-items: start;
       margin-bottom: 24px;
+      width: 100%;
+      box-sizing: border-box;
     }
 
     .col-6 {
       grid-column: span 6;
       width: 100%;
+      min-width: 0;
     }
 
     .col-12 {
       grid-column: span 12;
       width: 100%;
+      min-width: 0;
     }
 
-    @media (max-width: 960px) {
+    @media (max-width: 1080px) {
       .grid-12 {
         grid-template-columns: 1fr;
         gap: 22px;
@@ -832,20 +841,24 @@
 
     .reality-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
-      margin-bottom: 20px;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+      margin-bottom: 22px;
+      width: 100%;
+      box-sizing: border-box;
     }
 
-    @media (max-width: 1024px) {
+    @media (max-width: 1140px) {
       .reality-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
       }
     }
 
-    @media (max-width: 580px) {
+    @media (max-width: 620px) {
       .reality-grid {
         grid-template-columns: 1fr;
+        gap: 12px;
       }
     }
 
@@ -858,6 +871,9 @@
       flex-direction: column;
       justify-content: space-between;
       gap: 8px;
+      min-width: 0;
+      overflow: hidden;
+      box-sizing: border-box;
     }
 
     .reality-card .r-label {

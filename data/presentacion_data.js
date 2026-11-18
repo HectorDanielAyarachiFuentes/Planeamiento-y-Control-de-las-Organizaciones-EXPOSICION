@@ -351,11 +351,11 @@ const PRESENTACION_DATA = {
         "Expositor: Téc. Sup. en Recursos Humanos Héctor Daniel Ayarachi Fuentes (Ciclo de Licenciatura • Legajo N° 8252)",
         "Casa de Estudios: CURZAS — Centro Universitario Regional Zona Atlántica y Sur (UNCo • Sede Viedma)",
         "Espacio de Cátedra: Planeamiento y Control de las Organizaciones 2026 (Mgter. Susana Lopez • Lic. Carlos Jauge)",
-        "Propósito de la Exposición: Responder en 17 minutos a las consignas, preguntas guía y entregables oficiales de los 5 Avances"
+        "Propósito de la Exposición: Defensa oral de los 5 Avances articulando el hilo conductor de los nudos críticos en 17 minutos"
       ],
       "metadatosFooter": "Carátula Oficial y Presentación del Estudiante • Cátedra Planeamiento y Control 2026 • Viedma",
       "escena3D": "anim_01",
-      "guionOrador": "Muy buenos días, estimada profesora Mgter. Susana Lopez y estimado profesor Lic. Carlos Jauge. Mi nombre es Héctor Daniel Ayarachi Fuentes, Técnico Superior en Recursos Humanos y cursante de la Licenciatura en el CURZAS. Hoy presento la defensa integral de nuestra cursada estructurada rigurosamente en torno a las consignas y preguntas guía que nos plantearon para los 5 Avances, respondiendo en 17 minutos qué investigamos, qué respondimos en cada caso y qué problemas reales detectamos en el CURZAS.",
+      "guionOrador": "Muy buenos días, estimada profesora Mgter. Susana Lopez y estimado profesor Lic. Carlos Jauge. Mi nombre es Héctor Daniel Ayarachi Fuentes, cursante de la Licenciatura en Recursos Humanos en el CURZAS. Hoy presento la defensa oral de nuestra investigación integral. Siguiendo las pautas de cátedra, esta exposición no busca resumir linealmente las 46 páginas del informe, sino recorrer su hilo conductor conectando los tres nudos críticos: cómo las secretarías rompen la paradoja del co-gobierno mediante la red de 10 Nodos Regionales; cómo esa expansión territorial choca con la rigidez presupuestaria del 90,2% en Personal y los cuellos de botella digitales en SUDOCU y Mapuche; y cómo cerramos desde nuestro rol estratégico en Recursos Humanos con propuestas viables de rediseño.",
       "tiempoSugerido": "⏱️ ~35-40 seg"
     },
     {
@@ -367,15 +367,14 @@ const PRESENTACION_DATA = {
       "titulo": "Los 5 Avances de Cátedra: Consignas Oficiales y Respuestas Situadas",
       "subtitulo": "Estructura Temática según los Objetivos y Entregables Fijados por la Cátedra (Unidades I a V)",
       "puntosClave": [
-        "Avance 1: Contexto, Modelo de Gestión y Gobernanza (Unidad I): Modelo weberiano vs NGP, accountability horizontal/vertical/social y nivel de gobernanza inteligente / IA según Oszlak.",
-        "Avance 2: Diagnóstico y Planificación Estratégica Situacional (Unidad II): Planificación normativa vs PES de Matus, Matriz FODA situada, actores clave en RRHH y capacidades estatales (Bertranou).",
-        "Avance 3: Diseño Organizacional, Procesos y Ecosistema Digital (Unidad III): Organigrama formal vs real, centralización/desconcentración, y flujograma de licencias en SUDOCU con cuellos de botella.",
-        "Avance 4: Programación Presupuestaria y Factor Humano (Unidad IV): Presupuesto total, absorción del 90,2% por el Inciso 1 (Personal), 40% de Zona Desfavorable y Presupuesto por Programas (Makon, Prog. 26).",
-        "Avance 5: Sistemas de Control, Tablero de Comando y Evaluación (Unidad V): Auditoría AGN/UAI estatutaria/SIGEN (Res. 311/2026), evaluación docente vs nodocente, 4 KPIs y bucle de retroalimentación."
+        "🧵 Hilo Conductor Estratégico: Conectar los nudos críticos del informe articulando las 5 Unidades en 17 minutos.",
+        "🌐 1. Nudo Político & Territorial: Las secretarías rompen la paradoja del co-gobierno mediante la red viva de 10 Nodos Regionales.",
+        "💰 2. Nudo Fiscal & Tecnológico: La expansión choca con la rigidez del 90,2% en Inciso 1 (Personal) y la doble carga manual SUDOCU/Mapuche.",
+        "🎯 3. Cierre desde el Rol de RR.HH.: Propuestas viables de rediseño (custodia documental, subrogancias automáticas y Tablero con KPIs)."
       ],
       "metadatosFooter": "Hoja de Ruta Ejecutiva • Resumen Somero de los 5 Avances • CURZAS - UNCo",
       "escena3D": "anim_02",
-      "guionOrador": "Para ordenar estrictamente la exposición y responder a las consignas sin divagar, organizamos la defensa en 5 bloques: el Avance 1 responde sobre el modelo weberiano y la ausencia de IA; el Avance 2 responde sobre la planificación situacional, el FODA y las capacidades de Bertranou; el Avance 3 desglosa el organigrama y el flujograma de licencias en SUDOCU; el Avance 4 analiza los números presupuestarios del Inciso 1; y el Avance 5 formaliza el control de la UAI estatutaria y nuestro Tablero de 4 KPIs.",
+      "guionOrador": "Para estructurar la defensa sobre el hilo conductor, conectamos los nudos críticos de cada Unidad: en el Avance 1 y 2, cómo la presencia provincial en 10 nodos supera el riesgo de endogamia del co-gobierno; en el Avance 3, cómo esa red choca con el organigrama centralizado y los cuellos de botella del circuito de licencias; en el Avance 4, cómo colisiona con la extrema rigidez del 90,2% en sueldos por zona desfavorable; y en el Avance 5, cómo resolvemos estos desvíos desde nuestro rol profesional con propuestas viables de rediseño y nuestro Tablero de 4 KPIs.",
       "tiempoSugerido": "⏱️ ~35-40 seg"
     },
     {
@@ -495,7 +494,7 @@ const PRESENTACION_DATA = {
         "🚫 Blindaje Paritario (Sin IA en Personal): En el CURZAS NO existe IA ni algoritmos en selección o monitoreo; rige la garantía humana y paritaria de los CCTs.",
         "💻 Madurez Digital Media: Coexisten SUDOCU y SIU-Mapuche en silos desconectados, sin analítica de datos en tiempo real.",
         "⚖️ La Paradoja del Co-Gobierno (Cao & Blutman): La democracia cuatripartita de claustros es pionera, pero arriesga encerrarse en un 'silo corporativo endogámico' autorreferencial si agota su energía en disputas internas.",
-        "🌐 Salida Hacia la Poligobernanza: Superar el aislamiento burocrático conectando el co-gobierno con los 10 nodos regionales de la Línea Sur y Costa Atlántica."
+        "🌐 Salida Hacia la Poligobernanza: Las Secretarías del CURZAS rompen la endogamia proyectando la universidad al territorio mediante los 10 nodos regionales de la Línea Sur y Costa Atlántica."
       ],
       "metadatosFooter": "Avance 1 • Gobernanza Inteligente vs. Paradoja Endogámica • Oszlak, Cao & Blutman",
       "escena3D": "anim_06",
@@ -506,10 +505,10 @@ const PRESENTACION_DATA = {
         {
           "tipo": "📑 ENTREGABLE & PREGUNTA GUÍA (GOBERNANZA & IA)",
           "punto": "¿Cuál es el nivel de Gobernanza Inteligente (Oszlak), rigen algoritmos en personal y cómo impacta la Paradoja del Co-Gobierno (Cao & Blutman)?",
-          "respuesta": "• Gobernanza e IA: Madurez digital media en silos (SUDOCU y SIU sin analítica en tiempo real). NO existen normativas ni IA/algoritmos en personal; los concursos y ascensos son 100% humanos y paritarios por CCT.\n• Paradoja del Co-Gobierno: La democracia de claustros arriesga volverse un silo corporativo endogámico si se agota en la disputa interna; se supera articulando una poligobernanza territorial con los 10 nodos y municipios rionegrinos."
+          "respuesta": "• Gobernanza e IA: Madurez digital media en silos (SUDOCU y SIU sin analítica en tiempo real). NO existen normativas ni IA/algoritmos en personal; los concursos y ascensos son 100% humanos y paritarios por CCT.\n• Paradoja del Co-Gobierno: La democracia de claustros arriesga volverse un silo corporativo endogámico si se agota en la disputa interna; las Secretarías del CURZAS rompen esa paradoja al articular una poligobernanza territorial con los 10 nodos y municipios rionegrinos."
         }
       ],
-      "guionOrador": "Para cerrar el Avance 1 analizamos la Gobernanza Inteligente según Oscar Oszlak. Constatamos una madurez digital media con SUDOCU y SIU-Mapuche operando en silos desconectados. Respondiendo a la consigna de cátedra: no existe inteligencia artificial ni software predictivo en personal; los concursos y ascensos son 100% humanos y paritarios por CCT.\nPero además, articulamos la 'Paradoja del Co-Gobierno' de Cao y Blutman: el co-gobierno es un logro democrático indiscutible, pero encierra la paradoja de volverse endogámico si se agota en la disputa interna de claustros. Por eso planteamos que la verdadera gobernanza exige abrirse a la poligobernanza territorial con los 10 nodos rionegrinos."
+      "guionOrador": "Para cerrar el Avance 1 analizamos la Gobernanza Inteligente según Oscar Oszlak: constatamos madurez digital media y sin IA en personal por tutela paritaria. Pero además articulamos la 'Paradoja del Co-Gobierno' de Cao y Blutman: la autonomía de claustros arriesga la autorreferencialidad endogámica si se agota en la disputa interna; demostramos cómo las Secretarías del CURZAS rompen esa paradoja al abrirse a la poligobernanza territorial con los 10 nodos rionegrinos. (Apoyo visual: Tecla R para abrir el Mapa de la Red Territorial)."
     },
     {
       "id": "slide_8",
@@ -806,25 +805,25 @@ const PRESENTACION_DATA = {
       "bloque": "AVANCE 3: DISEÑO ORGANIZACIONAL, PROCESOS Y ECOSISTEMA DIGITAL (UNIDAD III)",
       "esquema": "Propuestas de Rediseño",
       "badge": "AVANCE 3 • PROPUESTAS",
-      "titulo": "Propuestas de Rediseño: Firma Digital, Interoperabilidad y Subrogancia",
-      "subtitulo": "Soluciones Concretas para Eliminar los Cuellos de Botella Relevados en Personal",
+      "titulo": "Propuestas de Rediseño: Custodia Documental, Subrogancia y Pasarelas API",
+      "subtitulo": "Soluciones Viables desde el Rol Estratégico en RR. HH. para Superar los Cuellos de Botella",
       "puntosClave": [
-        "🔑 1. Firma Digital Criptográfica (Ley 25.506): Reemplazar el escaneo de firmas ológrafas por firma digital con infraestructura PKI, garantizando plena validez jurídica sin papel.",
-        "🔌 2. Pasarela API SUDOCU → SIU-Mapuche: Automatizar el traspaso de licencias aprobadas al sistema de sueldos sin intervención manual humana, eliminando errores de liquidación.",
-        "📜 3. Ordenanza de Subrogancia Automática: Reglamentar un plazo máximo de 48 horas para que ante ausencia de la autoridad, el expediente pase automáticamente al reemplazante legal.",
-        "👥 4. Capacitación Paritaria Situada: Implementar talleres obligatorios en horario laboral con el gremio APUNC para nivelar competencias informáticas sin generar exclusión."
+        "📑 1. Declaración Jurada de Custodia Documental: Supresión del papel físico mediante DDJJ en SUDOCU; el agente conserva el original físico como depositario legal (prescripción de 2 a 5 años) bajo control aleatorio, eliminando la ventanilla presencial y el doble archivo.",
+        "📜 2. Ordenanza de Subrogancia Automática (48 horas): Plazo perentorio para que, ante ausencia o viaje de la autoridad titular, el expediente pase de forma automática al reemplazante legal, erradicando la parálisis de firmas.",
+        "🔌 3. Pasarela API SUDOCU → SIU-Mapuche: Interoperabilidad automática de licencias aprobadas hacia liquidación salarial, erradicando la transcripción manual humana y los errores de cálculo.",
+        "👥 4. Capacitación Paritaria Situada en Horario Laboral con APUNC: Plan de alfabetización digital acordado en CCT 366/06 para nivelar competencias informáticas sin exclusión."
       ],
-      "metadatosFooter": "Avance 3 • Propuestas Estratégicas de Rediseño • Firma Digital y Pasarelas API",
+      "metadatosFooter": "Avance 3 • Propuestas Estratégicas de Rediseño • Custodia Documental y Subrogancia",
       "escena3D": "anim_05",
       "tiempoSugerido": "⏱️ ~35-40 seg",
       "consignasCatedra": [
         {
-          "tipo": "💡 PROPUESTAS DE REDISEÑO (SOLUCIÓN A TRABAS)",
-          "punto": "¿Qué propuestas concretas de rediseño se formulan para eliminar los cuellos de botella relevados en el circuito de personal?",
-          "respuesta": "• 4 Propuestas Estratégicas Situadas:\n1. Firma Digital Criptográfica (Ley 25.506): Validez legal plena con infraestructura PKI, erradicando el certificado físico escaneado.\n2. Pasarela API SUDOCU → SIU-Mapuche: Interoperabilidad automática de actos administrativos hacia liquidación sin carga manual.\n3. Ordenanza de Subrogancia Automática: Despacho automático de expedientes a la autoridad supletoria tras 48 hs de inactividad.\n4. Capacitación Paritaria Situada: Plan de alfabetización digital en horario laboral acordado con APUNC para cerrar la brecha informática."
+          "tipo": "💡 PROPUESTAS DE REDISEÑO (ROL ESTRATÉGICO RR. HH.)",
+          "punto": "¿Qué propuestas concretas de rediseño viables desde RR. HH. se formulan para eliminar los cuellos de botella relevados en el circuito de personal?",
+          "respuesta": "• 4 Propuestas Estratégicas Situadas desde RR. HH.:\n1. Declaración Jurada de Custodia Documental y Firma Digital Criptográfica (Ley 25.506): El agente sube el PDF a SUDOCU y conserva el original físico como depositario legal con control aleatorio; validez jurídica plena sin doble archivo ni ventanilla presencial.\n2. Pasarela API SUDOCU → SIU-Mapuche: Interoperabilidad automática de actos administrativos hacia liquidación sin transcripción manual.\n3. Ordenanza de Subrogancia Automática (48 hs): Despacho automático de expedientes a la autoridad supletoria tras 48 hs de inactividad, evitando expedientes frenados.\n4. Capacitación Paritaria Situada: Plan de alfabetización digital en horario laboral acordado con APUNC bajo CCT 366/06 para cerrar la brecha informática."
         }
       ],
-      "guionOrador": "Para superar estos cuellos de botella formulamos cuatro propuestas concretas: implementar Firma Digital con plena validez de la Ley 25.506; crear una pasarela informática automática entre SUDOCU y SIU-Mapuche; dictar una ordenanza de subrogancia automática para que los expedientes no se frenen; y acordar en paritaria un plan de capacitación informática con APUNC."
+      "guionOrador": "Para superar estos cuellos de botella formulamos propuestas viables desde nuestro rol profesional en Recursos Humanos: primero, la Declaración Jurada con Deber de Custodia Documental del Agente, donde el empleado sube el certificado a SUDOCU y queda como depositario legal del original físico, suprimiendo la ventanilla presencial sin quebrar la legalidad; segundo, la Ordenanza de Subrogancia Automática en 48 horas para que ningún trámite quede paralizado por ausencia de una autoridad; tercero, la Pasarela API entre SUDOCU y SIU-Mapuche que elimine la doble carga manual; y cuarto, un plan de capacitación paritaria con APUNC en horario laboral."
     },
     {
       "id": "slide_20",
@@ -838,7 +837,7 @@ const PRESENTACION_DATA = {
         "📑 Entregable Específico Cátedra: Identificación de las partidas de gasto asignadas al factor humano (Inciso 1 - Gastos en Personal) dentro del presupuesto de la entidad.",
         "❓ Pregunta Guía Cátedra: ¿Cuál es el presupuesto total asignado al organismo y qué porcentaje se destina al Inciso 1 (Gastos en Personal)?",
         "💰 Presupuesto Total del CURZAS: $4.877 Millones de pesos en el ejercicio corriente (representa el 6,6% del total de la UNCo de $73.900M).",
-        "🏛️ Absorción del Inciso 1 (Personal): El 90,2% ($4.401 Millones) se destina exclusivamente al pago de salarios; apenas un 9,8% queda disponible para gastos operativos de funcionamiento."
+        "🏛️ Absorción del Inciso 1 (Personal): El 90,2% ($4.401 Millones) se destina exclusivamente al pago de salarios; la expansión territorial a los 10 Nodos choca con esta extrema rigidez, dejando apenas un 9,8% para funcionamiento provincial."
       ],
       "metadatosFooter": "Avance 4 • Ejecución Presupuestaria Oficial y Concentración en Personal • CURZAS",
       "escena3D": "anim_20",
@@ -852,10 +851,10 @@ const PRESENTACION_DATA = {
         {
           "tipo": "📑 ENTREGABLE 1 & PREGUNTA GUÍA (INCISO 1)",
           "punto": "¿Cuál es el presupuesto total asignado al organismo y qué porcentaje se destina al Inciso 1 (Gastos en Personal)?",
-          "respuesta": "• Presupuesto Total del CURZAS: $4.877 Millones de pesos en el ejercicio corriente (representa el 6,6% del presupuesto global de la UNCo de $73.900M).\n• Centralidad del Inciso 1 (Personal): El 90,2% ($4.401 Millones) está absorbido rígidamente por gastos en personal (salarios docentes y nodocentes).\n• Margen Operativo Crítico: Apenas un 9,8% ($476 Millones) queda disponible para el conjunto de gastos de funcionamiento (tarifas de luz, gas, insumos de laboratorio, limpieza y traslados a los 10 nodos)."
+          "respuesta": "• Presupuesto Total del CURZAS: $4.877 Millones de pesos en el ejercicio corriente (representa el 6,6% del presupuesto global de la UNCo de $73.900M).\n• Centralidad del Inciso 1 (Personal): El 90,2% ($4.401 Millones) está absorbido rígidamente por gastos en personal (salarios docentes y nodocentes) por el 40% de Zona Desfavorable.\n• Choque con la Expansión Territorial: Apenas un 9,8% ($476 Millones) queda disponible para sostener la presencia en los 10 nodos provinciales, gas, luz, insumos y traslados."
         }
       ],
-      "guionOrador": "En el Avance 4 abrimos los números presupuestarios respondiendo a la pregunta guía: el CURZAS administra $4.877 millones de pesos. El hallazgo más contundente es que el 90,2% de esos fondos se destina al Inciso 1, es decir, a pagar salarios de docentes y nodocentes. Nos queda menos de un 10% para afrontar tarifas de luz, gas, limpieza y viajes en toda la provincia. En pantalla disponemos de la vista previa isométrica y podemos acceder con la tecla 3 al Dashboard 3D interactivo para explorar la comparativa del PBI nacional, las 61 universidades y los números del CURZAS."
+      "guionOrador": "En el Avance 4 llegamos al segundo gran nudo crítico del informe: cómo la vocación de expansión territorial en los 10 nodos choca de frente con la rigidez macrofiscal. El CURZAS administra $4.877 millones de pesos, y el 90,2% está absorbido por el Inciso 1 (salarios docentes y nodocentes) debido al 40% de Zona Desfavorable. Apenas nos queda un 9,8% para afrontar servicios, gas, insumos y traslados en toda la provincia. En pantalla disponemos del gráfico isométrico comparativo que ilustra esta pirámide fiscal."
     },
     {
       "id": "slide_21",
@@ -1078,8 +1077,8 @@ const PRESENTACION_DATA = {
       "puntosClave": [
         "1️⃣ Avance 1 (Unidad I - Contexto y Gobernanza): Caracterizamos el modelo institucional • Lo más destacado: Burocracia Profesional que garantiza legalidad y convenios paritarios • Situación observada: Riesgo de endogamia en co-gobierno cerrado sobre sí mismo y falta de datos abiertos • Cómo solucionarlo: Accountability Social activa con portal web de datos abiertos sobre cargos y presupuesto abierto a la comunidad rionegrina, y comisiones consultivas territoriales.",
         "2️⃣ Avance 2 (Unidad II - Planificación Situacional): Diagnóstico FODA situado, actores con veto y capacidades estatales • Lo más destacado: Red viva de 10 Nodos en Río Negro y planificación PES (Matus) con gremios • Situación observada: Silos de datos intersistemas (doble carga SIU vs. SIGEVA) y brecha digital en personal de antigüedad • Cómo solucionarlo: API de interoperabilidad técnica automática y plan paritario de capacitación informática continua.",
-        "3️⃣ Avance 3 (Unidad III - Procesos y Ecosistema Digital): Mapeamos estructura formal vs real y circuito de licencias • Lo más destacado: Visibilización de la red territorial real frente al organigrama de jure • Situación observada: Parálisis por falta de subrogancia formal y falsa digitalización (papel escaneado) • Cómo solucionarlo: Ordenanza de subrogancia automática y digitalización integral del trámite de licencias en SUDOCU y Mapuche.",
-        "4️⃣ Avance 4 (Unidad IV - Presupuesto y Factor Humano): Presupuesto por programas (Prog. 26) y centralidad del Inciso 1 • Lo más destacado: El 90,2% del gasto va a salarios, confirmando que las personas son la capacidad estatal • Situación observada: Asfixia operativa (solo 9,8% para funcionamiento) y rigidez del 40% de Zona Desfavorable • Cómo solucionarlo: Actualización indexada de partidas de funcionamiento en paritaria nacional y convenios de cogestión con municipios.",
+        "3️⃣ Avance 3 (Unidad III - Procesos y Ecosistema Digital): Mapeamos estructura formal vs real y circuito de licencias • Lo más destacado: Visibilización de la red territorial real frente al organigrama de jure • Situación observada: Parálisis por falta de subrogancia formal y falsa digitalización (papel escaneado) • Cómo solucionarlo: Declaración jurada de custodia documental del original, ordenanza de subrogancia automática en 48 hs e interoperabilidad directa SUDOCU → Mapuche.",
+        "4️⃣ Avance 4 (Unidad IV - Presupuesto y Factor Humano): Presupuesto por programas (Prog. 26) y centralidad del Inciso 1 • Lo más destacado: El 90,2% del gasto va a salarios, confirmando que las personas son la capacidad estatal • Situación observada: Asfixia operativa (solo 9,8% para funcionamiento) frente a la demanda territorial de 10 nodos y rigidez del 40% de Zona Desfavorable • Cómo solucionarlo: Actualización indexada de partidas de funcionamiento en paritaria nacional y convenios de cogestión con municipios.",
         "5️⃣ Avance 5 (Unidad V - Control, Tablero y Evaluación): Ecosistema de control, UAI estatutaria y Tablero de RR. HH. • Lo más destacado: UAI independiente pionera, reactivación SIGEN (Res. 311/2026) y bucle de mejora • Situación observada: Asimetría evaluativa docente-nodocente diferida con APUNC; se administran cargos en Mapuche pero se carece de medición de resultados (Telma Ramírez) • Cómo solucionarlo: Tablero de 4 KPIs estratégicos articulado al PAT 2027 y SISAC, con enfoque formativo y no punitivo.",
         "🎓 Apertura al Tribunal y Agradecimiento: Reconocimiento sincero a los evaluadores Mgter. Susana Lopez y Lic. Carlos Jauge por su excelencia formativa • Apertura a la deliberación y preguntas del Tribunal."
       ],
@@ -1090,10 +1089,10 @@ const PRESENTACION_DATA = {
         {
           "tipo": "🎓 SÍNTESIS GENERAL & EVALUACIÓN INTEGRAL (5 AVANCES)",
           "punto": "¿Cuáles son los principales hallazgos, situaciones observadas y propuestas de solución integral para cada una de las 5 Unidades en el CURZAS?",
-          "respuesta": "• Avance 1 (Gobernanza): Burocracia Profesional que resguarda la legalidad; se detectó riesgo de endogamia en co-gobierno que se soluciona con Accountability Social y comisiones en nodos.\n• Avance 2 (Planificación): PES de Matus y red de 10 nodos; se detectaron silos SIU-SIGEVA y brecha digital que se corrigen con pasarelas API y capacitación paritaria.\n• Avance 3 (Procesos): Estructura formal centralizada vs red real; cuellos de botella por subrogancia y papel escaneado que se resuelven con ordenanza de subrogancia y digitalización integral.\n• Avance 4 (Presupuesto): El 90,2% se destina a salarios por ley de Zona Desfavorable (40%); se afronta la asfixia del 9,8% de funcionamiento con indexación paritaria y cogestión municipal.\n• Avance 5 (Control & KPIs): UAI estatutaria y Res. SIGEN 311/2026; la brecha de evaluación nodocente se supera con el Tablero de 4 KPIs estratégicos y bucle de mejora continua."
+          "respuesta": "• Avance 1 (Gobernanza): Burocracia Profesional que resguarda la legalidad; el riesgo de endogamia del co-gobierno se rompe con las Secretarías y los 10 nodos territoriales.\n• Avance 2 (Planificación): PES de Matus y red viva de 10 nodos; los silos intersistemas y la brecha digital se corrigen con pasarelas API y capacitación paritaria.\n• Avance 3 (Procesos): Estructura formal vs red real; se eliminan los cuellos de botella con la declaración jurada de custodia documental, ordenanza de subrogancia automática y pasarela API a Mapuche.\n• Avance 4 (Presupuesto): El 90,2% se destina a salarios por ley de Zona Desfavorable (40%); se mitiga la asfixia del 9,8% de funcionamiento con indexación paritaria y cogestión municipal de nodos.\n• Avance 5 (Control & KPIs): UAI estatutaria y Res. SIGEN 311/2026; la brecha de evaluación nodocente se supera con el Tablero de 4 KPIs estratégicos y bucle de mejora continua."
         }
       ],
-      "guionOrador": "Para concluir esta defensa integral en 17 minutos, sintetizamos los 5 Avances con sus hallazgos, la situación observada y la solución situada que propusimos:\nEn el Avance 1 validamos una Burocracia Profesional que resguarda la legalidad y los convenios paritarios; la situación observada fue el riesgo de endogamia en el co-gobierno cerrado y la falta de datos abiertos, que resolvemos con un portal de Accountability Social y comisiones consultivas en los 10 nodos.\nEn el Avance 2 articulamos el PES de Matus con la red de 10 nodos; la situación observada fueron los silos entre SIU y SIGEVA y la brecha digital, que solucionamos con interoperabilidad técnica y capacitación paritaria.\nEn el Avance 3 contrastamos el organigrama con la realidad; la situación observada fueron los cuellos de botella por falta de subrogancia y la falsa digitalización del papel escaneado, que resolvemos con ordenanza de subrogancia y tramitación digital directa en SUDOCU y Mapuche.\nEn el Avance 4 demostramos que el 90,2% del presupuesto va al Inciso 1 por el plus patagónico del 40%, confirmando que el personal es la auténtica capacidad estatal; la situación observada es la asfixia del 9,8% de funcionamiento, que proponemos mitigar con partidas indexadas y cogestión municipal de nodos.\nY en el Avance 5 consolidamos el control con la UAI estatutaria y la Res. SIGEN 311/2026; la situación observada fue la asimetría de medir cargos en vez de resultados por el diferimiento con APUNC (como advierte Telma Ramírez), que solucionamos implementando el Tablero de 4 KPIs estratégicos como bucle formativo de retroalimentación continua.\nAgradezco sinceramente a la profesora Susana Lopez y al profesor Carlos Jauge por su acompañamiento académico. Quedo a su entera disposición para las preguntas del Tribunal."
+      "guionOrador": "Para concluir esta defensa integral en 17 minutos, sintetizamos el hilo conductor de los 5 Avances:\nEn el Avance 1 validamos una Burocracia Profesional que resguarda la legalidad y los convenios paritarios, y mostramos cómo las Secretarías rompen la paradoja del co-gobierno proyectando la universidad a los 10 nodos territoriales.\nEn el Avance 2 articulamos el PES de Matus con la red viva de 10 nodos, superando silos de datos con capacitación paritaria e interoperabilidad.\nEn el Avance 3 visibilizamos la red real frente al organigrama de jure y destrabamos el circuito de licencias con propuestas viables de rediseño: declaración jurada de custodia documental para erradicar el papel físico, ordenanza de subrogancia automática en 48 horas y pasarela API entre SUDOCU y Mapuche.\nEn el Avance 4 mostramos cómo la expansión territorial colisiona con la rigidez macrofiscal, donde el 90,2% del presupuesto va al Inciso 1 por el plus patagónico del 40%, confirmando que el personal es la auténtica capacidad estatal del CURZAS.\nY en el Avance 5 consolidamos el control con la UAI estatutaria y la Res. SIGEN 311/2026, implementando el Tablero de 4 KPIs estratégicos para superar la brecha de evaluación nodocente como bucle de retroalimentación y aprendizaje continuo.\nAgradezco sinceramente a la profesora Susana Lopez y al profesor Carlos Jauge por su acompañamiento académico. Quedo a su entera disposición para las preguntas del Tribunal."
     }
   ]
 };
