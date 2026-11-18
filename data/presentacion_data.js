@@ -979,6 +979,13 @@ const PRESENTACION_DATA = {
       "metadatosFooter": "Avance 5 • Ecosistema de Control Público • Ley 24.156, Estatuto UNCo y Res. SIGEN 311/2026",
       "escena3D": "anim_25",
       "tiempoSugerido": "⏱️ ~35-40 seg",
+      "consignasCatedra": [
+        {
+          "tipo": "📑 ENTREGABLE 1 & PREGUNTA GUÍA (ORGANISMOS DE CONTROL)",
+          "punto": "¿Qué organismos auditan externa e internamente a la entidad, cuándo fue la última auditoría formal y qué observaciones se formularon al área de personal?",
+          "respuesta": "• Control Externo (AGN): Fiscalización posterior externa sobre estados contables y Cuenta de Inversión (SAF 809, informe integral consolidado 2021).\n• Control Interno Pionero (UAI Estatutaria): La UNCo consagró en su Estatuto la independencia funcional y jerárquica de su UAI (Cr. Oscar Rebolledo), blindando los Planes Anuales de Trabajo (PAT) frente a presiones del Rectorado.\n• Reactivación SIGEN (Res. 311/2026): El órgano rector instruyó auditar prioritariamente 'Personal y Nómina Salarial' en el PAT 2027 y exige reportar desvíos en el sistema SISAC.\n• Observaciones a Personal: Diferimiento en evaluación nodocente (CCT 366/06), demoras en rendición de comisiones de servicio a nodos y necesidad de conciliar en tiempo real SUDOCU con SIU-Mapuche."
+        }
+      ],
       "guionOrador": "Iniciamos el Avance 5 respondiendo la pregunta sobre qué organismos auditan al CURZAS y qué observaciones existen. Contamos con control externo de la AGN sobre la Cuenta de Inversión del SAF 809. Pero lo más distintivo es que la UNCo otorgó rango estatutario a su Unidad de Auditoría Interna, garantizando su independencia. Además, la Resolución SIGEN 311 de octubre de 2026 reactivó el control rector, exigiendo auditar prioritariamente la nómina salarial en el PAT 2027 y cargar desvíos en el sistema SISAC."
     },
     {
@@ -998,6 +1005,13 @@ const PRESENTACION_DATA = {
       "metadatosFooter": "Avance 5 • Evaluación del Desempeño y Convenios Colectivos • CCT 366/06 y CCT 1246/15",
       "escena3D": "anim_26",
       "tiempoSugerido": "⏱️ ~35-40 seg",
+      "consignasCatedra": [
+        {
+          "tipo": "❓ PREGUNTA GUÍA (METAS CUANTITATIVAS & EVALUACIÓN LABORAL)",
+          "punto": "¿Qué metas cuantitativas o indicadores clave de desempeño (KPIs) utiliza formalmente la institución para evaluar el rendimiento laboral?",
+          "respuesta": "• Estamento Docente (CCT Dec. 1246/15): Se evalúa formal y periódicamente mediante concursos públicos de oposición, reválidas de cátedra (cada 4 o 7 años), informes anuales en SIGEVA y encuestas obligatorias de estudiantes en Guaraní.\n• Estamento Nodocente (CCT Dec. 366/06 Título IX): Rige un diferimiento histórico acordado en paritaria con APUNC; no se aplica calificación ordinaria de desempeño y las promociones operan por antigüedad acumulada.\n• Brecha de Medición Estratégica (Telma Ramírez): No existen KPIs formales de rendimiento; la institución solo administra formalmente cargos en SIU-Mapuche sin medir tiempos de respuesta, calidad ni satisfacción ciudadana."
+        }
+      ],
       "guionOrador": "Respondiendo a la pregunta sobre qué metas o KPIs utiliza la institución para evaluar el rendimiento laboral: detectamos una asimetría estructural profunda entre los dos estamentos.\nPor un lado, los docentes son evaluados periódicamente bajo el CCT 1246/15 mediante concursos públicos de oposición, reválidas de cátedra cada 4 o 7 años, informes en SIGEVA y encuestas obligatorias de estudiantes en Guaraní.\nPor otro lado, en el estamento nodocente, si bien el CCT 366/06 Título IX exige calificación anual, en la UNCo existe un diferimiento histórico acordado en paritaria con APUNC, rigiendo el ascenso por antigüedad acumulada.\nComo advierte Telma Ramírez, el CURZAS administra formalmente cargos en SIU-Mapuche pero carece de indicadores de resultado. Por eso, en la siguiente filmina propusimos un Tablero con 4 KPIs estratégicos para superar esta brecha."
     },
     {
@@ -1018,6 +1032,13 @@ const PRESENTACION_DATA = {
       "metadatosFooter": "Avance 5 • Tablero de Control de Gestión en Recursos Humanos • Telma Ramírez y John Mayne",
       "escena3D": "anim_27",
       "tiempoSugerido": "⏱️ ~35-40 seg",
+      "consignasCatedra": [
+        {
+          "tipo": "📑 ENTREGABLE 2 (TABLERO DE CONTROL - 4 KPIS ESTRATÉGICOS)",
+          "punto": "Diseño de un Tablero de Control preliminar con al menos 3 Indicadores Clave de Gestión (KPIs) para medir la eficiencia de los recursos humanos.",
+          "respuesta": "• Tablero de 4 KPIs Estratégicos Situados (Telma Ramírez y John Mayne):\n1. KPI-1 (Tiempos de Procesos): Tramitación de novedades de personal (SUDOCU → Mapuche) en <= 5 días hábiles (Línea base: ~12d).\n2. KPI-2 (Calidad Salarial y Control): Liquidaciones mensuales sin observaciones ni rectificativas >= 99,0% (Monitoreo UAI/SISAC; Línea base: ~94%).\n3. KPI-3 (Formación Digital): Cobertura de capacitación digital nodocente en SUDOCU/SIU >= 90% anual con APUNC (Línea base: ~45%).\n4. KPI-4 (Contribución Territorial): Continuidad pedagógica y cobertura en los 10 nodos provinciales >= 95% (Línea base: ~82%)."
+        }
+      ],
       "guionOrador": "Para cumplir el entregable de diseñar el Tablero de Control con al menos 3 KPIs, propusimos 4 indicadores estratégicos basados en Telma Ramírez y John Mayne: el KPI 1 reduce a menos de 5 días el trámite de novedades entre SUDOCU y Mapuche; el KPI 2 eleva al 99% las liquidaciones sin errores para evitar observaciones de la UAI y el SISAC; el KPI 3 capacita al 90% del personal nodocente; y el KPI 4 garantiza el 95% de continuidad pedagógica en los 10 nodos territoriales."
     },
     {
@@ -1037,6 +1058,13 @@ const PRESENTACION_DATA = {
       "metadatosFooter": "Avance 5 • Bucle de Retroalimentación y Aprendizaje Organizacional • Martínez Nogueira y Feinstein",
       "escena3D": "anim_28",
       "tiempoSugerido": "⏱️ ~35-40 seg",
+      "consignasCatedra": [
+        {
+          "tipo": "🎯 CIRCUITO DE CONTROL & RETROALIMENTACIÓN (APRENDIZAJE)",
+          "punto": "¿Cómo se articula el circuito de control para que las auditorías no sean punitivas sino que retroalimenten la planificación estratégica?",
+          "respuesta": "• Circuito en 4 Eslabones Continuos:\n1. Operación Diaria (SUDOCU y Mapuche) alimenta en tiempo real el Tablero de 4 KPIs con alertas tempranas semafóricas.\n2. Auditoría Basada en Riesgos (UAI y Res. SIGEN 311/2026) fiscaliza nómina salarial (PAT 2027) y reporta compromisos en el sistema SISAC.\n3. Evaluación Pragmática (Feinstein): Supera el sesgo formalista o punitivo; convierte los desvíos en insumos de mejora y concertación paritaria con APUNC/ADUNC.\n4. Bucle de Aprendizaje Organizacional: La retroalimentación corrige la Planificación Situacional (Avance 2), los procesos de personal (Avance 3) y la defensa presupuestaria (Avance 4)."
+        }
+      ],
       "guionOrador": "La evaluación solo tiene sentido si retroalimenta la gestión. Modelamos un circuito en 4 eslabones: la operación diaria en SUDOCU y Mapuche alimenta el Tablero; la UAI audita con enfoque de riesgos bajo la Resolución SIGEN 311 y reporta al SISAC; y finalmente la conducción aplica una evaluación pragmática según Feinstein. El bucle de retroalimentación vuelve a conectar con el PES del Avance 2, los procesos del Avance 3 y el presupuesto del Avance 4."
     },
     {
@@ -1058,6 +1086,13 @@ const PRESENTACION_DATA = {
       "metadatosFooter": "Téc. Sup. en RR. HH. Héctor Daniel Ayarachi Fuentes • Ciclo Lectivo 2026 • CURZAS - UNCo",
       "escena3D": "anim_29",
       "tiempoSugerido": "⏱️ ~35-40 seg",
+      "consignasCatedra": [
+        {
+          "tipo": "🎓 SÍNTESIS GENERAL & EVALUACIÓN INTEGRAL (5 AVANCES)",
+          "punto": "¿Cuáles son los principales hallazgos, situaciones observadas y propuestas de solución integral para cada una de las 5 Unidades en el CURZAS?",
+          "respuesta": "• Avance 1 (Gobernanza): Burocracia Profesional que resguarda la legalidad; se detectó riesgo de endogamia en co-gobierno que se soluciona con Accountability Social y comisiones en nodos.\n• Avance 2 (Planificación): PES de Matus y red de 10 nodos; se detectaron silos SIU-SIGEVA y brecha digital que se corrigen con pasarelas API y capacitación paritaria.\n• Avance 3 (Procesos): Estructura formal centralizada vs red real; cuellos de botella por subrogancia y papel escaneado que se resuelven con ordenanza de subrogancia y digitalización integral.\n• Avance 4 (Presupuesto): El 90,2% se destina a salarios por ley de Zona Desfavorable (40%); se afronta la asfixia del 9,8% de funcionamiento con indexación paritaria y cogestión municipal.\n• Avance 5 (Control & KPIs): UAI estatutaria y Res. SIGEN 311/2026; la brecha de evaluación nodocente se supera con el Tablero de 4 KPIs estratégicos y bucle de mejora continua."
+        }
+      ],
       "guionOrador": "Para concluir esta defensa integral en 17 minutos, sintetizamos los 5 Avances con sus hallazgos, la situación observada y la solución situada que propusimos:\nEn el Avance 1 validamos una Burocracia Profesional que resguarda la legalidad y los convenios paritarios; la situación observada fue el riesgo de endogamia en el co-gobierno cerrado y la falta de datos abiertos, que resolvemos con un portal de Accountability Social y comisiones consultivas en los 10 nodos.\nEn el Avance 2 articulamos el PES de Matus con la red de 10 nodos; la situación observada fueron los silos entre SIU y SIGEVA y la brecha digital, que solucionamos con interoperabilidad técnica y capacitación paritaria.\nEn el Avance 3 contrastamos el organigrama con la realidad; la situación observada fueron los cuellos de botella por falta de subrogancia y la falsa digitalización del papel escaneado, que resolvemos con ordenanza de subrogancia y tramitación digital directa en SUDOCU y Mapuche.\nEn el Avance 4 demostramos que el 90,2% del presupuesto va al Inciso 1 por el plus patagónico del 40%, confirmando que el personal es la auténtica capacidad estatal; la situación observada es la asfixia del 9,8% de funcionamiento, que proponemos mitigar con partidas indexadas y cogestión municipal de nodos.\nY en el Avance 5 consolidamos el control con la UAI estatutaria y la Res. SIGEN 311/2026; la situación observada fue la asimetría de medir cargos en vez de resultados por el diferimiento con APUNC (como advierte Telma Ramírez), que solucionamos implementando el Tablero de 4 KPIs estratégicos como bucle formativo de retroalimentación continua.\nAgradezco sinceramente a la profesora Susana Lopez y al profesor Carlos Jauge por su acompañamiento académico. Quedo a su entera disposición para las preguntas del Tribunal."
     }
   ]
