@@ -848,6 +848,13 @@ const PRESENTACION_DATA = {
       "labelBoton2D": "🔍 Resumen Isométrico 2D",
       "labelBoton3D": "🌐 Dashboard Interactivo 3D",
       "tiempoSugerido": "⏱️ ~35-40 seg",
+      "consignasCatedra": [
+        {
+          "tipo": "📑 ENTREGABLE 1 & PREGUNTA GUÍA (INCISO 1)",
+          "punto": "¿Cuál es el presupuesto total asignado al organismo y qué porcentaje se destina al Inciso 1 (Gastos en Personal)?",
+          "respuesta": "• Presupuesto Total del CURZAS: $4.877 Millones de pesos en el ejercicio corriente (representa el 6,6% del presupuesto global de la UNCo de $73.900M).\n• Centralidad del Inciso 1 (Personal): El 90,2% ($4.401 Millones) está absorbido rígidamente por gastos en personal (salarios docentes y nodocentes).\n• Margen Operativo Crítico: Apenas un 9,8% ($476 Millones) queda disponible para el conjunto de gastos de funcionamiento (tarifas de luz, gas, insumos de laboratorio, limpieza y traslados a los 10 nodos)."
+        }
+      ],
       "guionOrador": "En el Avance 4 abrimos los números presupuestarios respondiendo a la pregunta guía: el CURZAS administra $4.877 millones de pesos. El hallazgo más contundente es que el 90,2% de esos fondos se destina al Inciso 1, es decir, a pagar salarios de docentes y nodocentes. Nos queda menos de un 10% para afrontar tarifas de luz, gas, limpieza y viajes en toda la provincia. En pantalla disponemos de la vista previa isométrica y podemos acceder con la tecla 3 al Dashboard 3D interactivo para explorar la comparativa del PBI nacional, las 61 universidades y los números del CURZAS."
     },
     {
@@ -867,6 +874,13 @@ const PRESENTACION_DATA = {
       "metadatosFooter": "Avance 4 • Composición Salarial y Plus de Zona Patagónica • CCT 366/06 y 1246/15",
       "escena3D": "anim_09",
       "tiempoSugerido": "⏱️ ~35-40 seg",
+      "consignasCatedra": [
+        {
+          "tipo": "🔍 QUÉ BUSCAR (ZONA PATAGÓNICA & ESTAMENTOS)",
+          "punto": "¿Por qué el gasto salarial en el CURZAS presenta mayor rigidez y cómo se compone la partida del Inciso 1 entre claustros?",
+          "respuesta": "• Impacto de la Zona Desfavorable (40%): Por ley nacional y convenios paritarios, cada sueldo devenga un adicional obligatorio del 40% por costo de vida patagónico (de cada $100 liquidados, $40 corresponden al plus zonal).\n• Distribución por Claustros: El 68% de la masa salarial financia la labor académica docente (CCT 1246/15) y el 32% sostiene al personal nodocente (CCT 366/06) en administración, biblioteca y mantenimiento.\n• Inflexibilidad a la baja: Al estar reglado por convenios colectivos, el Inciso 1 no admite reducciones discrecionales ni despidos sin vulnerar la legalidad estatutaria."
+        }
+      ],
       "guionOrador": "¿Por qué el gasto en personal es tan elevado? Principalmente por la Zona Desfavorable Patagónica, un plus del 40% fijado por ley que compensa el costo de vida del sur. Además, el 68% de esa masa salarial sostiene a los docentes que dictan clases y el 32% al personal nodocente que mantiene abiertas las aulas y laboratorios en Viedma y los nodos."
     },
     {
@@ -886,6 +900,13 @@ const PRESENTACION_DATA = {
       "metadatosFooter": "Avance 4 • Presupuesto por Programas y Matriz Insumo-Producto • Marcos Makon",
       "escena3D": "anim_19",
       "tiempoSugerido": "⏱️ ~35-40 seg",
+      "consignasCatedra": [
+        {
+          "tipo": "📑 ENTREGABLE 2 & PREGUNTA GUÍA (PROGRAMAS)",
+          "punto": "¿Cómo se estructuran los programas del organismo en la planilla presupuestaria oficial bajo la técnica de Presupuesto por Programas?",
+          "respuesta": "• Programa Presupuestario Oficial: Se encuadra de forma unificada bajo el Programa 26 ('Desarrollo de la Educación Superior') de la Ley de Presupuesto de la Administración Nacional.\n• Cadena Insumo-Proceso-Producto (Marcos Makon / CEPAL): Los recursos financieros del Inciso 1 (Insumos) se combinan con la infraestructura áulica e informática (Procesos) para generar graduados universitarios calificados, proyectos de extensión y transferencia científica comunitaria (Productos terminales).\n• Crítica al modelo: El formato actual es marcadamente inercial y financiero, con escasa desagregación de metas físicas y productos por sede o nodo territorial."
+        }
+      ],
       "guionOrador": "Respondiendo a la pregunta de cómo se estructuran los programas en la planilla oficial: aplicamos la metodología de Marcos Makon. Todo se encuadra en el Programa 26 nacional, 'Desarrollo de la Educación Superior'. Los insumos financieros se transforman en productos concretos: nuevos técnicos y licenciados graduados e investigaciones volcadas a Río Negro."
     },
     {
@@ -905,6 +926,13 @@ const PRESENTACION_DATA = {
       "metadatosFooter": "Avance 4 • Sistemas Integrados de Administración Financiera • Ley 24.156",
       "escena3D": "anim_12",
       "tiempoSugerido": "⏱️ ~35-40 seg",
+      "consignasCatedra": [
+        {
+          "tipo": "📑 ENTREGABLE 2 (CICLO PRESUPUESTARIO & SISTEMAS)",
+          "punto": "¿Cómo se desarrolla el ciclo presupuestario y qué sistemas informáticos integran la administración financiera del organismo (Ley 24.156)?",
+          "respuesta": "• 4 Fases del Ciclo Presupuestario (Schweinheim): 1. Formulación (CIN/SPU) → 2. Aprobación (Congreso de la Nación) → 3. Ejecución cotidiana (CURZAS / UNCo) → 4. Evaluación y Cierre de Ejercicio (Cuenta de Inversión).\n• Interconexión de Sistemas: SIU-Pilagá gestiona compras, contrataciones y pagos operativos; SIU-Mapuche procesa legajos y nómina salarial; ambos enlazan con el sistema e-SIDIF de la Secretaría de Hacienda de la Nación para recibir las cuotas de la Cuenta Única del Tesoro (CUT).\n• Control Interno y Externo: Intervención previa del servicio contable del CURZAS, auditoría permanente de la UAI estatutaria y control posterior de la AGN."
+        }
+      ],
       "guionOrador": "El recorrido de los fondos sigue el ciclo de la Ley 24.156 explicado por Guillermo Schweinheim. El presupuesto opera mediante sistemas informáticos cruzados: el SIU-Pilagá administra los fondos de funcionamiento, el SIU-Mapuche liquida los salarios y ambos se comunican con el e-SIDIF de Nación para recibir las partidas del Tesoro."
     },
     {
@@ -924,6 +952,13 @@ const PRESENTACION_DATA = {
       "metadatosFooter": "Avance 4 • Síntesis Estratégica: Planificación, Presupuesto y Personas • CURZAS",
       "escena3D": "anim_24",
       "tiempoSugerido": "⏱️ ~35-40 seg",
+      "consignasCatedra": [
+        {
+          "tipo": "🎯 OBJETIVO GENERAL & SÍNTESIS (FACTOR HUMANO)",
+          "punto": "¿Cómo se vincula la planificación política con los recursos económicos asignados y por qué el factor humano es la auténtica capacidad estatal?",
+          "respuesta": "• Vinculación Política-Presupuesto: No hay plan situacional viable sin respaldo de crédito presupuestario; la expansión hacia los 10 nodos provinciales exige financiar horas docentes y soporte territorial nodocente.\n• Desmitificación del 'Gasto': En el sector público universitario, las personas no son un gasto operativo pasivo ni una variable de ajuste, sino el servicio público en sí mismo.\n• Capacidad Estatal Encarnada (Bertranou): Sin docentes que viajen por la Línea Sur ni nodocentes que sostengan sistemas y edificios, la misión autonómica desaparece; defender el Inciso 1 es defender la capacidad misma del Estado para garantizar la educación superior como derecho social."
+        }
+      ],
       "guionOrador": "Llegamos a la conclusión medular del Avance 4: en una fábrica los salarios pueden ser un costo, pero en la universidad pública las personas son el servicio mismo. Sin el docente que viaja a Los Menucos o el nodocente que abre la sede en Viedma, no existe el CURZAS. Por eso, el 90,2% en salarios demuestra que el factor humano es la auténtica capacidad estatal de la universidad."
     },
     {
