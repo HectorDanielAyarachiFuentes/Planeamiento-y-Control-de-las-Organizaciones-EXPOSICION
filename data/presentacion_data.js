@@ -353,7 +353,7 @@ const PRESENTACION_DATA = {
         "Espacio de Cátedra: Planeamiento y Control de las Organizaciones 2026 (Mgter. Susana Lopez • Lic. Carlos Jauge)",
         "Propósito de la Exposición: Defensa oral de los 5 Avances articulando el hilo conductor de los nudos críticos en 17 minutos"
       ],
-      "metadatosFooter": "Carátula Oficial y Presentación del Estudiante • Cátedra Planeamiento y Control 2026 • Viedma",
+      "metadatosFooter": "Carátula Oficial y Presentación del Estudiante • Cátedra Planeamiento y Control de las Organizaciones 2026 • Viedma",
       "escena3D": "anim_01",
       "guionOrador": "Muy buenos días, estimados profesores Mgter. Susana Lopez y Lic. Carlos Jauge. Mi nombre es Héctor Daniel Ayarachi Fuentes, cursante de la Licenciatura en Recursos Humanos en el CURZAS.\nHoy presento la defensa oral de nuestra investigación integral. Siguiendo las orientaciones de la cátedra, esta exposición no busca realizar un resumen exhaustivo de las 46 páginas del informe, sino recorrer su hilo conductor a través de tres nudos críticos:\nPrimero, cómo las secretarías del CURZAS superan la paradoja del co-gobierno mediante la red de 10 Nodos Regionales de la provincia.\nSegundo, cómo esa expansión territorial convive con la rigidez presupuestaria del 90,2% en Personal y los cuellos de botella digitales entre SUDOCU y Mapuche.\nY tercero, cómo respondemos desde nuestro rol profesional en Recursos Humanos mediante propuestas viables de rediseño.",
       "tiempoSugerido": "⏱️ ~35-40 seg"

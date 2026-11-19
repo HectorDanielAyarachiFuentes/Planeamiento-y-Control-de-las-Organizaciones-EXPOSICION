@@ -825,7 +825,7 @@ class PresentationApp {
         {
           badge: "CÁTEDRA 2026",
           icon: "📚",
-          title: "Planeamiento y Control",
+          title: "Planeamiento y Control de las Organizaciones",
           sub: "Ciclo Académico 2026 • Dpto. de Administración Pública",
           meta: "Docentes: Mgter. Susana Lopez • Lic. Carlos Jauge"
         },
