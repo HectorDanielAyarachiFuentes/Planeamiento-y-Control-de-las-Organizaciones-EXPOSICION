@@ -1093,6 +1093,33 @@ const PRESENTACION_DATA = {
         }
       ],
       "guionOrador": "Para concluir esta defensa, integramos los hallazgos centrales siguiendo el hilo conductor del informe:\nEl CURZAS proyecta su vocación democratizadora superando la paradoja del co-gobierno mediante la presencia efectiva en 10 localidades rionegrinas.\nEsa red territorial se fundamenta en su plantel docente y nodocente, que absorbe el 90,2% del presupuesto como base de su capacidad institucional.\nY los cuellos de botella administrativos encuentran respuestas viables: mediante la declaración jurada de custodia documental, la subrogancia automática y un Tablero de KPIs orientado a la mejora continua y no a la sanción.\nComo futuro Licenciado en Recursos Humanos, entiendo que planificar y controlar en la universidad pública es fortalecer su compromiso con la sociedad.\nAgradezco a la profesora Mgter. Susana Lopez y al profesor Lic. Carlos Jauge por su acompañamiento académico, y quedo a entera disposición para las preguntas del Tribunal."
+    },
+    {
+      "id": "slide_30",
+      "numero": 30,
+      "bloque": "MARCO TEÓRICO Y REFERENCIAS BIBLIOGRÁFICAS",
+      "esquema": "Bibliografía Oficial (Normas APA 7ª Ed.)",
+      "badge": "BIBLIOGRAFÍA • NORMAS APA",
+      "titulo": "Marco Teórico y Referencias Bibliográficas (Normas APA 7ª Ed.)",
+      "subtitulo": "Autores Fundamentales del Planeamiento, la Poligobernanza, el Presupuesto y el Control en la UNCo",
+      "layout": "bibliography_showcase",
+      "puntosClave": [
+        "📚 Gobernanza & Planificación Situacional (PES): Matus, Carlos (1993/2007) • Oszlak, Oscar (2020) • Cao, Horacio y Blutman, Gustavo (2019, 2021) • Abal Medina, Juan Manuel (2014) • Aguilar Villanueva, Luis F. (2006).",
+        "🏛️ Capacidades Estatales & Diseño Organizacional: Bertranou, Julián (2015) • Hintze, Jorge (2001/2018) • Campos, Silvia et al. (2000) • Forester, John (1984) • Zeller, Norberto e Impala, Darío (2000).",
+        "💰 Presupuesto por Programas & Factor Humano: Makon, Marcos P. (1999/2024) • Schweinheim, Guillermo (2018) • Ramírez, Telma I. (2023) • CIN (2024) • OPC (2024) • MECON-ONP (2024).",
+        "⚖️ Control Público, Evaluación & Normativa Oficial: Feinstein, Osvaldo (2016) • Mayne, John (2016) • Martínez Nogueira, Roberto (2016) • SIGEN (Res. 299 y 311/2026) • AGN (Entidad 809) • Estatuto UNCo • Leyes 24.156 y 24.521 • CCT 366/06 y 1246/15."
+      ],
+      "metadatosFooter": "Bibliografía Oficial Consolidada • Normas APA (7ª Edición) • Actividades 1 a 5 • Cátedra Planeamiento y Control de las Organizaciones 2026",
+      "escena3D": "anim_29",
+      "tiempoSugerido": "⏱️ ~30-35 seg",
+      "consignasCatedra": [
+        {
+          "tipo": "📚 REFERENCIAS BIBLIOGRÁFICAS (NORMAS APA 7ª ED.)",
+          "punto": "¿Cuáles son las fuentes académicas y referencias bibliográficas obligatorias que sustentan el informe final integral?",
+          "respuesta": "• Gobernanza y PES: Carlos Matus (Planificación Situacional y Teoría del Juego Social), Oscar Oszlak (Gobernanza Inteligente e IA), Horacio Cao & Gustavo Blutman (Poligobernanza y Neoweberianismo), Juan Manuel Abal Medina y Luis Aguilar Villanueva.\n• Capacidades y Estructura: Julián Bertranou (Capacidades Estatales: relacional, administrativa y técnica), Jorge Hintze (Gestión por procesos y estructuras matriciales ad hoc), Silvia Campos et al. (Ecología organizacional) y John Forester (Racionalidad limitada y 'salir del paso').\n• Presupuesto y Factor Humano: Marcos Makon (Presupuesto por Programas y cadena insumo-producto), Guillermo Schweinheim (SIAF y Ley 24.156) y Telma Ramírez (Indicadores de gestión en finanzas públicas).\n• Control y Evaluación: Osvaldo Feinstein (Evaluación pragmática/formativa), John Mayne (Análisis de contribución), Roberto Martínez Nogueira, Informes de la AGN, Resoluciones SIGEN 299 y 311/2026 (SISAC / UAI 2027), Estatuto UNCo y convenios colectivos CCT 366/06 y CCT 1246/15."
+        }
+      ],
+      "guionOrador": "Como cierre formal de la defensa, dejamos asentadas las referencias bibliográficas que estructuran el marco teórico de la investigación bajo Normas APA.\nCada diagnóstico y propuesta del informe cuenta con respaldo disciplinar riguroso: desde la gobernanza inteligente de Oszlak y la planificación situacional de Matus; las capacidades estatales de Bertranou y el diseño por procesos de Hintze; el presupuesto por programas de Makon y Schweinheim; hasta los indicadores de gestión de Telma Ramírez y la evaluación pragmática de Feinstein articulada con los lineamientos de SIGEN y AGN.\nEste andamiaje teórico consolida nuestra propuesta no como una opinión intuitiva, sino como un proyecto de gestión pública riguroso, situated y viable para el CURZAS."
     }
   ]
 };

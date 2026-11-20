@@ -666,10 +666,10 @@ class PresentationApp {
       {
         id: "cierre",
         code: "CIERRE",
-        shortLabel: "Cierre y Defensa",
+        shortLabel: "Cierre y Bibliografía",
         shortTitle: "CIERRE",
-        title: "Cierre: Conclusiones Integrales y Defensa de Cátedra",
-        range: [28, 28], // filmina 29
+        title: "Cierre: Conclusiones Integrales y Bibliografía Oficial",
+        range: [28, 29], // filminas 29 y 30
         isEje: false
       }
     ];
@@ -804,7 +804,7 @@ class PresentationApp {
     }
 
     this.bulletsElement.innerHTML = "";
-    this.bulletsElement.classList.remove("intro-mode", "avances-mode");
+    this.bulletsElement.classList.remove("intro-mode", "avances-mode", "conclusion-mode", "biblio-mode");
 
     if (index === 0 || slide.id === "slide_1" || slide.layout === "intro_showcase") {
       this.bulletsElement.classList.add("intro-mode");
@@ -956,7 +956,7 @@ class PresentationApp {
 
         this.bulletsElement.appendChild(li);
       });
-    } else if (index === this.totalSlides - 1 || slide.id === "slide_29" || slide.layout === "conclusion_summary") {
+    } else if (slide.id === "slide_29" || slide.layout === "conclusion_summary") {
       this.bulletsElement.classList.add("conclusion-mode");
       const conclusiones = [
         {
@@ -1050,6 +1050,77 @@ class PresentationApp {
         </p>
       `;
       this.bulletsElement.appendChild(closingCard);
+    } else if (slide.id === "slide_30" || slide.layout === "bibliography_showcase") {
+      this.bulletsElement.classList.add("biblio-mode");
+      const biblioGroups = [
+        {
+          category: "Gobernanza & Planificación Situacional",
+          icon: "📚",
+          badge: "UNIDADES I & II",
+          authors: [
+            { name: "Carlos Matus (1993/2007)", desc: "Planificación Estratégica Situacional (PES), Teoría del juego social y viabilidad técnico-política." },
+            { name: "Oscar Oszlak (2020)", desc: "El Estado en la era exponencial: Gobernanza pública inteligente, tecnologías disruptivas e IA." },
+            { name: "Horacio Cao & Gustavo Blutman (2019, 2021)", desc: "Poligobernanza, Neoweberianismo, Estado Plataforma y la Paradoja del Co-Gobierno." },
+            { name: "Juan Manuel Abal Medina (2014) & Luis Aguilar Villanueva (2006)", desc: "Modelos de administración pública y marcos de gobernanza y gestión pública." }
+          ]
+        },
+        {
+          category: "Capacidades Estatales & Diseño Organizacional",
+          icon: "🏛️",
+          badge: "UNIDADES II & III",
+          authors: [
+            { name: "Julián Bertranou (2015)", desc: "Capacidades estatales (político-relacional, administrativa-organizacional y técnico-analítica), vínculos y arreglos institucionales." },
+            { name: "Jorge Hintze (2001/2018)", desc: "Modelos organizativos matriciales, tramados ad hoc, gestión por procesos y redes interinstitucionales." },
+            { name: "Silvia Campos et al. (2000) & John Forester (1984)", desc: "Ecología organizacional, inercia estructural burocrática y política de salir del paso." },
+            { name: "Norberto Zeller & Darío Impala (2000)", desc: "Estructura institucional y organización del Estado argentino (INAP)." }
+          ]
+        },
+        {
+          category: "Presupuesto, Factor Humano & Sistemas Integrados",
+          icon: "💰",
+          badge: "UNIDAD IV",
+          authors: [
+            { name: "Marcos P. Makon (1999/2024)", desc: "Técnica de Presupuesto por Programas, cadena Insumo-Proceso-Producto y medición de productos terminales." },
+            { name: "Guillermo Schweinheim (2018)", desc: "El sistema de administración financiera en Argentina, ciclo presupuestario integral y Ley 24.156." },
+            { name: "Telma I. Ramírez (2023)", desc: "Indicadores de gestión pública y superación de la administración tradicional de personal." },
+            { name: "CIN, OPC & MECON-ONP (2024)", desc: "Metodología del presupuesto universitario nacional, Inciso 1 (salarios) y financiamiento." }
+          ]
+        },
+        {
+          category: "Sistemas de Control, Evaluación & Marco Jurídico",
+          icon: "⚖️",
+          badge: "UNIDAD V",
+          authors: [
+            { name: "Osvaldo Feinstein (2016)", desc: "Evaluación pragmática y formativa de políticas públicas para el aprendizaje institucional." },
+            { name: "John Mayne (2016) & Roberto Martínez Nogueira (2016)", desc: "Análisis de atribución y contribución, y fundamentos analíticos de la evaluación." },
+            { name: "SIGEN & AGN (2024/2026)", desc: "Res. SIGEN 299 y 311/2026 (SISAC / UAI 2027), Normas de Auditoría Interna e informes de Cuenta de Inversión Entidad 809." },
+            { name: "Marco Normativo Oficial", desc: "Estatuto UNCo (UAI), Ley 24.156, Ley 24.521 (Art. 59 bis), CCT Nodocente 366/06 y CCT Docente 1246/15." }
+          ]
+        }
+      ];
+
+      biblioGroups.forEach((group) => {
+        const card = document.createElement("li");
+        card.className = "biblio-card";
+        card.innerHTML = `
+          <div class="biblio-card-header">
+            <span class="biblio-card-icon">${group.icon}</span>
+            <div class="biblio-title-wrap">
+              <span class="biblio-badge">${group.badge}</span>
+              <h4 class="biblio-card-title">${group.category}</h4>
+            </div>
+          </div>
+          <ul class="biblio-authors-list">
+            ${group.authors.map(a => `
+              <li class="biblio-author-item">
+                <strong class="biblio-author-name">${a.name}:</strong>
+                <span class="biblio-author-desc">${a.desc}</span>
+              </li>
+            `).join("")}
+          </ul>
+        `;
+        this.bulletsElement.appendChild(card);
+      });
     } else {
       const bulletsList = slide.puntosClave || slide.bullets || [];
       bulletsList.forEach((punto) => {
@@ -2946,7 +3017,7 @@ class PresentationApp {
 
       // Contador de filminas / índice general
       if (btn.id === "slide-counter-badge") {
-        return "Botón: Abrir índice de los 5 Avances y 29 filminas";
+        return "Botón: Abrir índice de los 5 Avances y 30 filminas";
       }
 
       // Controles de cronómetro
