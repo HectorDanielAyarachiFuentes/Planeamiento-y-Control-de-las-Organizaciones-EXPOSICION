@@ -248,6 +248,7 @@ class PresentationApp {
     // Cronómetro
     this.btnTimerToggle.addEventListener("click", () => this.toggleTimer());
     this.btnTimerReset.addEventListener("click", () => this.resetTimer());
+    this.updateTimerDisplay();
 
     // Modal de Notas de Orador
     this.btnToggleNotes.addEventListener("click", () => this.toggleNotes());
@@ -1561,7 +1562,7 @@ class PresentationApp {
 
         if (this.elapsedSeconds >= this.totalSeconds) {
           this.pauseTimer();
-          alert("⏱️ Los 30 minutos estipulados para la exposición han concluido.");
+          alert(`⏱️ Los ${this.data.timing.totalMinutos} minutos estipulados para la exposición han concluido.`);
         }
       }, 1000);
     }
@@ -2950,7 +2951,7 @@ class PresentationApp {
 
       // Controles de cronómetro
       if (btn.id === "btn-timer-toggle") return "Botón: Iniciar o pausar cronómetro";
-      if (btn.id === "btn-timer-reset") return "Botón: Reiniciar cronómetro a 17 minutos";
+      if (btn.id === "btn-timer-reset") return `Botón: Reiniciar cronómetro a ${this.data.timing.totalMinutos} minutos`;
 
       // Botones de navegación de filminas
       if (btn.id === "btn-prev" || btn.id === "btn-notes-prev") return "Botón: Filmina anterior";

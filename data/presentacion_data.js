@@ -35,10 +35,10 @@ const PRESENTACION_DATA = {
     "lugar": "Viedma, Río Negro — República Argentina"
   },
   "timing": {
-    "totalMinutos": 17,
-    "alertaAmarillaMinutos": 12,
-    "alertaRojaMinutos": 15,
-    "promedioPorSlideMin": 0.58
+    "totalMinutos": 24,
+    "alertaAmarillaMinutos": 18,
+    "alertaRojaMinutos": 21,
+    "promedioPorSlideMin": 0.83
   },
   "consignasCatedra": [
     {
@@ -351,7 +351,7 @@ const PRESENTACION_DATA = {
         "Expositor: Téc. Sup. en Recursos Humanos Héctor Daniel Ayarachi Fuentes (Ciclo de Licenciatura • Legajo N° 8252)",
         "Casa de Estudios: CURZAS — Centro Universitario Regional Zona Atlántica y Sur (UNCo • Sede Viedma)",
         "Espacio de Cátedra: Planeamiento y Control de las Organizaciones 2026 (Mgter. Susana Lopez • Lic. Carlos Jauge)",
-        "Propósito de la Exposición: Defensa oral de los 5 Avances articulando el hilo conductor de los nudos críticos en 17 minutos"
+        "Propósito de la Exposición: Defensa oral de los 5 Avances articulando el hilo conductor de los nudos críticos en 24 minutos"
       ],
       "metadatosFooter": "Carátula Oficial y Presentación del Estudiante • Cátedra Planeamiento y Control de las Organizaciones 2026 • Viedma",
       "escena3D": "anim_01",
@@ -367,7 +367,7 @@ const PRESENTACION_DATA = {
       "titulo": "Los 5 Avances de Cátedra: Consignas Oficiales y Respuestas Situadas",
       "subtitulo": "Estructura Temática según los Objetivos y Entregables Fijados por la Cátedra (Unidades I a V)",
       "puntosClave": [
-        "🧵 Hilo Conductor Estratégico: Conectar los nudos críticos del informe articulando las 5 Unidades en 17 minutos.",
+        "🧵 Hilo Conductor Estratégico: Conectar los nudos críticos del informe articulando las 5 Unidades en 24 minutos.",
         "🌐 1. Nudo Político & Territorial: Las secretarías rompen la paradoja del co-gobierno mediante la red viva de 10 Nodos Regionales.",
         "💰 2. Nudo Fiscal & Tecnológico: La expansión choca con la rigidez del 90,2% en Inciso 1 (Personal) y la doble carga manual SUDOCU/Mapuche.",
         "🎯 3. Cierre desde el Rol de RR.HH.: Propuestas viables de rediseño (custodia documental, subrogancias automáticas y Tablero con KPIs)."
